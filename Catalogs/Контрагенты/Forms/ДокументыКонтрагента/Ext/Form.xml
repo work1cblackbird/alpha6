@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Список" id="1">
+			<Representation>List</Representation>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>~Список.DefaultPicture</RowPictureDataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список документов</v8:content>
+				</v8:item>
+			</Title>
+			<SearchStringLocation>CommandBar</SearchStringLocation>
+			<ViewStatusLocation>Top</ViewStatusLocation>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnGetDataAtServer">СписокПриПолученииДанныхНаСервере</Event>
+				<Event name="BeforeRowChange">СписокПередНачаломИзменения</Event>
+			</Events>
+			<ChildItems>
+				<PictureField name="Состояние" id="40">
+					<DataPath>Список.Состояние</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<ContextMenu name="СостояниеКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="СостояниеРасширеннаяПодсказка" id="42"/>
+				</PictureField>
+				<InputField name="СписокХозОперация" id="26">
+					<DataPath>Список.ХозОперация</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>20</Width>
+					<ContextMenu name="СписокХозОперацияКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="СписокХозОперацияРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<LabelField name="СсылкаНомер" id="37">
+					<DataPath>Список.Номер</DataPath>
+					<ContextMenu name="СсылкаНомерКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="СсылкаНомерРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+				<InputField name="СписокДата" id="14">
+					<DataPath>Список.Дата</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>9</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</Format>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="СписокДатаКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СписокДатаРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="СписокВремя" id="32">
+					<DataPath>Список.Дата</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>8</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДЛФ=T</v8:content>
+						</v8:item>
+					</Format>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДЛФ=T</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="СписокВремяКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="СписокВремяРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<ColumnGroup name="СуммаВалюта" id="35">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма и валюта</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма валюта</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="СуммаВалютаРасширеннаяПодсказка" id="36"/>
+					<ChildItems>
+						<InputField name="СписокСуммаДокумента" id="23">
+							<DataPath>Список.СуммаДокумента</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>10</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СписокСуммаДокументаКонтекстноеМеню" id="24"/>
+							<ExtendedTooltip name="СписокСуммаДокументаРасширеннаяПодсказка" id="25"/>
+						</InputField>
+						<InputField name="СписокВалютаДокумента" id="29">
+							<DataPath>Список.ВалютаДокумента</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вал.</v8:content>
+								</v8:item>
+							</Title>
+							<Width>4</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СписокВалютаДокументаКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="СписокВалютаДокументаРасширеннаяПодсказка" id="31"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="СписокОрганизация" id="17">
+					<DataPath>Список.Организация</DataPath>
+					<Width>16</Width>
+					<ContextMenu name="СписокОрганизацияКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="СписокОрганизацияРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="СписокПодразделениеКомпании" id="20">
+					<DataPath>Список.ПодразделениеКомпании</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+					</Title>
+					<Width>16</Width>
+					<ContextMenu name="СписокПодразделениеКомпанииКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СписокПодразделениеКомпанииРасширеннаяПодсказка" id="22"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>~Список.ХозОперацияПредставление</Field>
+				<Field>Список.Ссылка</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Контрагенты.Ссылка КАК Ссылка
+ПОМЕСТИТЬ втИтог
+ИЗ
+	КритерийОтбора.Контрагенты(&amp;Значение) КАК Контрагенты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	втИтог.Ссылка КАК Ссылка,
+	ВЫРАЗИТЬ("" КАК СТРОКА(12)) КАК Номер,
+	ДАТАВРЕМЯ(1, 1, 1) КАК Дата,
+	ЗНАЧЕНИЕ(Справочник.Валюты.ПустаяСсылка) КАК ВалютаДокумента,
+	0 КАК СуммаДокумента,
+	ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка) КАК Организация,
+	ЗНАЧЕНИЕ(Справочник.ПодразделенияКомпании.ПустаяСсылка) КАК ПодразделениеКомпании,
+	ЗНАЧЕНИЕ(Справочник.ХозОперации.ПустаяСсылка) КАК ХозОперация
+ИЗ
+	втИтог КАК втИтог</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Организация</dcssch:dataPath>
+					<dcssch:field>Организация</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Номер</dcssch:dataPath>
+					<dcssch:field>Номер</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Дата</dcssch:dataPath>
+					<dcssch:field>Дата</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВалютаДокумента</dcssch:dataPath>
+					<dcssch:field>ВалютаДокумента</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта документа</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПодразделениеКомпании</dcssch:dataPath>
+					<dcssch:field>ПодразделениеКомпании</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделение компании</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СуммаДокумента</dcssch:dataPath>
+					<dcssch:field>СуммаДокумента</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма документа</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+						</dcscor:item>
+					</dcssch:appearance>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ХозОперация</dcssch:dataPath>
+					<dcssch:field>ХозОперация</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Хоз операция</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<CalculatedField>
+					<dcssch:dataPath>Состояние</dcssch:dataPath>
+					<dcssch:expression>Выбор Когда Ссылка.Проведен Тогда 14 Когда Ссылка.ПометкаУдаления Тогда 13 Иначе 12 Конец</dcssch:expression>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</CalculatedField>
+				<Parameter>
+					<dcssch:name>Значение</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+						<v8:Type>cfg:CatalogRef.СтроковыеКонтактыВзаимодействий</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<KeyType>FieldValue</KeyType>
+				<KeyField>Ссылка</KeyField>
+				<GetInvisibleFieldPresentations>false</GetInvisibleFieldPresentations>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

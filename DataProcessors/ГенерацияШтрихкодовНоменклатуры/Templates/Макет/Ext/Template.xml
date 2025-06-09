@@ -1,0 +1,965 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Код</dataPath>
+			<field>Код</field>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПометкаУдаления</dataPath>
+			<field>ПометкаУдаления</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Номенклатура</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Наименование</dataPath>
+			<field>Наименование</field>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетУчетаНДСПоРеализации</dataPath>
+			<field>СчетУчетаНДСПоРеализации</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидНоменклатуры</dataPath>
+			<field>ВидНоменклатуры</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:EnumRef.ВидыНоменклатуры</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаименованиеИностранное</dataPath>
+			<field>НаименованиеИностранное</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование иностранное</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЕдиницаИзмерения</dataPath>
+			<field>ЕдиницаИзмерения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Единица измерения</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаименованиеПолное</dataPath>
+			<field>НаименованиеПолное</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полное наименование</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Артикул</dataPath>
+			<field>Артикул</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>№ по кат.</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипНоменклатуры</dataPath>
+			<field>ТипНоменклатуры</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ТипыНоменклатуры</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтранаПроисхождения</dataPath>
+			<field>СтранаПроисхождения</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.СтраныМира</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИмяПредопределенныхДанных</dataPath>
+			<field>ИмяПредопределенныхДанных</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Производитель</dataPath>
+			<field>Производитель</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Производители</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Прослеживаемый</dataPath>
+			<field>Прослеживаемый</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦеноваяГруппа</dataPath>
+			<field>ЦеноваяГруппа</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ЦеновыеГруппы</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АртикулДляПоиска</dataPath>
+			<field>АртикулДляПоиска</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗапретПродажи</dataPath>
+			<field>ЗапретПродажи</field>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗапретЗакупки</dataPath>
+			<field>ЗапретЗакупки</field>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВерсияДанных</dataPath>
+			<field>ВерсияДанных</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Родитель</dataPath>
+			<field>Родитель</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтоГруппа</dataPath>
+			<field>ЭтоГруппа</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>БазоваяЕдиницаИзмерения</dataPath>
+			<field>БазоваяЕдиницаИзмерения</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Комментарий</dataPath>
+			<field>Комментарий</field>
+			<useRestriction>
+				<field>true</field>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнаяЕдиницаИзмерения</dataPath>
+			<field>ОсновнаяЕдиницаИзмерения</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИспользованиеШтрихКодов</dataPath>
+			<field>ИспользованиеШтрихКодов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использование штрих кодов</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтавкаНДС</dataPath>
+			<field>СтавкаНДС</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаУчета</dataPath>
+			<field>ВалютаУчета</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СпособРаспределенияДопРасходов</dataPath>
+			<field>СпособРаспределенияДопРасходов</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГТД</dataPath>
+			<field>ГТД</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатьяДопРасходов</dataPath>
+			<field>СтатьяДопРасходов</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокХраненияТовара</dataPath>
+			<field>СрокХраненияТовара</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроцентНаценки</dataPath>
+			<field>ПроцентНаценки</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КартинкаАвтокаталога</dataPath>
+			<field>КартинкаАвтокаталога</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КратностьПоставок</dataPath>
+			<field>КратностьПоставок</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИспользованиеХарактеристик</dataPath>
+			<field>ИспользованиеХарактеристик</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использование характеристик</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СнятаСПроизводства</dataPath>
+			<field>СнятаСПроизводства</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФайлКартинки</dataPath>
+			<field>ФайлКартинки</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСоздания</dataPath>
+			<field>ДатаСоздания</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Вес</dataPath>
+			<field>Вес</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КодТНВЭД</dataPath>
+			<field>КодТНВЭД</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КодОКПД2</dataPath>
+			<field>КодОКПД2</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Автор</dataPath>
+			<field>Автор</field>
+			<useRestriction>
+				<field>true</field>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Пользователи</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ХарактеристикаНоменклатуры</dataPath>
+			<field>ХарактеристикаНоменклатуры</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Характеристика номенклатуры</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Предопределенный</dataPath>
+			<field>Предопределенный</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИспользованиеЕдиницИзмерения</dataPath>
+			<field>ИспользованиеЕдиницИзмерения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использование единиц измерения</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ТипыНоменклатуры.Ссылка КАК Ссылка,
+	ТипыНоменклатуры.ИспользованиеЕдиницИзмерения КАК ИспользованиеЕдиницИзмерения,
+	ТипыНоменклатуры.ИспользованиеШтрихКодов КАК ИспользованиеШтрихКодов,
+	ТипыНоменклатуры.ИспользованиеХарактеристик КАК ИспользованиеХарактеристик,
+	ВЫБОР
+		КОГДА ТипыНоменклатуры.ИспользованиеХарактеристик = 1
+				И ТипыНоменклатуры.ИспользованиеШтрихКодов = 3
+			ТОГДА ХарактеристикиНоменклатуры.Ссылка
+		ИНАЧЕ ЗНАЧЕНИЕ(Справочник.ХарактеристикиНоменклатуры.ПустаяСсылка)
+	КОНЕЦ КАК ХарактеристикаНоменклатуры,
+	ВЫБОР
+		КОГДА ТипыНоменклатуры.ИспользованиеЕдиницИзмерения = 1
+				И ТипыНоменклатуры.ИспользованиеШтрихКодов = 2
+			ТОГДА ЕдиницыИзмерения.Ссылка
+		ИНАЧЕ ЗНАЧЕНИЕ(Справочник.ЕдиницыИзмерения.ПустаяСсылка)
+	КОНЕЦ КАК ЕдиницаИзмерения
+ПОМЕСТИТЬ втТипыНоменклатуры
+ИЗ
+	Справочник.ТипыНоменклатуры КАК ТипыНоменклатуры
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ХарактеристикиНоменклатуры КАК ХарактеристикиНоменклатуры
+		ПО (ХарактеристикиНоменклатуры.Владелец = ТипыНоменклатуры.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ЕдиницыИзмерения КАК ЕдиницыИзмерения
+		ПО ТипыНоменклатуры.Ссылка = ЕдиницыИзмерения.Владелец
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	Номенклатура.Ссылка КАК Ссылка,
+	Номенклатура.ВерсияДанных КАК ВерсияДанных,
+	Номенклатура.ПометкаУдаления КАК ПометкаУдаления,
+	Номенклатура.Родитель КАК Родитель,
+	Номенклатура.ЭтоГруппа КАК ЭтоГруппа,
+	Номенклатура.Код КАК Код,
+	Номенклатура.Наименование КАК Наименование,
+	ВЫРАЗИТЬ(Номенклатура.НаименованиеИностранное КАК СТРОКА(1000)) КАК НаименованиеИностранное,
+	ВЫРАЗИТЬ(Номенклатура.НаименованиеПолное КАК СТРОКА(1000)) КАК НаименованиеПолное,
+	Номенклатура.Артикул КАК Артикул,
+	Номенклатура.ТипНоменклатуры КАК ТипНоменклатуры,
+	Номенклатура.ВидНоменклатуры КАК ВидНоменклатуры,
+	Номенклатура.БазоваяЕдиницаИзмерения КАК БазоваяЕдиницаИзмерения,
+	Номенклатура.ОсновнаяЕдиницаИзмерения КАК ОсновнаяЕдиницаИзмерения,
+	Номенклатура.СтавкаНДС КАК СтавкаНДС,
+	Номенклатура.ВалютаУчета КАК ВалютаУчета,
+	Номенклатура.СпособРаспределенияДопРасходов КАК СпособРаспределенияДопРасходов,
+	Номенклатура.СтатьяДопРасходов КАК СтатьяДопРасходов,
+	Номенклатура.ГТД КАК ГТД,
+	Номенклатура.СтранаПроисхождения КАК СтранаПроисхождения,
+	Номенклатура.СрокХраненияТовара КАК СрокХраненияТовара,
+	Номенклатура.ПроцентНаценки КАК ПроцентНаценки,
+	Номенклатура.Производитель КАК Производитель,
+	Номенклатура.КартинкаАвтокаталога КАК КартинкаАвтокаталога,
+	Номенклатура.СчетУчетаНДСПоРеализации КАК СчетУчетаНДСПоРеализации,
+	Номенклатура.КратностьПоставок КАК КратностьПоставок,
+	Номенклатура.СнятаСПроизводства КАК СнятаСПроизводства,
+	Номенклатура.ЗапретПродажи КАК ЗапретПродажи,
+	Номенклатура.ЗапретЗакупки КАК ЗапретЗакупки,
+	Номенклатура.ФайлКартинки КАК ФайлКартинки,
+	Номенклатура.Вес КАК Вес,
+	Номенклатура.АртикулДляПоиска КАК АртикулДляПоиска,
+	Номенклатура.КодТНВЭД КАК КодТНВЭД,
+	Номенклатура.ЦеноваяГруппа КАК ЦеноваяГруппа,
+	Номенклатура.КодОКПД2 КАК КодОКПД2,
+	Номенклатура.Прослеживаемый КАК Прослеживаемый,
+	Номенклатура.Автор КАК Автор,
+	Номенклатура.ДатаСоздания КАК ДатаСоздания,
+	Номенклатура.Комментарий КАК Комментарий,
+	Номенклатура.Предопределенный КАК Предопределенный,
+	Номенклатура.ИмяПредопределенныхДанных КАК ИмяПредопределенныхДанных,
+	ЕСТЬNULL(втТипыНоменклатуры.ИспользованиеШтрихКодов, 0) КАК ИспользованиеШтрихКодов,
+	ЕСТЬNULL(втТипыНоменклатуры.ИспользованиеХарактеристик, 0) КАК ИспользованиеХарактеристик,
+	ЕСТЬNULL(втТипыНоменклатуры.ИспользованиеЕдиницИзмерения, 0) КАК ИспользованиеЕдиницИзмерения,
+	ЕСТЬNULL(втТипыНоменклатуры.ХарактеристикаНоменклатуры, ЗНАЧЕНИЕ(Справочник.ХарактеристикиНоменклатуры.ПустаяСсылка)) КАК ТипНоменклатурыХарактеристикаНоменклатуры,
+	ЕСТЬNULL(втТипыНоменклатуры.ЕдиницаИзмерения, ЗНАЧЕНИЕ(Справочник.ЕдиницыИзмерения.ПустаяСсылка)) КАК ТипНоменклатурыЕдиницаИзмерения
+ПОМЕСТИТЬ втНоменклатура
+ИЗ
+	Справочник.Номенклатура КАК Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ втТипыНоменклатуры КАК втТипыНоменклатуры
+		ПО Номенклатура.ТипНоменклатуры = втТипыНоменклатуры.Ссылка
+ГДЕ
+	НЕ Номенклатура.ЭтоГруппа
+	И НЕ Номенклатура.ПометкаУдаления
+	И НЕ Номенклатура.ТипНоменклатуры.ИспользованиеШтрихКодов = 0
+	И ВЫБОР КОГДА &amp;ПоСписку ТОГДА Номенклатура.Ссылка В (&amp;СписокНоменклатуры) ИНАЧЕ ИСТИНА КОНЕЦ
+{ГДЕ
+	Номенклатура.Ссылка.*,
+	Номенклатура.Код,
+	Номенклатура.Наименование,
+	Номенклатура.НаименованиеИностранное,
+	Номенклатура.НаименованиеПолное,
+	Номенклатура.Артикул,
+	Номенклатура.ТипНоменклатуры,
+	Номенклатура.ВидНоменклатуры,
+	Номенклатура.СтранаПроисхождения,
+	Номенклатура.Производитель,
+	Номенклатура.ЦеноваяГруппа,
+	Номенклатура.ЗапретПродажи,
+	Номенклатура.ЗапретЗакупки}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ втТипыНоменклатуры
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	втНоменклатура.Ссылка КАК Ссылка,
+	втНоменклатура.ВерсияДанных КАК ВерсияДанных,
+	втНоменклатура.ПометкаУдаления КАК ПометкаУдаления,
+	втНоменклатура.Родитель КАК Родитель,
+	втНоменклатура.ЭтоГруппа КАК ЭтоГруппа,
+	втНоменклатура.Код КАК Код,
+	втНоменклатура.Наименование КАК Наименование,
+	втНоменклатура.НаименованиеИностранное КАК НаименованиеИностранное,
+	втНоменклатура.НаименованиеПолное КАК НаименованиеПолное,
+	втНоменклатура.Артикул КАК Артикул,
+	втНоменклатура.ТипНоменклатуры КАК ТипНоменклатуры,
+	втНоменклатура.ВидНоменклатуры КАК ВидНоменклатуры,
+	втНоменклатура.БазоваяЕдиницаИзмерения КАК БазоваяЕдиницаИзмерения,
+	втНоменклатура.ОсновнаяЕдиницаИзмерения КАК ОсновнаяЕдиницаИзмерения,
+	втНоменклатура.СтавкаНДС КАК СтавкаНДС,
+	втНоменклатура.ВалютаУчета КАК ВалютаУчета,
+	втНоменклатура.СпособРаспределенияДопРасходов КАК СпособРаспределенияДопРасходов,
+	втНоменклатура.СтатьяДопРасходов КАК СтатьяДопРасходов,
+	втНоменклатура.ГТД КАК ГТД,
+	втНоменклатура.СтранаПроисхождения КАК СтранаПроисхождения,
+	втНоменклатура.СрокХраненияТовара КАК СрокХраненияТовара,
+	втНоменклатура.ПроцентНаценки КАК ПроцентНаценки,
+	втНоменклатура.Производитель КАК Производитель,
+	втНоменклатура.КартинкаАвтокаталога КАК КартинкаАвтокаталога,
+	втНоменклатура.СчетУчетаНДСПоРеализации КАК СчетУчетаНДСПоРеализации,
+	втНоменклатура.КратностьПоставок КАК КратностьПоставок,
+	втНоменклатура.СнятаСПроизводства КАК СнятаСПроизводства,
+	втНоменклатура.ЗапретПродажи КАК ЗапретПродажи,
+	втНоменклатура.ЗапретЗакупки КАК ЗапретЗакупки,
+	втНоменклатура.ФайлКартинки КАК ФайлКартинки,
+	втНоменклатура.Вес КАК Вес,
+	втНоменклатура.АртикулДляПоиска КАК АртикулДляПоиска,
+	втНоменклатура.КодТНВЭД КАК КодТНВЭД,
+	втНоменклатура.ЦеноваяГруппа КАК ЦеноваяГруппа,
+	втНоменклатура.КодОКПД2 КАК КодОКПД2,
+	втНоменклатура.Прослеживаемый КАК Прослеживаемый,
+	втНоменклатура.Автор КАК Автор,
+	втНоменклатура.ДатаСоздания КАК ДатаСоздания,
+	втНоменклатура.Комментарий КАК Комментарий,
+	втНоменклатура.Предопределенный КАК Предопределенный,
+	втНоменклатура.ИмяПредопределенныхДанных КАК ИмяПредопределенныхДанных,
+	ВЫБОР
+		КОГДА втНоменклатура.ИспользованиеХарактеристик = 2
+			ТОГДА ХарактеристикиНоменклатуры.Ссылка
+		КОГДА втНоменклатура.ИспользованиеХарактеристик = 1
+			ТОГДА втНоменклатура.ТипНоменклатурыХарактеристикаНоменклатуры
+		ИНАЧЕ ЗНАЧЕНИЕ(Справочник.ХарактеристикиНоменклатуры.ПустаяСсылка)
+	КОНЕЦ КАК ХарактеристикаНоменклатуры,
+	ВЫБОР
+		КОГДА втНоменклатура.ИспользованиеЕдиницИзмерения = 2
+			ТОГДА ЕдиницыИзмерения.Ссылка
+		ИНАЧЕ втНоменклатура.ТипНоменклатурыЕдиницаИзмерения
+	КОНЕЦ КАК ЕдиницаИзмерения,
+	втНоменклатура.ИспользованиеШтрихКодов КАК ИспользованиеШтрихКодов,
+	втНоменклатура.ИспользованиеХарактеристик КАК ИспользованиеХарактеристик,
+	втНоменклатура.ИспользованиеЕдиницИзмерения КАК ИспользованиеЕдиницИзмерения
+ПОМЕСТИТЬ втИтоговаяТаблица
+ИЗ
+	втНоменклатура КАК втНоменклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ХарактеристикиНоменклатуры КАК ХарактеристикиНоменклатуры
+		ПО втНоменклатура.Ссылка = ХарактеристикиНоменклатуры.Владелец
+			И (втНоменклатура.ИспользованиеШтрихКодов = 3)
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ЕдиницыИзмерения КАК ЕдиницыИзмерения
+		ПО втНоменклатура.ОсновнаяЕдиницаИзмерения = ЕдиницыИзмерения.Ссылка
+			И (втНоменклатура.ИспользованиеШтрихКодов = 2)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ втНоменклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	втИтоговаяТаблица.Ссылка КАК Ссылка,
+	втИтоговаяТаблица.ВерсияДанных КАК ВерсияДанных,
+	втИтоговаяТаблица.ПометкаУдаления КАК ПометкаУдаления,
+	втИтоговаяТаблица.Родитель КАК Родитель,
+	втИтоговаяТаблица.ЭтоГруппа КАК ЭтоГруппа,
+	втИтоговаяТаблица.Код КАК Код,
+	втИтоговаяТаблица.Наименование КАК Наименование,
+	втИтоговаяТаблица.НаименованиеИностранное КАК НаименованиеИностранное,
+	втИтоговаяТаблица.НаименованиеПолное КАК НаименованиеПолное,
+	втИтоговаяТаблица.Артикул КАК Артикул,
+	втИтоговаяТаблица.ТипНоменклатуры КАК ТипНоменклатуры,
+	втИтоговаяТаблица.ВидНоменклатуры КАК ВидНоменклатуры,
+	втИтоговаяТаблица.БазоваяЕдиницаИзмерения КАК БазоваяЕдиницаИзмерения,
+	втИтоговаяТаблица.ОсновнаяЕдиницаИзмерения КАК ОсновнаяЕдиницаИзмерения,
+	втИтоговаяТаблица.СтавкаНДС КАК СтавкаНДС,
+	втИтоговаяТаблица.ВалютаУчета КАК ВалютаУчета,
+	втИтоговаяТаблица.СпособРаспределенияДопРасходов КАК СпособРаспределенияДопРасходов,
+	втИтоговаяТаблица.СтатьяДопРасходов КАК СтатьяДопРасходов,
+	втИтоговаяТаблица.ГТД КАК ГТД,
+	втИтоговаяТаблица.СтранаПроисхождения КАК СтранаПроисхождения,
+	втИтоговаяТаблица.СрокХраненияТовара КАК СрокХраненияТовара,
+	втИтоговаяТаблица.ПроцентНаценки КАК ПроцентНаценки,
+	втИтоговаяТаблица.Производитель КАК Производитель,
+	втИтоговаяТаблица.КартинкаАвтокаталога КАК КартинкаАвтокаталога,
+	втИтоговаяТаблица.СчетУчетаНДСПоРеализации КАК СчетУчетаНДСПоРеализации,
+	втИтоговаяТаблица.КратностьПоставок КАК КратностьПоставок,
+	втИтоговаяТаблица.СнятаСПроизводства КАК СнятаСПроизводства,
+	втИтоговаяТаблица.ЗапретПродажи КАК ЗапретПродажи,
+	втИтоговаяТаблица.ЗапретЗакупки КАК ЗапретЗакупки,
+	втИтоговаяТаблица.ФайлКартинки КАК ФайлКартинки,
+	втИтоговаяТаблица.Вес КАК Вес,
+	втИтоговаяТаблица.АртикулДляПоиска КАК АртикулДляПоиска,
+	втИтоговаяТаблица.КодТНВЭД КАК КодТНВЭД,
+	втИтоговаяТаблица.ЦеноваяГруппа КАК ЦеноваяГруппа,
+	втИтоговаяТаблица.КодОКПД2 КАК КодОКПД2,
+	втИтоговаяТаблица.Прослеживаемый КАК Прослеживаемый,
+	втИтоговаяТаблица.Автор КАК Автор,
+	втИтоговаяТаблица.ДатаСоздания КАК ДатаСоздания,
+	втИтоговаяТаблица.Комментарий КАК Комментарий,
+	втИтоговаяТаблица.Предопределенный КАК Предопределенный,
+	втИтоговаяТаблица.ИмяПредопределенныхДанных КАК ИмяПредопределенныхДанных,
+	втИтоговаяТаблица.ХарактеристикаНоменклатуры КАК ХарактеристикаНоменклатуры,
+	втИтоговаяТаблица.ЕдиницаИзмерения КАК ЕдиницаИзмерения,
+	втИтоговаяТаблица.ИспользованиеШтрихКодов КАК ИспользованиеШтрихКодов,
+	втИтоговаяТаблица.ИспользованиеХарактеристик КАК ИспользованиеХарактеристик,
+	втИтоговаяТаблица.ИспользованиеЕдиницИзмерения КАК ИспользованиеЕдиницИзмерения
+ИЗ
+	втИтоговаяТаблица КАК втИтоговаяТаблица
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.Штрихкоды КАК Штрихкоды
+		ПО втИтоговаяТаблица.Ссылка = Штрихкоды.Объект
+			И (ВЫБОР
+				КОГДА втИтоговаяТаблица.ИспользованиеШтрихКодов = 2
+					ТОГДА втИтоговаяТаблица.ЕдиницаИзмерения = Штрихкоды.ЕдиницаИзмерения
+				КОГДА втИтоговаяТаблица.ИспользованиеШтрихКодов = 3
+					ТОГДА втИтоговаяТаблица.ХарактеристикаНоменклатуры = Штрихкоды.ХарактеристикаНоменклатуры
+				ИНАЧЕ ИСТИНА
+			КОНЕЦ)
+ГДЕ
+	Штрихкоды.Штрихкод ЕСТЬ NULL</query>
+	</dataSet>
+	<parameter>
+		<name>СписокНоменклатуры</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Список номенклатуры</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Номенклатура</v8:Type>
+		</valueType>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ПоСписку</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>По списку</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">true</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Артикул</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидНоменклатуры</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЕдиницаИзмерения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗапретЗакупки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗапретПродажи</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИспользованиеЕдиницИзмерения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИспользованиеХарактеристик</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИспользованиеШтрихКодов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Код</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Наименование</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НаименованиеИностранное</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НаименованиеПолное</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПометкаУдаления</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Производитель</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтранаПроисхождения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТипНоменклатуры</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ХарактеристикаНоменклатуры</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦеноваяГруппа</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидНоменклатуры</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Ссылка</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Наименование</dcsset:left>
+					<dcsset:comparisonType>Contains</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ЗаписатьИЗакрыть" id="186">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="187"/>
+			</Button>
+			<Button name="Записать" id="188">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаписатьАльфаАвто</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ЗаписатьРасширеннаяПодсказка" id="189"/>
+			</Button>
+			<Button name="ФормаСкопировать" id="198">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Copy</CommandName>
+				<ExtendedTooltip name="ФормаСкопироватьРасширеннаяПодсказка" id="199"/>
+			</Button>
+			<ButtonGroup name="ОсновныеДействия" id="179">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основные действия</v8:content>
+					</v8:item>
+				</Title>
+				<CommandSource>Form</CommandSource>
+				<ExtendedTooltip name="ОсновныеДействияРасширеннаяПодсказка" id="180"/>
+			</ButtonGroup>
+			<ButtonGroup name="ГлобальныеКоманды" id="181">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Глобальные команды</v8:content>
+					</v8:item>
+				</Title>
+				<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
+				<ExtendedTooltip name="ГлобальныеКомандыРасширеннаяПодсказка" id="182"/>
+			</ButtonGroup>
+			<Button name="ФормаИзменитьФорму" id="194">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="195"/>
+			</Button>
+			<Button name="ФормаСправка" id="196">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="197"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="Ссылка" id="183">
+			<DataPath>Объект.Ref</DataPath>
+			<UserVisible>
+				<xr:Common>false</xr:Common>
+			</UserVisible>
+			<ContextMenu name="СсылкаКонтекстноеМеню" id="184"/>
+			<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="185"/>
+		</LabelField>
+		<UsualGroup name="НаименованиеКод" id="79">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование и код</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="НаименованиеКодРасширеннаяПодсказка" id="80"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование ценной бумаги</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>28</MaxWidth>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПринадлежность" id="141">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Принадлежность</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ExtendedTooltip name="ГруппаПринадлежностьРасширеннаяПодсказка" id="142"/>
+			<ChildItems>
+				<InputField name="ПодразделениеКомпании" id="10">
+					<DataPath>Объект.ПодразделениеКомпании</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделение компании, на котором числится ценная бумага</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>26</MaxWidth>
+					<ContextMenu name="ПодразделениеКомпанииКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ПодразделениеКомпанииРасширеннаяПодсказка" id="12"/>
+					<Events>
+						<Event name="OnChange">ПодразделениеКомпанииПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Организация" id="73">
+					<DataPath>Объект.Организация</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация, на которой числится ценная бумага</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>26</MaxWidth>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="75"/>
+					<Events>
+						<Event name="OnChange">ОрганизацияПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСтоимость" id="143">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стоимость</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ExtendedTooltip name="ГруппаСтоимостьРасширеннаяПодсказка" id="144"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаОсновныеДанные" id="177">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основные данные</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОсновныеДанныеРасширеннаяПодсказка" id="178"/>
+					<ChildItems>
+						<UsualGroup name="ГруппДанныеЛево" id="148">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Групп данные (лево)</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппДанныеЛевоРасширеннаяПодсказка" id="149"/>
+							<ChildItems>
+								<InputField name="Номинал" id="145">
+									<DataPath>Объект.Номинал</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номинальная стоимость ценной бумаги</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>13</MaxWidth>
+									<ContextMenu name="НоминалКонтекстноеМеню" id="146"/>
+									<ExtendedTooltip name="НоминалРасширеннаяПодсказка" id="147"/>
+								</InputField>
+								<InputField name="ДатаПринятияКУчету" id="155">
+									<DataPath>Объект.ДатаПринятияКУчету</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата принятия к учету ценной бумаги</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>13</MaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ДатаПринятияКУчетуКонтекстноеМеню" id="156"/>
+									<ExtendedTooltip name="ДатаПринятияКУчетуРасширеннаяПодсказка" id="157"/>
+								</InputField>
+								<CheckBoxField name="ПервичныйВладелец" id="161">
+									<DataPath>Объект.ПервичныйВладелец</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Признак первичного владельца</v8:content>
+										</v8:item>
+									</ToolTip>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПервичныйВладелецКонтекстноеМеню" id="162"/>
+									<ExtendedTooltip name="ПервичныйВладелецРасширеннаяПодсказка" id="163"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппДанныеПраво" id="153">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Групп данные (право)</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппДанныеПравоРасширеннаяПодсказка" id="154"/>
+							<ChildItems>
+								<InputField name="ВалютаДенежныхСредств" id="150">
+									<DataPath>Объект.ВалютаДенежныхСредств</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основная валюта, в которой хранятся денежные средства</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ContextMenu name="ВалютаДенежныхСредствКонтекстноеМеню" id="151"/>
+									<ExtendedTooltip name="ВалютаДенежныхСредствРасширеннаяПодсказка" id="152"/>
+								</InputField>
+								<InputField name="ПредполагаемаяДатаПродажи" id="158">
+									<DataPath>Объект.ПредполагаемаяДатаПродажи</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Предполагаемая дата продажи ценной бумаги</v8:content>
+										</v8:item>
+									</ToolTip>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ПредполагаемаяДатаПродажиКонтекстноеМеню" id="159"/>
+									<ExtendedTooltip name="ПредполагаемаяДатаПродажиРасширеннаяПодсказка" id="160"/>
+								</InputField>
+								<CheckBoxField name="ОбращаетсяНаОрганизованномРынке" id="164">
+									<DataPath>Объект.ОбращаетсяНаОрганизованномРынке</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Признак обращения на организованном рынке</v8:content>
+										</v8:item>
+									</ToolTip>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ОбращаетсяНаОрганизованномРынкеКонтекстноеМеню" id="165"/>
+									<ExtendedTooltip name="ОбращаетсяНаОрганизованномРынкеРасширеннаяПодсказка" id="166"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ЦенныеБумаги</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПараметрыПодключаемыхКоманд" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры подключаемых команд</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>Catalog.ЯчейкиХранения.StandardCommand.OpenByValue</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Подбор пользователей</v8:content>
+		</v8:item>
+	</Title>
+	<Width>76</Width>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ОК" id="27">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<SkipOnInput>false</SkipOnInput>
+				<DefaultItem>true</DefaultItem>
+				<CommandName>Form.Command.ОК</CommandName>
+				<ExtendedTooltip name="ОКExtendedTooltip" id="28"/>
+			</Button>
+			<Button name="Отмена" id="29">
+				<Type>CommandBarButton</Type>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.StandardCommand.Cancel</CommandName>
+				<ExtendedTooltip name="ОтменаExtendedTooltip" id="30"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СпискиПользователей" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списки пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списки пользователей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СпискиПользователейРасширеннаяПодсказка" id="13"/>
+			<ChildItems>
+				<UsualGroup name="ПользователиОтбор" id="37">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователи отбор</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователи отбор</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПользователиОтборРасширеннаяПодсказка" id="38"/>
+					<ChildItems>
+						<InputField name="ОтборПоПодразделению" id="34">
+							<DataPath>ОтборПоПодразделению</DataPath>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="ОтборПоПодразделениюКонтекстноеМеню" id="35"/>
+							<ExtendedTooltip name="ОтборПоПодразделениюРасширеннаяПодсказка" id="36"/>
+							<Events>
+								<Event name="OnChange">ОтборПоПодразделениюПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Table name="ПользователиДоступные" id="1">
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Height>1</Height>
+							<MultipleChoice>true</MultipleChoice>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ПользователиДоступные</DataPath>
+							<RowPictureDataPath>ПользователиДоступные.DefaultPicture</RowPictureDataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пользователи доступные</v8:content>
+								</v8:item>
+							</Title>
+							<CommandSet>
+								<ExcludedCommand>Change</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ПользователиДоступныеКонтекстноеМеню" id="2"/>
+							<AutoCommandBar name="ПользователиДоступныеКоманднаяПанель" id="3">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПользователиДоступныеРасширеннаяПодсказка" id="4"/>
+							<SearchStringAddition name="ПользователиДоступныеСтрокаПоиска" id="42">
+								<AdditionSource>
+									<Item>ПользователиДоступные</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиДоступныеСтрокаПоискаКонтекстноеМеню" id="43"/>
+								<ExtendedTooltip name="ПользователиДоступныеСтрокаПоискаРасширеннаяПодсказка" id="44"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПользователиДоступныеСостояниеПросмотра" id="45">
+								<AdditionSource>
+									<Item>ПользователиДоступные</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиДоступныеСостояниеПросмотраКонтекстноеМеню" id="46"/>
+								<ExtendedTooltip name="ПользователиДоступныеСостояниеПросмотраРасширеннаяПодсказка" id="47"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПользователиДоступныеУправлениеПоиском" id="48">
+								<AdditionSource>
+									<Item>ПользователиДоступные</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиДоступныеУправлениеПоискомКонтекстноеМеню" id="49"/>
+								<ExtendedTooltip name="ПользователиДоступныеУправлениеПоискомРасширеннаяПодсказка" id="50"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ПользователиДоступныеВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ПользователиДоступныеСсылка" id="14">
+									<DataPath>ПользователиДоступные.Ref</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ПользователиДоступныеСсылкаКонтекстноеМеню" id="15"/>
+									<ExtendedTooltip name="ПользователиДоступныеСсылкаРасширеннаяПодсказка" id="16"/>
+								</LabelField>
+								<LabelField name="ПользователиДоступныеПользователь" id="31">
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ПользователиДоступныеПользовательКонтекстноеМеню" id="32"/>
+									<ExtendedTooltip name="ПользователиДоступныеПользовательРасширеннаяПодсказка" id="33"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="КнопкиВыбора" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кнопки выбора</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кнопки выбора</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="КнопкиВыбораРасширеннаяПодсказка" id="18"/>
+					<ChildItems>
+						<PictureDecoration name="ОтступСверху" id="39">
+							<Width>3</Width>
+							<Height>4</Height>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отступ сверху</v8:content>
+								</v8:item>
+							</Title>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ОтступСверхуКонтекстноеМеню" id="40"/>
+							<ExtendedTooltip name="ОтступСверхуРасширеннаяПодсказка" id="41"/>
+						</PictureDecoration>
+						<Button name="ДобавитьВСписокВыбранных" id="19">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ДобавитьВСписокВыбранных</CommandName>
+							<ExtendedTooltip name="ДобавитьВСписокВыбранныхРасширеннаяПодсказка" id="20"/>
+						</Button>
+						<Button name="УдалитьИзСпискаВыбранных" id="23">
+							<Type>UsualButton</Type>
+							<Height>1</Height>
+							<CommandName>Form.Command.УдалитьИзСпискаВыбранных</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&gt;&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="УдалитьИзСпискаВыбранныхРасширеннаяПодсказка" id="24"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="ПользователиВыбранные" id="5">
+					<Representation>List</Representation>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<Header>false</Header>
+					<HorizontalLines>false</HorizontalLines>
+					<VerticalLines>false</VerticalLines>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ПользователиВыбранные</DataPath>
+					<RowPictureDataPath>ПользователиВыбранные.Picture</RowPictureDataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователи выбранные</v8:content>
+						</v8:item>
+					</Title>
+					<CommandSet>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>CheckAll</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>EndEdit</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>Pickup</ExcludedCommand>
+						<ExcludedCommand>UncheckAll</ExcludedCommand>
+					</CommandSet>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<ContextMenu name="ПользователиВыбранныеКонтекстноеМеню" id="6"/>
+					<AutoCommandBar name="ПользователиВыбранныеКоманднаяПанель" id="7">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ПользователиВыбранныеРасширеннаяПодсказка" id="8"/>
+					<SearchStringAddition name="ПользователиВыбранныеСтрокаПоиска" id="51">
+						<AdditionSource>
+							<Item>ПользователиВыбранные</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПользователиВыбранныеСтрокаПоискаКонтекстноеМеню" id="52"/>
+						<ExtendedTooltip name="ПользователиВыбранныеСтрокаПоискаРасширеннаяПодсказка" id="53"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ПользователиВыбранныеСостояниеПросмотра" id="54">
+						<AdditionSource>
+							<Item>ПользователиВыбранные</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПользователиВыбранныеСостояниеПросмотраКонтекстноеМеню" id="55"/>
+						<ExtendedTooltip name="ПользователиВыбранныеСостояниеПросмотраРасширеннаяПодсказка" id="56"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ПользователиВыбранныеУправлениеПоиском" id="57">
+						<AdditionSource>
+							<Item>ПользователиВыбранные</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ПользователиВыбранныеУправлениеПоискомКонтекстноеМеню" id="58"/>
+						<ExtendedTooltip name="ПользователиВыбранныеУправлениеПоискомРасширеннаяПодсказка" id="59"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">ПользователиВыбранныеВыбор</Event>
+						<Event name="BeforeAddRow">ПользователиВыбранныеПередНачаломДобавления</Event>
+						<Event name="BeforeRowChange">ПользователиВыбранныеПередНачаломИзменения</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="ПользователиВыбранныеЗначение" id="9">
+							<DataPath>ПользователиВыбранные.Value</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПользователиВыбранныеЗначениеКонтекстноеМеню" id="10"/>
+							<ExtendedTooltip name="ПользователиВыбранныеЗначениеРасширеннаяПодсказка" id="11"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ПользователиДоступные" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователи доступные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.Пользователи</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Наименование</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПользователиВыбранные" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователи выбранные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборПоПодразделению" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияКомпании</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ДобавитьВСписокВыбранных" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить пользователя в список</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить в список выбранных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveRight</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьВСписокВыбранных</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УдалитьИзСпискаВыбранных" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить пользователя из списка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить из списка выбранных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveLeft</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УдалитьИзСпискаВыбранных</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОК" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

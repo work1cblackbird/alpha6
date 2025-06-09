@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНДСУпр</dataPath>
+			<field>СуммаНДСУпр</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДнейАренды</dataPath>
+			<field>ДнейАренды</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дней аренды</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоговорАренды</dataPath>
+			<field>ДоговорАренды</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаУпр</dataPath>
+			<field>СуммаУпр</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНДС</dataPath>
+			<field>СуммаНДС</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидАрендыЭксплуатации</dataPath>
+			<field>ВидАрендыЭксплуатации</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид аренды эксплуатации</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Автомобиль</dataPath>
+			<field>Автомобиль</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеКомпании</dataPath>
+			<field>ПодразделениеКомпании</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Месяц</dataPath>
+			<field>Месяц</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Месяц</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='MMMM yyyy'</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаВвода</dataPath>
+			<field>ДатаВвода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата ввода</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаВывода</dataPath>
+			<field>ДатаВывода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата вывода</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МесяцДнейЭксплуатации</dataPath>
+			<field>МесяцДнейЭксплуатации</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дней эксплуатации</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	АвтомобилиДляТестДрайваОстаткиИОбороты.Автомобиль КАК Автомобиль,
+	МИНИМУМ(ВЫБОР
+			КОГДА АвтомобилиДляТестДрайваОстаткиИОбороты.КоличествоНачальныйОстаток &gt; 0
+				ТОГДА АвтомобилиДляТестДрайваОстаткиИОбороты.ПериодМесяц
+			ИНАЧЕ АвтомобилиДляТестДрайваОстаткиИОбороты.ПериодДень
+		КОНЕЦ) КАК ДатаВвода,
+	МАКСИМУМ(ВЫБОР
+			КОГДА АвтомобилиДляТестДрайваОстаткиИОбороты.КоличествоКонечныйОстаток &gt; 0
+				ТОГДА КОНЕЦПЕРИОДА(АвтомобилиДляТестДрайваОстаткиИОбороты.ПериодМесяц, МЕСЯЦ)
+			ИНАЧЕ АвтомобилиДляТестДрайваОстаткиИОбороты.ПериодДень
+		КОНЕЦ) КАК ДатаВывода,
+	АвтомобилиДляТестДрайваОстаткиИОбороты.ПодразделениеКомпании КАК ПодразделениеКомпании,
+	АвтомобилиДляТестДрайваОстаткиИОбороты.ВидАренды КАК ВидАрендыЭксплуатации
+ПОМЕСТИТЬ вт_Эксплуатация
+ИЗ
+	РегистрНакопления.АвтомобилиДляТестДрайва.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода, Авто, , ) КАК АвтомобилиДляТестДрайваОстаткиИОбороты
+
+СГРУППИРОВАТЬ ПО
+	АвтомобилиДляТестДрайваОстаткиИОбороты.Автомобиль,
+	АвтомобилиДляТестДрайваОстаткиИОбороты.ПодразделениеКомпании,
+	АвтомобилиДляТестДрайваОстаткиИОбороты.ВидАренды
+
+ИНДЕКСИРОВАТЬ ПО
+	Автомобиль,
+	ПодразделениеКомпании
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	АрендаАвтомобилейФактическийПериодДействия.ПериодРегистрации КАК ПериодРегистрации,
+	АрендаАвтомобилейФактическийПериодДействия.ДоговорАренды КАК ДоговорАренды,
+	АрендаАвтомобилейФактическийПериодДействия.Автомобиль КАК Автомобиль,
+	АрендаАвтомобилейФактическийПериодДействия.Количество КАК Количество,
+	АрендаАвтомобилейФактическийПериодДействия.Сумма КАК Сумма,
+	АрендаАвтомобилейФактическийПериодДействия.СуммаУпр КАК СуммаУпр,
+	АрендаАвтомобилейФактическийПериодДействия.СуммаНДС КАК СуммаНДС,
+	АрендаАвтомобилейФактическийПериодДействия.СуммаНДСУпр КАК СуммаНДСУпр,
+	АрендаАвтомобилейФактическийПериодДействия.ДоговорАренды.ПодразделениеКомпании КАК ПодразделениеКомпании
+ПОМЕСТИТЬ вт_Аренда
+ИЗ
+	РегистрРасчета.АрендаАвтомобилей.ФактическийПериодДействия(ПериодРегистрации МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода) КАК АрендаАвтомобилейФактическийПериодДействия
+ГДЕ
+	АрендаАвтомобилейФактическийПериодДействия.ВидРасчета.Аренда
+
+ИНДЕКСИРОВАТЬ ПО
+	ПериодРегистрации,
+	Автомобиль,
+	ПодразделениеКомпании
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ГрафикПериодовАренды.Дата, МЕСЯЦ) КАК Дата
+ПОМЕСТИТЬ вт_Периоды
+ИЗ
+	РегистрСведений.ГрафикПериодовАренды КАК ГрафикПериодовАренды
+ГДЕ
+	ГрафикПериодовАренды.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ГрафикПериодовАренды.Дата, МЕСЯЦ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	вт_Периоды.Дата КАК ПериодРегистрации,
+	вт_Эксплуатация.Автомобиль КАК Автомобиль,
+	вт_Эксплуатация.ДатаВвода КАК ДатаВвода,
+	вт_Эксплуатация.ДатаВывода КАК ДатаВывода,
+	вт_Эксплуатация.ПодразделениеКомпании КАК ПодразделениеКомпании,
+	ВЫБОР
+		КОГДА вт_Эксплуатация.ДатаВвода &gt; вт_Периоды.Дата
+			ТОГДА вт_Эксплуатация.ДатаВвода
+		ИНАЧЕ вт_Периоды.Дата
+	КОНЕЦ КАК МесяцДатаВвода,
+	ВЫБОР
+		КОГДА вт_Эксплуатация.ДатаВывода &lt; КОНЕЦПЕРИОДА(вт_Периоды.Дата, МЕСЯЦ)
+			ТОГДА вт_Эксплуатация.ДатаВывода
+		ИНАЧЕ КОНЕЦПЕРИОДА(вт_Периоды.Дата, МЕСЯЦ)
+	КОНЕЦ КАК МесяцДатаВывода,
+	РАЗНОСТЬДАТ(ВЫБОР
+			КОГДА вт_Эксплуатация.ДатаВвода &gt; вт_Периоды.Дата
+				ТОГДА вт_Эксплуатация.ДатаВвода
+			ИНАЧЕ вт_Периоды.Дата
+		КОНЕЦ, ВЫБОР
+			КОГДА вт_Эксплуатация.ДатаВывода &lt; КОНЕЦПЕРИОДА(вт_Периоды.Дата, МЕСЯЦ)
+				ТОГДА вт_Эксплуатация.ДатаВывода
+			ИНАЧЕ КОНЕЦПЕРИОДА(вт_Периоды.Дата, МЕСЯЦ)
+		КОНЕЦ, ДЕНЬ) + 1 КАК МесяцДнейЭксплуатации,
+	вт_Эксплуатация.ВидАрендыЭксплуатации КАК ВидАрендыЭксплуатации
+ПОМЕСТИТЬ вт_ЭксплуатацияПоПериодам
+ИЗ
+	вт_Периоды КАК вт_Периоды
+		ПОЛНОЕ СОЕДИНЕНИЕ вт_Эксплуатация КАК вт_Эксплуатация
+		ПО (ИСТИНА)
+ГДЕ
+	РАЗНОСТЬДАТ(ВЫБОР
+				КОГДА вт_Эксплуатация.ДатаВвода &gt; вт_Периоды.Дата
+					ТОГДА вт_Эксплуатация.ДатаВвода
+				ИНАЧЕ вт_Периоды.Дата
+			КОНЕЦ, ВЫБОР
+				КОГДА вт_Эксплуатация.ДатаВывода &lt; КОНЕЦПЕРИОДА(вт_Периоды.Дата, МЕСЯЦ)
+					ТОГДА вт_Эксплуатация.ДатаВывода
+				ИНАЧЕ КОНЕЦПЕРИОДА(вт_Периоды.Дата, МЕСЯЦ)
+			КОНЕЦ, ДЕНЬ) &gt; 0
+
+ИНДЕКСИРОВАТЬ ПО
+	ПериодРегистрации,
+	Автомобиль,
+	ПодразделениеКомпании
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЕСТЬNULL(вт_Аренда.Количество, 0) КАК ДнейАренды,
+	ЕСТЬNULL(вт_Аренда.Сумма, 0) КАК Сумма,
+	ЕСТЬNULL(вт_Аренда.СуммаУпр, 0) КАК СуммаУпр,
+	ЕСТЬNULL(вт_Аренда.СуммаНДС, 0) КАК СуммаНДС,
+	ЕСТЬNULL(вт_Аренда.СуммаНДСУпр, 0) КАК СуммаНДСУпр,
+	ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.ПериодРегистрации, вт_Аренда.ПериодРегистрации) КАК Месяц,
+	ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.Автомобиль, вт_Аренда.Автомобиль) КАК Автомобиль,
+	ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.ПодразделениеКомпании, вт_Аренда.ПодразделениеКомпании) КАК ПодразделениеКомпании,
+	ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.ВидАрендыЭксплуатации, ЗНАЧЕНИЕ(Справочник.ВидыАренды.ПустаяСсылка)) КАК ВидАрендыЭксплуатации,
+	ЕСТЬNULL(вт_Аренда.ДоговорАренды, ЗНАЧЕНИЕ(Документ.ДоговорАренды.ПустаяСсылка)) КАК ДоговорАренды,
+	ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.ДатаВвода, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаВвода,
+	ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.ДатаВывода, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаВывода,
+	ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.МесяцДатаВвода, ДАТАВРЕМЯ(1, 1, 1)) КАК МесяцДатаВвода,
+	ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.МесяцДатаВывода, ДАТАВРЕМЯ(1, 1, 1)) КАК МесяцДатаВывода,
+	0 КАК МесяцДнейЭксплуатации
+{ВЫБРАТЬ
+	ДнейАренды,
+	Сумма,
+	СуммаУпр,
+	СуммаНДС,
+	СуммаНДСУпр,
+	Автомобиль.*,
+	Месяц,
+	ПодразделениеКомпании.*,
+	ВидАрендыЭксплуатации.*,
+	ДоговорАренды.*,
+	ДатаВвода,
+	ДатаВывода,
+	МесяцДнейЭксплуатации}
+ИЗ
+	вт_ЭксплуатацияПоПериодам КАК вт_ЭксплуатацияПоПериодам
+		ПОЛНОЕ СОЕДИНЕНИЕ вт_Аренда КАК вт_Аренда
+		ПО вт_ЭксплуатацияПоПериодам.ПериодРегистрации = вт_Аренда.ПериодРегистрации
+			И вт_ЭксплуатацияПоПериодам.Автомобиль = вт_Аренда.Автомобиль
+			И вт_ЭксплуатацияПоПериодам.ПодразделениеКомпании = вт_Аренда.ПодразделениеКомпании
+{ГДЕ
+	(ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.ПериодРегистрации, вт_Аренда.ПериодРегистрации)) КАК Месяц,
+	(ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.Автомобиль, вт_Аренда.Автомобиль)).* КАК Автомобиль,
+	(ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.ПодразделениеКомпании, вт_Аренда.ПодразделениеКомпании)).* КАК ПодразделениеКомпании,
+	(0) КАК МесяцДнейЭксплуатации,
+	(ЕСТЬNULL(вт_Аренда.ДоговорАренды, ЗНАЧЕНИЕ(Документ.ДоговорАренды.ПустаяСсылка))).* КАК ДоговорАренды,
+	(ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.ВидАрендыЭксплуатации, ЗНАЧЕНИЕ(Справочник.ВидыАренды.ПустаяСсылка))).* КАК ВидАрендыЭксплуатации,
+	(ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.ДатаВвода, ДАТАВРЕМЯ(1, 1, 1))) КАК ДатаВывода,
+	(ЕСТЬNULL(вт_ЭксплуатацияПоПериодам.ДатаВывода, ДАТАВРЕМЯ(1, 1, 1))) КАК ДатаВывода}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	0,
+	0,
+	0,
+	0,
+	0,
+	вт_ЭксплуатацияПоПериодам.ПериодРегистрации,
+	вт_ЭксплуатацияПоПериодам.Автомобиль,
+	вт_ЭксплуатацияПоПериодам.ПодразделениеКомпании,
+	вт_ЭксплуатацияПоПериодам.ВидАрендыЭксплуатации,
+	ЗНАЧЕНИЕ(Документ.ДоговорАренды.ПустаяСсылка),
+	вт_ЭксплуатацияПоПериодам.ДатаВвода,
+	вт_ЭксплуатацияПоПериодам.ДатаВывода,
+	вт_ЭксплуатацияПоПериодам.МесяцДатаВвода,
+	вт_ЭксплуатацияПоПериодам.МесяцДатаВывода,
+	вт_ЭксплуатацияПоПериодам.МесяцДнейЭксплуатации
+ИЗ
+	вт_ЭксплуатацияПоПериодам КАК вт_ЭксплуатацияПоПериодам
+{ГДЕ
+	вт_ЭксплуатацияПоПериодам.ПериодРегистрации КАК Месяц,
+	вт_ЭксплуатацияПоПериодам.Автомобиль.*,
+	вт_ЭксплуатацияПоПериодам.ПодразделениеКомпании.*,
+	вт_ЭксплуатацияПоПериодам.ВидАрендыЭксплуатации.*,
+	вт_ЭксплуатацияПоПериодам.МесяцДнейЭксплуатации,
+	вт_ЭксплуатацияПоПериодам.ДатаВывода,
+	вт_ЭксплуатацияПоПериодам.ДатаВвода,
+	(ЗНАЧЕНИЕ(Документ.ДоговорАренды.ПустаяСсылка)).* КАК ДоговорАренды}</query>
+		<autoFillFields>false</autoFillFields>
+		<useQueryGroupIfPossible>false</useQueryGroupIfPossible>
+	</dataSet>
+	<calculatedField>
+		<dataPath>СуммаБезНДС</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сумма без НДС</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СуммаБезНДСУпр</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сумма без НДСУпр</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентИспользования</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент использования</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаНДС</dataPath>
+		<expression>Сумма(СуммаНДС)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаНДСУпр</dataPath>
+		<expression>Сумма(СуммаНДСУпр)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаУпр</dataPath>
+		<expression>Сумма(СуммаУпр)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДнейАренды</dataPath>
+		<expression>Сумма(ДнейАренды)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаБезНДСУпр</dataPath>
+		<expression>Сумма(СуммаУпр) - Сумма(СуммаНДСУпр)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаБезНДС</dataPath>
+		<expression>Сумма(Сумма) - Сумма(СуммаНДС)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентИспользования</dataPath>
+		<expression>ВЫБОР КОГДА Сумма(МесяцДнейЭксплуатации) = 0 Тогда 0 ИНАЧЕ Сумма(ДнейАренды) / Сумма(МесяцДнейЭксплуатации) КОНЕЦ *100</expression>
+	</totalField>
+	<totalField>
+		<dataPath>МесяцДнейЭксплуатации</dataPath>
+		<expression>Сумма(МесяцДнейЭксплуатации)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Анализ парка аренды</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Автомобиль</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПодразделениеКомпании</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Месяц</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МесяцДнейЭксплуатации</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДнейАренды</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроцентИспользования</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаНДС</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаБезНДС</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>СуммаНДСУпр</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>СуммаУпр</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>СуммаБезНДСУпр</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ПодразделениеКомпании</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидАрендыЭксплуатации</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ПодразделениеКомпании</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Автомобиль</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Месяц</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

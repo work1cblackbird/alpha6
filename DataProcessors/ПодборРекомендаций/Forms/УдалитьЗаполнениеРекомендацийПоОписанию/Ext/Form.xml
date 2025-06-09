@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Заполнение рекомендаций по описанию</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Применить" id="93">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Применить</CommandName>
+				<ExtendedTooltip name="ПрименитьРасширеннаяПодсказка" id="94"/>
+			</Button>
+			<Button name="Закрыть" id="95">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="96"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="СтраницыРекомендации" id="89">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы рекомендации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы рекомендации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРекомендацииРасширеннаяПодсказка" id="90"/>
+			<ChildItems>
+				<Page name="СтраницаРекомендации" id="91">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рекомендации</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница рекомендации</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаРекомендацииРасширеннаяПодсказка" id="92"/>
+					<ChildItems>
+						<Table name="Рекомендации" id="4">
+							<Footer>true</Footer>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.Рекомендации</DataPath>
+							<CommandSet>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+							</CommandSet>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Рекомендации</v8:content>
+								</v8:item>
+							</ToolTip>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="РекомендацииКонтекстноеМеню" id="5"/>
+							<AutoCommandBar name="РекомендацииКоманднаяПанель" id="6"/>
+							<ExtendedTooltip name="РекомендацииРасширеннаяПодсказка" id="7"/>
+							<SearchStringAddition name="РекомендацииСтрокаПоиска" id="8">
+								<AdditionSource>
+									<Item>Рекомендации</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РекомендацииСтрокаПоискаКонтекстноеМеню" id="9"/>
+								<ExtendedTooltip name="РекомендацииСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РекомендацииСостояниеПросмотра" id="11">
+								<AdditionSource>
+									<Item>Рекомендации</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РекомендацииСостояниеПросмотраКонтекстноеМеню" id="12"/>
+								<ExtendedTooltip name="РекомендацииСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РекомендацииУправлениеПоиском" id="14">
+								<AdditionSource>
+									<Item>Рекомендации</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РекомендацииУправлениеПоискомКонтекстноеМеню" id="15"/>
+								<ExtendedTooltip name="РекомендацииУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnEditEnd">РекомендацииПриОкончанииРедактирования</Event>
+								<Event name="BeforeDeleteRow">РекомендацииПередУдалением</Event>
+								<Event name="BeforeEditEnd">РекомендацииПередОкончаниемРедактирования</Event>
+								<Event name="OnStartEdit">РекомендацииПриНачалеРедактирования</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="РекомендацииНомерСтроки" id="17">
+									<DataPath>Объект.Рекомендации.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>3</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="РекомендацииНомерСтрокиКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="РекомендацииНомерСтрокиРасширеннаяПодсказка" id="19"/>
+								</LabelField>
+								<InputField name="РекомендацииРекомендацияАртикул" id="26">
+									<DataPath>Объект.Рекомендации.РекомендацияАртикул</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>11</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="РекомендацииРекомендацияАртикулКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="РекомендацииРекомендацияАртикулРасширеннаяПодсказка" id="28"/>
+								</InputField>
+								<InputField name="РекомендацииРекомендация" id="29">
+									<DataPath>Объект.Рекомендации.Рекомендация</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>22</Width>
+									<ContextMenu name="РекомендацииРекомендацияКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="РекомендацииРекомендацияРасширеннаяПодсказка" id="31"/>
+									<Events>
+										<Event name="OnChange">РекомендацииРекомендацияПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="РекомендацииКоличество" id="41">
+									<DataPath>Объект.Рекомендации.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<FooterDataPath>Объект.Рекомендации.TotalКоличество</FooterDataPath>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="РекомендацииКоличествоКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="РекомендацииКоличествоРасширеннаяПодсказка" id="43"/>
+									<Events>
+										<Event name="OnChange">РекомендацииКоличествоПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="РекомендацииОстатокНаСкладе" id="86">
+									<DataPath>Объект.Рекомендации.ОстатокНаСкладе</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Остаток</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Остаток на складах</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="РекомендацииОстатокНаСкладеКонтекстноеМеню" id="87"/>
+									<ExtendedTooltip name="РекомендацииОстатокНаСкладеРасширеннаяПодсказка" id="88"/>
+								</InputField>
+								<InputField name="РекомендацииПериод" id="20">
+									<DataPath>Объект.Рекомендации.Период</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>9</Width>
+									<ContextMenu name="РекомендацииПериодКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="РекомендацииПериодРасширеннаяПодсказка" id="22"/>
+								</InputField>
+								<InputField name="РекомендацииРекомендацияДоРедактирования" id="32">
+									<DataPath>Объект.Рекомендации.РекомендацияДоРедактирования</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииРекомендацияДоРедактированияКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="РекомендацииРекомендацияДоРедактированияРасширеннаяПодсказка" id="34"/>
+								</InputField>
+								<InputField name="РекомендацииРекомендацияЗаписи" id="35">
+									<DataPath>Объект.Рекомендации.РекомендацияЗаписи</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииРекомендацияЗаписиКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="РекомендацииРекомендацияЗаписиРасширеннаяПодсказка" id="37"/>
+								</InputField>
+								<InputField name="РекомендацииЦена" id="38">
+									<DataPath>Объект.Рекомендации.Цена</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="РекомендацииЦенаКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="РекомендацииЦенаРасширеннаяПодсказка" id="40"/>
+								</InputField>
+								<InputField name="РекомендацииКоэффициент" id="44">
+									<DataPath>Объект.Рекомендации.Коэффициент</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииКоэффициентКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="РекомендацииКоэффициентРасширеннаяПодсказка" id="46"/>
+								</InputField>
+								<InputField name="РекомендацииСумма" id="47">
+									<DataPath>Объект.Рекомендации.Сумма</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииСуммаКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="РекомендацииСуммаРасширеннаяПодсказка" id="49"/>
+								</InputField>
+								<InputField name="РекомендацииЗаявкаНаРемонт" id="50">
+									<DataPath>Объект.Рекомендации.ЗаявкаНаРемонт</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииЗаявкаНаРемонтКонтекстноеМеню" id="51"/>
+									<ExtendedTooltip name="РекомендацииЗаявкаНаРемонтРасширеннаяПодсказка" id="52"/>
+								</InputField>
+								<InputField name="РекомендацииЗаказНаряд" id="53">
+									<DataPath>Объект.Рекомендации.ЗаказНаряд</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииЗаказНарядКонтекстноеМеню" id="54"/>
+									<ExtendedTooltip name="РекомендацииЗаказНарядРасширеннаяПодсказка" id="55"/>
+								</InputField>
+								<InputField name="РекомендацииПричинаОтказа" id="56">
+									<DataPath>Объект.Рекомендации.ПричинаОтказа</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииПричинаОтказаКонтекстноеМеню" id="57"/>
+									<ExtendedTooltip name="РекомендацииПричинаОтказаРасширеннаяПодсказка" id="58"/>
+								</InputField>
+								<InputField name="РекомендацииДатаВыполнения" id="59">
+									<DataPath>Объект.Рекомендации.ДатаВыполнения</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииДатаВыполненияКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="РекомендацииДатаВыполненияРасширеннаяПодсказка" id="61"/>
+								</InputField>
+								<InputField name="РекомендацииАвтор" id="62">
+									<DataPath>Объект.Рекомендации.Автор</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииАвторКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="РекомендацииАвторРасширеннаяПодсказка" id="64"/>
+								</InputField>
+								<InputField name="РекомендацииИсполнитель" id="65">
+									<DataPath>Объект.Рекомендации.Исполнитель</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииИсполнительКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="РекомендацииИсполнительРасширеннаяПодсказка" id="67"/>
+								</InputField>
+								<CheckBoxField name="РекомендацииВыполнена" id="68">
+									<DataPath>Объект.Рекомендации.Выполнена</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РекомендацииВыполненаКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="РекомендацииВыполненаРасширеннаяПодсказка" id="70"/>
+								</CheckBoxField>
+								<InputField name="РекомендацииСостояние" id="71">
+									<DataPath>Объект.Рекомендации.Состояние</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииСостояниеКонтекстноеМеню" id="72"/>
+									<ExtendedTooltip name="РекомендацииСостояниеРасширеннаяПодсказка" id="73"/>
+								</InputField>
+								<CheckBoxField name="РекомендацииЗаказНарядТекущий" id="74">
+									<DataPath>Объект.Рекомендации.ЗаказНарядТекущий</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РекомендацииЗаказНарядТекущийКонтекстноеМеню" id="75"/>
+									<ExtendedTooltip name="РекомендацииЗаказНарядТекущийРасширеннаяПодсказка" id="76"/>
+								</CheckBoxField>
+								<InputField name="РекомендацииДатаАктуальности" id="77">
+									<DataPath>Объект.Рекомендации.ДатаАктуальности</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииДатаАктуальностиКонтекстноеМеню" id="78"/>
+									<ExtendedTooltip name="РекомендацииДатаАктуальностиРасширеннаяПодсказка" id="79"/>
+								</InputField>
+								<InputField name="РекомендацииКомментарий" id="80">
+									<DataPath>Объект.Рекомендации.Комментарий</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииКомментарийКонтекстноеМеню" id="81"/>
+									<ExtendedTooltip name="РекомендацииКомментарийРасширеннаяПодсказка" id="82"/>
+								</InputField>
+								<InputField name="РекомендацииКомментарийЗаписи" id="83">
+									<DataPath>Объект.Рекомендации.УдалитьКомментарийЗаписи</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РекомендацииКомментарийЗаписиКонтекстноеМеню" id="84"/>
+									<ExtendedTooltip name="РекомендацииКомментарийЗаписиРасширеннаяПодсказка" id="85"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<InputField name="Комментарий" id="1">
+			<DataPath>Комментарий</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текстовое описание рекомендации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>2</Height>
+			<VerticalStretch>false</VerticalStretch>
+			<MultiLine>true</MultiLine>
+			<ExtendedEdit>false</ExtendedEdit>
+			<OpenButton>true</OpenButton>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="3"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПодборРекомендаций</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Columns>
+				<AdditionalColumns table="Объект.Рекомендации">
+					<Column name="ОстатокНаСкладе" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Остаток на складе</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>15</v8:Digits>
+								<v8:FractionDigits>3</v8:FractionDigits>
+								<v8:AllowedSign>Any</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="Комментарий" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>300</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Период" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Автор" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Исполнитель" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исполнитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаАктуальности" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата актуальности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗагрузкаВыбраннойРекомендации" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузка выбранной рекомендации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтображатьОстаток" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать остаток</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КомментарийЗаписи" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>300</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПериодЗаписи" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РекомендацияЗаписи" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рекомендация записи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+				<v8:Type>cfg:CatalogRef.Автоработы</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Применить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Применить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

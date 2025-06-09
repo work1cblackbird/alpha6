@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<SaveWindowSettings>false</SaveWindowSettings>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОтправитьНаПодпись" id="48">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОтправитьНаПодпись</CommandName>
+				<ExtendedTooltip name="ФормаОтправитьНаПодписьРасширеннаяПодсказка" id="49"/>
+			</Button>
+			<Button name="ФормаСинхронизировать" id="86">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Синхронизировать</CommandName>
+				<ExtendedTooltip name="ФормаСинхронизироватьРасширеннаяПодсказка" id="87"/>
+			</Button>
+			<Button name="ФормаЗаписатьИЗакрыть" id="46">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="47"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="44">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="45"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Шапка" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ШапкаРасширеннаяПодсказка" id="26"/>
+			<ChildItems>
+				<UsualGroup name="ШапкаЛево" id="27">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка (лево)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ШапкаЛевоРасширеннаяПодсказка" id="28"/>
+					<ChildItems>
+						<InputField name="ДокументОснование" id="16">
+							<DataPath>Объект.ДокументОснование</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДокументОснованиеКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ДокументОснованиеРасширеннаяПодсказка" id="18"/>
+							<Events>
+								<Event name="OnChange">ДокументОснованиеПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ИмяПечатнойФормы" id="19">
+							<DataPath>Объект.ИмяПечатнойФормы</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Имя документа</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ИмяПечатнойФормыКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ИмяПечатнойФормыРасширеннаяПодсказка" id="21"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ШапкаПраво" id="29">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка (право)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ШапкаПравоРасширеннаяПодсказка" id="30"/>
+					<ChildItems>
+						<UsualGroup name="СостояниеИОбновить" id="61">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Состояние и обновить</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>AlwaysHorizontal</Group>
+							<VerticalAlign>Center</VerticalAlign>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:ФонПЭП</BackColor>
+							<ExtendedTooltip name="СостояниеИОбновитьРасширеннаяПодсказка" id="62"/>
+							<ChildItems>
+								<LabelDecoration name="СостояниеДокументаЗаголовок" id="88">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Состояние:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СостояниеДокументаЗаголовокКонтекстноеМеню" id="89"/>
+									<ExtendedTooltip name="СостояниеДокументаЗаголовокРасширеннаяПодсказка" id="90"/>
+								</LabelDecoration>
+								<PictureDecoration name="СостояниеДокументаКартинка" id="91">
+									<Width>2</Width>
+									<Height>1</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Состояние документа картинка</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СостояниеДокументаКартинкаКонтекстноеМеню" id="92"/>
+									<ExtendedTooltip name="СостояниеДокументаКартинкаРасширеннаяПодсказка" id="93"/>
+								</PictureDecoration>
+								<LabelField name="СостояниеДокумента" id="50">
+									<DataPath>СостояниеДокумента</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>16</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>16</MaxWidth>
+									<ContextMenu name="СостояниеДокументаКонтекстноеМеню" id="51"/>
+									<ExtendedTooltip name="СостояниеДокументаРасширеннаяПодсказка" id="52"/>
+								</LabelField>
+								<Button name="ФормаОбновитьДокумент" id="53">
+									<Type>UsualButton</Type>
+									<Representation>Picture</Representation>
+									<CommandName>Form.Command.ОбновитьСостояниеДокумента</CommandName>
+									<ExtendedTooltip name="ФормаОбновитьДокументРасширеннаяПодсказка" id="54"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="НомерИДата" id="31">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер и дата</v8:content>
+								</v8:item>
+							</Title>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="НомерИДатаРасширеннаяПодсказка" id="32"/>
+							<ChildItems>
+								<InputField name="Номер" id="1">
+									<DataPath>Объект.Number</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+								</InputField>
+								<InputField name="Дата" id="4">
+									<DataPath>Объект.Date</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ДанныеДокумента" id="55">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="ДанныеДокументаРасширеннаяПодсказка" id="56"/>
+			<ChildItems>
+				<Page name="СтраницаОсновное" id="63">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основное</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<ExtendedTooltip name="СтраницаОсновноеРасширеннаяПодсказка" id="64"/>
+					<ChildItems>
+						<UsualGroup name="Участники" id="57">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Участники</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="УчастникиРасширеннаяПодсказка" id="58"/>
+							<ChildItems>
+								<UsualGroup name="ЮридическоеЛицоПЭПИСтатус" id="71">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Юридическое лицо и статус</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ЮридическоеЛицоПЭПИСтатусРасширеннаяПодсказка" id="72"/>
+									<ChildItems>
+										<InputField name="ЮридическоеЛицоПЭП" id="7">
+											<DataPath>Объект.ЮридическоеЛицоПЭП</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>36</MaxWidth>
+											<ContextMenu name="ЮридическоеЛицоПЭПКонтекстноеМеню" id="8"/>
+											<ExtendedTooltip name="ЮридическоеЛицоПЭПРасширеннаяПодсказка" id="9"/>
+											<Events>
+												<Event name="OnChange">ЮридическоеЛицоПЭППриИзменении</Event>
+											</Events>
+										</InputField>
+										<PictureDecoration name="ДекорацияЮридическоеЛицоПЭПСтатус" id="73">
+											<Width>2</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>2</MaxWidth>
+											<Height>1</Height>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<MaxHeight>1</MaxHeight>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Участник не зарегистрирован в ПЭП</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Picture>
+												<xr:Ref>CommonPicture.УчастникНеЗарегистрированВСервисе</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="ДекорацияЮридическоеЛицоПЭПСтатусКонтекстноеМеню" id="74"/>
+											<ExtendedTooltip name="ДекорацияЮридическоеЛицоПЭПСтатусРасширеннаяПодсказка" id="75"/>
+										</PictureDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="КонтактноеЛицоПЭПИСтатус" id="76">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Контактное лицо и статус</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="КонтактноеЛицоПЭПИСтатусРасширеннаяПодсказка" id="77"/>
+									<ChildItems>
+										<InputField name="КонтактноеЛицоПЭП" id="10">
+											<DataPath>Объект.КонтактноеЛицоПЭП</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>36</MaxWidth>
+											<ContextMenu name="КонтактноеЛицоПЭПКонтекстноеМеню" id="11"/>
+											<ExtendedTooltip name="КонтактноеЛицоПЭПРасширеннаяПодсказка" id="12"/>
+											<Events>
+												<Event name="OnChange">КонтактноеЛицоПЭППриИзменении</Event>
+											</Events>
+										</InputField>
+										<PictureDecoration name="ДекорацияКонтактноеЛицоПЭПСтатус" id="78">
+											<Width>2</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>2</MaxWidth>
+											<Height>1</Height>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<MaxHeight>1</MaxHeight>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Декорация контактное лицо ПЭПСтатус</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Участник не зарегистрирован в ПЭП</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Picture>
+												<xr:Ref>CommonPicture.УчастникНеЗарегистрированВСервисе</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="ДекорацияКонтактноеЛицоПЭПСтатусКонтекстноеМеню" id="79"/>
+											<ExtendedTooltip name="ДекорацияКонтактноеЛицоПЭПСтатусРасширеннаяПодсказка" id="80"/>
+										</PictureDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ФизическоеЛицоПЭПИСтатус" id="81">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Физическое лицо и статус</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ФизическоеЛицоПЭПИСтатусРасширеннаяПодсказка" id="82"/>
+									<ChildItems>
+										<InputField name="ФизическоеЛицоПЭП" id="13">
+											<DataPath>Объект.ФизическоеЛицоПЭП</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>36</MaxWidth>
+											<ChoiceParameters>
+												<app:item name="Отбор.ПодписаноСогласиеНаРаботуСПЭП">
+													<app:value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:boolean">true</Value>
+													</app:value>
+												</app:item>
+											</ChoiceParameters>
+											<ContextMenu name="ФизическоеЛицоПЭПКонтекстноеМеню" id="14"/>
+											<ExtendedTooltip name="ФизическоеЛицоПЭПРасширеннаяПодсказка" id="15"/>
+											<Events>
+												<Event name="OnChange">ФизическоеЛицоПЭППриИзменении</Event>
+											</Events>
+										</InputField>
+										<PictureDecoration name="ДекорацияФизическоеЛицоПЭПСтатус" id="83">
+											<Width>2</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>2</MaxWidth>
+											<Height>1</Height>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<MaxHeight>1</MaxHeight>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Декорация физическое лицо</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Участник не зарегистрирован в ПЭП</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Picture>
+												<xr:Ref>CommonPicture.УчастникНеЗарегистрированВСервисе</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="ДекорацияФизическоеЛицоПЭПСтатусКонтекстноеМеню" id="84"/>
+											<ExtendedTooltip name="ДекорацияФизическоеЛицоПЭПСтатусРасширеннаяПодсказка" id="85"/>
+										</PictureDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ПодписанныйДокумент" id="59">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подписанный документ</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ПодписанныйДокументРасширеннаяПодсказка" id="60"/>
+							<ChildItems>
+								<CommandBar name="КоманднаяПанельДокументPDF" id="67">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Документ PDF</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="КоманднаяПанельДокументPDFРасширеннаяПодсказка" id="68"/>
+									<ChildItems>
+										<Button name="ВыбратьФайл" id="69">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ВыбратьФайл</CommandName>
+											<ExtendedTooltip name="ВыбратьФайлРасширеннаяПодсказка" id="70"/>
+										</Button>
+									</ChildItems>
+								</CommandBar>
+								<PDFDocumentField name="ДокументPDF" id="33">
+									<DataPath>ДокументPDF</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ДокументPDFКонтекстноеМеню" id="34"/>
+									<ExtendedTooltip name="ДокументPDFРасширеннаяПодсказка" id="35"/>
+									<ViewStatusAddition name="ДокументPDFСостояниеПросмотра" id="36">
+										<AdditionSource>
+											<Item>ДокументPDF</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДокументPDFСостояниеПросмотраКонтекстноеМеню" id="37"/>
+										<ExtendedTooltip name="ДокументPDFСостояниеПросмотраРасширеннаяПодсказка" id="38"/>
+									</ViewStatusAddition>
+								</PDFDocumentField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаКомментарий" id="65">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаКомментарийРасширеннаяПодсказка" id="66"/>
+					<ChildItems>
+						<InputField name="Комментарий" id="22">
+							<DataPath>Объект.Комментарий</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>2</Height>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<HorizontalStretch>true</HorizontalStretch>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="КомментарийКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="24"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ЗаявкаНаПодпись</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="СостояниеДокумента" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.СтатусыЗаявокНаПодпись</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДокументPDF" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ PDF</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:pdfdoc="http://v8.1c.ru/8.3/data/pdf">pdfdoc:PDFDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресФайлаВоВременномХранилище" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес файла во временном хранилище</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДоступноИзменениеЗаявкиНаПодпись" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доступно изменение заявки на подпись</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОтправитьНаПодпись" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить на подпись ПЭП</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОтправитьНаПодпись</Action>
+		</Command>
+		<Command name="ОбновитьСостояниеДокумента" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьСостояниеДокумента</Action>
+		</Command>
+		<Command name="ВыбратьФайл" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать файл</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.ChooseValue</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыбратьФайл</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="Синхронизировать" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Синхронизировать ПЭП</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Синхронизировать</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="АдресФайлаВоВременномХранилище">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ДокументУчета">
+			<Type>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ИмяПечатнойФормы">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

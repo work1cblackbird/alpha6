@@ -1,0 +1,3109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНастройка" id="431">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНастройкаРасширеннаяПодсказка" id="432"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаШапка" id="481">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа шапка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа шапка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="482"/>
+					<ChildItems>
+						<InputField name="Период" id="66">
+							<DataPath>Объект.Период</DataPath>
+							<Width>9</Width>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ=dd.MM.yyyy</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="ПериодКонтекстноеМеню" id="67"/>
+							<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="68"/>
+							<Events>
+								<Event name="OnChange">ДатаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ПериодВремя" id="555">
+							<DataPath>Объект.Период</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>5</Width>
+							<ChoiceButton>false</ChoiceButton>
+							<SpinButton>true</SpinButton>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ=ЧЧ:мм</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="ПериодВремяКонтекстноеМеню" id="556"/>
+							<ExtendedTooltip name="ПериодВремяРасширеннаяПодсказка" id="557"/>
+							<Events>
+								<Event name="OnChange">ДатаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Button name="ТекущееВремя" id="558">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ТекущееВремя</CommandName>
+							<ExtendedTooltip name="ТекущееВремяРасширеннаяПодсказка" id="559"/>
+						</Button>
+						<CommandBar name="КоманднаяПанель" id="479">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Командная панель</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Командная панель</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalLocation>Right</HorizontalLocation>
+							<CommandSource>Form</CommandSource>
+							<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="480"/>
+							<ChildItems>
+								<ButtonGroup name="ФормаГруппаВидимостьПанелей" id="483">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Форма группа видимость панелей</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Форма группа видимость панелей</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>Compact</Representation>
+									<ExtendedTooltip name="ФормаГруппаВидимостьПанелейРасширеннаяПодсказка" id="484"/>
+									<ChildItems>
+										<Button name="ОтобразитьФильтры" id="477">
+											<Type>CommandBarButton</Type>
+											<Check>true</Check>
+											<CommandName>Form.Command.ОтобразитьФильтры</CommandName>
+											<ExtendedTooltip name="ОтобразитьФильтрыРасширеннаяПодсказка" id="478"/>
+										</Button>
+										<Button name="ОтобразитьИнформацию" id="475">
+											<Type>CommandBarButton</Type>
+											<Check>true</Check>
+											<CommandName>Form.Command.ОтобразитьИнформацию</CommandName>
+											<ExtendedTooltip name="ОтобразитьИнформациюРасширеннаяПодсказка" id="476"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
+							</ChildItems>
+						</CommandBar>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="СписокОтбор" id="53">
+					<Representation>Tree</Representation>
+					<Autofill>true</Autofill>
+					<Width>60</Width>
+					<HeightInTableRows>1</HeightInTableRows>
+					<Header>false</Header>
+					<InitialTreeView>ExpandAllLevels</InitialTreeView>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Список.Filter</DataPath>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<ViewMode>All</ViewMode>
+					<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+					<ContextMenu name="СписокОтборКонтекстноеМеню" id="54"/>
+					<AutoCommandBar name="СписокОтборКоманднаяПанель" id="55">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СписокОтборРасширеннаяПодсказка" id="56"/>
+					<SearchStringAddition name="СписокОтборСтрокаПоиска" id="57">
+						<AdditionSource>
+							<Item>СписокОтбор</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОтборСтрокаПоискаКонтекстноеМеню" id="58"/>
+						<ExtendedTooltip name="СписокОтборСтрокаПоискаРасширеннаяПодсказка" id="59"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокОтборСостояниеПросмотра" id="60">
+						<AdditionSource>
+							<Item>СписокОтбор</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОтборСостояниеПросмотраКонтекстноеМеню" id="61"/>
+						<ExtendedTooltip name="СписокОтборСостояниеПросмотраРасширеннаяПодсказка" id="62"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокОтборУправлениеПоиском" id="63">
+						<AdditionSource>
+							<Item>СписокОтбор</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОтборУправлениеПоискомКонтекстноеМеню" id="64"/>
+						<ExtendedTooltip name="СписокОтборУправлениеПоискомРасширеннаяПодсказка" id="65"/>
+					</SearchControlAddition>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Список" id="1">
+			<HeightInTableRows>4</HeightInTableRows>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>~Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2">
+				<ChildItems>
+					<Popup name="СписокГруппаЭксплуатацияКонтекстноеМеню" id="517">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Эксплуатация автомобилей</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Список группа эксплуатация</v8:content>
+							</v8:item>
+						</ToolTip>
+						<Picture>
+							<xr:Ref>CommonPicture.АвтомобильВыбор</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="СписокГруппаЭксплуатацияКонтекстноеМенюРасширеннаяПодсказка" id="518"/>
+						<ChildItems>
+							<Button name="СписокВвестиВЭксплуатациюКонтекстноеМеню" id="519">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВвестиВЭксплуатацию</CommandName>
+								<ExtendedTooltip name="СписокВвестиВЭксплуатациюКонтекстноеМенюРасширеннаяПодсказка" id="520"/>
+							</Button>
+							<Button name="СписокВывестиИэЭксплуатацииКонтекстноеМеню" id="521">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВывестиИэЭксплуатации</CommandName>
+								<ExtendedTooltip name="СписокВывестиИэЭксплуатацииКонтекстноеМенюРасширеннаяПодсказка" id="522"/>
+							</Button>
+							<Button name="СписокПереместитьКонтекстноеМеню" id="523">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.Переместить</CommandName>
+								<ExtendedTooltip name="СписокПереместитьКонтекстноеМенюРасширеннаяПодсказка" id="524"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<Popup name="СписокГруппаДокументыКонтекстноеМеню" id="525">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Создание документов</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Список группа документы</v8:content>
+							</v8:item>
+						</ToolTip>
+						<Picture>
+							<xr:Ref>CommonPicture.ЗаполнениеДокументовПодменю</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="СписокГруппаДокументыКонтекстноеМенюРасширеннаяПодсказка" id="526"/>
+						<ChildItems>
+							<Button name="СписокВвестиЗаявкуНаРемонтКонтекстноеМеню" id="527">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВвестиЗаявкуНаРемонт</CommandName>
+								<ExtendedTooltip name="СписокВвестиЗаявкуНаРемонтКонтекстноеМенюРасширеннаяПодсказка" id="528"/>
+							</Button>
+							<Button name="СписокВвестиЗаявкуКонтекстноеМеню" id="529">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВвестиЗаявку</CommandName>
+								<ExtendedTooltip name="СписокВвестиЗаявкуКонтекстноеМенюРасширеннаяПодсказка" id="530"/>
+							</Button>
+							<Button name="СписокВвестиДоговорКонтекстноеМеню" id="531">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВвестиДоговор</CommandName>
+								<ExtendedTooltip name="СписокВвестиДоговорКонтекстноеМенюРасширеннаяПодсказка" id="532"/>
+							</Button>
+							<Button name="СписокПомощникВводаДокументовАрендыКонтекстноеМеню" id="580">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ПомощникВводаДокументовАренды</CommandName>
+								<ExtendedTooltip name="СписокПомощникВводаДокументовАрендыКонтекстноеМенюРасширеннаяПодсказка" id="581"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<Button name="СписокОткрытьВПланировщикеКонтекстноеМеню" id="533">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОткрытьВПланировщике</CommandName>
+						<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+						<ExtendedTooltip name="СписокОткрытьВПланировщикеКонтекстноеМенюРасширеннаяПодсказка" id="534"/>
+					</Button>
+					<Button name="СписокОбновитьКонтекстноеМеню" id="535">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.Item.Список.StandardCommand.Refresh</CommandName>
+						<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+						<ExtendedTooltip name="СписокОбновитьКонтекстноеМенюРасширеннаяПодсказка" id="536"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<ChildItems>
+					<Popup name="СписокГруппаЭксплуатация" id="467">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Эксплуатация автомобилей</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Список группа эксплуатация</v8:content>
+							</v8:item>
+						</ToolTip>
+						<Picture>
+							<xr:Ref>CommonPicture.АвтомобильВыбор</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="СписокГруппаЭксплуатацияРасширеннаяПодсказка" id="468"/>
+						<ChildItems>
+							<Button name="СписокВвестиВЭксплуатацию" id="465">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВвестиВЭксплуатацию</CommandName>
+								<ExtendedTooltip name="СписокВвестиВЭксплуатациюРасширеннаяПодсказка" id="466"/>
+							</Button>
+							<Button name="СписокВывестиИэЭксплуатации" id="69">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВывестиИэЭксплуатации</CommandName>
+								<ExtendedTooltip name="СписокВывестиИэЭксплуатацииРасширеннаяПодсказка" id="70"/>
+							</Button>
+							<Button name="СписокПереместить" id="71">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.Переместить</CommandName>
+								<ExtendedTooltip name="СписокПереместитьРасширеннаяПодсказка" id="72"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<Popup name="СписокГруппаДокументы" id="509">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Создание документов</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Список группа документы</v8:content>
+							</v8:item>
+						</ToolTip>
+						<Picture>
+							<xr:Ref>CommonPicture.ЗаполнениеДокументовПодменю</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="СписокГруппаДокументыРасширеннаяПодсказка" id="510"/>
+						<ChildItems>
+							<Button name="СписокВвестиЗаявкуНаРемонт" id="172">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВвестиЗаявкуНаРемонт</CommandName>
+								<ExtendedTooltip name="СписокВвестиЗаявкуНаРемонтРасширеннаяПодсказка" id="173"/>
+							</Button>
+							<Button name="СписокВвестиЗаявку" id="511">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВвестиЗаявку</CommandName>
+								<ExtendedTooltip name="СписокВвестиЗаявкуРасширеннаяПодсказка" id="512"/>
+							</Button>
+							<Button name="СписокВвестиДоговор" id="513">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВвестиДоговор</CommandName>
+								<ExtendedTooltip name="СписокВвестиДоговорРасширеннаяПодсказка" id="514"/>
+							</Button>
+							<Button name="СписокПомощникВводаДокументовАренды" id="575">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ПомощникВводаДокументовАренды</CommandName>
+								<ExtendedTooltip name="СписокПомощникВводаДокументовАрендыРасширеннаяПодсказка" id="576"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<Button name="СписокОткрытьВПланировщике" id="463">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОткрытьВПланировщике</CommandName>
+						<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+						<ExtendedTooltip name="СписокОткрытьВПланировщикеРасширеннаяПодсказка" id="464"/>
+					</Button>
+					<Button name="СписокОбновить" id="291">
+						<Type>CommandBarButton</Type>
+						<UserVisible>
+							<xr:Common>false</xr:Common>
+						</UserVisible>
+						<Representation>Picture</Representation>
+						<CommandName>Form.Item.Список.StandardCommand.Refresh</CommandName>
+						<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+						<ExtendedTooltip name="СписокОбновитьРасширеннаяПодсказка" id="292"/>
+					</Button>
+					<Button name="СписокРазвернутьПодменюКнопок" id="515">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.РазвернутьПодменюКнопок</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Развернуть подменю кнопок</v8:content>
+							</v8:item>
+						</Title>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="СписокРазвернутьПодменюКнопокРасширеннаяПодсказка" id="516"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СписокВыбор</Event>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="СписокАвтомобиль" id="17">
+					<DataPath>Список.Автомобиль</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СписокАвтомобильКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="СписокАвтомобильРасширеннаяПодсказка" id="19"/>
+				</LabelField>
+				<LabelField name="СписокПодразделениеКомпании" id="41">
+					<DataPath>Список.ПодразделениеКомпании</DataPath>
+					<ContextMenu name="СписокПодразделениеКомпанииКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="СписокПодразделениеКомпанииРасширеннаяПодсказка" id="43"/>
+				</LabelField>
+				<LabelField name="СписокВидАренды" id="176">
+					<DataPath>Список.ВидАренды</DataPath>
+					<ContextMenu name="СписокВидАрендыКонтекстноеМеню" id="177"/>
+					<ExtendedTooltip name="СписокВидАрендыРасширеннаяПодсказка" id="178"/>
+				</LabelField>
+				<LabelField name="СписокМарка" id="32">
+					<DataPath>Список.Марка</DataPath>
+					<ContextMenu name="СписокМаркаКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="СписокМаркаРасширеннаяПодсказка" id="34"/>
+				</LabelField>
+				<LabelField name="СписокМодель" id="35">
+					<DataPath>Список.Модель</DataPath>
+					<ContextMenu name="СписокМодельКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="СписокМодельРасширеннаяПодсказка" id="37"/>
+				</LabelField>
+				<LabelField name="СписокВариантКомплектации" id="20">
+					<DataPath>Список.ВариантКомплектации</DataPath>
+					<ContextMenu name="СписокВариантКомплектацииКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СписокВариантКомплектацииРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<LabelField name="СписокТипДвигателя" id="488">
+					<DataPath>Список.ТипДвигателя</DataPath>
+					<ContextMenu name="СписокТипДвигателяКонтекстноеМеню" id="489"/>
+					<ExtendedTooltip name="СписокТипДвигателяРасширеннаяПодсказка" id="490"/>
+				</LabelField>
+				<LabelField name="СписокТипКузова" id="485">
+					<DataPath>Список.ТипКузова</DataPath>
+					<ContextMenu name="СписокТипКузоваКонтекстноеМеню" id="486"/>
+					<ExtendedTooltip name="СписокТипКузоваРасширеннаяПодсказка" id="487"/>
+				</LabelField>
+				<LabelField name="СписокТипКПП" id="44">
+					<DataPath>Список.ТипКПП</DataPath>
+					<ContextMenu name="СписокТипКППКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="СписокТипКППРасширеннаяПодсказка" id="46"/>
+				</LabelField>
+				<LabelField name="СписокТипПривода" id="491">
+					<DataPath>Список.ТипПривода</DataPath>
+					<ContextMenu name="СписокТипПриводаКонтекстноеМеню" id="492"/>
+					<ExtendedTooltip name="СписокТипПриводаРасширеннаяПодсказка" id="493"/>
+				</LabelField>
+				<LabelField name="СписокАвтомобильТипСалона" id="197">
+					<DataPath>Список.Автомобиль.ТипСалона</DataPath>
+					<ContextMenu name="СписокАвтомобильТипСалонаКонтекстноеМеню" id="198"/>
+					<ExtendedTooltip name="СписокАвтомобильТипСалонаРасширеннаяПодсказка" id="199"/>
+				</LabelField>
+				<LabelField name="СписокЦвет" id="47">
+					<DataPath>Список.Цвет</DataPath>
+					<ContextMenu name="СписокЦветКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="СписокЦветРасширеннаяПодсказка" id="49"/>
+				</LabelField>
+				<LabelField name="СписокДатаВводаВЭксплуатацию" id="566">
+					<DataPath>Список.ДатаВводаВЭксплуатацию</DataPath>
+					<Width>10</Width>
+					<ContextMenu name="СписокДатаВводаВЭксплуатациюКонтекстноеМеню" id="567"/>
+					<ExtendedTooltip name="СписокДатаВводаВЭксплуатациюРасширеннаяПодсказка" id="568"/>
+				</LabelField>
+				<LabelField name="СписокДатаВыбытия" id="26">
+					<DataPath>Список.ДатаВыбытия</DataPath>
+					<Width>10</Width>
+					<ContextMenu name="СписокДатаВыбытияКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="СписокДатаВыбытияРасширеннаяПодсказка" id="28"/>
+				</LabelField>
+				<LabelField name="СписокVIN" id="14">
+					<DataPath>Список.VIN</DataPath>
+					<ContextMenu name="СписокVINКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СписокVINРасширеннаяПодсказка" id="16"/>
+				</LabelField>
+				<LabelField name="СписокКарточкаАктива" id="29">
+					<DataPath>Список.КарточкаАктива</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="СписокКарточкаАктиваКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СписокКарточкаАктиваРасширеннаяПодсказка" id="31"/>
+				</LabelField>
+				<LabelField name="СписокНомерГаражный" id="38">
+					<DataPath>Список.НомерГаражный</DataPath>
+					<ContextMenu name="СписокНомерГаражныйКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="СписокНомерГаражныйРасширеннаяПодсказка" id="40"/>
+				</LabelField>
+				<LabelField name="СписокПробег" id="188">
+					<DataPath>Список.Пробег</DataPath>
+					<ContextMenu name="СписокПробегКонтекстноеМеню" id="189"/>
+					<ExtendedTooltip name="СписокПробегРасширеннаяПодсказка" id="190"/>
+				</LabelField>
+				<LabelField name="СписокОстатокПробегаДоТО" id="200">
+					<DataPath>Список.ОстатокПробегаДоТО</DataPath>
+					<ContextMenu name="СписокОстатокПробегаДоТОКонтекстноеМеню" id="201"/>
+					<ExtendedTooltip name="СписокОстатокПробегаДоТОРасширеннаяПодсказка" id="202"/>
+				</LabelField>
+				<LabelField name="СписокВариантКомплектацииМежсервисныйПробегТО" id="206">
+					<DataPath>Список.ВариантКомплектации.МежсервисныйПробегТО</DataPath>
+					<ContextMenu name="СписокВариантКомплектацииМежсервисныйПробегТОКонтекстноеМеню" id="207"/>
+					<ExtendedTooltip name="СписокВариантКомплектацииМежсервисныйПробегТОРасширеннаяПодсказка" id="208"/>
+				</LabelField>
+				<LabelField name="СписокГосНомер" id="194">
+					<DataPath>Список.ГосНомер</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Гос. номер</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СписокГосНомерКонтекстноеМеню" id="195"/>
+					<ExtendedTooltip name="СписокГосНомерРасширеннаяПодсказка" id="196"/>
+				</LabelField>
+				<LabelField name="СписокСвидетельствоОРегистрацииТС" id="182">
+					<DataPath>Список.СвидетельствоОРегистрацииТС</DataPath>
+					<ContextMenu name="СписокСвидетельствоОРегистрацииТСКонтекстноеМеню" id="183"/>
+					<ExtendedTooltip name="СписокСвидетельствоОРегистрацииТСРасширеннаяПодсказка" id="184"/>
+				</LabelField>
+				<LabelField name="СписокПТС" id="191">
+					<DataPath>Список.ПТС</DataPath>
+					<ContextMenu name="СписокПТСКонтекстноеМеню" id="192"/>
+					<ExtendedTooltip name="СписокПТСРасширеннаяПодсказка" id="193"/>
+				</LabelField>
+				<LabelField name="СписокХозяин" id="185">
+					<DataPath>Список.Хозяин</DataPath>
+					<ContextMenu name="СписокХозяинКонтекстноеМеню" id="186"/>
+					<ExtendedTooltip name="СписокХозяинРасширеннаяПодсказка" id="187"/>
+				</LabelField>
+				<LabelField name="СписокМОЛ" id="472">
+					<DataPath>Список.МОЛ</DataPath>
+					<ContextMenu name="СписокМОЛКонтекстноеМеню" id="473"/>
+					<ExtendedTooltip name="СписокМОЛРасширеннаяПодсказка" id="474"/>
+				</LabelField>
+				<LabelField name="СписокДоговорАренды" id="569">
+					<DataPath>Список.ДоговорАренды</DataPath>
+					<ContextMenu name="СписокДоговорАрендыКонтекстноеМеню" id="570"/>
+					<ExtendedTooltip name="СписокДоговорАрендыРасширеннаяПодсказка" id="571"/>
+				</LabelField>
+				<LabelField name="СписокДоговорАрендыВидАренды" id="577">
+					<DataPath>Список.ДоговорАренды.ВидАренды</DataPath>
+					<ContextMenu name="СписокДоговорАрендыВидАрендыКонтекстноеМеню" id="578"/>
+					<ExtendedTooltip name="СписокДоговорАрендыВидАрендыРасширеннаяПодсказка" id="579"/>
+				</LabelField>
+				<LabelField name="СписокСостояние" id="572">
+					<DataPath>Список.Состояние</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние аренды</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СписокСостояниеКонтекстноеМеню" id="573"/>
+					<ExtendedTooltip name="СписокСостояниеРасширеннаяПодсказка" id="574"/>
+				</LabelField>
+				<LabelField name="СписокДоговорДатаНачала" id="585">
+					<DataPath>Список.ДоговорДатаНачала</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата начала</v8:content>
+						</v8:item>
+					</Title>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='dd.MM.yyyy ЧЧ:мм'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="СписокДоговорДатаНачалаКонтекстноеМеню" id="586"/>
+					<ExtendedTooltip name="СписокДоговорДатаНачалаРасширеннаяПодсказка" id="587"/>
+				</LabelField>
+				<LabelField name="СписокДоговорДатаОкончания" id="582">
+					<DataPath>Список.ДоговорДатаОкончания</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата окончания</v8:content>
+						</v8:item>
+					</Title>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='dd.MM.yyyy ЧЧ:мм'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="СписокДоговорДатаОкончанияКонтекстноеМеню" id="583"/>
+					<ExtendedTooltip name="СписокДоговорДатаОкончанияРасширеннаяПодсказка" id="584"/>
+				</LabelField>
+				<LabelField name="СписокДействующееСоглашение" id="588">
+					<DataPath>Список.ДействующееСоглашение</DataPath>
+					<ContextMenu name="СписокДействующееСоглашениеКонтекстноеМеню" id="589"/>
+					<ExtendedTooltip name="СписокДействующееСоглашениеРасширеннаяПодсказка" id="590"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<Pages name="СтраницыДанных" id="73">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnBottom</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыДанныхРасширеннаяПодсказка" id="74"/>
+			<Events>
+				<Event name="OnCurrentPageChange">СтраницыДанныхПриСменеСтраницы</Event>
+			</Events>
+			<ChildItems>
+				<Page name="СтраницаТарификация" id="77">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тарификация</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница тарификация</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаТарификацияРасширеннаяПодсказка" id="78"/>
+					<ChildItems>
+						<Table name="Тарификация" id="79">
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>2</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Тарификация</DataPath>
+							<RowPictureDataPath>~Тарификация.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ТарификацияКонтекстноеМеню" id="80">
+								<ChildItems>
+									<Button name="ТарификацияТарификацияИзменитьТарификациюКонтекстноеМеню" id="553">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ТарификацияИзменитьТарификацию</CommandName>
+										<ExtendedTooltip name="ТарификацияТарификацияИзменитьТарификациюКонтекстноеМенюРасширеннаяПодсказка" id="554"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="ТарификацияКоманднаяПанель" id="81">
+								<ChildItems>
+									<Button name="ТарификацияТарификацияИзменитьТарификацию" id="174">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ТарификацияИзменитьТарификацию</CommandName>
+										<ExtendedTooltip name="ТарификацияТарификацияИзменитьТарификациюРасширеннаяПодсказка" id="175"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ТарификацияРасширеннаяПодсказка" id="82"/>
+							<SearchStringAddition name="ТарификацияСтрокаПоиска" id="83">
+								<AdditionSource>
+									<Item>Тарификация</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТарификацияСтрокаПоискаКонтекстноеМеню" id="84"/>
+								<ExtendedTooltip name="ТарификацияСтрокаПоискаРасширеннаяПодсказка" id="85"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТарификацияСостояниеПросмотра" id="86">
+								<AdditionSource>
+									<Item>Тарификация</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТарификацияСостояниеПросмотраКонтекстноеМеню" id="87"/>
+								<ExtendedTooltip name="ТарификацияСостояниеПросмотраРасширеннаяПодсказка" id="88"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТарификацияУправлениеПоиском" id="89">
+								<AdditionSource>
+									<Item>Тарификация</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТарификацияУправлениеПоискомКонтекстноеМеню" id="90"/>
+								<ExtendedTooltip name="ТарификацияУправлениеПоискомРасширеннаяПодсказка" id="91"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ТарификацияВидАренды" id="179">
+									<DataPath>Тарификация.ВидАренды</DataPath>
+									<ContextMenu name="ТарификацияВидАрендыКонтекстноеМеню" id="180"/>
+									<ExtendedTooltip name="ТарификацияВидАрендыРасширеннаяПодсказка" id="181"/>
+								</LabelField>
+								<LabelField name="ТарификацияМодель" id="107">
+									<DataPath>Тарификация.Модель</DataPath>
+									<ContextMenu name="ТарификацияМодельКонтекстноеМеню" id="108"/>
+									<ExtendedTooltip name="ТарификацияМодельРасширеннаяПодсказка" id="109"/>
+								</LabelField>
+								<LabelField name="ТарификацияВариантКомплектации" id="92">
+									<DataPath>Тарификация.ВариантКомплектации</DataPath>
+									<ContextMenu name="ТарификацияВариантКомплектацииКонтекстноеМеню" id="93"/>
+									<ExtendedTooltip name="ТарификацияВариантКомплектацииРасширеннаяПодсказка" id="94"/>
+								</LabelField>
+								<CheckBoxField name="ТарификацияВидАрендыТипЦенЦенаВключаетНДС" id="669">
+									<DataPath>Тарификация.ВидАренды.ТипЦен.ЦенаВключаетНДС</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вкл. НДС</v8:content>
+										</v8:item>
+									</Title>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТарификацияВидАрендыТипЦенЦенаВключаетНДСКонтекстноеМеню" id="670"/>
+									<ExtendedTooltip name="ТарификацияВидАрендыТипЦенЦенаВключаетНДСРасширеннаяПодсказка" id="671"/>
+								</CheckBoxField>
+								<LabelField name="ТарификацияМинута" id="104">
+									<DataPath>Тарификация.Минута</DataPath>
+									<ContextMenu name="ТарификацияМинутаКонтекстноеМеню" id="105"/>
+									<ExtendedTooltip name="ТарификацияМинутаРасширеннаяПодсказка" id="106"/>
+								</LabelField>
+								<LabelField name="ТарификацияЧас" id="116">
+									<DataPath>Тарификация.Час</DataPath>
+									<ContextMenu name="ТарификацияЧасКонтекстноеМеню" id="117"/>
+									<ExtendedTooltip name="ТарификацияЧасРасширеннаяПодсказка" id="118"/>
+								</LabelField>
+								<LabelField name="ТарификацияСутки" id="113">
+									<DataPath>Тарификация.Сутки</DataPath>
+									<ContextMenu name="ТарификацияСуткиКонтекстноеМеню" id="114"/>
+									<ExtendedTooltip name="ТарификацияСуткиРасширеннаяПодсказка" id="115"/>
+								</LabelField>
+								<LabelField name="ТарификацияНеделя" id="110">
+									<DataPath>Тарификация.Неделя</DataPath>
+									<ContextMenu name="ТарификацияНеделяКонтекстноеМеню" id="111"/>
+									<ExtendedTooltip name="ТарификацияНеделяРасширеннаяПодсказка" id="112"/>
+								</LabelField>
+								<LabelField name="ТарификацияМесяц" id="101">
+									<DataPath>Тарификация.Месяц</DataPath>
+									<ContextMenu name="ТарификацияМесяцКонтекстноеМеню" id="102"/>
+									<ExtendedTooltip name="ТарификацияМесяцРасширеннаяПодсказка" id="103"/>
+								</LabelField>
+								<LabelField name="ТарификацияКвартал" id="278">
+									<DataPath>Тарификация.Квартал</DataPath>
+									<ContextMenu name="ТарификацияКварталКонтекстноеМеню" id="279"/>
+									<ExtendedTooltip name="ТарификацияКварталРасширеннаяПодсказка" id="280"/>
+								</LabelField>
+								<LabelField name="ТарификацияГод" id="275">
+									<DataPath>Тарификация.Год</DataPath>
+									<ContextMenu name="ТарификацияГодКонтекстноеМеню" id="276"/>
+									<ExtendedTooltip name="ТарификацияГодРасширеннаяПодсказка" id="277"/>
+								</LabelField>
+								<LabelField name="ТарификацияДепозит" id="98">
+									<DataPath>Тарификация.Депозит</DataPath>
+									<ContextMenu name="ТарификацияДепозитКонтекстноеМеню" id="99"/>
+									<ExtendedTooltip name="ТарификацияДепозитРасширеннаяПодсказка" id="100"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНеисправности" id="75">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Повреждения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница неисправности</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаНеисправностиРасширеннаяПодсказка" id="76"/>
+					<ChildItems>
+						<Table name="Неисправности" id="122">
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>2</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Неисправности</DataPath>
+							<RowPictureDataPath>~Неисправности.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="НеисправностиКонтекстноеМеню" id="123">
+								<ChildItems>
+									<Button name="НеисправностиНеисправностиОтметитьИсправлениеКонтекстноеМеню" id="549">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.НеисправностиОтметитьИсправление</CommandName>
+										<ExtendedTooltip name="НеисправностиНеисправностиОтметитьИсправлениеКонтекстноеМенюРасширеннаяПодсказка" id="550"/>
+									</Button>
+									<Button name="НеисправностиНеисправностиВвестиЗаявкуНаРемонтКонтекстноеМеню" id="551">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.НеисправностиВвестиЗаявкуНаРемонт</CommandName>
+										<ExtendedTooltip name="НеисправностиНеисправностиВвестиЗаявкуНаРемонтКонтекстноеМенюРасширеннаяПодсказка" id="552"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="НеисправностиКоманднаяПанель" id="124">
+								<ChildItems>
+									<Button name="НеисправностиНеисправностиОтметитьИсправление" id="168">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.НеисправностиОтметитьИсправление</CommandName>
+										<ExtendedTooltip name="НеисправностиНеисправностиОтметитьИсправлениеРасширеннаяПодсказка" id="169"/>
+									</Button>
+									<Button name="НеисправностиНеисправностиВвестиЗаявкуНаРемонт" id="170">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.НеисправностиВвестиЗаявкуНаРемонт</CommandName>
+										<ExtendedTooltip name="НеисправностиНеисправностиВвестиЗаявкуНаРемонтРасширеннаяПодсказка" id="171"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="НеисправностиРасширеннаяПодсказка" id="125"/>
+							<SearchStringAddition name="НеисправностиСтрокаПоиска" id="126">
+								<AdditionSource>
+									<Item>Неисправности</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НеисправностиСтрокаПоискаКонтекстноеМеню" id="127"/>
+								<ExtendedTooltip name="НеисправностиСтрокаПоискаРасширеннаяПодсказка" id="128"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="НеисправностиСостояниеПросмотра" id="129">
+								<AdditionSource>
+									<Item>Неисправности</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НеисправностиСостояниеПросмотраКонтекстноеМеню" id="130"/>
+								<ExtendedTooltip name="НеисправностиСостояниеПросмотраРасширеннаяПодсказка" id="131"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="НеисправностиУправлениеПоиском" id="132">
+								<AdditionSource>
+									<Item>Неисправности</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="НеисправностиУправлениеПоискомКонтекстноеМеню" id="133"/>
+								<ExtendedTooltip name="НеисправностиУправлениеПоискомРасширеннаяПодсказка" id="134"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">НеисправностиВыбор</Event>
+								<Event name="OnActivateRow">НеисправностиПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="НеисправностиТипПовреждения" id="144">
+									<DataPath>Неисправности.ТипПовреждения</DataPath>
+									<ContextMenu name="НеисправностиТипПоврежденияКонтекстноеМеню" id="145"/>
+									<ExtendedTooltip name="НеисправностиТипПоврежденияРасширеннаяПодсказка" id="146"/>
+								</LabelField>
+								<LabelField name="НеисправностиОписание" id="150">
+									<DataPath>Неисправности.Описание</DataPath>
+									<ContextMenu name="НеисправностиОписаниеКонтекстноеМеню" id="151"/>
+									<ExtendedTooltip name="НеисправностиОписаниеРасширеннаяПодсказка" id="152"/>
+								</LabelField>
+								<LabelField name="НеисправностиИдентификаторПовреждения" id="153">
+									<DataPath>Неисправности.ИдентификаторПовреждения</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<ContextMenu name="НеисправностиИдентификаторПоврежденияКонтекстноеМеню" id="154"/>
+									<ExtendedTooltip name="НеисправностиИдентификаторПоврежденияРасширеннаяПодсказка" id="155"/>
+								</LabelField>
+								<LabelField name="НеисправностиНомерПовреждения" id="156">
+									<DataPath>Неисправности.НомерПовреждения</DataPath>
+									<ContextMenu name="НеисправностиНомерПоврежденияКонтекстноеМеню" id="157"/>
+									<ExtendedTooltip name="НеисправностиНомерПоврежденияРасширеннаяПодсказка" id="158"/>
+								</LabelField>
+								<LabelField name="НеисправностиРегистратор" id="135">
+									<DataPath>Неисправности.Регистратор</DataPath>
+									<ContextMenu name="НеисправностиРегистраторКонтекстноеМеню" id="136"/>
+									<ExtendedTooltip name="НеисправностиРегистраторРасширеннаяПодсказка" id="137"/>
+								</LabelField>
+								<LabelField name="НеисправностиАвтомобиль" id="141">
+									<DataPath>Неисправности.Автомобиль</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<ContextMenu name="НеисправностиАвтомобильКонтекстноеМеню" id="142"/>
+									<ExtendedTooltip name="НеисправностиАвтомобильРасширеннаяПодсказка" id="143"/>
+								</LabelField>
+								<LabelField name="НеисправностиАвтор" id="165">
+									<DataPath>Неисправности.Автор</DataPath>
+									<ContextMenu name="НеисправностиАвторКонтекстноеМеню" id="166"/>
+									<ExtendedTooltip name="НеисправностиАвторРасширеннаяПодсказка" id="167"/>
+								</LabelField>
+								<CheckBoxField name="НеисправностиИсправлено" id="159">
+									<DataPath>Неисправности.Исправлено</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НеисправностиИсправленоКонтекстноеМеню" id="160"/>
+									<ExtendedTooltip name="НеисправностиИсправленоРасширеннаяПодсказка" id="161"/>
+								</CheckBoxField>
+								<LabelField name="НеисправностиПериод" id="560">
+									<DataPath>Неисправности.Период</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата создания</v8:content>
+										</v8:item>
+									</Title>
+									<Width>10</Width>
+									<ContextMenu name="НеисправностиПериодКонтекстноеМеню" id="561"/>
+									<ExtendedTooltip name="НеисправностиПериодРасширеннаяПодсказка" id="562"/>
+								</LabelField>
+								<LabelField name="НеисправностиДатаИзменения" id="147">
+									<DataPath>Неисправности.ДатаИзменения</DataPath>
+									<Width>10</Width>
+									<ContextMenu name="НеисправностиДатаИзмененияКонтекстноеМеню" id="148"/>
+									<ExtendedTooltip name="НеисправностиДатаИзмененияРасширеннаяПодсказка" id="149"/>
+								</LabelField>
+								<LabelField name="НеисправностиДатаУстраненияПлан" id="563">
+									<DataPath>Неисправности.ДатаУстраненияПлан</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Устранить до</v8:content>
+										</v8:item>
+									</Title>
+									<Width>10</Width>
+									<ContextMenu name="НеисправностиДатаУстраненияПланКонтекстноеМеню" id="564"/>
+									<ExtendedTooltip name="НеисправностиДатаУстраненияПланРасширеннаяПодсказка" id="565"/>
+								</LabelField>
+								<LabelField name="НеисправностиДатаИсправления" id="162">
+									<DataPath>Неисправности.ДатаИсправления</DataPath>
+									<Width>10</Width>
+									<ContextMenu name="НеисправностиДатаИсправленияКонтекстноеМеню" id="163"/>
+									<ExtendedTooltip name="НеисправностиДатаИсправленияРасширеннаяПодсказка" id="164"/>
+								</LabelField>
+								<LabelField name="НеисправностиМедиаФайл" id="537">
+									<DataPath>Неисправности.МедиаФайл</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<ContextMenu name="НеисправностиМедиаФайлКонтекстноеМеню" id="538"/>
+									<ExtendedTooltip name="НеисправностиМедиаФайлРасширеннаяПодсказка" id="539"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+						<PictureField name="ОбнаруженнаяНеисправностьАдресКартинки" id="540">
+							<DataPath>ОбнаруженнаяНеисправностьАдресКартинки</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>30</Width>
+							<PictureSize>AutoSize</PictureSize>
+							<Hyperlink>true</Hyperlink>
+							<NonselectedPictureText>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нет изображения</v8:content>
+								</v8:item>
+							</NonselectedPictureText>
+							<TextColor>web:DarkGray</TextColor>
+							<Font ref="sys:DefaultGUIFont" height="12" kind="WindowsFont"/>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ОбнаруженнаяНеисправностьАдресКартинкиКонтекстноеМеню" id="541"/>
+							<ExtendedTooltip name="ОбнаруженнаяНеисправностьАдресКартинкиРасширеннаяПодсказка" id="542"/>
+							<Events>
+								<Event name="Click">ОбнаруженнаяНеисправностьАдресКартинкиНажатие</Event>
+							</Events>
+						</PictureField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаСтрахование" id="209">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страхование</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница страхование</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаСтрахованиеРасширеннаяПодсказка" id="210"/>
+					<ChildItems>
+						<Table name="Страхование" id="211">
+							<HeightInTableRows>2</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>Страхование</DataPath>
+							<RowPictureDataPath>Страхование.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="СтрахованиеКонтекстноеМеню" id="212"/>
+							<AutoCommandBar name="СтрахованиеКоманднаяПанель" id="213"/>
+							<ExtendedTooltip name="СтрахованиеРасширеннаяПодсказка" id="214"/>
+							<SearchStringAddition name="СтрахованиеСтрокаПоиска" id="215">
+								<AdditionSource>
+									<Item>Страхование</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтрахованиеСтрокаПоискаКонтекстноеМеню" id="216"/>
+								<ExtendedTooltip name="СтрахованиеСтрокаПоискаРасширеннаяПодсказка" id="217"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СтрахованиеСостояниеПросмотра" id="218">
+								<AdditionSource>
+									<Item>Страхование</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтрахованиеСостояниеПросмотраКонтекстноеМеню" id="219"/>
+								<ExtendedTooltip name="СтрахованиеСостояниеПросмотраРасширеннаяПодсказка" id="220"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СтрахованиеУправлениеПоиском" id="221">
+								<AdditionSource>
+									<Item>Страхование</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СтрахованиеУправлениеПоискомКонтекстноеМеню" id="222"/>
+								<ExtendedTooltip name="СтрахованиеУправлениеПоискомРасширеннаяПодсказка" id="223"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeAddRow">СтрахованиеПередНачаломДобавления</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="СтрахованиеДата" id="224">
+									<DataPath>Страхование.Дата</DataPath>
+									<ContextMenu name="СтрахованиеДатаКонтекстноеМеню" id="225"/>
+									<ExtendedTooltip name="СтрахованиеДатаРасширеннаяПодсказка" id="226"/>
+								</LabelField>
+								<LabelField name="СтрахованиеНомер" id="227">
+									<DataPath>Страхование.Номер</DataPath>
+									<ContextMenu name="СтрахованиеНомерКонтекстноеМеню" id="228"/>
+									<ExtendedTooltip name="СтрахованиеНомерРасширеннаяПодсказка" id="229"/>
+								</LabelField>
+								<LabelField name="СтрахованиеВидСтрахования" id="233">
+									<DataPath>Страхование.ВидСтрахования</DataPath>
+									<ContextMenu name="СтрахованиеВидСтрахованияКонтекстноеМеню" id="234"/>
+									<ExtendedTooltip name="СтрахованиеВидСтрахованияРасширеннаяПодсказка" id="235"/>
+								</LabelField>
+								<LabelField name="СтрахованиеСтраховщик" id="257">
+									<DataPath>Страхование.Страховщик</DataPath>
+									<ContextMenu name="СтрахованиеСтраховщикКонтекстноеМеню" id="258"/>
+									<ExtendedTooltip name="СтрахованиеСтраховщикРасширеннаяПодсказка" id="259"/>
+								</LabelField>
+								<LabelField name="СтрахованиеПрограммаСтрахования" id="254">
+									<DataPath>Страхование.ПрограммаСтрахования</DataPath>
+									<ContextMenu name="СтрахованиеПрограммаСтрахованияКонтекстноеМеню" id="255"/>
+									<ExtendedTooltip name="СтрахованиеПрограммаСтрахованияРасширеннаяПодсказка" id="256"/>
+								</LabelField>
+								<InputField name="СтрахованиеВидДействияДоговора" id="230">
+									<DataPath>Страхование.ВидДействияДоговора</DataPath>
+									<ContextMenu name="СтрахованиеВидДействияДоговораКонтекстноеМеню" id="231"/>
+									<ExtendedTooltip name="СтрахованиеВидДействияДоговораРасширеннаяПодсказка" id="232"/>
+								</InputField>
+								<LabelField name="СтрахованиеДатаНачалаСтрахования" id="236">
+									<DataPath>Страхование.ДатаНачалаСтрахования</DataPath>
+									<ContextMenu name="СтрахованиеДатаНачалаСтрахованияКонтекстноеМеню" id="237"/>
+									<ExtendedTooltip name="СтрахованиеДатаНачалаСтрахованияРасширеннаяПодсказка" id="238"/>
+								</LabelField>
+								<LabelField name="СтрахованиеДатаОкончанияСтрахования" id="239">
+									<DataPath>Страхование.ДатаОкончанияСтрахования</DataPath>
+									<ContextMenu name="СтрахованиеДатаОкончанияСтрахованияКонтекстноеМеню" id="240"/>
+									<ExtendedTooltip name="СтрахованиеДатаОкончанияСтрахованияРасширеннаяПодсказка" id="241"/>
+								</LabelField>
+								<LabelField name="СтрахованиеСерияКвитанции" id="242">
+									<DataPath>Страхование.СерияКвитанции</DataPath>
+									<ContextMenu name="СтрахованиеСерияКвитанцииКонтекстноеМеню" id="243"/>
+									<ExtendedTooltip name="СтрахованиеСерияКвитанцииРасширеннаяПодсказка" id="244"/>
+								</LabelField>
+								<LabelField name="СтрахованиеНомерКвитанции" id="248">
+									<DataPath>Страхование.НомерКвитанции</DataPath>
+									<ContextMenu name="СтрахованиеНомерКвитанцииКонтекстноеМеню" id="249"/>
+									<ExtendedTooltip name="СтрахованиеНомерКвитанцииРасширеннаяПодсказка" id="250"/>
+								</LabelField>
+								<LabelField name="СтрахованиеСерияПолиса" id="245">
+									<DataPath>Страхование.СерияПолиса</DataPath>
+									<ContextMenu name="СтрахованиеСерияПолисаКонтекстноеМеню" id="246"/>
+									<ExtendedTooltip name="СтрахованиеСерияПолисаРасширеннаяПодсказка" id="247"/>
+								</LabelField>
+								<LabelField name="СтрахованиеНомерПолиса" id="251">
+									<DataPath>Страхование.НомерПолиса</DataPath>
+									<ContextMenu name="СтрахованиеНомерПолисаКонтекстноеМеню" id="252"/>
+									<ExtendedTooltip name="СтрахованиеНомерПолисаРасширеннаяПодсказка" id="253"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаРемонт" id="260">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ремонт</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница ремонт</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаРемонтРасширеннаяПодсказка" id="261"/>
+					<ChildItems>
+						<Table name="Ремонт" id="298">
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>2</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>Ремонт</DataPath>
+							<RowPictureDataPath>~Ремонт.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="РемонтКонтекстноеМеню" id="299"/>
+							<AutoCommandBar name="РемонтКоманднаяПанель" id="300"/>
+							<ExtendedTooltip name="РемонтРасширеннаяПодсказка" id="301"/>
+							<SearchStringAddition name="РемонтСтрокаПоиска" id="302">
+								<AdditionSource>
+									<Item>Ремонт</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РемонтСтрокаПоискаКонтекстноеМеню" id="303"/>
+								<ExtendedTooltip name="РемонтСтрокаПоискаРасширеннаяПодсказка" id="304"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РемонтСостояниеПросмотра" id="305">
+								<AdditionSource>
+									<Item>Ремонт</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РемонтСостояниеПросмотраКонтекстноеМеню" id="306"/>
+								<ExtendedTooltip name="РемонтСостояниеПросмотраРасширеннаяПодсказка" id="307"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РемонтУправлениеПоиском" id="308">
+								<AdditionSource>
+									<Item>Ремонт</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РемонтУправлениеПоискомКонтекстноеМеню" id="309"/>
+								<ExtendedTooltip name="РемонтУправлениеПоискомРасширеннаяПодсказка" id="310"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">РемонтВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="РемонтДокумент" id="320">
+									<DataPath>Ремонт.Документ</DataPath>
+									<ContextMenu name="РемонтДокументКонтекстноеМеню" id="321"/>
+									<ExtendedTooltip name="РемонтДокументРасширеннаяПодсказка" id="322"/>
+								</LabelField>
+								<LabelField name="РемонтВидРемонта" id="311">
+									<DataPath>Ремонт.ВидРемонта</DataPath>
+									<ContextMenu name="РемонтВидРемонтаКонтекстноеМеню" id="312"/>
+									<ExtendedTooltip name="РемонтВидРемонтаРасширеннаяПодсказка" id="313"/>
+								</LabelField>
+								<LabelField name="РемонтДатаНачала" id="314">
+									<DataPath>Ремонт.ДатаНачала</DataPath>
+									<ContextMenu name="РемонтДатаНачалаКонтекстноеМеню" id="315"/>
+									<ExtendedTooltip name="РемонтДатаНачалаРасширеннаяПодсказка" id="316"/>
+								</LabelField>
+								<LabelField name="РемонтДатаОкончания" id="317">
+									<DataPath>Ремонт.ДатаОкончания</DataPath>
+									<ContextMenu name="РемонтДатаОкончанияКонтекстноеМеню" id="318"/>
+									<ExtendedTooltip name="РемонтДатаОкончанияРасширеннаяПодсказка" id="319"/>
+								</LabelField>
+								<LabelField name="РемонтСостояние" id="469">
+									<DataPath>Ремонт.Состояние</DataPath>
+									<ContextMenu name="РемонтСостояниеКонтекстноеМеню" id="470"/>
+									<ExtendedTooltip name="РемонтСостояниеРасширеннаяПодсказка" id="471"/>
+								</LabelField>
+								<LabelField name="РемонтКонтрагент" id="323">
+									<DataPath>Ремонт.Контрагент</DataPath>
+									<ContextMenu name="РемонтКонтрагентКонтекстноеМеню" id="324"/>
+									<ExtendedTooltip name="РемонтКонтрагентРасширеннаяПодсказка" id="325"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаХранениеШин" id="265">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Хранение шин</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница хранение шин</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаХранениеШинРасширеннаяПодсказка" id="266"/>
+					<ChildItems>
+						<Table name="ХранениеШин" id="326">
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>2</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>ХранениеШин</DataPath>
+							<RowPictureDataPath>~ХранениеШин.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ХранениеШинКонтекстноеМеню" id="327"/>
+							<AutoCommandBar name="ХранениеШинКоманднаяПанель" id="328"/>
+							<ExtendedTooltip name="ХранениеШинРасширеннаяПодсказка" id="329"/>
+							<SearchStringAddition name="ХранениеШинСтрокаПоиска" id="330">
+								<AdditionSource>
+									<Item>ХранениеШин</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ХранениеШинСтрокаПоискаКонтекстноеМеню" id="331"/>
+								<ExtendedTooltip name="ХранениеШинСтрокаПоискаРасширеннаяПодсказка" id="332"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ХранениеШинСостояниеПросмотра" id="333">
+								<AdditionSource>
+									<Item>ХранениеШин</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ХранениеШинСостояниеПросмотраКонтекстноеМеню" id="334"/>
+								<ExtendedTooltip name="ХранениеШинСостояниеПросмотраРасширеннаяПодсказка" id="335"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ХранениеШинУправлениеПоиском" id="336">
+								<AdditionSource>
+									<Item>ХранениеШин</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ХранениеШинУправлениеПоискомКонтекстноеМеню" id="337"/>
+								<ExtendedTooltip name="ХранениеШинУправлениеПоискомРасширеннаяПодсказка" id="338"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ХранениеШинВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ХранениеШинЗаявкаНаХранениеШин" id="494">
+									<DataPath>ХранениеШин.ЗаявкаНаХранениеШин</DataPath>
+									<ContextMenu name="ХранениеШинЗаявкаНаХранениеШинКонтекстноеМеню" id="495"/>
+									<ExtendedTooltip name="ХранениеШинЗаявкаНаХранениеШинРасширеннаяПодсказка" id="496"/>
+								</LabelField>
+								<LabelField name="ХранениеШинНоменклатура" id="500">
+									<DataPath>ХранениеШин.Номенклатура</DataPath>
+									<ContextMenu name="ХранениеШинНоменклатураКонтекстноеМеню" id="501"/>
+									<ExtendedTooltip name="ХранениеШинНоменклатураРасширеннаяПодсказка" id="502"/>
+								</LabelField>
+								<LabelField name="ХранениеШинКоличество" id="497">
+									<DataPath>ХранениеШин.Количество</DataPath>
+									<Width>10</Width>
+									<ContextMenu name="ХранениеШинКоличествоКонтекстноеМеню" id="498"/>
+									<ExtendedTooltip name="ХранениеШинКоличествоРасширеннаяПодсказка" id="499"/>
+								</LabelField>
+								<LabelField name="ХранениеШинСкладКомпании" id="503">
+									<DataPath>ХранениеШин.СкладКомпании</DataPath>
+									<ContextMenu name="ХранениеШинСкладКомпанииКонтекстноеМеню" id="504"/>
+									<ExtendedTooltip name="ХранениеШинСкладКомпанииРасширеннаяПодсказка" id="505"/>
+								</LabelField>
+								<LabelField name="ХранениеШинЯчейка" id="506">
+									<DataPath>ХранениеШин.Ячейка</DataPath>
+									<ContextMenu name="ХранениеШинЯчейкаКонтекстноеМеню" id="507"/>
+									<ExtendedTooltip name="ХранениеШинЯчейкаРасширеннаяПодсказка" id="508"/>
+								</LabelField>
+								<LabelField name="ХранениеШинХранитьС" id="546">
+									<DataPath>ХранениеШин.ХранитьС</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Хранение с</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ХранениеШинХранитьСКонтекстноеМеню" id="547"/>
+									<ExtendedTooltip name="ХранениеШинХранитьСРасширеннаяПодсказка" id="548"/>
+								</LabelField>
+								<LabelField name="ХранениеШинХранитьПо" id="543">
+									<DataPath>ХранениеШин.ХранитьПо</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Хранение по</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ХранениеШинХранитьПоКонтекстноеМеню" id="544"/>
+									<ExtendedTooltip name="ХранениеШинХранитьПоРасширеннаяПодсказка" id="545"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаКомплектация" id="270">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комплектация</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница комплектация</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаКомплектацияРасширеннаяПодсказка" id="271"/>
+					<ChildItems>
+						<Table name="ОпцииАвтомобиля" id="382">
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>2</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>ОпцииАвтомобиля</DataPath>
+							<RowPictureDataPath>ОпцииАвтомобиля.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ОпцииАвтомобиляКонтекстноеМеню" id="383"/>
+							<AutoCommandBar name="ОпцииАвтомобиляКоманднаяПанель" id="384"/>
+							<ExtendedTooltip name="ОпцииАвтомобиляРасширеннаяПодсказка" id="385"/>
+							<SearchStringAddition name="ОпцииАвтомобиляСтрокаПоиска" id="386">
+								<AdditionSource>
+									<Item>ОпцииАвтомобиля</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОпцииАвтомобиляСтрокаПоискаКонтекстноеМеню" id="387"/>
+								<ExtendedTooltip name="ОпцииАвтомобиляСтрокаПоискаРасширеннаяПодсказка" id="388"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ОпцииАвтомобиляСостояниеПросмотра" id="389">
+								<AdditionSource>
+									<Item>ОпцииАвтомобиля</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОпцииАвтомобиляСостояниеПросмотраКонтекстноеМеню" id="390"/>
+								<ExtendedTooltip name="ОпцииАвтомобиляСостояниеПросмотраРасширеннаяПодсказка" id="391"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ОпцииАвтомобиляУправлениеПоиском" id="392">
+								<AdditionSource>
+									<Item>ОпцииАвтомобиля</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ОпцииАвтомобиляУправлениеПоискомКонтекстноеМеню" id="393"/>
+								<ExtendedTooltip name="ОпцииАвтомобиляУправлениеПоискомРасширеннаяПодсказка" id="394"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ОпцииАвтомобиляОпция" id="398">
+									<DataPath>ОпцииАвтомобиля.Опция</DataPath>
+									<ContextMenu name="ОпцииАвтомобиляОпцияКонтекстноеМеню" id="399"/>
+									<ExtendedTooltip name="ОпцииАвтомобиляОпцияРасширеннаяПодсказка" id="400"/>
+								</LabelField>
+								<LabelField name="ОпцииАвтомобиляКоличество" id="395">
+									<DataPath>ОпцииАвтомобиля.Количество</DataPath>
+									<ContextMenu name="ОпцииАвтомобиляКоличествоКонтекстноеМеню" id="396"/>
+									<ExtendedTooltip name="ОпцииАвтомобиляКоличествоРасширеннаяПодсказка" id="397"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+						<Table name="ОборудованиеАвтомобиля" id="404">
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>2</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>ОборудованиеАвтомобиля</DataPath>
+							<RowPictureDataPath>ОборудованиеАвтомобиля.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ОборудованиеАвтомобиляКонтекстноеМеню" id="405"/>
+							<AutoCommandBar name="ОборудованиеАвтомобиляКоманднаяПанель" id="406"/>
+							<ExtendedTooltip name="ОборудованиеАвтомобиляРасширеннаяПодсказка" id="407"/>
+							<SearchStringAddition name="ОборудованиеАвтомобиляСтрокаПоиска" id="408">
+								<AdditionSource>
+									<Item>ОборудованиеАвтомобиля</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОборудованиеАвтомобиляСтрокаПоискаКонтекстноеМеню" id="409"/>
+								<ExtendedTooltip name="ОборудованиеАвтомобиляСтрокаПоискаРасширеннаяПодсказка" id="410"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ОборудованиеАвтомобиляСостояниеПросмотра" id="411">
+								<AdditionSource>
+									<Item>ОборудованиеАвтомобиля</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОборудованиеАвтомобиляСостояниеПросмотраКонтекстноеМеню" id="412"/>
+								<ExtendedTooltip name="ОборудованиеАвтомобиляСостояниеПросмотраРасширеннаяПодсказка" id="413"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ОборудованиеАвтомобиляУправлениеПоиском" id="414">
+								<AdditionSource>
+									<Item>ОборудованиеАвтомобиля</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ОборудованиеАвтомобиляУправлениеПоискомКонтекстноеМеню" id="415"/>
+								<ExtendedTooltip name="ОборудованиеАвтомобиляУправлениеПоискомРасширеннаяПодсказка" id="416"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ОборудованиеАвтомобиляНоменклатура" id="420">
+									<DataPath>ОборудованиеАвтомобиля.Номенклатура</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оборудование</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ОборудованиеАвтомобиляНоменклатураКонтекстноеМеню" id="421"/>
+									<ExtendedTooltip name="ОборудованиеАвтомобиляНоменклатураРасширеннаяПодсказка" id="422"/>
+								</LabelField>
+								<LabelField name="ОборудованиеАвтомобиляКоличествоОстаток" id="417">
+									<DataPath>ОборудованиеАвтомобиля.КоличествоОстаток</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ОборудованиеАвтомобиляКоличествоОстатокКонтекстноеМеню" id="418"/>
+									<ExtendedTooltip name="ОборудованиеАвтомобиляКоличествоОстатокРасширеннаяПодсказка" id="419"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаДоговорыАренды" id="293">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Договоры аренды</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница договоры аренды</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаДоговорыАрендыРасширеннаяПодсказка" id="294"/>
+					<ChildItems>
+						<Table name="ДоговорыАренды" id="351">
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>2</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>ДоговорыАренды</DataPath>
+							<RowPictureDataPath>~ДоговорыАренды.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ДоговорыАрендыКонтекстноеМеню" id="352"/>
+							<AutoCommandBar name="ДоговорыАрендыКоманднаяПанель" id="353"/>
+							<ExtendedTooltip name="ДоговорыАрендыРасширеннаяПодсказка" id="354"/>
+							<SearchStringAddition name="ДоговорыАрендыСтрокаПоиска" id="355">
+								<AdditionSource>
+									<Item>ДоговорыАренды</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДоговорыАрендыСтрокаПоискаКонтекстноеМеню" id="356"/>
+								<ExtendedTooltip name="ДоговорыАрендыСтрокаПоискаРасширеннаяПодсказка" id="357"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДоговорыАрендыСостояниеПросмотра" id="358">
+								<AdditionSource>
+									<Item>ДоговорыАренды</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДоговорыАрендыСостояниеПросмотраКонтекстноеМеню" id="359"/>
+								<ExtendedTooltip name="ДоговорыАрендыСостояниеПросмотраРасширеннаяПодсказка" id="360"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДоговорыАрендыУправлениеПоиском" id="361">
+								<AdditionSource>
+									<Item>ДоговорыАренды</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДоговорыАрендыУправлениеПоискомКонтекстноеМеню" id="362"/>
+								<ExtendedTooltip name="ДоговорыАрендыУправлениеПоискомРасширеннаяПодсказка" id="363"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ДоговорыАрендыВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ДоговорыАрендыДокумент" id="373">
+									<DataPath>ДоговорыАренды.Документ</DataPath>
+									<ContextMenu name="ДоговорыАрендыДокументКонтекстноеМеню" id="374"/>
+									<ExtendedTooltip name="ДоговорыАрендыДокументРасширеннаяПодсказка" id="375"/>
+								</LabelField>
+								<LabelField name="ДоговорыАрендыВидАренды" id="364">
+									<DataPath>ДоговорыАренды.ВидАренды</DataPath>
+									<ContextMenu name="ДоговорыАрендыВидАрендыКонтекстноеМеню" id="365"/>
+									<ExtendedTooltip name="ДоговорыАрендыВидАрендыРасширеннаяПодсказка" id="366"/>
+								</LabelField>
+								<LabelField name="ДоговорыАрендыДатаНачала" id="367">
+									<DataPath>ДоговорыАренды.ДатаНачала</DataPath>
+									<ContextMenu name="ДоговорыАрендыДатаНачалаКонтекстноеМеню" id="368"/>
+									<ExtendedTooltip name="ДоговорыАрендыДатаНачалаРасширеннаяПодсказка" id="369"/>
+								</LabelField>
+								<LabelField name="ДоговорыАрендыДатаОкончания" id="370">
+									<DataPath>ДоговорыАренды.ДатаОкончания</DataPath>
+									<ContextMenu name="ДоговорыАрендыДатаОкончанияКонтекстноеМеню" id="371"/>
+									<ExtendedTooltip name="ДоговорыАрендыДатаОкончанияРасширеннаяПодсказка" id="372"/>
+								</LabelField>
+								<LabelField name="ДоговорыАрендыЗаказчик" id="376">
+									<DataPath>ДоговорыАренды.Заказчик</DataPath>
+									<ContextMenu name="ДоговорыАрендыЗаказчикКонтекстноеМеню" id="377"/>
+									<ExtendedTooltip name="ДоговорыАрендыЗаказчикРасширеннаяПодсказка" id="378"/>
+								</LabelField>
+								<LabelField name="ДоговорыАрендыЗаявкаНаАренду" id="379">
+									<DataPath>ДоговорыАренды.ЗаявкаНаАренду</DataPath>
+									<ContextMenu name="ДоговорыАрендыЗаявкаНаАрендуКонтекстноеМеню" id="380"/>
+									<ExtendedTooltip name="ДоговорыАрендыЗаявкаНаАрендуРасширеннаяПодсказка" id="381"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаВодители" id="591">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Водители</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница водители</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаВодителиРасширеннаяПодсказка" id="592"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаВодители" id="667">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа водители</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа водители</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаВодителиРасширеннаяПодсказка" id="668"/>
+							<ChildItems>
+								<Table name="Водители" id="593">
+									<Height>3</Height>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<DataPath>Водители</DataPath>
+									<RowPictureDataPath>~Водители.DefaultPicture</RowPictureDataPath>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+									<ContextMenu name="ВодителиКонтекстноеМеню" id="594"/>
+									<AutoCommandBar name="ВодителиКоманднаяПанель" id="595">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ВодителиРасширеннаяПодсказка" id="596"/>
+									<SearchStringAddition name="ВодителиСтрокаПоиска" id="597">
+										<AdditionSource>
+											<Item>Водители</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВодителиСтрокаПоискаКонтекстноеМеню" id="598"/>
+										<ExtendedTooltip name="ВодителиСтрокаПоискаРасширеннаяПодсказка" id="599"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ВодителиСостояниеПросмотра" id="600">
+										<AdditionSource>
+											<Item>Водители</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВодителиСостояниеПросмотраКонтекстноеМеню" id="601"/>
+										<ExtendedTooltip name="ВодителиСостояниеПросмотраРасширеннаяПодсказка" id="602"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ВодителиУправлениеПоиском" id="603">
+										<AdditionSource>
+											<Item>Водители</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ВодителиУправлениеПоискомКонтекстноеМеню" id="604"/>
+										<ExtendedTooltip name="ВодителиУправлениеПоискомРасширеннаяПодсказка" id="605"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ВодителиВодитель" id="606">
+											<DataPath>Водители.Водитель</DataPath>
+											<ContextMenu name="ВодителиВодительКонтекстноеМеню" id="607"/>
+											<ExtendedTooltip name="ВодителиВодительРасширеннаяПодсказка" id="608"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+								<Table name="ВодителиВодительКонтактнаяИнформация" id="609">
+									<Representation>List</Representation>
+									<ReadOnly>true</ReadOnly>
+									<HeightInTableRows>3</HeightInTableRows>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<DataPath>Items.Водители.CurrentData.Водитель.КонтактнаяИнформация</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ВодителиВодительКонтактнаяИнформацияКонтекстноеМеню" id="610"/>
+									<AutoCommandBar name="ВодителиВодительКонтактнаяИнформацияКоманднаяПанель" id="611">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ВодителиВодительКонтактнаяИнформацияРасширеннаяПодсказка" id="612"/>
+									<SearchStringAddition name="ВодителиВодительКонтактнаяИнформацияСтрокаПоиска" id="613">
+										<AdditionSource>
+											<Item>ВодителиВодительКонтактнаяИнформация</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВодителиВодительКонтактнаяИнформацияСтрокаПоискаКонтекстноеМеню" id="614"/>
+										<ExtendedTooltip name="ВодителиВодительКонтактнаяИнформацияСтрокаПоискаРасширеннаяПодсказка" id="615"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ВодителиВодительКонтактнаяИнформацияСостояниеПросмотра" id="616">
+										<AdditionSource>
+											<Item>ВодителиВодительКонтактнаяИнформация</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВодителиВодительКонтактнаяИнформацияСостояниеПросмотраКонтекстноеМеню" id="617"/>
+										<ExtendedTooltip name="ВодителиВодительКонтактнаяИнформацияСостояниеПросмотраРасширеннаяПодсказка" id="618"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ВодителиВодительКонтактнаяИнформацияУправлениеПоиском" id="619">
+										<AdditionSource>
+											<Item>ВодителиВодительКонтактнаяИнформация</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ВодителиВодительКонтактнаяИнформацияУправлениеПоискомКонтекстноеМеню" id="620"/>
+										<ExtendedTooltip name="ВодителиВодительКонтактнаяИнформацияУправлениеПоискомРасширеннаяПодсказка" id="621"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ВодителиВодительКонтактнаяИнформацияТип" id="664">
+											<DataPath>Items.Водители.CurrentData.Водитель.КонтактнаяИнформация.Тип</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контактная информация</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВодителиВодительКонтактнаяИнформацияТипКонтекстноеМеню" id="665"/>
+											<ExtendedTooltip name="ВодителиВодительКонтактнаяИнформацияТипРасширеннаяПодсказка" id="666"/>
+										</InputField>
+										<InputField name="ВодителиВодительКонтактнаяИнформацияПредставление" id="655">
+											<DataPath>Items.Водители.CurrentData.Водитель.КонтактнаяИнформация.Представление</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Значение</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВодителиВодительКонтактнаяИнформацияПредставлениеКонтекстноеМеню" id="656"/>
+											<ExtendedTooltip name="ВодителиВодительКонтактнаяИнформацияПредставлениеРасширеннаяПодсказка" id="657"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.УправлениеАвтомобилямиАренды</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Список" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>Список.Автомобиль</Field>
+				<Field>Список.ВариантКомплектации</Field>
+				<Field>Список.ВидАренды</Field>
+				<Field>Список.ДействующееСоглашение</Field>
+				<Field>Список.ДоговорДатаНачала</Field>
+				<Field>Список.ДоговорДатаОкончания</Field>
+				<Field>Список.КарточкаАктива</Field>
+				<Field>Список.Марка</Field>
+				<Field>Список.Модель</Field>
+				<Field>Список.ПодразделениеКомпании</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	АвтомобилиДляТестДрайваОстатки.ПодразделениеКомпании КАК ПодразделениеКомпании,
+	АвтомобилиДляТестДрайваОстатки.Автомобиль.Марка КАК Марка,
+	АвтомобилиДляТестДрайваОстатки.Автомобиль.Модель КАК Модель,
+	АвтомобилиДляТестДрайваОстатки.Автомобиль.ВариантКомплектации КАК ВариантКомплектации,
+	АвтомобилиДляТестДрайваОстатки.Автомобиль.Цвет КАК Цвет,
+	АвтомобилиДляТестДрайваОстатки.Актив.ДатаВыбытия КАК ДатаВыбытия,
+	АвтомобилиДляТестДрайваОстатки.Актив.ДатаВводаВЭксплуатацию КАК ДатаВводаВЭксплуатацию,
+	АвтомобилиДляТестДрайваОстатки.Автомобиль.VIN КАК VIN,
+	АвтомобилиДляТестДрайваОстатки.Автомобиль.НомерГаражный КАК НомерГаражный,
+	АвтомобилиДляТестДрайваОстатки.Автомобиль.ВариантКомплектации.ТипКПП КАК ТипКПП,
+	АвтомобилиДляТестДрайваОстатки.Автомобиль КАК Автомобиль,
+	АвтомобилиДляТестДрайваОстатки.ВидАренды КАК ВидАренды,
+	АвтомобилиДляТестДрайваОстатки.Актив КАК КарточкаАктива,
+	АвтомобилиДляТестДрайваОстатки.Автомобиль.ВариантКомплектации.ТипДвигателя КАК ТипДвигателя,
+	АвтомобилиДляТестДрайваОстатки.Автомобиль.ВариантКомплектации.ТипКузова КАК ТипКузова,
+	АвтомобилиДляТестДрайваОстатки.Автомобиль.ВариантКомплектации.ТипПривода КАК ТипПривода,
+	ВЫБОР
+		КОГДА АвтомобилиДляТестДрайваОстатки.Автомобиль.ВариантКомплектации.МежсервисныйПробегТО = 0
+			ТОГДА АвтомобилиДляТестДрайваОстатки.Автомобиль.Модель.МежсервисныйПробегТО
+		ИНАЧЕ АвтомобилиДляТестДрайваОстатки.Автомобиль.ВариантКомплектации.МежсервисныйПробегТО
+	КОНЕЦ КАК МежсервисныйПробегТО
+ПОМЕСТИТЬ вт_Автомобили
+ИЗ
+	РегистрНакопления.АвтомобилиДляТестДрайва.Остатки(&amp;Период, ) КАК АвтомобилиДляТестДрайваОстатки
+ГДЕ
+	НЕ АвтомобилиДляТестДрайваОстатки.ВидАренды = ЗНАЧЕНИЕ(Справочник.ВидыАренды.ПустаяСсылка)
+
+ИНДЕКСИРОВАТЬ ПО
+	Автомобиль
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	АвтомобилиСрезПоследних.Автомобиль КАК Автомобиль,
+	МАКСИМУМ(ВЫБОР
+			КОГДА АвтомобилиСрезПоследних.ВидЗначения = ЗНАЧЕНИЕ(Перечисление.ДополнительнаяИнформацияАвтомобилей.Пробег)
+				ТОГДА АвтомобилиСрезПоследних.Значение
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Пробег,
+	МАКСИМУМ(ВЫБОР
+			КОГДА АвтомобилиСрезПоследних.ВидЗначения = ЗНАЧЕНИЕ(Перечисление.ДополнительнаяИнформацияАвтомобилей.ГосНомер)
+				ТОГДА АвтомобилиСрезПоследних.Значение
+			ИНАЧЕ ""
+		КОНЕЦ) КАК ГосНомер,
+	МАКСИМУМ(ВЫБОР
+			КОГДА АвтомобилиСрезПоследних.ВидЗначения = ЗНАЧЕНИЕ(Перечисление.ДополнительнаяИнформацияАвтомобилей.Хозяин)
+				ТОГДА АвтомобилиСрезПоследних.Значение
+			ИНАЧЕ НЕОПРЕДЕЛЕНО
+		КОНЕЦ) КАК Хозяин,
+	МАКСИМУМ(ВЫБОР
+			КОГДА АвтомобилиСрезПоследних.ВидЗначения = ЗНАЧЕНИЕ(Перечисление.ДополнительнаяИнформацияАвтомобилей.ТехПаспорт)
+				ТОГДА АвтомобилиСрезПоследних.Значение
+			ИНАЧЕ НЕОПРЕДЕЛЕНО
+		КОНЕЦ) КАК ПТС,
+	МАКСИМУМ(ВЫБОР
+			КОГДА АвтомобилиСрезПоследних.ВидЗначения = ЗНАЧЕНИЕ(Перечисление.ДополнительнаяИнформацияАвтомобилей.СвидетельствоОРегистрацииТС)
+				ТОГДА АвтомобилиСрезПоследних.Значение
+			ИНАЧЕ НЕОПРЕДЕЛЕНО
+		КОНЕЦ) КАК СвидетельствоОРегистрацииТС
+ПОМЕСТИТЬ вт_Характеристики
+ИЗ
+	РегистрСведений.Автомобили.СрезПоследних(
+			,
+			Автомобиль В
+				(ВЫБРАТЬ
+					вт_Автомобили.Автомобиль КАК Автомобиль
+				ИЗ
+					вт_Автомобили КАК вт_Автомобили)) КАК АвтомобилиСрезПоследних
+
+СГРУППИРОВАТЬ ПО
+	АвтомобилиСрезПоследних.Автомобиль
+
+ИНДЕКСИРОВАТЬ ПО
+	Автомобиль
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	АрендаСостоянияАвтомобилейСрезПоследних.Автомобиль КАК Автомобиль,
+	МАКСИМУМ(АрендаСостоянияДоговоровСрезПоследних.ДоговорАренды) КАК ДоговорАренды,
+	МАКСИМУМ(АрендаСостоянияДоговоровСрезПоследних.Состояние) КАК Состояние
+ПОМЕСТИТЬ ВТ_Договоры
+ИЗ
+	РегистрСведений.АрендаСостоянияАвтомобилей.СрезПоследних(
+			,
+			Автомобиль В
+				(ВЫБРАТЬ
+					вт_Автомобили.Автомобиль КАК Автомобиль
+				ИЗ
+					вт_Автомобили КАК вт_Автомобили)) КАК АрендаСостоянияАвтомобилейСрезПоследних
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.АрендаСостоянияДоговоров.СрезПоследних(&amp;Период, ) КАК АрендаСостоянияДоговоровСрезПоследних
+		ПО АрендаСостоянияАвтомобилейСрезПоследних.ДоговорАренды = АрендаСостоянияДоговоровСрезПоследних.ДоговорАренды
+ГДЕ
+	АрендаСостоянияАвтомобилейСрезПоследних.Состояние = ЗНАЧЕНИЕ(Перечисление.АрендаСостоянияАвтомобилей.ВыданКлиенту)
+
+СГРУППИРОВАТЬ ПО
+	АрендаСостоянияАвтомобилейСрезПоследних.Автомобиль
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	вт_Автомобили.ПодразделениеКомпании КАК ПодразделениеКомпании,
+	вт_Автомобили.Марка КАК Марка,
+	вт_Автомобили.Модель КАК Модель,
+	вт_Автомобили.ВариантКомплектации КАК ВариантКомплектации,
+	вт_Автомобили.Цвет КАК Цвет,
+	вт_Автомобили.ДатаВыбытия КАК ДатаВыбытия,
+	вт_Автомобили.ДатаВводаВЭксплуатацию КАК ДатаВводаВЭксплуатацию,
+	вт_Автомобили.VIN КАК VIN,
+	вт_Автомобили.НомерГаражный КАК НомерГаражный,
+	вт_Автомобили.ТипКПП КАК ТипКПП,
+	вт_Автомобили.Автомобиль КАК Автомобиль,
+	вт_Автомобили.ВидАренды КАК ВидАренды,
+	вт_Автомобили.КарточкаАктива КАК КарточкаАктива,
+	вт_Характеристики.Пробег КАК Пробег,
+	вт_Характеристики.ГосНомер КАК ГосНомер,
+	вт_Характеристики.Хозяин КАК Хозяин,
+	вт_Характеристики.ПТС КАК ПТС,
+	вт_Характеристики.СвидетельствоОРегистрацииТС КАК СвидетельствоОРегистрацииТС,
+	ВЫБОР
+	КОГДА вт_Автомобили.МежсервисныйПробегТО &lt;&gt; 0
+		ТОГДА ВЫБОР
+				КОГДА ((ВЫРАЗИТЬ((ВЫРАЗИТЬ(вт_Характеристики.Пробег КАК ЧИСЛО)) / вт_Автомобили.МежсервисныйПробегТО КАК ЧИСЛО(15, 0))) + 1) * вт_Автомобили.МежсервисныйПробегТО - (ВЫРАЗИТЬ(вт_Характеристики.Пробег КАК ЧИСЛО)) &lt; вт_Автомобили.МежсервисныйПробегТО
+					ТОГДА ((ВЫРАЗИТЬ((ВЫРАЗИТЬ(вт_Характеристики.Пробег КАК ЧИСЛО)) / вт_Автомобили.МежсервисныйПробегТО КАК ЧИСЛО(15, 0))) + 1) * вт_Автомобили.МежсервисныйПробегТО - (ВЫРАЗИТЬ(вт_Характеристики.Пробег КАК ЧИСЛО))
+				ИНАЧЕ (ВЫРАЗИТЬ((ВЫРАЗИТЬ(вт_Характеристики.Пробег КАК ЧИСЛО)) / вт_Автомобили.МежсервисныйПробегТО КАК ЧИСЛО(15, 0))) * вт_Автомобили.МежсервисныйПробегТО - (ВЫРАЗИТЬ(вт_Характеристики.Пробег КАК ЧИСЛО))
+			КОНЕЦ
+КОНЕЦ КАК ОстатокПробегаДоТО,
+	ПрочиеАктивыВЭксплуатацииОстатки.МОЛ КАК МОЛ,
+	вт_Автомобили.ТипДвигателя КАК ТипДвигателя,
+	вт_Автомобили.ТипКузова КАК ТипКузова,
+	вт_Автомобили.ТипПривода КАК ТипПривода,
+	ВТ_Договоры.ДоговорАренды КАК ДоговорАренды,
+	ВТ_Договоры.Состояние КАК Состояние,
+	АрендаДействующиеСоглашенияСрезПоследних.ДатаНачала КАК ДоговорДатаНачала,
+	АрендаДействующиеСоглашенияСрезПоследних.ДатаОкончания КАК ДоговорДатаОкончания,
+	АрендаДействующиеСоглашенияСрезПоследних.ДействующееСоглашение КАК ДействующееСоглашение,
+	вт_Автомобили.МежсервисныйПробегТО КАК МежсервисныйПробегТО
+ИЗ
+	вт_Автомобили КАК вт_Автомобили
+		ЛЕВОЕ СОЕДИНЕНИЕ вт_Характеристики КАК вт_Характеристики
+		ПО (вт_Автомобили.Автомобиль = вт_Характеристики.Автомобиль)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ПрочиеАктивыВЭксплуатации.Остатки КАК ПрочиеАктивыВЭксплуатацииОстатки
+		ПО (вт_Автомобили.ПодразделениеКомпании = ПрочиеАктивыВЭксплуатацииОстатки.ПодразделениеКомпании)
+			И (вт_Автомобили.КарточкаАктива = ПрочиеАктивыВЭксплуатацииОстатки.ПрочийАктив)
+			И (вт_Автомобили.Автомобиль = ПрочиеАктивыВЭксплуатацииОстатки.Автомобиль)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Договоры КАК ВТ_Договоры
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.АрендаДействующиеСоглашения.СрезПоследних(
+					,
+					ДоговорАренды В
+						(ВЫБРАТЬ
+							ВТ_Договоры.ДоговорАренды КАК ДоговорАренды
+						ИЗ
+							ВТ_Договоры КАК ВТ_Договоры)) КАК АрендаДействующиеСоглашенияСрезПоследних
+			ПО (ВТ_Договоры.ДоговорАренды = АрендаДействующиеСоглашенияСрезПоследних.ДоговорАренды)
+		ПО (вт_Автомобили.Автомобиль = ВТ_Договоры.Автомобиль)</QueryText>
+				<KeyField>Автомобиль</KeyField>
+				<KeyField>КарточкаАктива</KeyField>
+				<KeyField>ПодразделениеКомпании</KeyField>
+				<KeyField>ВидАренды</KeyField>
+				<KeyField>МОЛ</KeyField>
+				<KeyField>ДоговорАренды</KeyField>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">ПодразделениеКомпании</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>492428a2-ab73-41e2-9b74-9f45e7d04a3d</dcsset:userSettingID>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">ВидАренды</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>27bbe3b8-0a7e-4411-b1e1-db5e31c348b3</dcsset:userSettingID>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Марка</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>61709f28-5208-41d8-93be-d6b714f40e4a</dcsset:userSettingID>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Модель</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>273755b5-6d39-48dd-80ac-407c343cde03</dcsset:userSettingID>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Тарификация" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тарификация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЦеныАрендыСрезПоследних.ВидАренды КАК ВидАренды,
+	ЦеныАрендыСрезПоследних.Модель КАК Модель,
+	ЦеныАрендыСрезПоследних.ВариантКомплектации КАК ВариантКомплектации,
+	ЦеныАрендыСрезПоследних.Минута КАК Минута,
+	ЦеныАрендыСрезПоследних.Час КАК Час,
+	ЦеныАрендыСрезПоследних.Сутки КАК Сутки,
+	ЦеныАрендыСрезПоследних.Неделя КАК Неделя,
+	ЦеныАрендыСрезПоследних.Месяц КАК Месяц,
+	ЦеныАрендыСрезПоследних.Квартал КАК Квартал,
+	ЦеныАрендыСрезПоследних.Год КАК Год,
+	ЦеныАрендыСрезПоследних.Депозит КАК Депозит
+ИЗ
+	РегистрСведений.ЦеныАренды.СрезПоследних(
+			&amp;Период,
+			Модель = &amp;Модель
+				И ВариантКомплектации = &amp;ВариантКомплектации
+				И ПодразделениеКомпании = &amp;ПодразделениеКомпании) КАК ЦеныАрендыСрезПоследних
+ГДЕ
+	ЦеныАрендыСрезПоследних.ВариантКомплектации &lt;&gt; ЗНАЧЕНИЕ(Справочник.ВариантыКомплектации.ПустаяСсылка)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ЦеныАрендыСрезПоследних.ВидАренды,
+	ЦеныАрендыСрезПоследних.Модель,
+	ЦеныАрендыСрезПоследних.ВариантКомплектации,
+	ЦеныАрендыСрезПоследних.Минута,
+	ЦеныАрендыСрезПоследних.Час,
+	ЦеныАрендыСрезПоследних.Сутки,
+	ЦеныАрендыСрезПоследних.Неделя,
+	ЦеныАрендыСрезПоследних.Месяц,
+	ЦеныАрендыСрезПоследних.Квартал,
+	ЦеныАрендыСрезПоследних.Год,
+	ЦеныАрендыСрезПоследних.Депозит
+ИЗ
+	РегистрСведений.ЦеныАренды.СрезПоследних(
+			&amp;Период,
+			Модель = &amp;Модель
+				И ВариантКомплектации = ЗНАЧЕНИЕ(Справочник.ВариантыКомплектации.ПустаяСсылка)
+				И ПодразделениеКомпании = &amp;ПодразделениеКомпании) КАК ЦеныАрендыСрезПоследних
+
+УПОРЯДОЧИТЬ ПО
+	ВидАренды,
+	Модель,
+	ВариантКомплектации</QueryText>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Неисправности" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Неисправности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>Неисправности.Автомобиль</Field>
+				<Field>Неисправности.ДатаИсправления</Field>
+				<Field>Неисправности.ИдентификаторПовреждения</Field>
+				<Field>Неисправности.Исправлено</Field>
+				<Field>Неисправности.МедиаФайл</Field>
+				<Field>Неисправности.Регистратор</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ПоврежденияАвтомобилейСрезПоследних.Документ КАК Регистратор,
+	ПоврежденияАвтомобилейСрезПоследних.Автомобиль КАК Автомобиль,
+	ПоврежденияАвтомобилейСрезПоследних.ТипПовреждения КАК ТипПовреждения,
+	ПоврежденияАвтомобилейСрезПоследних.ОписаниеПовреждения КАК Описание,
+	ПоврежденияАвтомобилейСрезПоследних.ИдентификаторПовреждения КАК ИдентификаторПовреждения,
+	ПоврежденияАвтомобилейСрезПоследних.НомерПовреждения КАК НомерПовреждения,
+	ПоврежденияАвтомобилейСрезПоследних.ПоврежденияУстранены КАК Исправлено,
+	ПоврежденияАвтомобилейСрезПоследних.ДатаУстранения КАК ДатаИсправления,
+	ПоврежденияАвтомобилейСрезПоследних.ДатаИзменения КАК ДатаИзменения,
+	ПоврежденияАвтомобилейСрезПоследних.Автор КАК Автор,
+	ПоврежденияАвтомобилейСрезПоследних.МедиаФайл КАК МедиаФайл,
+	ПоврежденияАвтомобилейСрезПоследних.ДатаУстраненияПлан КАК ДатаУстраненияПлан,
+	ПоврежденияАвтомобилейСрезПоследних.Период КАК Период
+ИЗ
+	РегистрСведений.ПоврежденияАвтомобилей.СрезПоследних(, Автомобиль &lt;&gt; ЗНАЧЕНИЕ(Справочник.Автомобили.ПустаяСсылка)) КАК ПоврежденияАвтомобилейСрезПоследних</QueryText>
+				<KeyField>Регистратор</KeyField>
+				<KeyField>ИдентификаторПовреждения</KeyField>
+				<KeyField>Автомобиль</KeyField>
+				<KeyField>ТипПовреждения</KeyField>
+				<KeyField>Описание</KeyField>
+				<KeyField>НомерПовреждения</KeyField>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Исправлено</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Страхование" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страхование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>Страхование.Ссылка</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДокументСтраховойПолис.Ссылка КАК Ссылка,
+	ДокументСтраховойПолис.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументСтраховойПолис.Номер КАК Номер,
+	ДокументСтраховойПолис.Дата КАК Дата,
+	ДокументСтраховойПолис.Проведен КАК Проведен,
+	ДокументСтраховойПолис.Автомобиль КАК Автомобиль,
+	ДокументСтраховойПолис.ВидДействияДоговора КАК ВидДействияДоговора,
+	ДокументСтраховойПолис.ВидСтрахования КАК ВидСтрахования,
+	ДокументСтраховойПолис.ДатаВыдачи КАК ДатаВыдачи,
+	ДокументСтраховойПолис.ДатаНачалаИспользованияТС1 КАК ДатаНачалаИспользованияТС1,
+	ДокументСтраховойПолис.ДатаНачалаИспользованияТС2 КАК ДатаНачалаИспользованияТС2,
+	ДокументСтраховойПолис.ДатаНачалаИспользованияТС3 КАК ДатаНачалаИспользованияТС3,
+	ДокументСтраховойПолис.ДатаНачалаСтрахования КАК ДатаНачалаСтрахования,
+	ДокументСтраховойПолис.ДатаОкончанияИспользованияТС1 КАК ДатаОкончанияИспользованияТС1,
+	ДокументСтраховойПолис.ДатаОкончанияИспользованияТС2 КАК ДатаОкончанияИспользованияТС2,
+	ДокументСтраховойПолис.ДатаОкончанияИспользованияТС3 КАК ДатаОкончанияИспользованияТС3,
+	ДокументСтраховойПолис.ДатаОкончанияСтрахования КАК ДатаОкончанияСтрахования,
+	ДокументСтраховойПолис.ДокументОснование КАК ДокументОснование,
+	ДокументСтраховойПолис.ДолжностьСтраховщика КАК ДолжностьСтраховщика,
+	ДокументСтраховойПолис.НомерКвитанции КАК НомерКвитанции,
+	ДокументСтраховойПолис.НомерПолиса КАК НомерПолиса,
+	ДокументСтраховойПолис.ОплатаКвитанцииКартой КАК ОплатаКвитанцииКартой,
+	ДокументСтраховойПолис.ПрограммаСтрахования КАК ПрограммаСтрахования,
+	ДокументСтраховойПолис.СерияКвитанции КАК СерияКвитанции,
+	ДокументСтраховойПолис.СерияПолиса КАК СерияПолиса,
+	ДокументСтраховойПолис.СобственникТС КАК СобственникТС,
+	ДокументСтраховойПолис.СрокСтрахования КАК СрокСтрахования,
+	ДокументСтраховойПолис.Страхователь КАК Страхователь,
+	ДокументСтраховойПолис.Страховщик КАК Страховщик,
+	ДокументСтраховойПолис.СуммаПремии КАК СуммаПремии,
+	ДокументСтраховойПолис.ТранспортноеСредство КАК ТранспортноеСредство,
+	ДокументСтраховойПолис.Автор КАК Автор,
+	ДокументСтраховойПолис.ВалютаДокумента КАК ВалютаДокумента,
+	ДокументСтраховойПолис.ДатаОперации КАК ДатаОперации,
+	ДокументСтраховойПолис.ДатаСоздания КАК ДатаСоздания,
+	ДокументСтраховойПолис.Комментарий КАК Комментарий,
+	ДокументСтраховойПолис.КурсВалютыУпр КАК КурсВалютыУпр,
+	ДокументСтраховойПолис.КурсДокумента КАК КурсДокумента,
+	ДокументСтраховойПолис.Организация КАК Организация,
+	ДокументСтраховойПолис.ПодразделениеКомпании КАК ПодразделениеКомпании,
+	ДокументСтраховойПолис.Проект КАК Проект,
+	ДокументСтраховойПолис.ХозОперация КАК ХозОперация,
+	ДокументСтраховойПолис.ЛицаДопущенныеКУправлениюТС.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		ЛицоДопущенное КАК ЛицоДопущенное,
+		ВодительскоеУдостоверение КАК ВодительскоеУдостоверение,
+		ГодНачалаВодительскогоСтажа КАК ГодНачалаВодительскогоСтажа,
+		ВодительскийСтаж КАК ВодительскийСтаж
+	) КАК ЛицаДопущенныеКУправлениюТС,
+	ДокументСтраховойПолис.МоментВремени КАК МоментВремени,
+	ДокументСтраховойПолис.ДатаНачалаСтрахования &lt; &amp;Период
+		И ДокументСтраховойПолис.ДатаОкончанияСтрахования &gt; &amp;Период КАК Текущий
+ИЗ
+	Документ.СтраховойПолис КАК ДокументСтраховойПолис
+ГДЕ
+	ДокументСтраховойПолис.Автомобиль &lt;&gt; ЗНАЧЕНИЕ(Справочник.Автомобили.ПустаяСсылка)</QueryText>
+				<MainTable>Document.СтраховойПолис</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Текущий</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Текущий</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:ДобавленныйРеквизитФон</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:МоиВариантыОтчетовЦвет</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>Шрифт</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Font" ref="style:TextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Ремонт" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ремонт</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>Ремонт.Документ</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗаявкаНаРемонт.Ссылка КАК Документ,
+	ЗаявкаНаРемонт.ВидРемонта КАК ВидРемонта,
+	ЗаявкаНаРемонт.ДатаНачала КАК ДатаНачала,
+	ЗаявкаНаРемонт.ДатаОкончания КАК ДатаОкончания,
+	ЗаявкаНаРемонт.Контрагент КАК Контрагент,
+	ЗаявкаНаРемонт.Состояние КАК Состояние,
+	ЗаявкаНаРемонт.ДатаНачала &lt; &amp;Период
+		И ЗаявкаНаРемонт.ДатаОкончания &gt; &amp;Период КАК Текущий
+ИЗ
+	Документ.ЗаявкаНаРемонт КАК ЗаявкаНаРемонт
+ГДЕ
+	НЕ ЗаявкаНаРемонт.ПометкаУдаления
+	И ЗаявкаНаРемонт.Автомобиль = &amp;Автомобиль
+	И ЗаявкаНаРемонт.Автомобиль &lt;&gt; ЗНАЧЕНИЕ(Справочник.Автомобили.ПустаяСсылка)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ЗаказНаряд.Ссылка,
+	ЗаказНаряд.ВидРемонта,
+	ЗаказНаряд.ДатаНачала,
+	ЗаказНаряд.ДатаОкончания,
+	ЗаказНаряд.Контрагент,
+	ЗаказНаряд.Состояние,
+	ЗаказНаряд.ДатаНачала &lt; &amp;Период
+		И ЗаказНаряд.ДатаОкончания &gt; &amp;Период
+ИЗ
+	Документ.ЗаказНаряд КАК ЗаказНаряд
+ГДЕ
+	НЕ ЗаказНаряд.ПометкаУдаления
+	И ЗаказНаряд.СводныйРемонтныйЗаказ.Автомобиль = &amp;Автомобиль
+	И ЗаказНаряд.СводныйРемонтныйЗаказ.Автомобиль &lt;&gt; ЗНАЧЕНИЕ(Справочник.Автомобили.ПустаяСсылка)</QueryText>
+				<KeyField>Документ</KeyField>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Текущий</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаНачала</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Текущий</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:ВидДняПроизводственногоКалендаряПредпраздничныйЦвет</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>Шрифт</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ХранениеШин" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Хранение шин</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~ХранениеШин.Документ</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОстаткиТоваровОрдерныйСкладОстатки.СкладКомпании КАК СкладКомпании,
+	ОстаткиТоваровОрдерныйСкладОстатки.Ячейка КАК Ячейка,
+	ОстаткиТоваровОрдерныйСкладОстатки.Номенклатура КАК Номенклатура,
+	ОстаткиТоваровОрдерныйСкладОстатки.ЗаявкаНаХранениеШин КАК ЗаявкаНаХранениеШин,
+	ОстаткиТоваровОрдерныйСкладОстатки.КоличествоОстаток КАК Количество,
+	ОстаткиТоваровОрдерныйСкладОстатки.ЗаявкаНаХранениеШин.ДатаНачала КАК ХранитьС,
+	ОстаткиТоваровОрдерныйСкладОстатки.ЗаявкаНаХранениеШин.ДатаОкончания КАК ХранитьПо,
+	ОстаткиТоваровОрдерныйСкладОстатки.ЗаявкаНаХранениеШин.ДатаНачала &lt; &amp;Период
+		И ОстаткиТоваровОрдерныйСкладОстатки.ЗаявкаНаХранениеШин.ДатаОкончания &gt; &amp;Период КАК Текущий
+ИЗ
+	РегистрНакопления.ОстаткиТоваровОрдерныйСклад.Остатки(
+			&amp;Период,
+			ЗаявкаНаХранениеШин.Автомобиль = &amp;Автомобиль
+				И ЗаявкаНаХранениеШин.Автомобиль &lt;&gt; ЗНАЧЕНИЕ(Справочник.Автомобили.ПустаяСсылка)) КАК ОстаткиТоваровОрдерныйСкладОстатки</QueryText>
+				<KeyField>ЗаявкаНаХранениеШин</KeyField>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Текущий</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ХранитьС</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Текущий</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:ДобавленныйРеквизитФон</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:МоиВариантыОтчетовЦвет</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>Шрифт</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ДоговорыАренды" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договоры аренды</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ДоговорыАренды.Документ</Field>
+				<Field>ДоговорыАренды.ЗаявкаНаАренду</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДоговорАрендыАвтомобили.Ссылка КАК Документ,
+	ДоговорАрендыАвтомобили.Ссылка.ВидАренды КАК ВидАренды,
+	ДоговорАрендыАвтомобили.Ссылка.ДатаНачала КАК ДатаНачала,
+	ДоговорАрендыАвтомобили.Ссылка.ДатаОкончания КАК ДатаОкончания,
+	ДоговорАрендыАвтомобили.Ссылка.Заказчик КАК Заказчик,
+	ВЫРАЗИТЬ(ДоговорАрендыАвтомобили.Ссылка.ДокументОснование КАК Документ.ЗаявкаНаАренду) КАК ЗаявкаНаАренду
+ПОМЕСТИТЬ вт_Договоры
+ИЗ
+	Документ.ДоговорАренды.Автомобили КАК ДоговорАрендыАвтомобили
+ГДЕ
+	НЕ ДоговорАрендыАвтомобили.Ссылка.ПометкаУдаления
+	И ДоговорАрендыАвтомобили.Автомобиль = &amp;Автомобиль
+	И ДоговорАрендыАвтомобили.Автомобиль &lt;&gt; ЗНАЧЕНИЕ(Справочник.Автомобили.ПустаяСсылка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	вт_Договоры.Документ КАК Документ,
+	вт_Договоры.ВидАренды КАК ВидАренды,
+	ЕСТЬNULL(АрендаДействующиеСоглашенияСрезПоследних.ДатаНачала, вт_Договоры.ДатаНачала) КАК ДатаНачала,
+	ЕСТЬNULL(АрендаДействующиеСоглашенияСрезПоследних.ДатаОкончания, вт_Договоры.ДатаОкончания) КАК ДатаОкончания,
+	вт_Договоры.Заказчик КАК Заказчик,
+	вт_Договоры.ЗаявкаНаАренду КАК ЗаявкаНаАренду,
+	ВЫБОР
+		КОГДА &amp;Период МЕЖДУ ЕСТЬNULL(АрендаДействующиеСоглашенияСрезПоследних.ДатаНачала, вт_Договоры.ДатаНачала) И ЕСТЬNULL(АрендаДействующиеСоглашенияСрезПоследних.ДатаОкончания, вт_Договоры.ДатаОкончания)
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК Текущий,
+	АрендаДействующиеСоглашенияСрезПоследних.ДействующееСоглашение КАК ДействующееСоглашение
+ИЗ
+	вт_Договоры КАК вт_Договоры
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.АрендаДействующиеСоглашения.СрезПоследних(
+				&amp;Период,
+				ДоговорАренды В
+					(ВЫБРАТЬ
+						вт_Договоры.Документ КАК Документ
+					ИЗ
+						вт_Договоры КАК вт_Договоры)) КАК АрендаДействующиеСоглашенияСрезПоследних
+		ПО вт_Договоры.Документ = АрендаДействующиеСоглашенияСрезПоследних.ДоговорАренды</QueryText>
+				<KeyField>Документ</KeyField>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Текущий</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаНачала</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Текущий</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:ДобавленныйРеквизитФон</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:МоиВариантыОтчетовЦвет</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:use>false</dcscor:use>
+									<dcscor:parameter>Шрифт</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОборудованиеАвтомобиля" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оборудование автомобиля</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ОборудованиеАвтомобиля.КоличествоОстаток</Field>
+				<Field>ОборудованиеАвтомобиля.Номенклатура</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КомплектацияАвтомобилей.Номенклатура КАК Номенклатура,
+	КомплектацияАвтомобилей.Номенклатура.Наименование КАК НоменклатураНаименование,
+	СУММА(КомплектацияАвтомобилей.КоличествоОстаток) КАК КоличествоОстаток
+ИЗ
+	РегистрНакопления.КомплектацияАвтомобилей.Остатки(
+			,
+			Автомобиль = &amp;Автомобиль
+				И Автомобиль &lt;&gt; ЗНАЧЕНИЕ(Справочник.Автомобили.ПустаяСсылка)) КАК КомплектацияАвтомобилей
+
+СГРУППИРОВАТЬ ПО
+	КомплектацияАвтомобилей.Автомобиль,
+	КомплектацияАвтомобилей.Номенклатура,
+	КомплектацияАвтомобилей.Номенклатура.Наименование
+
+ИМЕЮЩИЕ
+	СУММА(КомплектацияАвтомобилей.КоличествоОстаток) &lt;&gt; 0</QueryText>
+				<MainTable>AccumulationRegister.КомплектацияАвтомобилей.Balance</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОпцииАвтомобиля" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Опции автомобиля</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ОпцииАвтомобиля.Количество</Field>
+				<Field>ОпцииАвтомобиля.Опция</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОпцииАвтомобилей.Опция КАК Опция,
+	ОпцииАвтомобилей.Количество КАК Количество
+ИЗ
+	РегистрСведений.ОпцииАвтомобилей КАК ОпцииАвтомобилей
+ГДЕ
+	ОпцииАвтомобилей.Автомобиль = &amp;Автомобиль
+	И ОпцииАвтомобилей.ЗаписьАктивна = ИСТИНА
+	И ОпцииАвтомобилей.Автомобиль &lt;&gt; ЗНАЧЕНИЕ(Справочник.Автомобили.ПустаяСсылка)</QueryText>
+				<MainTable>InformationRegister.ОпцииАвтомобилей</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ИспользоватьПодменюКнопок" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать подменю кнопок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ИспользоватьПодменюКнопок</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ОбнаруженнаяНеисправностьАдресКартинки" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обнаруженная неисправность адрес картинки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущаяКартинка" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая картинка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДефектовочнаяВедомостьПрисоединенныеФайлы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Водители" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Водители</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ДоговорАрендыВодители.Водитель КАК Водитель
+ИЗ
+	Документ.ДоговорАренды.Водители КАК ДоговорАрендыВодители
+ГДЕ
+	ДоговорАрендыВодители.Ссылка = &amp;ДействующееСоглашение
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ИзменениеДоговораАрендыВодители.Водитель
+ИЗ
+	Документ.ИзменениеДоговораАренды.Водители КАК ИзменениеДоговораАрендыВодители
+ГДЕ
+	ИзменениеДоговораАрендыВодители.Ссылка = &amp;ДействующееСоглашение</QueryText>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВывестиИэЭксплуатации" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Из эксплуатации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вывести иэ эксплуатации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.AppearanceCross</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВывестиИэЭксплуатации</Action>
+			<Representation>TextPicture</Representation>
+			<AssociatedTableElementId xsi:type="xs:string">Список</AssociatedTableElementId>
+		</Command>
+		<Command name="Переместить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переместить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переместить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.AppearanceRightArrowYellow</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Переместить</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="НеисправностиОтметитьИсправление" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить исправление</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить исправление повреждения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗавершитьРедактированиеМакета</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НеисправностиОтметитьИсправление</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="НеисправностиВвестиЗаявкуНаРемонт" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввести заявку на ремонт</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввести заявку на ремонт повреждения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаявкаНаРемонт</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НеисправностиВвестиЗаявкуНаРемонт</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ВвестиЗаявкуНаРемонт" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявка на ремонт</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввести заявку на ремонт</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВвестиЗаявкуНаРемонт</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ТарификацияИзменитьТарификацию" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить тарификацию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тарификация изменить тарификацию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СкидкаНаценка</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ТарификацияИзменитьТарификацию</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ВидимостьИнформация" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать/скрыть панель информации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Видимость информация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.РасширеннаяИнформация</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВидимостьИнформация</Action>
+		</Command>
+		<Command name="ОткрытьВПланировщике" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть в планировщике</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть в планировщике</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Событие</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьВПланировщике</Action>
+		</Command>
+		<Command name="ВвестиВЭксплуатацию" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В эксплуатацию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввести в эксплуатацию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВвестиВЭксплуатацию</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ОтобразитьФильтры" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фильтры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отобразить фильтры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionFilter</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтобразитьФильтры</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ОтобразитьИнформацию" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отобразить информацию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.РасширеннаяИнформация</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтобразитьИнформацию</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ВвестиДоговор" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор аренды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввести договор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВвестиДоговор</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ВвестиЗаявку" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявка на аренду</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввести заявку на аренду</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВвестиЗаявку</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="РазвернутьПодменюКнопок" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть подменю кнопок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть подменю кнопок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SpreadsheetShowGroups</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РазвернутьПодменюКнопок</Action>
+		</Command>
+		<Command name="ТекущееВремя" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущее время</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущее время</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ТекущееВремя</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ПомощникВводаДокументовАренды" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввести документы аренды (помощник)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Помощник ввода документов аренды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПомощникВводаДокументовАренды</Action>
+		</Command>
+	</Commands>
+</Form>

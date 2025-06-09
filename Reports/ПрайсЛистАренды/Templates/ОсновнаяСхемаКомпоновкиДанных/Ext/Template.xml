@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Месяц</dataPath>
+			<field>Месяц</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеКомпании</dataPath>
+			<field>ПодразделениеКомпании</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидАренды</dataPath>
+			<field>ВидАренды</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВариантКомплектации</dataPath>
+			<field>ВариантКомплектации</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Модель</dataPath>
+			<field>Модель</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Минута</dataPath>
+			<field>Минута</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Час</dataPath>
+			<field>Час</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Неделя</dataPath>
+			<field>Неделя</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Квартал</dataPath>
+			<field>Квартал</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Год</dataPath>
+			<field>Год</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Депозит</dataPath>
+			<field>Депозит</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>День</dataPath>
+			<field>День</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сутки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ЦеныАрендыСрезПоследних.ПодразделениеКомпании КАК ПодразделениеКомпании,
+	ЦеныАрендыСрезПоследних.ВидАренды КАК ВидАренды,
+	ЦеныАрендыСрезПоследних.Модель КАК Модель,
+	ЦеныАрендыСрезПоследних.ВариантКомплектации КАК ВариантКомплектации,
+	ЦеныАрендыСрезПоследних.Минута КАК Минута,
+	ЦеныАрендыСрезПоследних.Час КАК Час,
+	ЦеныАрендыСрезПоследних.Сутки КАК День,
+	ЦеныАрендыСрезПоследних.Неделя КАК Неделя,
+	ЦеныАрендыСрезПоследних.Месяц КАК Месяц,
+	ЦеныАрендыСрезПоследних.Квартал КАК Квартал,
+	ЦеныАрендыСрезПоследних.Год КАК Год,
+	ЦеныАрендыСрезПоследних.Депозит КАК Депозит
+{ВЫБРАТЬ
+	ПодразделениеКомпании.*,
+	ВидАренды.*,
+	Модель.*,
+	ВариантКомплектации.*,
+	Минута,
+	Час,
+	День,
+	Неделя,
+	Месяц,
+	Квартал,
+	Год,
+	Депозит}
+ИЗ
+	РегистрСведений.ЦеныАренды.СрезПоследних(&amp;Период, ) КАК ЦеныАрендыСрезПоследних
+{ГДЕ
+	ЦеныАрендыСрезПоследних.ПодразделениеКомпании.*,
+	ЦеныАрендыСрезПоследних.ВидАренды.*,
+	ЦеныАрендыСрезПоследних.Модель.*,
+	ЦеныАрендыСрезПоследних.ВариантКомплектации.*,
+	ЦеныАрендыСрезПоследних.Минута,
+	ЦеныАрендыСрезПоследних.Час,
+	ЦеныАрендыСрезПоследних.Неделя,
+	ЦеныАрендыСрезПоследних.Месяц,
+	ЦеныАрендыСрезПоследних.Квартал,
+	ЦеныАрендыСрезПоследних.Год,
+	ЦеныАрендыСрезПоследних.Депозит,
+	ЦеныАрендыСрезПоследних.Сутки КАК День}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>Год</dataPath>
+		<expression>Максимум(Год)</expression>
+		<group>ВариантКомплектации</group>
+		<group>Модель</group>
+	</totalField>
+	<totalField>
+		<dataPath>Депозит</dataPath>
+		<expression>Максимум(Депозит)</expression>
+		<group>ВариантКомплектации</group>
+		<group>Модель</group>
+	</totalField>
+	<totalField>
+		<dataPath>Квартал</dataPath>
+		<expression>Максимум(Квартал)</expression>
+		<group>ВариантКомплектации</group>
+		<group>Модель</group>
+	</totalField>
+	<totalField>
+		<dataPath>Месяц</dataPath>
+		<expression>Максимум(Месяц)</expression>
+		<group>ВариантКомплектации</group>
+		<group>Модель</group>
+	</totalField>
+	<totalField>
+		<dataPath>Минута</dataPath>
+		<expression>Максимум(Минута)</expression>
+		<group>ВариантКомплектации</group>
+		<group>Модель</group>
+	</totalField>
+	<totalField>
+		<dataPath>Неделя</dataPath>
+		<expression>Максимум(Неделя)</expression>
+		<group>ВариантКомплектации</group>
+		<group>Модель</group>
+	</totalField>
+	<totalField>
+		<dataPath>Час</dataPath>
+		<expression>Максимум(Час)</expression>
+		<group>ВариантКомплектации</group>
+		<group>Модель</group>
+	</totalField>
+	<totalField>
+		<dataPath>День</dataPath>
+		<expression>Максимум(День)</expression>
+		<group>ВариантКомплектации</group>
+		<group>Модель</group>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Прайс-лист аренды</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Минута</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Час</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>День</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Неделя</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Месяц</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Квартал</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Год</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Депозит</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ПодразделениеКомпании</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидАренды</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПодразделениеКомпании</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ВидАренды</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>Модель</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+							<dcsset:item>
+								<dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>ВариантКомплектации</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+								</dcsset:groupItems>
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+							</dcsset:item>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

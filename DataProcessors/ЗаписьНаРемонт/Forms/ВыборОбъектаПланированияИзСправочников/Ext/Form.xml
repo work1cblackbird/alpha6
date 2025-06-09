@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Добавление нового объекта планирования</v8:content>
+		</v8:item>
+	</Title>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаПропуститьВыбор" id="75">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПропуститьВыбор</CommandName>
+				<ExtendedTooltip name="ФормаПропуститьВыборРасширеннаяПодсказка" id="76"/>
+			</Button>
+			<Button name="ФормаДалее" id="77">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Далее</CommandName>
+				<ExtendedTooltip name="ФормаДалееРасширеннаяПодсказка" id="78"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Страницы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Page name="СтраницаАвтоработы" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автоработы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница автоработы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаАвтоработыРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<LabelDecoration name="ЗаголовокАвторабот" id="82">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Выбор автоработы&lt;/&gt;&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ЗаголовокАвтоработКонтекстноеМеню" id="83"/>
+							<ExtendedTooltip name="ЗаголовокАвтоработРасширеннаяПодсказка" id="84"/>
+						</LabelDecoration>
+						<LabelDecoration name="ЗаголовокАвтоработПодробный" id="79">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выбранная авторабота будет запланирована на графике и добавлена в документ.
+&lt;fontsize 10&gt;Табличная часть в которую бедет дабавлена авторабота будет определена автоматически по настройкам автоработы.&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ЗаголовокАвтоработПодробныйКонтекстноеМеню" id="80"/>
+							<ExtendedTooltip name="ЗаголовокАвтоработПодробныйРасширеннаяПодсказка" id="81"/>
+						</LabelDecoration>
+						<Button name="УбратьПодробнуюИнформациюАвтоработы" id="85">
+							<Type>Hyperlink</Type>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<CommandName>Form.Command.УбратьПодробнуюИнформацию</CommandName>
+							<ExtendedTooltip name="УбратьПодробнуюИнформациюАвтоработыРасширеннаяПодсказка" id="86"/>
+						</Button>
+						<Table name="Автоработы" id="5">
+							<ReadOnly>true</ReadOnly>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Автоработы</DataPath>
+							<RowPictureDataPath>Автоработы.DefaultPicture</RowPictureDataPath>
+							<CommandSet>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Create</ExcludedCommand>
+								<ExcludedCommand>CreateFolder</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+								<ExcludedCommand>LevelDown</ExcludedCommand>
+								<ExcludedCommand>LevelUp</ExcludedCommand>
+								<ExcludedCommand>ListSettings</ExcludedCommand>
+								<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+								<ExcludedCommand>MoveItem</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+								<ExcludedCommand>SearchHistory</ExcludedCommand>
+								<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>CommandBar</SearchStringLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="АвтоработыКонтекстноеМеню" id="6"/>
+							<AutoCommandBar name="АвтоработыКоманднаяПанель" id="7">
+								<ChildItems>
+									<Popup name="АвтоработыРежимПросмотра" id="101">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Автоработы режим просмотра</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Автоработы режим просмотра</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Picture>
+											<xr:Ref>StdPicture.ListViewMode</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<Representation>Picture</Representation>
+										<ExtendedTooltip name="АвтоработыРежимПросмотраРасширеннаяПодсказка" id="102"/>
+										<ChildItems>
+											<Button name="АвтоработыСписок" id="95">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.Автоработы.StandardCommand.List</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="АвтоработыСписокРасширеннаяПодсказка" id="96"/>
+											</Button>
+											<Button name="АвтоработыИерархическийСписок" id="97">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.Автоработы.StandardCommand.HierarchicalList</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="АвтоработыИерархическийСписокРасширеннаяПодсказка" id="98"/>
+											</Button>
+											<Button name="АвтоработыДерево" id="99">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.Автоработы.StandardCommand.Tree</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="АвтоработыДеревоРасширеннаяПодсказка" id="100"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<Button name="АвтоработыОбновить" id="103">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.Автоработы.StandardCommand.Refresh</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="АвтоработыОбновитьРасширеннаяПодсказка" id="104"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="АвтоработыРасширеннаяПодсказка" id="8"/>
+							<SearchStringAddition name="АвтоработыСтрокаПоиска" id="9">
+								<AdditionSource>
+									<Item>Автоработы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="АвтоработыСтрокаПоискаКонтекстноеМеню" id="10"/>
+								<ExtendedTooltip name="АвтоработыСтрокаПоискаРасширеннаяПодсказка" id="11"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="АвтоработыСостояниеПросмотра" id="12">
+								<AdditionSource>
+									<Item>Автоработы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="АвтоработыСостояниеПросмотраКонтекстноеМеню" id="13"/>
+								<ExtendedTooltip name="АвтоработыСостояниеПросмотраРасширеннаяПодсказка" id="14"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="АвтоработыУправлениеПоиском" id="15">
+								<AdditionSource>
+									<Item>Автоработы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="АвтоработыУправлениеПоискомКонтекстноеМеню" id="16"/>
+								<ExtendedTooltip name="АвтоработыУправлениеПоискомРасширеннаяПодсказка" id="17"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">АвтоработыВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="АвтоработыНаименование" id="18">
+									<DataPath>Автоработы.Наименование</DataPath>
+									<ContextMenu name="АвтоработыНаименованиеКонтекстноеМеню" id="19"/>
+									<ExtendedTooltip name="АвтоработыНаименованиеРасширеннаяПодсказка" id="20"/>
+								</LabelField>
+								<LabelField name="АвтоработыНаименованиеПолное" id="27">
+									<DataPath>Автоработы.НаименованиеПолное</DataPath>
+									<ContextMenu name="АвтоработыНаименованиеПолноеКонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="АвтоработыНаименованиеПолноеРасширеннаяПодсказка" id="29"/>
+								</LabelField>
+								<LabelField name="АвтоработыАртикул" id="24">
+									<DataPath>Автоработы.Артикул</DataPath>
+									<ContextMenu name="АвтоработыАртикулКонтекстноеМеню" id="25"/>
+									<ExtendedTooltip name="АвтоработыАртикулРасширеннаяПодсказка" id="26"/>
+								</LabelField>
+								<LabelField name="АвтоработыВремяВыполнения" id="33">
+									<DataPath>Автоработы.ВремяВыполнения</DataPath>
+									<ContextMenu name="АвтоработыВремяВыполненияКонтекстноеМеню" id="34"/>
+									<ExtendedTooltip name="АвтоработыВремяВыполненияРасширеннаяПодсказка" id="35"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПричиныОбращения" id="36">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Причины обращения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница причины обращения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаПричиныОбращенияРасширеннаяПодсказка" id="37"/>
+					<ChildItems>
+						<LabelDecoration name="ЗаголовокПричинОбращения" id="87">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;b&gt;&lt;fontsize 12&gt;Выбор причины обращения&lt;/&gt;&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ЗаголовокПричинОбращенияКонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="ЗаголовокПричинОбращенияРасширеннаяПодсказка" id="89"/>
+						</LabelDecoration>
+						<LabelDecoration name="ЗаголовокПричинОбращенияПодробный" id="90">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;colorstyle 0:66f7737d-371d-4496-807e-0449ef60711c&gt;Если на предыдущем шаге была выбранна работа, то производится выбор причины обращения в которую нужно поместить указанную работу.
+Если шаг выбора работы был пропущен производится выбор причины обращения для планирования на графике.&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ЗаголовокПричинОбращенияПодробныйКонтекстноеМеню" id="91"/>
+							<ExtendedTooltip name="ЗаголовокПричинОбращенияПодробныйРасширеннаяПодсказка" id="92"/>
+						</LabelDecoration>
+						<Button name="УбратьПодробнуюИнформациюПричиныОбращения" id="93">
+							<Type>Hyperlink</Type>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<CommandName>Form.Command.УбратьПодробнуюИнформацию</CommandName>
+							<ExtendedTooltip name="УбратьПодробнуюИнформациюПричиныОбращенияРасширеннаяПодсказка" id="94"/>
+						</Button>
+						<Table name="ПричиныОбращения" id="38">
+							<ReadOnly>true</ReadOnly>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ПричиныОбращения</DataPath>
+							<RowPictureDataPath>ПричиныОбращения.DefaultPicture</RowPictureDataPath>
+							<CommandSet>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Create</ExcludedCommand>
+								<ExcludedCommand>CreateFolder</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+								<ExcludedCommand>LevelDown</ExcludedCommand>
+								<ExcludedCommand>LevelUp</ExcludedCommand>
+								<ExcludedCommand>ListSettings</ExcludedCommand>
+								<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+								<ExcludedCommand>MoveItem</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+								<ExcludedCommand>SearchHistory</ExcludedCommand>
+								<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>CommandBar</SearchStringLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ПричиныОбращенияКонтекстноеМеню" id="39"/>
+							<AutoCommandBar name="ПричиныОбращенияКоманднаяПанель" id="40">
+								<ChildItems>
+									<Popup name="ПричиныОбращенияРежимПросмотра" id="105">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Причины обращения режим просмотра</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Причины обращения режим просмотра</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Picture>
+											<xr:Ref>StdPicture.ListViewMode</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<Representation>Picture</Representation>
+										<ExtendedTooltip name="ПричиныОбращенияРежимПросмотраРасширеннаяПодсказка" id="106"/>
+										<ChildItems>
+											<Button name="ПричиныОбращенияСписок" id="107">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ПричиныОбращения.StandardCommand.List</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ПричиныОбращенияСписокРасширеннаяПодсказка" id="108"/>
+											</Button>
+											<Button name="ПричиныОбращенияИерархическийСписок" id="109">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ПричиныОбращения.StandardCommand.HierarchicalList</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ПричиныОбращенияИерархическийСписокРасширеннаяПодсказка" id="110"/>
+											</Button>
+											<Button name="ПричиныОбращенияДерево" id="111">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ПричиныОбращения.StandardCommand.Tree</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ПричиныОбращенияДеревоРасширеннаяПодсказка" id="112"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<Button name="ПричиныОбращенияОбновить" id="113">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.ПричиныОбращения.StandardCommand.Refresh</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="ПричиныОбращенияОбновитьРасширеннаяПодсказка" id="114"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПричиныОбращенияРасширеннаяПодсказка" id="41"/>
+							<SearchStringAddition name="ПричиныОбращенияСтрокаПоиска" id="42">
+								<AdditionSource>
+									<Item>ПричиныОбращения</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПричиныОбращенияСтрокаПоискаКонтекстноеМеню" id="43"/>
+								<ExtendedTooltip name="ПричиныОбращенияСтрокаПоискаРасширеннаяПодсказка" id="44"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПричиныОбращенияСостояниеПросмотра" id="45">
+								<AdditionSource>
+									<Item>ПричиныОбращения</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПричиныОбращенияСостояниеПросмотраКонтекстноеМеню" id="46"/>
+								<ExtendedTooltip name="ПричиныОбращенияСостояниеПросмотраРасширеннаяПодсказка" id="47"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПричиныОбращенияУправлениеПоиском" id="48">
+								<AdditionSource>
+									<Item>ПричиныОбращения</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПричиныОбращенияУправлениеПоискомКонтекстноеМеню" id="49"/>
+								<ExtendedTooltip name="ПричиныОбращенияУправлениеПоискомРасширеннаяПодсказка" id="50"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ПричиныОбращенияВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ПричиныОбращенияНаименование" id="51">
+									<DataPath>ПричиныОбращения.Наименование</DataPath>
+									<ContextMenu name="ПричиныОбращенияНаименованиеКонтекстноеМеню" id="52"/>
+									<ExtendedTooltip name="ПричиныОбращенияНаименованиеРасширеннаяПодсказка" id="53"/>
+								</LabelField>
+								<LabelField name="ПричиныОбращенияАртикул" id="60">
+									<DataPath>ПричиныОбращения.Артикул</DataPath>
+									<ContextMenu name="ПричиныОбращенияАртикулКонтекстноеМеню" id="61"/>
+									<ExtendedTooltip name="ПричиныОбращенияАртикулРасширеннаяПодсказка" id="62"/>
+								</LabelField>
+								<LabelField name="ПричиныОбращенияПричинаОбращения" id="57">
+									<DataPath>ПричиныОбращения.ПричинаОбращения</DataPath>
+									<ContextMenu name="ПричиныОбращенияПричинаОбращенияКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ПричиныОбращенияПричинаОбращенияРасширеннаяПодсказка" id="59"/>
+								</LabelField>
+								<LabelField name="ПричиныОбращенияВремяВыполнения" id="72">
+									<DataPath>ПричиныОбращения.ВремяВыполнения</DataPath>
+									<ContextMenu name="ПричиныОбращенияВремяВыполненияКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="ПричиныОбращенияВремяВыполненияРасширеннаяПодсказка" id="74"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Автоработы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автоработы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ТипыРесурсовДоступныеТипыАвторабот.ТипАвтоработы КАК ТипАвтоработы
+ПОМЕСТИТЬ ДоступныеТипыАвторабот
+ИЗ
+	Справочник.ТипыРесурсов.ДоступныеТипыАвторабот КАК ТипыРесурсовДоступныеТипыАвторабот
+ГДЕ
+	ТипыРесурсовДоступныеТипыАвторабот.Ссылка В
+			(ВЫБРАТЬ
+				Сотрудники.ТипРесурса КАК ТипРесурса
+			ИЗ
+				Справочник.Сотрудники КАК Сотрудники
+			ГДЕ
+				Сотрудники.Ссылка В (&amp;РесурсыПланирования)
+		
+			ОБЪЕДИНИТЬ ВСЕ
+		
+			ВЫБРАТЬ
+				Цеха.ТипРесурса
+			ИЗ
+				Справочник.Цеха КАК Цеха
+			ГДЕ
+				Цеха.Ссылка В (&amp;РесурсыПланирования))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СправочникАвтоработы.Ссылка КАК Ссылка,
+	СправочникАвтоработы.Родитель КАК Родитель,
+	СправочникАвтоработы.ЭтоГруппа КАК ЭтоГруппа,
+	СправочникАвтоработы.ПометкаУдаления КАК ПометкаУдаления,
+	СправочникАвтоработы.Код КАК Код,
+	СправочникАвтоработы.Наименование КАК Наименование,
+	СправочникАвтоработы.Артикул КАК Артикул,
+	СправочникАвтоработы.НаименованиеПолное КАК НаименованиеПолное,
+	СправочникАвтоработы.Номенклатура КАК Номенклатура,
+	СправочникАвтоработы.ВремяВыполнения КАК ВремяВыполнения,
+	СправочникАвтоработы.ЭтоОкраска КАК ЭтоОкраска,
+	СправочникАвтоработы.ВидИспользования КАК ВидИспользования,
+	СправочникАвтоработы.Тип КАК Тип,
+	СправочникАвтоработы.ЭтоДополнительноеПредложение КАК ЭтоДополнительноеПредложение,
+	СправочникАвтоработы.ПолноеОписание КАК ПолноеОписание,
+	СправочникАвтоработы.ЦеноваяГруппа КАК ЦеноваяГруппа,
+	СправочникАвтоработы.Комментарий КАК Комментарий
+ИЗ
+	Справочник.Автоработы КАК СправочникАвтоработы
+ГДЕ
+	СправочникАвтоработы.Тип В
+			(ВЫБРАТЬ
+				ДоступныеТипыАвторабот.ТипАвтоработы КАК ТипАвтоработы
+			ИЗ
+				ДоступныеТипыАвторабот КАК ДоступныеТипыАвторабот)</QueryText>
+				<MainTable>Catalog.Автоработы</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПометкаУдаления</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПричиныОбращения" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Причины обращения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ПричиныОбращения.ЕстьВДокументе</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	СправочникПричиныОбращений.Ссылка КАК Ссылка,
+	СправочникПричиныОбращений.Родитель КАК Родитель,
+	СправочникПричиныОбращений.ЭтоГруппа КАК ЭтоГруппа,
+	СправочникПричиныОбращений.ПометкаУдаления КАК ПометкаУдаления,
+	СправочникПричиныОбращений.Код КАК Код,
+	СправочникПричиныОбращений.Наименование КАК Наименование,
+	СправочникПричиныОбращений.ПричинаОбращения КАК ПричинаОбращения,
+	СправочникПричиныОбращений.Артикул КАК Артикул,
+	СправочникПричиныОбращений.ТипПричиныОбращения КАК ТипПричиныОбращения,
+	СправочникПричиныОбращений.ВидРемонта КАК ВидРемонта,
+	СправочникПричиныОбращений.ЗапретитьВыбор КАК ЗапретитьВыбор,
+	СправочникПричиныОбращений.ВремяВыполнения КАК ВремяВыполнения,
+	СправочникПричиныОбращений.ТипАвторабот КАК ТипАвторабот,
+	СправочникПричиныОбращений.Комментарий КАК Комментарий,
+	ВЫБОР
+		КОГДА СправочникПричиныОбращений.Ссылка В (&amp;ПричиныОбращенияВДокументе)
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК ЕстьВДокументе
+ИЗ
+	Справочник.ПричиныОбращений КАК СправочникПричиныОбращений</QueryText>
+				<MainTable>Catalog.ПричиныОбращений</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ЗапретитьВыбор</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПометкаУдаления</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ЕстьВДокументе</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ВыбраннаяАвторабота" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбранная авторабота</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Автоработы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыбраннаяПричинаОбращения" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбранная причина обращения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПричиныОбращений</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СкрытьПодсказкуАвторабот" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрыть подсказку авторабот</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>СкрытьПодсказкуАвторабот</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="СкрытьПодсказкуПричинОбращения" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрыть подсказку причин обращения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>СкрытьПодсказкуПричинОбращения</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПропуститьВыбор" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пропустить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пропустить выбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПропуститьВыбор</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Далее" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее &gt;&gt;</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Далее</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УбратьПодробнуюИнформацию" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Больше не показывать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Больше не показывать подробную подсказку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УбратьПодробнуюИнформацию</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

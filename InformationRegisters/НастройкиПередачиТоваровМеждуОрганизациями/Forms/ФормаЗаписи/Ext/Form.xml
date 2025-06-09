@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<CommandSet>
+		<ExcludedCommand>Delete</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="РазрешитьРедактированияРеквизитов" id="65">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.РазрешитьРедактированияРеквизитов</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="РазрешитьРедактированияРеквизитовРасширеннаяПодсказка" id="66"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="АктивностьИНачалоДествия" id="131">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активность и начало дествия</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активность и начало дествия</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<United>false</United>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="АктивностьИНачалоДествияРасширеннаяПодсказка" id="132"/>
+			<ChildItems>
+				<RadioButtonField name="СпособПередачиТоваров" id="91">
+					<DataPath>Запись.СпособПередачиТоваров</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Передача</v8:content>
+						</v8:item>
+					</Title>
+					<RadioButtonType>Tumbler</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Через внутреннюю продажу</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СпособыПередачиТоваров.EnumValue.Продажа</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Не выполняется</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СпособыПередачиТоваров.EnumValue.НеПередается</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="СпособПередачиТоваровКонтекстноеМеню" id="92"/>
+					<ExtendedTooltip name="СпособПередачиТоваровРасширеннаяПодсказка" id="93"/>
+					<Events>
+						<Event name="OnChange">СпособПередачиТоваровПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<InputField name="Период" id="62">
+					<DataPath>Запись.Period</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действует с</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата начиная с каторгой начинает действовать данная настройка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="64"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ВладелецИПродавец" id="133">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец и продавец</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец и продавец</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<United>false</United>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ВладелецИПродавецРасширеннаяПодсказка" id="134"/>
+			<ChildItems>
+				<UsualGroup name="Владелец" id="135">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец товара</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<United>false</United>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="136"/>
+					<ChildItems>
+						<InputField name="ОрганизацияОтправитель" id="71">
+							<DataPath>Запись.ОрганизацияОтправитель</DataPath>
+							<MaxWidth>20</MaxWidth>
+							<ContextMenu name="ОрганизацияОтправительКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="ОрганизацияОтправительРасширеннаяПодсказка" id="73"/>
+							<Events>
+								<Event name="OnChange">ОрганизацияОтправительПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="КонтрагентПоставки" id="50">
+							<DataPath>Запись.КонтрагентПоставки</DataPath>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="КонтрагентПоставкиКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="КонтрагентПоставкиРасширеннаяПодсказка" id="52"/>
+						</InputField>
+						<InputField name="ДоговорВзаиморасчетовПоставки" id="53">
+							<DataPath>Запись.ДоговорВзаиморасчетовПоставки</DataPath>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ДоговорВзаиморасчетовПоставкиКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ДоговорВзаиморасчетовПоставкиРасширеннаяПодсказка" id="55"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Продавец" id="137">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Продавец товара</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Продавец</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<United>false</United>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="ПродавецРасширеннаяПодсказка" id="138"/>
+					<ChildItems>
+						<InputField name="ОрганизацияПолучатель" id="79">
+							<DataPath>Запись.ОрганизацияПолучатель</DataPath>
+							<ContextMenu name="ОрганизацияПолучательКонтекстноеМеню" id="80"/>
+							<ExtendedTooltip name="ОрганизацияПолучательРасширеннаяПодсказка" id="81"/>
+							<Events>
+								<Event name="OnChange">ОрганизацияПолучательПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Контрагент" id="56">
+							<DataPath>Запись.Контрагент</DataPath>
+							<MaxWidth>20</MaxWidth>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="КонтрагентКонтекстноеМеню" id="57"/>
+							<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="58"/>
+						</InputField>
+						<InputField name="ДоговорВзаиморасчетов" id="59">
+							<DataPath>Запись.ДоговорВзаиморасчетов</DataPath>
+							<MaxWidth>20</MaxWidth>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ДоговорВзаиморасчетовКонтекстноеМеню" id="60"/>
+							<ExtendedTooltip name="ДоговорВзаиморасчетовРасширеннаяПодсказка" id="61"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="РеквизитыДокументаПередачи" id="139">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизиты документа передачи</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<United>false</United>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="РеквизитыДокументаПередачиРасширеннаяПодсказка" id="140"/>
+			<ChildItems>
+				<UsualGroup name="РеквизитыДокументаПередачиЛево" id="141">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реквизиты документа передачи</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реквизиты документа передачи</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<United>false</United>
+					<ExtendedTooltip name="РеквизитыДокументаПередачиЛевоРасширеннаяПодсказка" id="142"/>
+					<ChildItems>
+						<InputField name="ПодразделениеКомпании" id="25">
+							<DataPath>Запись.ПодразделениеКомпании</DataPath>
+							<MaxWidth>20</MaxWidth>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ПодразделениеКомпанииКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="ПодразделениеКомпанииРасширеннаяПодсказка" id="27"/>
+						</InputField>
+						<InputField name="ТипЦен" id="10">
+							<DataPath>Запись.ТипЦен</DataPath>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ТипЦенКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ТипЦенРасширеннаяПодсказка" id="12"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="РеквизитыДокументаПередачиПраво" id="143">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реквизиты документа передачи (право)</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реквизиты документа передачи право</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="РеквизитыДокументаПередачиПравоРасширеннаяПодсказка" id="144"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияОтступ" id="113">
+							<ContextMenu name="ДекорацияОтступКонтекстноеМеню" id="114"/>
+							<ExtendedTooltip name="ДекорацияОтступРасширеннаяПодсказка" id="115"/>
+						</LabelDecoration>
+						<InputField name="Валюта" id="104">
+							<DataPath>Запись.Валюта</DataPath>
+							<HorizontalStretch>false</HorizontalStretch>
+							<OpenButton>false</OpenButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ВалютаКонтекстноеМеню" id="105"/>
+							<ExtendedTooltip name="ВалютаExtendedTooltip" id="106"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныйПараметры" id="148">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительный параметры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дополнительный параметры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ThroughAlign>Use</ThroughAlign>
+			<ExtendedTooltip name="ГруппаДополнительныйПараметрыРасширеннаяПодсказка" id="149"/>
+			<ChildItems>
+				<InputField name="ПередаватьМатериалыАвторабот" id="145">
+					<DataPath>Запись.ПередаватьМатериалыАвторабот</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Материалы авторабот</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БЛ='Списываются с организации владельца'; БИ='Передаются организации продавцу'</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ПередаватьМатериалыАвтоработКонтекстноеМеню" id="146"/>
+					<ExtendedTooltip name="ПередаватьМатериалыАвтоработРасширеннаяПодсказка" id="147"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.НастройкиПередачиТоваровМеждуОрганизациями</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="РазрешитьРедактированияРеквизитов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разрешить редактирования реквизитов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разрешить редактирования реквизитов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.РазрешитьРедактированиеРеквизитовОбъекта</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>РазрешитьРедактированияРеквизитов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

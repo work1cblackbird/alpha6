@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ОбщиеВзаиморасчеты</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИтогиВзаиморасчетов</dataPath>
+			<field>ИтогиВзаиморасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоги взаиморасчетов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаВзаиморасчетов</dataPath>
+			<field>СуммаВзаиморасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидВзаиморасчетов</dataPath>
+			<field>ВидВзаиморасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ПродажиОбороты.Покупатель,
+	ПродажиОбороты.Период,
+	ПродажиОбороты.СуммаУпрОборот КАК СуммаЗапчасти,
+	0 КАК СуммаОбслуживание,
+	0 КАК СуммаАвтомобили
+ПОМЕСТИТЬ ПродажиКлиента
+ИЗ
+	РегистрНакопления.Продажи.Обороты(
+			,
+			,
+			Год,
+			Покупатель = &amp;Контрагент
+				И НЕ Номенклатура = ЗНАЧЕНИЕ(Справочник.Номенклатура.ПустаяСсылка)
+				И НЕ Номенклатура = ЗНАЧЕНИЕ(Справочник.Номенклатура.Авторабота)) КАК ПродажиОбороты
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ПродажиОбороты.Покупатель,
+	ПродажиОбороты.Период,
+	0,
+	ПродажиОбороты.СуммаУпрОборот,
+	0
+ИЗ
+	РегистрНакопления.Продажи.Обороты(
+			,
+			,
+			Год,
+			ВЫБОР
+					КОГДА ДокументПродажи ССЫЛКА Документ.ЗаказНаряд
+						ТОГДА ДокументПродажи.СводныйРемонтныйЗаказ.Автомобиль
+					ИНАЧЕ ДокументПродажи.Автомобиль
+				КОНЕЦ В
+					(ВЫБРАТЬ
+						Автомобили.Автомобиль
+					ИЗ
+						РегистрСведений.Автомобили КАК Автомобили
+					ГДЕ
+						Автомобили.ВидЗначения = ЗНАЧЕНИЕ(Перечисление.ДополнительнаяИнформацияАвтомобилей.Хозяин)
+						И Автомобили.Значение = &amp;Контрагент)
+				И НЕ Авторабота = ЗНАЧЕНИЕ(Справочник.Автоработы.ПустаяСсылка)
+				И Авторабота ССЫЛКА Справочник.Автоработы) КАК ПродажиОбороты
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ПродажиАвтомобилейОбороты.Покупатель,
+	ПродажиАвтомобилейОбороты.Период,
+	0,
+	0,
+	ПродажиАвтомобилейОбороты.СуммаУпрОборот
+ИЗ
+	РегистрНакопления.ПродажиАвтомобилей.Обороты(, , Год, Покупатель = &amp;Контрагент) КАК ПродажиАвтомобилейОбороты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	"Общие" КАК ИтогиВзаиморасчетов,
+	ПродажиКлиента.СуммаЗапчасти КАК СуммаВзаиморасчетов,
+	"Запчасти" КАК ВидВзаиморасчетов
+{ВЫБРАТЬ
+	ИтогиВзаиморасчетов,
+	СуммаВзаиморасчетов,
+	ВидВзаиморасчетов}
+ИЗ
+	ПродажиКлиента КАК ПродажиКлиента
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Общие",
+	ПродажиКлиента.СуммаОбслуживание,
+	"Обслуживание"
+ИЗ
+	ПродажиКлиента КАК ПродажиКлиента
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Общие",
+	ПродажиКлиента.СуммаАвтомобили,
+	"Автомобили"
+ИЗ
+	ПродажиКлиента КАК ПродажиКлиента
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"За текущий год",
+	ПродажиКлиента.СуммаЗапчасти,
+	"Запчасти"
+ИЗ
+	ПродажиКлиента КАК ПродажиКлиента
+ГДЕ
+	ПродажиКлиента.Период МЕЖДУ НАЧАЛОПЕРИОДА(&amp;Период, ГОД) И КОНЕЦПЕРИОДА(&amp;Период, ГОД)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"За текущий год",
+	ПродажиКлиента.СуммаОбслуживание,
+	"Обслуживание"
+ИЗ
+	ПродажиКлиента КАК ПродажиКлиента
+ГДЕ
+	ПродажиКлиента.Период МЕЖДУ НАЧАЛОПЕРИОДА(&amp;Период, ГОД) И КОНЕЦПЕРИОДА(&amp;Период, ГОД)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"За текущий год",
+	ПродажиКлиента.СуммаАвтомобили,
+	"Автомобили"
+ИЗ
+	ПродажиКлиента КАК ПродажиКлиента</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ТекущиеВзаиморасчеты</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДнейОплаты</dataPath>
+			<field>ДнейОплаты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дней аванса/просрочки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПредоплатыДолга</dataPath>
+			<field>СуммаПредоплатыДолга</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КредитПоДоговору</dataPath>
+			<field>КредитПоДоговору</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кредит по договору сделки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СделкаВзаиморасчетов</dataPath>
+			<field>СделкаВзаиморасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сделка / Документ расчетов</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДнейНаОплатуДолга</dataPath>
+			<field>ДнейНаОплатуДолга</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дней на оплату по договору сделки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидОплатыКлиента</dataPath>
+			<field>ВидОплатыКлиента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Долг/Предоплата</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВзаиморасчетыКомпанииОстатки.Сделка КАК СделкаВзаиморасчетов,
+	ВзаиморасчетыКомпанииОстатки.СуммаУпрОстаток КАК СуммаПредоплатыДолга,
+	ВзаиморасчетыКомпанииОстатки.ДоговорВзаиморасчетов.МаксимальныйКредит КАК КредитПоДоговору,
+	ВзаиморасчетыКомпанииОстатки.ДоговорВзаиморасчетов.СрокОплатыЗадолженности КАК ДнейНаОплатуДолга,
+	РАЗНОСТЬДАТ(ВзаиморасчетыКомпанииОстатки.Сделка.Дата, &amp;Период, ДЕНЬ) КАК ДнейОплаты
+ПОМЕСТИТЬ ДолгиКлиента
+{ВЫБРАТЬ
+	СделкаВзаиморасчетов.*,
+	СуммаПредоплатыДолга,
+	КредитПоДоговору,
+	ДнейНаОплатуДолга,
+	ДнейОплаты}
+ИЗ
+	РегистрНакопления.ВзаиморасчетыКомпании.Остатки(, Контрагент = &amp;Контрагент) КАК ВзаиморасчетыКомпанииОстатки
+ГДЕ
+	ВзаиморасчетыКомпанииОстатки.СуммаУпрОстаток &gt; 0
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	РасчетыСКонтрагентамиОстатки.ДокументРасчетов,
+	РасчетыСКонтрагентамиОстатки.СуммаУпрОстаток,
+	РасчетыСКонтрагентамиОстатки.ДоговорВзаиморасчетов.МаксимальныйКредит,
+	РасчетыСКонтрагентамиОстатки.ДоговорВзаиморасчетов.СрокОплатыЗадолженности,
+	РАЗНОСТЬДАТ(РасчетыСКонтрагентамиОстатки.ДокументРасчетов.Дата, &amp;Период, ДЕНЬ)
+ИЗ
+	РегистрНакопления.РасчетыСКонтрагентами.Остатки(, Контрагент = &amp;Контрагент) КАК РасчетыСКонтрагентамиОстатки
+ГДЕ
+	РасчетыСКонтрагентамиОстатки.СуммаУпрОстаток &gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВложенныйЗапрос.СделкаВзаиморасчетов КАК СделкаВзаиморасчетов,
+	СУММА(ВложенныйЗапрос.СуммаПредоплатыДолга) КАК СуммаПредоплатыДолга,
+	ВложенныйЗапрос.КредитПоДоговору КАК КредитПоДоговору,
+	ВложенныйЗапрос.ДнейНаОплатуДолга КАК ДнейНаОплатуДолга,
+	ВложенныйЗапрос.ДнейОплаты КАК ДнейОплаты,
+	ВложенныйЗапрос.ВидОплатыКлиента КАК ВидОплатыКлиента
+{ВЫБРАТЬ
+	СделкаВзаиморасчетов.*,
+	СуммаПредоплатыДолга,
+	КредитПоДоговору,
+	ДнейНаОплатуДолга,
+	ДнейОплаты,
+	ВидОплатыКлиента}
+ИЗ
+	(ВЫБРАТЬ
+		ВзаиморасчетыКомпанииОбороты.Сделка КАК СделкаВзаиморасчетов,
+		ВзаиморасчетыКомпанииОбороты.СуммаУпрРасход КАК СуммаПредоплатыДолга,
+		0 КАК КредитПоДоговору,
+		ВзаиморасчетыКомпанииОбороты.ДоговорВзаиморасчетов.СрокОплатыЗадолженности КАК ДнейНаОплатуДолга,
+		РАЗНОСТЬДАТ(ВзаиморасчетыКомпанииОбороты.Сделка.Дата, &amp;Период, ДЕНЬ) КАК ДнейОплаты,
+		"Предоплата" КАК ВидОплатыКлиента
+	ИЗ
+		РегистрНакопления.ВзаиморасчетыКомпании.Обороты(
+				,
+				,
+				,
+				Контрагент = &amp;Контрагент
+					И Сделка В
+						(ВЫБРАТЬ
+							ДолгиКлиента.СделкаВзаиморасчетов
+						ИЗ
+							ДолгиКлиента КАК ДолгиКлиента)) КАК ВзаиморасчетыКомпанииОбороты
+	ГДЕ
+		ВзаиморасчетыКомпанииОбороты.СуммаУпрРасход &gt; 0
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ДолгиКлиента.СделкаВзаиморасчетов,
+		ДолгиКлиента.СуммаПредоплатыДолга,
+		ДолгиКлиента.КредитПоДоговору,
+		ДолгиКлиента.ДнейНаОплатуДолга,
+		ДолгиКлиента.ДнейОплаты,
+		"Долг"
+	ИЗ
+		ДолгиКлиента КАК ДолгиКлиента
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		РасчетыСКонтрагентамиОбороты.ДокументРасчетов,
+		РасчетыСКонтрагентамиОбороты.СуммаУпрРасход,
+		0,
+		РасчетыСКонтрагентамиОбороты.ДоговорВзаиморасчетов.СрокОплатыЗадолженности,
+		РАЗНОСТЬДАТ(РасчетыСКонтрагентамиОбороты.ДокументРасчетов.Дата, &amp;Период, ДЕНЬ),
+		"Предоплата"
+	ИЗ
+		РегистрНакопления.РасчетыСКонтрагентами.Обороты(
+				,
+				,
+				,
+				Контрагент = &amp;Контрагент
+					И ДокументРасчетов В
+						(ВЫБРАТЬ
+							ДолгиКлиента.СделкаВзаиморасчетов
+						ИЗ
+							ДолгиКлиента КАК ДолгиКлиента)) КАК РасчетыСКонтрагентамиОбороты
+	ГДЕ
+		РасчетыСКонтрагентамиОбороты.СуммаУпрРасход &gt; 0) КАК ВложенныйЗапрос
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.ВидОплатыКлиента,
+	ВложенныйЗапрос.СделкаВзаиморасчетов,
+	ВложенныйЗапрос.ДнейНаОплатуДолга,
+	ВложенныйЗапрос.ДнейОплаты,
+	ВложенныйЗапрос.КредитПоДоговору
+
+УПОРЯДОЧИТЬ ПО
+	ВложенныйЗапрос.СделкаВзаиморасчетов.Дата</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<parameter>
+		<name>Контрагент</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Контрагент</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Контрагенты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisYear</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ВидВзаиморасчетов</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ИтогиВзаиморасчетов</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>СуммаВзаиморасчетов</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>СделкаВзаиморасчетов</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ВидОплатыКлиента</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ДнейНаОплатуДолга</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ДнейОплаты</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>КредитПоДоговору</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>СуммаПредоплатыДолга</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

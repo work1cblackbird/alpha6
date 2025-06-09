@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ЗаписатьИЗакрыть" id="155">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="156"/>
+			</Button>
+			<Button name="Записать" id="157">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаписатьАльфаАвто</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ЗаписатьРасширеннаяПодсказка" id="158"/>
+			</Button>
+			<Button name="ФормаСкопировать" id="167">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Copy</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.СоздатьКопированиемТекущегоАльфаАвто</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаСкопироватьРасширеннаяПодсказка" id="168"/>
+			</Button>
+			<ButtonGroup name="ОсновныеДействия" id="148">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основные действия</v8:content>
+					</v8:item>
+				</Title>
+				<CommandSource>Form</CommandSource>
+				<ExtendedTooltip name="ОсновныеДействияРасширеннаяПодсказка" id="149"/>
+			</ButtonGroup>
+			<ButtonGroup name="ГлобальныеКоманды" id="150">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Глобальные команды</v8:content>
+					</v8:item>
+				</Title>
+				<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
+				<ExtendedTooltip name="ГлобальныеКомандыРасширеннаяПодсказка" id="151"/>
+			</ButtonGroup>
+			<Button name="ФормаИзменитьФорму" id="163">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="164"/>
+			</Button>
+			<Button name="ФормаСправка" id="165">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="166"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="Ссылка" id="152">
+			<DataPath>Объект.Ref</DataPath>
+			<UserVisible>
+				<xr:Common>false</xr:Common>
+			</UserVisible>
+			<ContextMenu name="СсылкаКонтекстноеМеню" id="153"/>
+			<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="154"/>
+		</LabelField>
+		<Pages name="ГруппаСтраницы" id="111">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="112"/>
+			<ChildItems>
+				<Page name="ГруппаОсновныеДанные" id="113">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основные данные</v8:content>
+						</v8:item>
+					</Title>
+					<Height>6</Height>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="ГруппаОсновныеДанныеРасширеннаяПодсказка" id="114"/>
+					<ChildItems>
+						<UsualGroup name="НаименованиеКод" id="79">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наименование и код</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="НаименованиеКодРасширеннаяПодсказка" id="80"/>
+							<ChildItems>
+								<InputField name="Наименование" id="4">
+									<DataPath>Объект.Description</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>30</MaxWidth>
+									<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+								</InputField>
+								<InputField name="Код" id="1">
+									<DataPath>Объект.Code</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="РежимЗаполнения" id="95">
+							<DataPath>Объект.РежимЗаполнения</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Все товары</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Только весовые товары</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Только штучные товары</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">2</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Только товары перечисленных типов</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">3</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Только товары входящие в группы</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">4</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="РежимЗаполненияКонтекстноеМеню" id="96"/>
+							<ExtendedTooltip name="РежимЗаполненияРасширеннаяПодсказка" id="97"/>
+							<Events>
+								<Event name="OnChange">РежимЗаполненияПриИзменении</Event>
+								<Event name="ChoiceProcessing">РежимЗаполненияОбработкаВыбора</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="АвтоматическиЗаполнятьНовымТоваром" id="98">
+							<DataPath>Объект.АвтоматическиЗаполнятьНовымТоваром</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="АвтоматическиЗаполнятьНовымТоваромКонтекстноеМеню" id="99"/>
+							<ExtendedTooltip name="АвтоматическиЗаполнятьНовымТоваромРасширеннаяПодсказка" id="100"/>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаТекущееЗаполнение" id="117">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Текущее заполнение</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаТекущееЗаполнениеРасширеннаяПодсказка" id="118"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияТекущееЗаполнение" id="119">
+									<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Текущее заполнение:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияТекущееЗаполнениеКонтекстноеМеню" id="120"/>
+									<ExtendedTooltip name="ДекорацияТекущееЗаполнениеРасширеннаяПодсказка" id="121"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияЗаполнениеКоличествоЯчеек" id="122">
+									<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполнение количества ячеек</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Текущее количество заполненных ячеек</v8:content>
+										</v8:item>
+									</ToolTip>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<ContextMenu name="ДекорацияЗаполнениеКоличествоЯчеекКонтекстноеМеню" id="123"/>
+									<ExtendedTooltip name="ДекорацияЗаполнениеКоличествоЯчеекРасширеннаяПодсказка" id="124"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаТекущееКоличествоИзмененных" id="128">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Текущее количество измененных</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаТекущееКоличествоИзмененныхРасширеннаяПодсказка" id="129"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияТекущееКоличествоИзмененных" id="130">
+									<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Текущее количество измененных:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияТекущееКоличествоИзмененныхКонтекстноеМеню" id="131"/>
+									<ExtendedTooltip name="ДекорацияТекущееКоличествоИзмененныхРасширеннаяПодсказка" id="132"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияЗаполнениеМаксКолИзмененных" id="136">
+									<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполнение количества измененных</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Текущее количество измененных ячеек</v8:content>
+										</v8:item>
+									</ToolTip>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<ContextMenu name="ДекорацияЗаполнениеМаксКолИзмененныхКонтекстноеМеню" id="137"/>
+									<ExtendedTooltip name="ДекорацияЗаполнениеМаксКолИзмененныхРасширеннаяПодсказка" id="138"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаОграниченияЗаполненияГруппы" id="115">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ограничения заполнения группы</v8:content>
+						</v8:item>
+					</Title>
+					<Height>4</Height>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="ГруппаОграниченияЗаполненияГруппыРасширеннаяПодсказка" id="116"/>
+					<ChildItems>
+						<Table name="ОграниченияЗаполненияГруппы" id="101">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.ОграниченияЗаполненияГруппы</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ограничения заполнения группы</v8:content>
+								</v8:item>
+							</Title>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ОграниченияЗаполненияГруппыКонтекстноеМеню" id="102"/>
+							<AutoCommandBar name="ОграниченияЗаполненияГруппыКоманднаяПанель" id="103"/>
+							<ExtendedTooltip name="ОграниченияЗаполненияГруппыРасширеннаяПодсказка" id="104"/>
+							<SearchStringAddition name="ОграниченияЗаполненияГруппыСтрокаПоиска" id="139">
+								<AdditionSource>
+									<Item>ОграниченияЗаполненияГруппы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОграниченияЗаполненияГруппыСтрокаПоискаКонтекстноеМеню" id="140"/>
+								<ExtendedTooltip name="ОграниченияЗаполненияГруппыСтрокаПоискаРасширеннаяПодсказка" id="141"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ОграниченияЗаполненияГруппыСостояниеПросмотра" id="142">
+								<AdditionSource>
+									<Item>ОграниченияЗаполненияГруппы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОграниченияЗаполненияГруппыСостояниеПросмотраКонтекстноеМеню" id="143"/>
+								<ExtendedTooltip name="ОграниченияЗаполненияГруппыСостояниеПросмотраРасширеннаяПодсказка" id="144"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ОграниченияЗаполненияГруппыУправлениеПоиском" id="145">
+								<AdditionSource>
+									<Item>ОграниченияЗаполненияГруппы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ОграниченияЗаполненияГруппыУправлениеПоискомКонтекстноеМеню" id="146"/>
+								<ExtendedTooltip name="ОграниченияЗаполненияГруппыУправлениеПоискомРасширеннаяПодсказка" id="147"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ОграниченияЗаполненияГруппыНомерСтроки" id="105">
+									<DataPath>Объект.ОграниченияЗаполненияГруппы.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОграниченияЗаполненияГруппыНомерСтрокиКонтекстноеМеню" id="106"/>
+									<ExtendedTooltip name="ОграниченияЗаполненияГруппыНомерСтрокиРасширеннаяПодсказка" id="107"/>
+								</LabelField>
+								<InputField name="ОграниченияЗаполненияГруппыТипГруппаНоменклатуры" id="108">
+									<DataPath>Объект.ОграниченияЗаполненияГруппы.ТипГруппаНоменклатуры</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>true</ChoiceButton>
+									<ContextMenu name="ОграниченияЗаполненияГруппыТипГруппаНоменклатурыКонтекстноеМеню" id="109"/>
+									<ExtendedTooltip name="ОграниченияЗаполненияГруппыТипГруппаНоменклатурыРасширеннаяПодсказка" id="110"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ГруппыТоваровОборудования</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НеобходимаОчистка" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Необходима очистка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПараметрыПодключаемыхКоманд" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры подключаемых команд</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>CommonCommand.СозданиеСвязанныхОбъектов</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarCreateBasedOn</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

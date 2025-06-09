@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<DocumentJournal uuid="3f841fbf-1ffa-4d5f-8df6-513f4efce046">
+		<InternalInfo>
+			<xr:GeneratedType name="DocumentJournalSelection.КассовыеОрдера" category="Selection">
+				<xr:TypeId>8aa26323-408c-4074-b06d-32e86707b323</xr:TypeId>
+				<xr:ValueId>8eeffda1-4612-45ae-811f-ee347a18d309</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentJournalList.КассовыеОрдера" category="List">
+				<xr:TypeId>80387543-5e08-4c3c-b519-57ada65d3404</xr:TypeId>
+				<xr:ValueId>e595979b-f139-405b-a10b-b0bfaffc329a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentJournalManager.КассовыеОрдера" category="Manager">
+				<xr:TypeId>81f3749d-297c-49ff-995a-74ce270e51ad</xr:TypeId>
+				<xr:ValueId>7d9656a1-a825-425c-8fae-ac1c9734c562</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>КассовыеОрдера</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кассовые ордера</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>Журнал приходных  и расходных кассовых ордеров</Comment>
+			<DefaultForm>DocumentJournal.КассовыеОрдера.Form.ФормаСписка</DefaultForm>
+			<AuxiliaryForm/>
+			<UseStandardCommands>true</UseStandardCommands>
+			<RegisteredDocuments>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходныйКассовыйОрдер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.РасходныйКассовыйОрдер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ПеремещениеДенежныхСредств</xr:Item>
+			</RegisteredDocuments>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<ListPresentation>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кассовые ордера</v8:content>
+				</v8:item>
+			</ListPresentation>
+			<ExtendedListPresentation/>
+			<Explanation>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал документов предназначен для группировки и отображения документов, имеющих общую учетную сущность.</v8:content>
+				</v8:item>
+			</Explanation>
+		</Properties>
+		<ChildObjects>
+			<Column uuid="e7049e4c-d927-478e-8095-ecda44f8950b">
+				<Properties>
+					<Name>Контрагент</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контрагент</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Контрагент, которому выдали / у которого приняли, денежные средства</Comment>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходныйКассовыйОрдер.Attribute.Контрагент</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.РасходныйКассовыйОрдер.Attribute.Контрагент</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ПеремещениеДенежныхСредств.Attribute.КассаКомпанииПолучатель</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="aaab7c0e-b662-446f-8542-982b36aff77c">
+				<Properties>
+					<Name>Касса</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Касса</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Касса компании в которой проходила операция приема/выдачи денежных средств</Comment>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходныйКассовыйОрдер.Attribute.КассаКомпании</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.РасходныйКассовыйОрдер.Attribute.КассаКомпании</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ПеремещениеДенежныхСредств.Attribute.КассаКомпанииОтправитель</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="81f0876f-6b0e-403c-8b7d-8c6f5adde411">
+				<Properties>
+					<Name>Договор</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Договор</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Договор по которому ведутся взаиморасчеты с контрагентом</Comment>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходныйКассовыйОрдер.Attribute.ДоговорВзаиморасчетов</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.РасходныйКассовыйОрдер.Attribute.ДоговорВзаиморасчетов</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="1cc4def2-dc98-4dfc-87d0-f42193770bb5">
+				<Properties>
+					<Name>Сделка</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сделка</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Документ, на основании которого введен кассовый ордер</Comment>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходныйКассовыйОрдер.Attribute.ДокументОснование</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.РасходныйКассовыйОрдер.Attribute.ДокументОснование</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Form>ФормаСписка</Form>
+		</ChildObjects>
+	</DocumentJournal>
+</MetaDataObject>

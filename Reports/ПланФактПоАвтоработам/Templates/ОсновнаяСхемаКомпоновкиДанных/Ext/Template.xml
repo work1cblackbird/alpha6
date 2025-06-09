@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Основной</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказНаряд</dataPath>
+			<field>ЗаказНаряд</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ наряд</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РабочееМесто</dataPath>
+			<field>РабочееМесто</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рабочее место</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Факт</dataPath>
+			<field>Факт</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Факт (ч.)</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=10; ЧДЦ=3</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">17</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПакетРабот</dataPath>
+			<field>ПакетРабот</field>
+			<useRestriction>
+				<field>true</field>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредставлениеПакета</dataPath>
+			<field>ПредставлениеПакета</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление пакета</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>План</dataPath>
+			<field>План</field>
+			<useRestriction>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+    ФактическоеВремя.ЗаказНаряд,
+    ФактическоеВремя.Цех,
+    ФактическоеВремя.Исполнитель,
+    ФактическоеВремя.ПакетРабот,
+    (ФактическоеВремя.Продолжительность/3600) КАК Продолжительность,
+    ЕСТЬNULL(ИнформацияОПакетахАвторабот.Представление, "Представление не задано") КАК ПредставлениеПакета
+ПОМЕСТИТЬ Факт
+ИЗ
+    РегистрСведений.ФактическоеВремя КАК ФактическоеВремя
+        ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИнформацияОПакетахАвторабот КАК ИнформацияОПакетахАвторабот
+        ПО ФактическоеВремя.ПакетРабот = ИнформацияОПакетахАвторабот.ПакетРабот
+ГДЕ
+    (ФактическоеВремя.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+        ИЛИ ФактическоеВремя.ДатаОкончания МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)
+    И (ФактическоеВремя.Состояние = ЗНАЧЕНИЕ(Справочник.ВидыОтметокВремени.Работа)
+        ИЛИ ФактическоеВремя.Состояние = ЗНАЧЕНИЕ(Справочник.ВидыОтметокВремени.РаботаПоУдаленномуПакету))
+    И ФактическоеВремя.Продолжительность &lt;&gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+    ВыработкаСотрудниковОбороты.ДокументПродажи,
+    ВыработкаСотрудниковОбороты.Сотрудник,
+    ВыработкаСотрудниковОбороты.Цех,
+    МАКСИМУМ(ВыработкаСотрудниковОбороты.КоличествоНормочасовОборот) КАК КоличествоНормочасовОборот,
+    ЕСТЬNULL(ЗаказНарядАвтоработы.ИдентификаторРаботы, "") КАК ИдентификаторАвтоработы,
+    ВыработкаСотрудниковОбороты.Авторабота
+ПОМЕСТИТЬ План
+ИЗ
+    РегистрНакопления.ВыработкаСотрудников.Обороты(&amp;НачалоПериода, &amp;КонецПериода, , ) КАК ВыработкаСотрудниковОбороты
+        ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗаказНаряд.Автоработы КАК ЗаказНарядАвтоработы
+        ПО ВыработкаСотрудниковОбороты.ДокументПродажи = ЗаказНарядАвтоработы.Ссылка
+            И ВыработкаСотрудниковОбороты.Авторабота = ЗаказНарядАвтоработы.Авторабота
+
+СГРУППИРОВАТЬ ПО
+    ВыработкаСотрудниковОбороты.Сотрудник,
+    ВыработкаСотрудниковОбороты.ДокументПродажи,
+    ВыработкаСотрудниковОбороты.Цех,
+    ЕСТЬNULL(ЗаказНарядАвтоработы.ИдентификаторРаботы, ""),
+    ВыработкаСотрудниковОбороты.Авторабота
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+    План.ДокументПродажи,
+    План.Цех,
+    План.Сотрудник,
+    ЕСТЬNULL(СоставПакетовРабот.ПакетРабот, "") КАК ПакетРабот,
+    СУММА(План.КоличествоНормочасовОборот) КАК КоличествоНормочасовОборот
+ПОМЕСТИТЬ ПланСПакетамиНеПолный
+ИЗ
+    План КАК План
+        ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СоставПакетовРабот КАК СоставПакетовРабот
+        ПО План.ДокументПродажи = СоставПакетовРабот.ЗаказНаряд
+            И План.ИдентификаторАвтоработы = СоставПакетовРабот.Авторабота
+
+СГРУППИРОВАТЬ ПО
+    План.ДокументПродажи,
+    ЕСТЬNULL(СоставПакетовРабот.ПакетРабот, ""),
+    План.Цех,
+    План.Сотрудник
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ План
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+    ПланСПакетамиНеПолный.ДокументПродажи,
+    ПланСПакетамиНеПолный.Цех,
+    ПланСПакетамиНеПолный.Сотрудник,
+    ПланСПакетамиНеПолный.ПакетРабот,
+    ПланСПакетамиНеПолный.КоличествоНормочасовОборот,
+    ЕСТЬNULL(ИнформацияОПакетахАвторабот.Представление, "Представление не задано") КАК ПредставлениеПакета
+ПОМЕСТИТЬ ПланСПакетами
+ИЗ
+    ПланСПакетамиНеПолный КАК ПланСПакетамиНеПолный
+    ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИнформацияОПакетахАвторабот КАК ИнформацияОПакетахАвторабот
+        ПО ПланСПакетамиНеПолный.ПакетРабот = ИнформацияОПакетахАвторабот.ПакетРабот
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+    ЕСТЬNULL(Факт.ЗаказНаряд, ПланСПакетами.ДокументПродажи) КАК ЗаказНаряд,
+    ЕСТЬNULL(Факт.Цех, ПланСПакетами.Цех) КАК РабочееМесто,
+    ЕСТЬNULL(Факт.Исполнитель, ПланСПакетами.Сотрудник) КАК Сотрудник,
+    ЕСТЬNULL(Факт.ПакетРабот, ПланСПакетами.ПакетРабот) КАК ПакетРабот,
+    ЕСТЬNULL(Факт.ПредставлениеПакета, ПланСПакетами.ПредставлениеПакета) КАК ПредставлениеПакета,
+    Факт.Продолжительность КАК Факт,
+    ЕСТЬNULL(ПланСПакетами.КоличествоНормочасовОборот, 0) КАК План
+{
+ВЫБРАТЬ
+    ЗаказНаряд.*        КАК ЗаказНаряд,
+    РабочееМесто.*      КАК РабочееМесто,
+    Сотрудник.*         КАК Сотрудник,
+    ПакетРабот          КАК ПакетРабот,
+    ПредставлениеПакета КАК ПредставлениеПакета,
+    Факт                КАК Факт,
+    План                КАК План
+}
+ИЗ
+    Факт КАК Факт
+        ПОЛНОЕ СОЕДИНЕНИЕ ПланСПакетами КАК ПланСПакетами
+        ПО Факт.ЗаказНаряд = ПланСПакетами.ДокументПродажи
+            И Факт.Цех = ПланСПакетами.Цех
+            И Факт.Исполнитель = ПланСПакетами.Сотрудник
+            И Факт.ПакетРабот = ПланСПакетами.ПакетРабот
+{
+ГДЕ
+    (ЕСТЬNULL(Факт.ЗаказНаряд, ПланСПакетами.ДокументПродажи)).* КАК ЗаказНаряд,
+    (ЕСТЬNULL(Факт.Цех, ПланСПакетами.Цех)).* КАК РабочееМесто,
+    (ЕСТЬNULL(Факт.Исполнитель, ПланСПакетами.Сотрудник)).* КАК Сотрудник
+}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ПакетРабот</dataPath>
+		<expression>РаботаСПакетамиРабот.ПредставлениеПакетаРабот(ЗаказНаряд, ПакетРабот, ПредставлениеПакета)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Пакет работ</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+			<order>true</order>
+		</useRestriction>
+	</calculatedField>
+	<totalField>
+		<dataPath>Факт</dataPath>
+		<expression>Сумма(Факт)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>План</dataPath>
+		<expression>Сумма(План)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>План-факт по автоработам</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>План</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Факт</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Сотрудник</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ЗаказНаряд</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ПакетРабот</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

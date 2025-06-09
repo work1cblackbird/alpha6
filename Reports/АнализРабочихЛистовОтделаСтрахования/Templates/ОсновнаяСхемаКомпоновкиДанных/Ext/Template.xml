@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>АнализРабочихЛистов</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПрограммаСтрахования</dataPath>
+			<field>ПрограммаСтрахования</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МенеджерСтраховогоОтдела</dataPath>
+			<field>МенеджерСтраховогоОтдела</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер страхового отдела</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектСтрахования</dataPath>
+			<field>ОбъектСтрахования</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПричинаОтказа</dataPath>
+			<field>ПричинаОтказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Причина отказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтоПролонгация</dataPath>
+			<field>ЭтоПролонгация</field>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтраховаяКомпания</dataPath>
+			<field>СтраховаяКомпания</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страховая компания</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидСтрахования</dataPath>
+			<field>ВидСтрахования</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеКомпании</dataPath>
+			<field>ПодразделениеКомпании</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение компании</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РабочийЛистОтделаСтрахования</dataPath>
+			<field>РабочийЛистОтделаСтрахования</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рабочий лист отдела страхования</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоВариантовСтрахования</dataPath>
+			<field>КоличествоВариантовСтрахования</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество вариантов страхования</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоВсего</dataPath>
+			<field>КоличествоВсего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество всего</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоРабочихЛистов</dataPath>
+			<field>КоличествоРабочихЛистов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество рабочих листов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫРАЗИТЬ(ЖурналСостояний.Объект КАК Документ.РабочийЛистОтделаСтрахования)	КАК РабочийЛист,
+	ВЫРАЗИТЬ(ЖурналСостояний.Состояние КАК Справочник.СтатусыРабочегоЛиста)		КАК Статус
+
+ПОМЕСТИТЬ ТаблицаРабочихЛистов
+ИЗ
+	РегистрСведений.ЖурналСостояний.СрезПоследних(&amp;Период, ) КАК ЖурналСостояний
+ГДЕ
+	ЖурналСостояний.Объект ССЫЛКА Документ.РабочийЛистОтделаСтрахования И
+    ЖурналСостояний.Состояние ССЫЛКА Справочник.СтатусыРабочегоЛиста
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РабочиеЛисты.РабочийЛист								КАК РабочийЛист,
+	РабочиеЛисты.Статус										КАК Статус,
+	Страхование.Страховщик									КАК СтраховаяКомпания,
+	Страхование.ОбъектСтрахования							КАК ОбъектСтрахования,
+	РабочиеЛисты.РабочийЛист.МенеджерОтделаСтрахования		КАК МенеджерСтраховогоОтдела,
+	Страхование.ВидСтрахования								КАК ВидСтрахования,
+	Страхование.ПрограммаСтрахования						КАК ПрограммаСтрахования,
+	РабочиеЛисты.РабочийЛист.ПричинаОтказа					КАК ПричинаОтказа,
+	Страхование.ЭтоПролонгация								КАК ЭтоПролонгация,
+	РабочиеЛисты.РабочийЛист.ПодразделениеКомпании			КАК ПодразделениеКомпании
+
+ПОМЕСТИТЬ ТаблицаСостояний
+
+ИЗ
+	Документ.РабочийЛистОтделаСтрахования.ВариантыСтрахования КАК Страхование
+ЛЕВОЕ СОЕДИНЕНИЕ ТаблицаРабочихЛистов КАК РабочиеЛисты
+ПО
+    РабочиеЛисты.РабочийЛист = Страхование.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаКоличества.РабочийЛист             КАК РабочийЛист,
+	Количество(ТаблицаКоличества.РабочийЛист) КАК КоличествоВсего
+
+ПОМЕСТИТЬ ТаблицаКоличества
+
+ИЗ
+	ТаблицаСостояний КАК ТаблицаКоличества
+	
+СГРУППИРОВАТЬ ПО
+	ТаблицаКоличества.РабочийЛист
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаСостояний.РабочийЛист				КАК РабочийЛистОтделаСтрахования,
+	ТаблицаСостояний.ПодразделениеКомпании		КАК ПодразделениеКомпании,
+	ТаблицаСостояний.СтраховаяКомпания			КАК СтраховаяКомпания,
+	ТаблицаСостояний.ОбъектСтрахования			КАК ОбъектСтрахования,
+	ТаблицаСостояний.МенеджерСтраховогоОтдела	КАК МенеджерСтраховогоОтдела,	
+	ТаблицаСостояний.ПрограммаСтрахования		КАК ПрограммаСтрахования,
+	ТаблицаСостояний.ПричинаОтказа				КАК ПричинаОтказа,
+	ТаблицаСостояний.Статус						КАК Статус,
+	ТаблицаСостояний.ВидСтрахования				КАК ВидСтрахования,
+	ТаблицаСостояний.ЭтоПролонгация				КАК ЭтоПролонгация,
+	ТаблицаКоличества.КоличествоВсего			КАК КоличествоВсего,
+	ТаблицаКоличества.КоличествоВсего			КАК КоличествоРабочихЛистов,
+	ТаблицаПрограмм.Количество					КАК КоличествоВариантовСтрахования
+	
+{
+ВЫБРАТЬ
+	РабочийЛистОтделаСтрахования.*				КАК РабочийЛистОтделаСтрахования,
+	ПодразделениеКомпании.*						КАК ПодразделениеКомпании,	
+	СтраховаяКомпания.*							КАК СтраховаяКомпания,
+	ОбъектСтрахования.*							КАК ОбъектСтрахования,
+	МенеджерСтраховогоОтдела.*					КАК МенеджерСтраховогоОтдела,	
+	ПрограммаСтрахования.*						КАК ПрограммаСтрахования,
+	ПричинаОтказа.*								КАК ПричинаОтказа,	
+	Статус.*									КАК Статус,
+	ВидСтрахования								КАК ВидСтрахования,
+	ЭтоПролонгация								КАК ЭтоПролонгация,
+	КоличествоВсего                             КАК КоличествоВсего,
+	КоличествоРабочихЛистов	                    КАК КоличествоРабочихЛистов,
+	КоличествоВариантовСтрахования              КАК КоличествоВариантовСтрахования
+}	
+	
+ИЗ
+	ТаблицаСостояний КАК ТаблицаСостояний
+	ЛЕВОЕ СОЕДИНЕНИЕ ТаблицаКоличества КАК ТаблицаКоличества
+		ПО ТаблицаСостояний.РабочийЛист=ТаблицаКоличества.РабочийЛист 
+	ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+					    ТаблицаПрограммСтроки.ПрограммаСтрахования                       КАК ПрограммаСтрахования,
+					    КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ТаблицаПрограммСтроки.ПрограммаСтрахования) КАК Количество
+					  ИЗ
+					    ТаблицаСостояний КАК ТаблицаПрограммСтроки
+					  СГРУППИРОВАТЬ ПО
+					    ТаблицаПрограммСтроки.ПрограммаСтрахования) КАК ТаблицаПрограмм
+	ПО ТаблицаСостояний.ПрограммаСтрахования = ТаблицаПрограмм.ПрограммаСтрахования
+
+{
+ГДЕ
+	ТаблицаСостояний.РабочийЛист.*							КАК РабочийЛистОтделаСтрахования,
+	ТаблицаСостояний.ПодразделениеКомпании.*				КАК ПодразделениеКомпании,
+	ТаблицаСостояний.СтраховаяКомпания.*					КАК СтраховаяКомпания,
+	ТаблицаСостояний.ОбъектСтрахования.*					КАК ОбъектСтрахования,
+	ТаблицаСостояний.МенеджерСтраховогоОтдела.*				КАК МенеджерСтраховогоОтдела,	
+	ТаблицаСостояний.ПрограммаСтрахования.*					КАК ПрограммаСтрахования,
+	ТаблицаСостояний.ПричинаОтказа.*						КАК ПричинаОтказа,	
+	ТаблицаСостояний.Статус.*								КАК Статус,
+	ТаблицаСостояний.ВидСтрахования							КАК ВидСтрахования,
+	ТаблицаСостояний.ЭтоПролонгация							КАК ЭтоПролонгация
+}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>КоличествоВариантовСтрахования</dataPath>
+		<expression>Сумма(КоличествоВариантовСтрахования)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоВсего</dataPath>
+		<expression>Сумма(КоличествоВсего)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоРабочихЛистов</dataPath>
+		<expression>Сумма(КоличествоРабочихЛистов)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Анализ рабочих листов отдела страхования</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоВариантовСтрахования</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоРабочихЛистов</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидСтрахования</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">МенеджерСтраховогоОтдела</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОбъектСтрахования</dcsset:left>
+					<dcsset:comparisonType>Contains</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ПричинаОтказа</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РабочийЛистОтделаСтрахования</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РабочийЛистОтделаСтрахования.Статус</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ПрограммаСтрахования</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">СтраховаяКомпания</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ЭтоПролонгация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextDay</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Статус</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>РабочийЛистОтделаСтрахования</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

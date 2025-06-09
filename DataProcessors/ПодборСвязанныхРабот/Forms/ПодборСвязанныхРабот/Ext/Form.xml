@@ -1,0 +1,748 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Подбор связанных работ</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Выбор" id="91">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Выбор</CommandName>
+				<ExtendedTooltip name="ВыборРасширеннаяПодсказка" id="92"/>
+			</Button>
+			<Button name="ФормаИзменитьФорму" id="144">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="145"/>
+			</Button>
+			<Button name="Справка" id="83">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="84"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="УправлениеДеревомИОтборы" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление деревом и отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление деревом и отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="УправлениеДеревомИОтборыРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<Button name="УстановитьВыборВсех" id="79">
+					<Type>UsualButton</Type>
+					<Representation>Picture</Representation>
+					<CommandName>Form.Command.УстановитьВыборВсех</CommandName>
+					<Picture>
+						<xr:Ref>StdPicture.CheckAll</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="УстановитьВыборВсехРасширеннаяПодсказка" id="80"/>
+				</Button>
+				<Button name="СнятьВыборВсех" id="81">
+					<Type>UsualButton</Type>
+					<Representation>Picture</Representation>
+					<CommandName>Form.Command.СнятьВыборВсех</CommandName>
+					<Picture>
+						<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="СнятьВыборВсехРасширеннаяПодсказка" id="82"/>
+				</Button>
+				<InputField name="ОтборМодель" id="4">
+					<DataPath>ОтборМодель</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбор по модели автомобиля</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<ContextMenu name="ОтборМодельКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ОтборМодельРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ОтборМодельПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОтборВариантКомплектации" id="1">
+					<DataPath>ОтборВариантКомплектации</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбор по варианту комплектации</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ClearButton>true</ClearButton>
+					<OpenButton>false</OpenButton>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Владелец</xr:Name>
+							<xr:DataPath xsi:type="xs:string">ОтборМодель</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="ОтборВариантКомплектацииКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ОтборВариантКомплектацииРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">ОтборВариантКомплектацииПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="СвязанныеРаботы" id="85">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Связанные работы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Связанные работы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Width>75</Width>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СвязанныеРаботыРасширеннаяПодсказка" id="86"/>
+			<ChildItems>
+				<Table name="ДеревоСвязанныеРаботы" id="93">
+					<Representation>Tree</Representation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ДеревоСвязанныеРаботы</DataPath>
+					<ContextMenu name="ДеревоСвязанныеРаботыКонтекстноеМеню" id="94"/>
+					<AutoCommandBar name="ДеревоСвязанныеРаботыКоманднаяПанель" id="95">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ДеревоСвязанныеРаботыРасширеннаяПодсказка" id="96"/>
+					<SearchStringAddition name="ДеревоСвязанныеРаботыСтрокаПоиска" id="97">
+						<AdditionSource>
+							<Item>ДеревоСвязанныеРаботы</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоСвязанныеРаботыСтрокаПоискаКонтекстноеМеню" id="98"/>
+						<ExtendedTooltip name="ДеревоСвязанныеРаботыСтрокаПоискаРасширеннаяПодсказка" id="99"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ДеревоСвязанныеРаботыСостояниеПросмотра" id="100">
+						<AdditionSource>
+							<Item>ДеревоСвязанныеРаботы</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоСвязанныеРаботыСостояниеПросмотраКонтекстноеМеню" id="101"/>
+						<ExtendedTooltip name="ДеревоСвязанныеРаботыСостояниеПросмотраРасширеннаяПодсказка" id="102"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ДеревоСвязанныеРаботыУправлениеПоиском" id="103">
+						<AdditionSource>
+							<Item>ДеревоСвязанныеРаботы</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоСвязанныеРаботыУправлениеПоискомКонтекстноеМеню" id="104"/>
+						<ExtendedTooltip name="ДеревоСвязанныеРаботыУправлениеПоискомРасширеннаяПодсказка" id="105"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="OnActivateRow">ДеревоСвязанныеРаботыПриАктивизацииСтроки</Event>
+					</Events>
+					<ChildItems>
+						<ColumnGroup name="Идентификаторы" id="139">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Описание</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Идентификаторы</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>InCell</Group>
+							<ShowTitle>false</ShowTitle>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="ИдентификаторыРасширеннаяПодсказка" id="140"/>
+							<ChildItems>
+								<CheckBoxField name="ДеревоСвязанныеРаботыДобавлятьВДокумент" id="141">
+									<DataPath>ДеревоСвязанныеРаботы.ДобавлятьВДокумент</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДеревоСвязанныеРаботыДобавлятьВДокументКонтекстноеМеню" id="142"/>
+									<ExtendedTooltip name="ДеревоСвязанныеРаботыДобавлятьВДокументРасширеннаяПодсказка" id="143"/>
+									<Events>
+										<Event name="OnChange">ДеревоСвязанныеРаботыДобавлятьВДокументПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<PictureField name="ДеревоСвязанныеРаботыКартинка" id="174">
+									<DataPath>ДеревоСвязанныеРаботы.Картинка</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДеревоСвязанныеРаботыКартинкаКонтекстноеМеню" id="175"/>
+									<ExtendedTooltip name="ДеревоСвязанныеРаботыКартинкаРасширеннаяПодсказка" id="176"/>
+								</PictureField>
+								<InputField name="ДеревоСвязанныеРаботыАртикул" id="177">
+									<DataPath>ДеревоСвязанныеРаботы.Артикул</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<Width>6</Width>
+									<ContextMenu name="ДеревоСвязанныеРаботыАртикулКонтекстноеМеню" id="178"/>
+									<ExtendedTooltip name="ДеревоСвязанныеРаботыАртикулРасширеннаяПодсказка" id="179"/>
+								</InputField>
+								<InputField name="ДеревоСвязанныеРаботыНаименование" id="180">
+									<DataPath>ДеревоСвязанныеРаботы.Наименование</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<Width>25</Width>
+									<ContextMenu name="ДеревоСвязанныеРаботыНаименованиеКонтекстноеМеню" id="181"/>
+									<ExtendedTooltip name="ДеревоСвязанныеРаботыНаименованиеРасширеннаяПодсказка" id="182"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<CheckBoxField name="ДеревоСвязанныеРаботыВспомогательнаяАвторабота" id="118">
+							<DataPath>ДеревоСвязанныеРаботы.ВспомогательнаяАвторабота</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Распологать во вспомогательных автоработах</v8:content>
+								</v8:item>
+							</ToolTip>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ДеревоСвязанныеРаботыВспомогательнаяАвтоработаКонтекстноеМеню" id="119"/>
+							<ExtendedTooltip name="ДеревоСвязанныеРаботыВспомогательнаяАвтоработаРасширеннаяПодсказка" id="120"/>
+						</CheckBoxField>
+						<InputField name="ДеревоСвязанныеРаботыКоличество" id="127">
+							<DataPath>ДеревоСвязанныеРаботы.Количество</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>11</Width>
+							<ContextMenu name="ДеревоСвязанныеРаботыКоличествоКонтекстноеМеню" id="128"/>
+							<ExtendedTooltip name="ДеревоСвязанныеРаботыКоличествоРасширеннаяПодсказка" id="129"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<Table name="МоделиИКомплектации" id="146">
+					<Representation>List</Representation>
+					<ReadOnly>true</ReadOnly>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>МоделиИКомплектации</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="МоделиИКомплектацииКонтекстноеМеню" id="147"/>
+					<AutoCommandBar name="МоделиИКомплектацииКоманднаяПанель" id="148">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="МоделиИКомплектацииРасширеннаяПодсказка" id="149"/>
+					<SearchStringAddition name="МоделиИКомплектацииСтрокаПоиска" id="150">
+						<AdditionSource>
+							<Item>МоделиИКомплектации</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="МоделиИКомплектацииСтрокаПоискаКонтекстноеМеню" id="151"/>
+						<ExtendedTooltip name="МоделиИКомплектацииСтрокаПоискаРасширеннаяПодсказка" id="152"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="МоделиИКомплектацииСостояниеПросмотра" id="153">
+						<AdditionSource>
+							<Item>МоделиИКомплектации</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="МоделиИКомплектацииСостояниеПросмотраКонтекстноеМеню" id="154"/>
+						<ExtendedTooltip name="МоделиИКомплектацииСостояниеПросмотраРасширеннаяПодсказка" id="155"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="МоделиИКомплектацииУправлениеПоиском" id="156">
+						<AdditionSource>
+							<Item>МоделиИКомплектации</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="МоделиИКомплектацииУправлениеПоискомКонтекстноеМеню" id="157"/>
+						<ExtendedTooltip name="МоделиИКомплектацииУправлениеПоискомРасширеннаяПодсказка" id="158"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">МоделиИКомплектацииВыбор</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="МоделиИКомплектацииМодель" id="165">
+							<DataPath>МоделиИКомплектации.Модель</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="МоделиИКомплектацииМодельКонтекстноеМеню" id="166"/>
+							<ExtendedTooltip name="МоделиИКомплектацииМодельРасширеннаяПодсказка" id="167"/>
+						</InputField>
+						<InputField name="МоделиИКомплектацииКомплектация" id="168">
+							<DataPath>МоделиИКомплектации.Комплектация</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="МоделиИКомплектацииКомплектацияКонтекстноеМеню" id="169"/>
+							<ExtendedTooltip name="МоделиИКомплектацииКомплектацияРасширеннаяПодсказка" id="170"/>
+						</InputField>
+						<InputField name="МоделиИКомплектацииКоличество" id="171">
+							<DataPath>МоделиИКомплектации.Количество</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="МоделиИКомплектацииКоличествоКонтекстноеМеню" id="172"/>
+							<ExtendedTooltip name="МоделиИКомплектацииКоличествоРасширеннаяПодсказка" id="173"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПодборСвязанныхРабот</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДеревоСвязанныеРаботы" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево связанные работы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Источник" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Источник</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ИсточникиСвязанныхРабот</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СвязаннаяРабота" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Связанная работа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.СвязаннаяРабота</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Артикул" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Связанная работа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>25</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Наименование" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВспомогательнаяАвторабота" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вспомогательная авторабота</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДоступностьРеквизитаВспомогательнойРаботы" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступность реквизита вспомогательной работы</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЭтоАвторабота" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это авторабота</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Уровень" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Уровень</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Характеристика" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Аналог" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аналог</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДобавлятьВДокумент" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Добавлять в документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Картинка" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ОтборМодель" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Модель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Модели</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборВариантКомплектации" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вариант комплектации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ВариантыКомплектации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборТипыНоменклатуры" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор типы номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="Источники" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источники</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Источник" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Источник</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ИсточникиСвязанныхРабот</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Количество" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КлючСтроки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ строки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КлючИсточника" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ источника</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="МоделиИКомплектации" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Модели и комплектации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Источник" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Источник</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ИсточникиСвязанныхРабот</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="СвязаннаяРабота" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Связанная работа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.СвязаннаяРабота</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Модель" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Модель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Модели</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Комплектация" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комплектация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВариантыКомплектации</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Контейнер" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контейнер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="УстановитьВыборВсех" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить выбор всех</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить выбор всех</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановкаВсехПометок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьВыборВсех" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять выбор всех</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять выбор всех</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановкаВсехПометок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Выбор" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В документ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ChooseValue</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Выбор</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

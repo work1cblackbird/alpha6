@@ -1,0 +1,1154 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Форма подбора ресурсов</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаполнить" id="190">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Заполнить</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>В документ</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаЗаполнитьРасширеннаяПодсказка" id="191"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПодбораСотрудников" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подбора сотрудников</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подбора сотрудников</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодбораСотрудниковРасширеннаяПодсказка" id="45"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаОтбораСотрудников" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отборы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа отбора сотрудников</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Behavior>Collapsible</Behavior>
+					<ControlRepresentation>Picture</ControlRepresentation>
+					<ExtendedTooltip name="ГруппаОтбораСотрудниковРасширеннаяПодсказка" id="49"/>
+					<ChildItems>
+						<Table name="СписокСотрудниковОтбор" id="157">
+							<Representation>Tree</Representation>
+							<Autofill>true</Autofill>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>СписокСотрудников.Filter</DataPath>
+							<ViewMode>All</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+							<ContextMenu name="СписокСотрудниковОтборКонтекстноеМеню" id="158"/>
+							<AutoCommandBar name="СписокСотрудниковОтборКоманднаяПанель" id="159">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="СписокСотрудниковОтборДобавитьЭлементОтбора" id="170">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.СписокСотрудниковОтбор.StandardCommand.AddFilterItem</CommandName>
+										<Picture>
+											<xr:Ref>CommonPicture.СоздатьАльфаАвто</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить</v8:content>
+											</v8:item>
+										</Title>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокСотрудниковОтборДобавитьЭлементОтбораРасширеннаяПодсказка" id="171"/>
+									</Button>
+									<Button name="СписокСотрудниковОтборДобавитьГруппуЭлементовОтбора" id="172">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.СписокСотрудниковОтбор.StandardCommand.AddFilterItemGroup</CommandName>
+										<Picture>
+											<xr:Ref>CommonPicture.СоздатьГруппуАльфаАвто</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокСотрудниковОтборДобавитьГруппуЭлементовОтбораРасширеннаяПодсказка" id="173"/>
+									</Button>
+									<Button name="СписокСотрудниковОтборПереместитьВверх" id="174">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокСотрудниковОтбор.StandardCommand.MoveUp</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокСотрудниковОтборПереместитьВверхРасширеннаяПодсказка" id="175"/>
+									</Button>
+									<Button name="СписокСотрудниковОтборПереместитьВниз" id="176">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокСотрудниковОтбор.StandardCommand.MoveDown</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокСотрудниковОтборПереместитьВнизРасширеннаяПодсказка" id="177"/>
+									</Button>
+									<Button name="СписокСотрудниковОтборПодробно" id="178">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокСотрудниковОтбор.StandardCommand.Detailed</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокСотрудниковОтборПодробноРасширеннаяПодсказка" id="179"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокСотрудниковОтборРасширеннаяПодсказка" id="160"/>
+							<SearchStringAddition name="СписокСотрудниковОтборСтрокаПоиска" id="161">
+								<AdditionSource>
+									<Item>СписокСотрудниковОтбор</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокСотрудниковОтборСтрокаПоискаКонтекстноеМеню" id="162"/>
+								<ExtendedTooltip name="СписокСотрудниковОтборСтрокаПоискаРасширеннаяПодсказка" id="163"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокСотрудниковОтборСостояниеПросмотра" id="164">
+								<AdditionSource>
+									<Item>СписокСотрудниковОтбор</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокСотрудниковОтборСостояниеПросмотраКонтекстноеМеню" id="165"/>
+								<ExtendedTooltip name="СписокСотрудниковОтборСостояниеПросмотраРасширеннаяПодсказка" id="166"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокСотрудниковОтборУправлениеПоиском" id="167">
+								<AdditionSource>
+									<Item>СписокСотрудниковОтбор</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокСотрудниковОтборУправлениеПоискомКонтекстноеМеню" id="168"/>
+								<ExtendedTooltip name="СписокСотрудниковОтборУправлениеПоискомРасширеннаяПодсказка" id="169"/>
+							</SearchControlAddition>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСотрудников" id="46">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сотрудники</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа сотрудников</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<ExtendedTooltip name="ГруппаСотрудниковРасширеннаяПодсказка" id="47"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаСписокСотрудниковИКомандыПереноса" id="251">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа список сотрудников и команды переноса</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа список сотрудников и команды переноса</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСписокСотрудниковИКомандыПереносаРасширеннаяПодсказка" id="252"/>
+							<ChildItems>
+								<Table name="СписокСотрудников" id="1">
+									<Representation>List</Representation>
+									<ReadOnly>true</ReadOnly>
+									<Width>80</Width>
+									<Height>10</Height>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>СписокСотрудников</DataPath>
+									<RowPictureDataPath>СписокСотрудников.DefaultPicture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>CancelSearch</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>CreateFolder</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+										<ExcludedCommand>Find</ExcludedCommand>
+										<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+										<ExcludedCommand>HierarchicalList</ExcludedCommand>
+										<ExcludedCommand>LevelDown</ExcludedCommand>
+										<ExcludedCommand>LevelUp</ExcludedCommand>
+										<ExcludedCommand>List</ExcludedCommand>
+										<ExcludedCommand>ListSettings</ExcludedCommand>
+										<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>MoveItem</ExcludedCommand>
+										<ExcludedCommand>OutputList</ExcludedCommand>
+										<ExcludedCommand>Refresh</ExcludedCommand>
+										<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>SearchHistory</ExcludedCommand>
+										<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+										<ExcludedCommand>Tree</ExcludedCommand>
+									</CommandSet>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+									<ContextMenu name="СписокСотрудниковКонтекстноеМеню" id="2">
+										<Autofill>false</Autofill>
+									</ContextMenu>
+									<AutoCommandBar name="СписокСотрудниковКоманднаяПанель" id="3">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="СписокСотрудниковРасширеннаяПодсказка" id="4"/>
+									<SearchStringAddition name="СписокСотрудниковСтрокаПоиска" id="5">
+										<Enabled>false</Enabled>
+										<AdditionSource>
+											<Item>СписокСотрудников</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокСотрудниковСтрокаПоискаКонтекстноеМеню" id="6"/>
+										<ExtendedTooltip name="СписокСотрудниковСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="СписокСотрудниковСостояниеПросмотра" id="8">
+										<AdditionSource>
+											<Item>СписокСотрудников</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокСотрудниковСостояниеПросмотраКонтекстноеМеню" id="9"/>
+										<ExtendedTooltip name="СписокСотрудниковСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="СписокСотрудниковУправлениеПоиском" id="11">
+										<Enabled>false</Enabled>
+										<AdditionSource>
+											<Item>СписокСотрудников</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокСотрудниковУправлениеПоискомКонтекстноеМеню" id="12"/>
+										<ExtendedTooltip name="СписокСотрудниковУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">СписокСотрудниковВыбор</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="СписокСотрудниковСотрудник" id="26">
+											<DataPath>СписокСотрудников.Сотрудник</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сотрудник</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="СписокСотрудниковСотрудникКонтекстноеМеню" id="27"/>
+											<ExtendedTooltip name="СписокСотрудниковСотрудникРасширеннаяПодсказка" id="28"/>
+										</LabelField>
+										<LabelField name="СписокСотрудниковПодразделение" id="50">
+											<DataPath>СписокСотрудников.ПодразделениеКомпании</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подразделение</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="СписокСотрудниковПодразделениеКонтекстноеМеню" id="51"/>
+											<ExtendedTooltip name="СписокСотрудниковПодразделениеРасширеннаяПодсказка" id="52"/>
+										</LabelField>
+										<LabelField name="СписокСотрудниковЦех" id="53">
+											<DataPath>СписокСотрудников.Цех</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Цех</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="СписокСотрудниковЦехКонтекстноеМеню" id="54"/>
+											<ExtendedTooltip name="СписокСотрудниковЦехРасширеннаяПодсказка" id="55"/>
+										</LabelField>
+										<LabelField name="СписокСотрудниковДолжность" id="56">
+											<DataPath>СписокСотрудников.Должность</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Должность</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="СписокСотрудниковДолжностьКонтекстноеМеню" id="57"/>
+											<ExtendedTooltip name="СписокСотрудниковДолжностьРасширеннаяПодсказка" id="58"/>
+										</LabelField>
+										<LabelField name="СписокСотрудниковТабельныйНомер" id="59">
+											<DataPath>СписокСотрудников.ТабельныйНомер</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Табельный номер</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="СписокСотрудниковТабельныйНомерКонтекстноеМеню" id="60"/>
+											<ExtendedTooltip name="СписокСотрудниковТабельныйНомерРасширеннаяПодсказка" id="61"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+								<UsualGroup name="ГруппаКомандыПереносаСотрудников" id="243">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа команды переноса сотрудников</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа команды переноса сотрудников</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<Group>Vertical</Group>
+									<VerticalAlign>Center</VerticalAlign>
+									<Behavior>Usual</Behavior>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКомандыПереносаСотрудниковРасширеннаяПодсказка" id="244"/>
+									<ChildItems>
+										<Button name="ПеренестиВыделенныхСотрудников" id="239">
+											<Type>UsualButton</Type>
+											<Representation>Text</Representation>
+											<CommandName>Form.Command.ПеренестиВыделенныхСотрудников</CommandName>
+											<ExtendedTooltip name="ПеренестиВыделенныхСотрудниковРасширеннаяПодсказка" id="240"/>
+										</Button>
+										<Button name="ПеренестиВсехСотрудников" id="241">
+											<Type>UsualButton</Type>
+											<Representation>PictureAndText</Representation>
+											<CommandName>Form.Command.ПеренестиВсехСотрудников</CommandName>
+											<ExtendedTooltip name="ПеренестиВсехСотрудниковРасширеннаяПодсказка" id="242"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ВыбранныеСотрудники" id="192">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ВыбранныеСотрудники</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ВыбранныеСотрудникиКонтекстноеМеню" id="193"/>
+							<AutoCommandBar name="ВыбранныеСотрудникиКоманднаяПанель" id="194"/>
+							<ExtendedTooltip name="ВыбранныеСотрудникиРасширеннаяПодсказка" id="195"/>
+							<SearchStringAddition name="ВыбранныеСотрудникиСтрокаПоиска" id="196">
+								<AdditionSource>
+									<Item>ВыбранныеСотрудники</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыбранныеСотрудникиСтрокаПоискаКонтекстноеМеню" id="197"/>
+								<ExtendedTooltip name="ВыбранныеСотрудникиСтрокаПоискаРасширеннаяПодсказка" id="198"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВыбранныеСотрудникиСостояниеПросмотра" id="199">
+								<AdditionSource>
+									<Item>ВыбранныеСотрудники</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыбранныеСотрудникиСостояниеПросмотраКонтекстноеМеню" id="200"/>
+								<ExtendedTooltip name="ВыбранныеСотрудникиСостояниеПросмотраРасширеннаяПодсказка" id="201"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВыбранныеСотрудникиУправлениеПоиском" id="202">
+								<AdditionSource>
+									<Item>ВыбранныеСотрудники</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыбранныеСотрудникиУправлениеПоискомКонтекстноеМеню" id="203"/>
+								<ExtendedTooltip name="ВыбранныеСотрудникиУправлениеПоискомРасширеннаяПодсказка" id="204"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="СписокВыбораСотрудниковСотрудник" id="205">
+									<DataPath>ВыбранныеСотрудники.Ресурс</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокВыбораСотрудниковСотрудникКонтекстноеМеню" id="206"/>
+									<ExtendedTooltip name="СписокВыбораСотрудниковСотрудникРасширеннаяПодсказка" id="207"/>
+								</InputField>
+								<InputField name="СписокВыбораСотрудниковПодразделение" id="208">
+									<DataPath>ВыбранныеСотрудники.ПодразделениеКомпании</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокВыбораСотрудниковПодразделениеКонтекстноеМеню" id="209"/>
+									<ExtendedTooltip name="СписокВыбораСотрудниковПодразделениеРасширеннаяПодсказка" id="210"/>
+								</InputField>
+								<InputField name="СписокВыбораСотрудниковЦех" id="211">
+									<DataPath>ВыбранныеСотрудники.Цех</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокВыбораСотрудниковЦехКонтекстноеМеню" id="212"/>
+									<ExtendedTooltip name="СписокВыбораСотрудниковЦехРасширеннаяПодсказка" id="213"/>
+								</InputField>
+								<InputField name="СписокВыбораСотрудниковДолжность" id="214">
+									<DataPath>ВыбранныеСотрудники.Должность</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокВыбораСотрудниковДолжностьКонтекстноеМеню" id="215"/>
+									<ExtendedTooltip name="СписокВыбораСотрудниковДолжностьРасширеннаяПодсказка" id="216"/>
+								</InputField>
+								<InputField name="СписокВыбораСотрудниковТабельныйНомер" id="217">
+									<DataPath>ВыбранныеСотрудники.ТабельныйНомер</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокВыбораСотрудниковТабельныйНомерКонтекстноеМеню" id="218"/>
+									<ExtendedTooltip name="СписокВыбораСотрудниковТабельныйНомерРасширеннаяПодсказка" id="219"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПодбораЦехов" id="65">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подбора цехов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа ресурсов отбора сотрудники</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодбораЦеховРасширеннаяПодсказка" id="66"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаОтбораЦехов" id="97">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отборы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа отбора</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Behavior>Collapsible</Behavior>
+					<ControlRepresentation>Picture</ControlRepresentation>
+					<ExtendedTooltip name="ГруппаОтбораЦеховРасширеннаяПодсказка" id="98"/>
+					<ChildItems>
+						<Table name="СписокЦеховОтбор" id="144">
+							<Representation>Tree</Representation>
+							<Autofill>true</Autofill>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>СписокЦехов.Filter</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ViewMode>All</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+							<ContextMenu name="СписокЦеховОтборКонтекстноеМеню" id="145"/>
+							<AutoCommandBar name="СписокЦеховОтборКоманднаяПанель" id="146">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="СписокЦеховОтборДобавитьЭлементОтбора" id="180">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.СписокЦеховОтбор.StandardCommand.AddFilterItem</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить</v8:content>
+											</v8:item>
+										</Title>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокЦеховОтборДобавитьЭлементОтбораРасширеннаяПодсказка" id="181"/>
+									</Button>
+									<Button name="СписокЦеховОтборДобавитьГруппуЭлементовОтбора" id="182">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.СписокЦеховОтбор.StandardCommand.AddFilterItemGroup</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.CreateFolder</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокЦеховОтборДобавитьГруппуЭлементовОтбораРасширеннаяПодсказка" id="183"/>
+									</Button>
+									<Button name="СписокЦеховОтборПереместитьВверх" id="184">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокЦеховОтбор.StandardCommand.MoveUp</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокЦеховОтборПереместитьВверхРасширеннаяПодсказка" id="185"/>
+									</Button>
+									<Button name="СписокЦеховОтборПереместитьВниз" id="186">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокЦеховОтбор.StandardCommand.MoveDown</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокЦеховОтборПереместитьВнизРасширеннаяПодсказка" id="187"/>
+									</Button>
+									<Button name="СписокЦеховОтборПодробно" id="188">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.СписокЦеховОтбор.StandardCommand.Detailed</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СписокЦеховОтборПодробноРасширеннаяПодсказка" id="189"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокЦеховОтборРасширеннаяПодсказка" id="147"/>
+							<SearchStringAddition name="СписокЦеховОтборСтрокаПоиска" id="148">
+								<AdditionSource>
+									<Item>СписокЦеховОтбор</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокЦеховОтборСтрокаПоискаКонтекстноеМеню" id="149"/>
+								<ExtendedTooltip name="СписокЦеховОтборСтрокаПоискаРасширеннаяПодсказка" id="150"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокЦеховОтборСостояниеПросмотра" id="151">
+								<AdditionSource>
+									<Item>СписокЦеховОтбор</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокЦеховОтборСостояниеПросмотраКонтекстноеМеню" id="152"/>
+								<ExtendedTooltip name="СписокЦеховОтборСостояниеПросмотраРасширеннаяПодсказка" id="153"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокЦеховОтборУправлениеПоиском" id="154">
+								<AdditionSource>
+									<Item>СписокЦеховОтбор</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокЦеховОтборУправлениеПоискомКонтекстноеМеню" id="155"/>
+								<ExtendedTooltip name="СписокЦеховОтборУправлениеПоискомРасширеннаяПодсказка" id="156"/>
+							</SearchControlAddition>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаЦеха" id="67">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цеха</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа ресурсов</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<ExtendedTooltip name="ГруппаЦехаРасширеннаяПодсказка" id="68"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаСписокЦеховИКомандыПереноса" id="255">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа список цехов и команды переноса</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа список цехов и команды переноса</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСписокЦеховИКомандыПереносаРасширеннаяПодсказка" id="256"/>
+							<ChildItems>
+								<Table name="СписокЦехов" id="112">
+									<Representation>List</Representation>
+									<ReadOnly>true</ReadOnly>
+									<Width>80</Width>
+									<Height>10</Height>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>СписокЦехов</DataPath>
+									<RowPictureDataPath>СписокЦехов.DefaultPicture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>CancelSearch</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+										<ExcludedCommand>Find</ExcludedCommand>
+										<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+										<ExcludedCommand>HierarchicalList</ExcludedCommand>
+										<ExcludedCommand>LevelDown</ExcludedCommand>
+										<ExcludedCommand>LevelUp</ExcludedCommand>
+										<ExcludedCommand>List</ExcludedCommand>
+										<ExcludedCommand>ListSettings</ExcludedCommand>
+										<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>MoveItem</ExcludedCommand>
+										<ExcludedCommand>OutputList</ExcludedCommand>
+										<ExcludedCommand>Refresh</ExcludedCommand>
+										<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>SearchHistory</ExcludedCommand>
+										<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+										<ExcludedCommand>Tree</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+									<ContextMenu name="СписокЦеховКонтекстноеМеню" id="113">
+										<Autofill>false</Autofill>
+									</ContextMenu>
+									<AutoCommandBar name="СписокЦеховКоманднаяПанель" id="114">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="СписокЦеховРасширеннаяПодсказка" id="115"/>
+									<SearchStringAddition name="СписокЦеховСтрокаПоиска" id="116">
+										<AdditionSource>
+											<Item>СписокЦехов</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокЦеховСтрокаПоискаКонтекстноеМеню" id="117"/>
+										<ExtendedTooltip name="СписокЦеховСтрокаПоискаРасширеннаяПодсказка" id="118"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="СписокЦеховСостояниеПросмотра" id="119">
+										<AdditionSource>
+											<Item>СписокЦехов</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокЦеховСостояниеПросмотраКонтекстноеМеню" id="120"/>
+										<ExtendedTooltip name="СписокЦеховСостояниеПросмотраРасширеннаяПодсказка" id="121"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="СписокЦеховУправлениеПоиском" id="122">
+										<AdditionSource>
+											<Item>СписокЦехов</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокЦеховУправлениеПоискомКонтекстноеМеню" id="123"/>
+										<ExtendedTooltip name="СписокЦеховУправлениеПоискомРасширеннаяПодсказка" id="124"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">СписокЦеховВыбор</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="СписокЦеховЦех" id="128">
+											<DataPath>СписокЦехов.Цех</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Цех</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="СписокЦеховЦехКонтекстноеМеню" id="129"/>
+											<ExtendedTooltip name="СписокЦеховЦехРасширеннаяПодсказка" id="130"/>
+										</LabelField>
+										<LabelField name="СписокЦеховПодразделение" id="125">
+											<DataPath>СписокЦехов.ПодразделениеКомпании</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подразделение</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="СписокЦеховПодразделениеКонтекстноеМеню" id="126"/>
+											<ExtendedTooltip name="СписокЦеховПодразделениеРасширеннаяПодсказка" id="127"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+								<UsualGroup name="ГруппаКомандыПереносаЦехов" id="245">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа команды переноса цехов</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа команды переноса сотрудников</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<Group>Vertical</Group>
+									<VerticalAlign>Center</VerticalAlign>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКомандыПереносаЦеховРасширеннаяПодсказка" id="246"/>
+									<ChildItems>
+										<Button name="ПеренестиВыделенныеЦеха" id="247">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ПеренестиВыделенныеЦеха</CommandName>
+											<ExtendedTooltip name="ПеренестиВыделенныеЦехаРасширеннаяПодсказка" id="248"/>
+										</Button>
+										<Button name="ПеренестиВсеЦеха" id="249">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ПеренестиВсеЦеха</CommandName>
+											<ExtendedTooltip name="ПеренестиВсеЦехаРасширеннаяПодсказка" id="250"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ВыбранныеЦеха" id="220">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ВыбранныеЦеха</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ВыбранныеЦехаКонтекстноеМеню" id="221"/>
+							<AutoCommandBar name="ВыбранныеЦехаКоманднаяПанель" id="222"/>
+							<ExtendedTooltip name="ВыбранныеЦехаРасширеннаяПодсказка" id="223"/>
+							<SearchStringAddition name="ВыбранныеЦехаСтрокаПоиска" id="224">
+								<AdditionSource>
+									<Item>ВыбранныеЦеха</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыбранныеЦехаСтрокаПоискаКонтекстноеМеню" id="225">
+									<Autofill>false</Autofill>
+								</ContextMenu>
+								<ExtendedTooltip name="ВыбранныеЦехаСтрокаПоискаРасширеннаяПодсказка" id="226"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВыбранныеЦехаСостояниеПросмотра" id="227">
+								<AdditionSource>
+									<Item>ВыбранныеЦеха</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыбранныеЦехаСостояниеПросмотраКонтекстноеМеню" id="228"/>
+								<ExtendedTooltip name="ВыбранныеЦехаСостояниеПросмотраРасширеннаяПодсказка" id="229"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВыбранныеЦехаУправлениеПоиском" id="230">
+								<AdditionSource>
+									<Item>ВыбранныеЦеха</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыбранныеЦехаУправлениеПоискомКонтекстноеМеню" id="231"/>
+								<ExtendedTooltip name="ВыбранныеЦехаУправлениеПоискомРасширеннаяПодсказка" id="232"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ВыбранныеЦехаЦех" id="236">
+									<DataPath>ВыбранныеЦеха.Ресурс</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ресурс</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВыбранныеЦехаЦехКонтекстноеМеню" id="237"/>
+									<ExtendedTooltip name="ВыбранныеЦехаЦехРасширеннаяПодсказка" id="238"/>
+								</InputField>
+								<InputField name="ВыбранныеЦехаПодразделенияКомпании" id="233">
+									<DataPath>ВыбранныеЦеха.ПодразделениеКомпании</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подразделение</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВыбранныеЦехаПодразделенияКомпанииКонтекстноеМеню" id="234"/>
+									<ExtendedTooltip name="ВыбранныеЦехаПодразделенияКомпанииРасширеннаяПодсказка" id="235"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СписокСотрудников" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список сотрудников</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Сотрудники.Ссылка КАК Сотрудник,
+	Сотрудники.Должность,
+	Сотрудники.Цех,
+	Сотрудники.ПодразделениеКомпании, 
+	Сотрудники.ТабельныйНомер
+ИЗ
+	Справочник.Сотрудники КАК Сотрудники
+ГДЕ
+	Сотрудники.ЭтоГруппа = ЛОЖЬ
+	И Сотрудники.ПометкаУдаления = ЛОЖЬ</QueryText>
+				<MainTable>Catalog.Сотрудники</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Подразделение</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>33ad57b4-7b52-4ed7-a4ec-a95f04511205</dcsset:userSettingID>
+							<dcsset:userSettingPresentation xsi:type="xs:string">Подразделение</dcsset:userSettingPresentation>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Цех</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>d2c26baa-f92a-4dc3-a71a-e78ac2bbe3d3</dcsset:userSettingID>
+							<dcsset:userSettingPresentation xsi:type="xs:string">Цех</dcsset:userSettingPresentation>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Должность</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>6db5cd10-965f-42ee-a8ab-d6fe7af26f3a</dcsset:userSettingID>
+							<dcsset:userSettingPresentation xsi:type="xs:string">Должность</dcsset:userSettingPresentation>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">ТабельныйНомер</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:string"/>
+							<dcsset:userSettingID>820621c2-bdc4-406a-a549-558fd034706e</dcsset:userSettingID>
+							<dcsset:userSettingPresentation xsi:type="xs:string">Табельный номер</dcsset:userSettingPresentation>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="СписокЦехов" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список цехов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+		Цеха.Ссылка КАК Цех,
+		Цеха.ПодразделениеКомпании 
+ИЗ
+		Справочник.Цеха КАК Цеха
+ГДЕ
+	Цеха.ПометкаУдаления = ЛОЖЬ</QueryText>
+				<MainTable>Catalog.Цеха</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Подразделение</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:viewMode>Normal</dcsset:viewMode>
+							<dcsset:userSettingID>13ac584f-644b-4468-8012-9629de45de79</dcsset:userSettingID>
+							<dcsset:userSettingPresentation xsi:type="xs:string">Подразделение</dcsset:userSettingPresentation>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="РежимПодбора" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим подбора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыбранныеСотрудники" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбранные сотрудники</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Ресурс" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ресурс</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Сотрудники</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПодразделениеКомпании" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделение компании</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ПодразделенияКомпании</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Цех" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цех</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Цеха</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Должность" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Должность</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Должности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТабельныйНомер" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Табельный номер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ВыбранныеЦеха" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбранные цеха</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПодразделениеКомпании" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделение компании</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ПодразделенияКомпании</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Ресурс" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ресурс</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Цеха</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Заполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ChooseValue</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Заполнить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПеренестиВыделенныхСотрудников" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&gt;</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести выделенных сотрудников в таблицу выбранных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПеренестиВыделенныхСотрудников</Action>
+		</Command>
+		<Command name="ПеренестиВсехСотрудников" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&gt;&gt;</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести всех сотрудников в таблицу выбранных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПеренестиВсехСотрудников</Action>
+		</Command>
+		<Command name="ПеренестиВсеЦеха" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&gt;&gt;</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести все цеха в таблицу выбранных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПеренестиВсеЦеха</Action>
+		</Command>
+		<Command name="ПеренестиВыделенныеЦеха" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&gt;</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести выделенные цеха в таблицу выбранных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПеренестиВыделенныеЦеха</Action>
+		</Command>
+	</Commands>
+</Form>

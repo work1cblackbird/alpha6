@@ -1,0 +1,1009 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаСправка" id="181">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="182"/>
+			</Button>
+			<Button name="ФормаРассчитатьЗаказ" id="604">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.РасcчитатьЗаказ</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаРассчитатьЗаказРасширеннаяПодсказка" id="605"/>
+			</Button>
+			<Button name="ФормаДобавитьВДокумент" id="614">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.Command.ДобавитьВДокумент</CommandName>
+				<ExtendedTooltip name="ФормаДобавитьВДокументРасширеннаяПодсказка" id="615"/>
+			</Button>
+			<Button name="ФормаЗакрыть" id="606">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="607"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Страницы" id="175">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="176"/>
+			<Events>
+				<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
+			</Events>
+			<ChildItems>
+				<Page name="СтраницаНастройки" id="177">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки</v8:content>
+						</v8:item>
+					</Title>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаНастройкиРасширеннаяПодсказка" id="178"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаШапка" id="167">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Шапка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ChildItemsWidth>Equal</ChildItemsWidth>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="168"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаШапкаЛево" id="169">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа шапка (лево)</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаШапкаЛевоРасширеннаяПодсказка" id="170"/>
+									<ChildItems>
+										<InputField name="ПодразделениеКомпании" id="608">
+											<DataPath>Объект.ПодразделениеКомпании</DataPath>
+											<ClearButton>true</ClearButton>
+											<ContextMenu name="ПодразделениеКомпанииКонтекстноеМеню" id="609"/>
+											<ExtendedTooltip name="ПодразделениеКомпанииРасширеннаяПодсказка" id="610"/>
+										</InputField>
+										<InputField name="Контрагент" id="611">
+											<DataPath>Объект.Контрагент</DataPath>
+											<ClearButton>true</ClearButton>
+											<ContextMenu name="КонтрагентКонтекстноеМеню" id="612"/>
+											<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="613"/>
+										</InputField>
+										<InputField name="ТипЦеныЗакупки" id="10">
+											<DataPath>Объект.ТипЦеныЗакупки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ClearButton>true</ClearButton>
+											<ContextMenu name="ТипЦеныЗакупкиКонтекстноеМеню" id="11"/>
+											<ExtendedTooltip name="ТипЦеныЗакупкиРасширеннаяПодсказка" id="12"/>
+										</InputField>
+										<InputField name="ТипЦеныПродажи" id="7">
+											<DataPath>Объект.ТипЦеныПродажи</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ClearButton>true</ClearButton>
+											<ContextMenu name="ТипЦеныПродажиКонтекстноеМеню" id="8"/>
+											<ExtendedTooltip name="ТипЦеныПродажиРасширеннаяПодсказка" id="9"/>
+										</InputField>
+										<CheckBoxField name="РасчетТолькоПоГлавнымАналогам" id="13">
+											<DataPath>Объект.РасчетТолькоПоГлавнымАналогам</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Рассчитывать только по главным аналогам</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="РасчетТолькоПоГлавнымАналогамКонтекстноеМеню" id="14"/>
+											<ExtendedTooltip name="РасчетТолькоПоГлавнымАналогамРасширеннаяПодсказка" id="15"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаШапкаПраво" id="171">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа шапка (право)</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаШапкаПравоРасширеннаяПодсказка" id="172"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаВремя" id="173">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Время</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаВремяРасширеннаяПодсказка" id="174"/>
+											<ChildItems>
+												<InputField name="НачалоПериодаВыборки" id="25">
+													<DataPath>Объект.НачалоПериодаВыборки</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Произвольный период с</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Начало произвольного периода расчета</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="НачалоПериодаВыборкиКонтекстноеМеню" id="26"/>
+													<ExtendedTooltip name="НачалоПериодаВыборкиРасширеннаяПодсказка" id="27"/>
+												</InputField>
+												<InputField name="КонецПериодаВыборки" id="28">
+													<DataPath>Объект.КонецПериодаВыборки</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>по</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Конец произвольного периода расчета</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="КонецПериодаВыборкиКонтекстноеМеню" id="29"/>
+													<ExtendedTooltip name="КонецПериодаВыборкиРасширеннаяПодсказка" id="30"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="СрокПоставки" id="19">
+											<DataPath>Объект.СрокПоставки</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Дата, на которую ожидается поставка товара</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ContextMenu name="СрокПоставкиКонтекстноеМеню" id="20"/>
+											<ExtendedTooltip name="СрокПоставкиРасширеннаяПодсказка" id="21"/>
+										</InputField>
+										<InputField name="ГлубинаЗапаса" id="16">
+											<DataPath>Объект.ГлубинаЗапаса</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Количество дней, на которое должно хватить товара между планируемой поставкой и следующей</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ContextMenu name="ГлубинаЗапасаКонтекстноеМеню" id="17"/>
+											<ExtendedTooltip name="ГлубинаЗапасаРасширеннаяПодсказка" id="18"/>
+										</InputField>
+										<InputField name="ПоследниеДниПродажи" id="22">
+											<DataPath>Объект.ПоследниеДниПродажи</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ContextMenu name="ПоследниеДниПродажиКонтекстноеМеню" id="23"/>
+											<ExtendedTooltip name="ПоследниеДниПродажиРасширеннаяПодсказка" id="24"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор" id="581">
+							<Representation>Tree</Representation>
+							<Autofill>true</Autofill>
+							<HeightInTableRows>5</HeightInTableRows>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>КомпоновщикНастроекКомпоновкиДанных.Settings.Filter</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Компоновщик настроек компоновки данных настройки отбор</v8:content>
+								</v8:item>
+							</Title>
+							<ViewMode>All</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+							<ContextMenu name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборКонтекстноеМеню" id="582"/>
+							<AutoCommandBar name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборКоманднаяПанель" id="583">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборДобавитьЭлементОтбора" id="594">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор.StandardCommand.AddFilterItem</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборДобавитьЭлементОтбораРасширеннаяПодсказка" id="595"/>
+									</Button>
+									<Button name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборДобавитьГруппуЭлементовОтбора" id="596">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор.StandardCommand.AddFilterItemGroup</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.CreateFolder</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборДобавитьГруппуЭлементовОтбораРасширеннаяПодсказка" id="597"/>
+									</Button>
+									<Button name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПереместитьВверх" id="598">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор.StandardCommand.MoveUp</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПереместитьВверхРасширеннаяПодсказка" id="599"/>
+									</Button>
+									<Button name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПереместитьВниз" id="600">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор.StandardCommand.MoveDown</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПереместитьВнизРасширеннаяПодсказка" id="601"/>
+									</Button>
+									<Button name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПодробно" id="602">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор.StandardCommand.Detailed</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПодробноРасширеннаяПодсказка" id="603"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборРасширеннаяПодсказка" id="584"/>
+							<SearchStringAddition name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСтрокаПоиска" id="585">
+								<AdditionSource>
+									<Item>КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСтрокаПоискаКонтекстноеМеню" id="586"/>
+								<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСтрокаПоискаРасширеннаяПодсказка" id="587"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСостояниеПросмотра" id="588">
+								<AdditionSource>
+									<Item>КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСостояниеПросмотраКонтекстноеМеню" id="589"/>
+								<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСостояниеПросмотраРасширеннаяПодсказка" id="590"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборУправлениеПоиском" id="591">
+								<AdditionSource>
+									<Item>КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборУправлениеПоискомКонтекстноеМеню" id="592"/>
+								<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборУправлениеПоискомРасширеннаяПодсказка" id="593"/>
+							</SearchControlAddition>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаРезультат" id="179">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат</v8:content>
+						</v8:item>
+					</Title>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаРезультатРасширеннаяПодсказка" id="180"/>
+					<ChildItems>
+						<UsualGroup name="ШапкаРезультат" id="183">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Шапка результат</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ШапкаРезультатРасширеннаяПодсказка" id="184"/>
+						</UsualGroup>
+						<UsualGroup name="Результат" id="185">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Результат</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="186"/>
+							<ChildItems>
+								<Table name="ОптимальныйЗаказ" id="37">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.ОптимальныйЗаказ</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оптимальный заказ</v8:content>
+										</v8:item>
+									</Title>
+									<CommandSet>
+										<ExcludedCommand>Add</ExcludedCommand>
+										<ExcludedCommand>CancelSearch</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>EndEdit</ExcludedCommand>
+										<ExcludedCommand>Find</ExcludedCommand>
+										<ExcludedCommand>MoveDown</ExcludedCommand>
+										<ExcludedCommand>MoveUp</ExcludedCommand>
+										<ExcludedCommand>OutputList</ExcludedCommand>
+										<ExcludedCommand>SelectAll</ExcludedCommand>
+										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+										<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+										<ExcludedCommand>SortListAsc</ExcludedCommand>
+										<ExcludedCommand>SortListDesc</ExcludedCommand>
+									</CommandSet>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ОптимальныйЗаказКонтекстноеМеню" id="38"/>
+									<AutoCommandBar name="ОптимальныйЗаказКоманднаяПанель" id="39">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="ОптимальныйЗаказУстановитьПометки" id="616">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.УстановитьПометки</CommandName>
+												<ExtendedTooltip name="ОптимальныйЗаказУстановитьПометкиРасширеннаяПодсказка" id="617"/>
+											</Button>
+											<Button name="ОптимальныйЗаказСнятьПометки" id="618">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СнятьПометки</CommandName>
+												<ExtendedTooltip name="ОптимальныйЗаказСнятьПометкиРасширеннаяПодсказка" id="619"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ОптимальныйЗаказРасширеннаяПодсказка" id="40"/>
+									<SearchStringAddition name="ОптимальныйЗаказСтрокаПоиска" id="41">
+										<AdditionSource>
+											<Item>ОптимальныйЗаказ</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ОптимальныйЗаказСтрокаПоискаКонтекстноеМеню" id="42"/>
+										<ExtendedTooltip name="ОптимальныйЗаказСтрокаПоискаРасширеннаяПодсказка" id="43"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ОптимальныйЗаказСостояниеПросмотра" id="44">
+										<AdditionSource>
+											<Item>ОптимальныйЗаказ</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ОптимальныйЗаказСостояниеПросмотраКонтекстноеМеню" id="45"/>
+										<ExtendedTooltip name="ОптимальныйЗаказСостояниеПросмотраРасширеннаяПодсказка" id="46"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ОптимальныйЗаказУправлениеПоиском" id="47">
+										<AdditionSource>
+											<Item>ОптимальныйЗаказ</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ОптимальныйЗаказУправлениеПоискомКонтекстноеМеню" id="48"/>
+										<ExtendedTooltip name="ОптимальныйЗаказУправлениеПоискомРасширеннаяПодсказка" id="49"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnActivateRow">ОптимальныйЗаказПриАктивизацииСтроки</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="ОптимальныйЗаказНомерСтроки" id="50">
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказНомерСтрокиКонтекстноеМеню" id="51"/>
+											<ExtendedTooltip name="ОптимальныйЗаказНомерСтрокиРасширеннаяПодсказка" id="52"/>
+										</LabelField>
+										<CheckBoxField name="ОптимальныйЗаказПеренестиВЗаказ" id="53">
+											<DataPath>Объект.ОптимальныйЗаказ.ПеренестиВЗаказ</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ОптимальныйЗаказПеренестиВЗаказКонтекстноеМеню" id="54"/>
+											<ExtendedTooltip name="ОптимальныйЗаказПеренестиВЗаказРасширеннаяПодсказка" id="55"/>
+										</CheckBoxField>
+										<InputField name="ОптимальныйЗаказНоменклатура" id="56">
+											<DataPath>Объект.ОптимальныйЗаказ.Номенклатура</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказНоменклатураКонтекстноеМеню" id="57"/>
+											<ExtendedTooltip name="ОптимальныйЗаказНоменклатураРасширеннаяПодсказка" id="58"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказНомерПоКаталогу" id="59">
+											<DataPath>Объект.ОптимальныйЗаказ.НомерПоКаталогу</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказНомерПоКаталогуКонтекстноеМеню" id="60"/>
+											<ExtendedTooltip name="ОптимальныйЗаказНомерПоКаталогуРасширеннаяПодсказка" id="61"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказПроизводитель" id="62">
+											<DataPath>Объект.ОптимальныйЗаказ.Производитель</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказПроизводительКонтекстноеМеню" id="63"/>
+											<ExtendedTooltip name="ОптимальныйЗаказПроизводительРасширеннаяПодсказка" id="64"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказНоменклатураБазоваяЕдиницаИзмерения" id="65">
+											<DataPath>Объект.ОптимальныйЗаказ.НоменклатураБазоваяЕдиницаИзмерения</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказНоменклатураБазоваяЕдиницаИзмеренияКонтекстноеМеню" id="66"/>
+											<ExtendedTooltip name="ОптимальныйЗаказНоменклатураБазоваяЕдиницаИзмеренияРасширеннаяПодсказка" id="67"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказГлавныйАналог" id="68">
+											<DataPath>Объект.ОптимальныйЗаказ.ГлавныйАналог</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<FooterText>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Главный аналог, если «Номенклатура» входит в группу аналогов</v8:content>
+												</v8:item>
+											</FooterText>
+											<ContextMenu name="ОптимальныйЗаказГлавныйАналогКонтекстноеМеню" id="69"/>
+											<ExtendedTooltip name="ОптимальныйЗаказГлавныйАналогРасширеннаяПодсказка" id="70"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказРекомендуемоеКоличество" id="143">
+											<DataPath>Объект.ОптимальныйЗаказ.РекомендуемоеКоличество</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказРекомендуемоеКоличествоКонтекстноеМеню" id="144"/>
+											<ExtendedTooltip name="ОптимальныйЗаказРекомендуемоеКоличествоРасширеннаяПодсказка" id="145"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличество" id="146">
+											<DataPath>Объект.ОптимальныйЗаказ.Количество</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоКонтекстноеМеню" id="147"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоРасширеннаяПодсказка" id="148"/>
+											<Events>
+												<Event name="OnChange">ОптимальныйЗаказКоличествоПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ДополнительнаяИнформация" id="187">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительная информация</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="ДополнительнаяИнформацияРасширеннаяПодсказка" id="188"/>
+							<ChildItems>
+								<Table name="ОптимальныйЗаказДополнительнаяИнформация" id="321">
+									<HeightInTableRows>3</HeightInTableRows>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.ОптимальныйЗаказ</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оптимальный заказ дополнительная информация</v8:content>
+										</v8:item>
+									</Title>
+									<CommandSet>
+										<ExcludedCommand>Add</ExcludedCommand>
+										<ExcludedCommand>CancelSearch</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>EndEdit</ExcludedCommand>
+										<ExcludedCommand>Find</ExcludedCommand>
+										<ExcludedCommand>MoveDown</ExcludedCommand>
+										<ExcludedCommand>MoveUp</ExcludedCommand>
+										<ExcludedCommand>OutputList</ExcludedCommand>
+										<ExcludedCommand>SelectAll</ExcludedCommand>
+										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+										<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+										<ExcludedCommand>SortListAsc</ExcludedCommand>
+										<ExcludedCommand>SortListDesc</ExcludedCommand>
+									</CommandSet>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияКонтекстноеМеню" id="322"/>
+									<AutoCommandBar name="ОптимальныйЗаказДополнительнаяИнформацияКоманднаяПанель" id="323">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияРасширеннаяПодсказка" id="324"/>
+									<SearchStringAddition name="ОптимальныйЗаказДополнительнаяИнформацияСтрокаПоиска" id="325">
+										<AdditionSource>
+											<Item>ОптимальныйЗаказДополнительнаяИнформация</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияСтрокаПоискаКонтекстноеМеню" id="326"/>
+										<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияСтрокаПоискаРасширеннаяПодсказка" id="327"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ОптимальныйЗаказДополнительнаяИнформацияСостояниеПросмотра" id="328">
+										<AdditionSource>
+											<Item>ОптимальныйЗаказДополнительнаяИнформация</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияСостояниеПросмотраКонтекстноеМеню" id="329"/>
+										<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияСостояниеПросмотраРасширеннаяПодсказка" id="330"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ОптимальныйЗаказДополнительнаяИнформацияУправлениеПоиском" id="331">
+										<AdditionSource>
+											<Item>ОптимальныйЗаказДополнительнаяИнформация</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияУправлениеПоискомКонтекстноеМеню" id="332"/>
+										<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияУправлениеПоискомРасширеннаяПодсказка" id="333"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияОстатокНаСкладе" id="485">
+											<DataPath>Объект.ОптимальныйЗаказ.ОстатокНаСкладе</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияОстатокНаСкладеКонтекстноеМеню" id="486"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияОстатокНаСкладеРасширеннаяПодсказка" id="487"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияЗаказаноПоставщику" id="488">
+											<DataPath>Объект.ОптимальныйЗаказ.ЗаказаноПоставщику</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияЗаказаноПоставщикуКонтекстноеМеню" id="489"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияЗаказаноПоставщикуРасширеннаяПодсказка" id="490"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияРезервНаСкладе" id="491">
+											<DataPath>Объект.ОптимальныйЗаказ.РезервНаСкладе</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияРезервНаСкладеКонтекстноеМеню" id="492"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияРезервНаСкладеРасширеннаяПодсказка" id="493"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияСвободныйОстатокНаСкладе" id="494">
+											<DataPath>Объект.ОптимальныйЗаказ.СвободныйОстатокНаСкладе</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияСвободныйОстатокНаСкладеКонтекстноеМеню" id="495"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияСвободныйОстатокНаСкладеРасширеннаяПодсказка" id="496"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияМинимальныйЗапас" id="497">
+											<DataPath>Объект.ОптимальныйЗаказ.МинимальныйЗапас</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияМинимальныйЗапасКонтекстноеМеню" id="498"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияМинимальныйЗапасРасширеннаяПодсказка" id="499"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияКоличествоПродажЗаПоследниеДни" id="500">
+											<DataPath>Объект.ОптимальныйЗаказ.КоличествоПродажЗаПоследниеДни</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияКоличествоПродажЗаПоследниеДниКонтекстноеМеню" id="501"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияКоличествоПродажЗаПоследниеДниРасширеннаяПодсказка" id="502"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияКоличествоДокументовПродажЗаГод" id="548">
+											<DataPath>Объект.ОптимальныйЗаказ.КоличествоДокументовПродажЗаГод</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияКоличествоДокументовПродажЗаГодКонтекстноеМеню" id="549"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияКоличествоДокументовПродажЗаГодРасширеннаяПодсказка" id="550"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияСкладскаяНаличность" id="551">
+											<DataPath>Объект.ОптимальныйЗаказ.СкладскаяНаличность</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияСкладскаяНаличностьКонтекстноеМеню" id="552"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияСкладскаяНаличностьРасширеннаяПодсказка" id="553"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияТочкаЗаказа" id="554">
+											<DataPath>Объект.ОптимальныйЗаказ.ТочкаЗаказа</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияТочкаЗаказаКонтекстноеМеню" id="555"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияТочкаЗаказаРасширеннаяПодсказка" id="556"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияДатаПоследнейПоставки" id="563">
+											<DataPath>Объект.ОптимальныйЗаказ.ДатаПоследнейПоставки</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияДатаПоследнейПоставкиКонтекстноеМеню" id="564"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияДатаПоследнейПоставкиРасширеннаяПодсказка" id="565"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияЦенаПродажи" id="566">
+											<DataPath>Объект.ОптимальныйЗаказ.ЦенаПродажи</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияЦенаПродажиКонтекстноеМеню" id="567"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияЦенаПродажиРасширеннаяПодсказка" id="568"/>
+											<Events>
+												<Event name="OnChange">ОптимальныйЗаказДополнительнаяИнформацияЦенаПродажиПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияСуммаПродажи" id="569">
+											<DataPath>Объект.ОптимальныйЗаказ.СуммаПродажи</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияСуммаПродажиКонтекстноеМеню" id="570"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияСуммаПродажиРасширеннаяПодсказка" id="571"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияЦенаЗакупки" id="572">
+											<DataPath>Объект.ОптимальныйЗаказ.ЦенаЗакупки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияЦенаЗакупкиКонтекстноеМеню" id="573"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияЦенаЗакупкиРасширеннаяПодсказка" id="574"/>
+											<Events>
+												<Event name="OnChange">ОптимальныйЗаказДополнительнаяИнформацияЦенаЗакупкиПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияСуммаЗакупки" id="575">
+											<DataPath>Объект.ОптимальныйЗаказ.СуммаЗакупки</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияСуммаЗакупкиКонтекстноеМеню" id="576"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияСуммаЗакупкиРасширеннаяПодсказка" id="577"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказДополнительнаяИнформацияИзрасходованоВПроизводствеЗаПоследниеДни" id="578">
+											<DataPath>Объект.ОптимальныйЗаказ.ИзрасходованоВПроизводствеЗаПоследниеДни</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказДополнительнаяИнформацияИзрасходованоВПроизводствеЗаПоследниеДниКонтекстноеМеню" id="579"/>
+											<ExtendedTooltip name="ОптимальныйЗаказДополнительнаяИнформацияИзрасходованоВПроизводствеЗаПоследниеДниРасширеннаяПодсказка" id="580"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="КоличествоПродаж" id="319">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Количество продаж</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ExtendedTooltip name="КоличествоПродажРасширеннаяПодсказка" id="320"/>
+							<ChildItems>
+								<Table name="ОптимальныйЗаказКоличествоПродаж" id="334">
+									<HeightInTableRows>3</HeightInTableRows>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.ОптимальныйЗаказ</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оптимальный заказ количество продаж</v8:content>
+										</v8:item>
+									</Title>
+									<CommandSet>
+										<ExcludedCommand>Add</ExcludedCommand>
+										<ExcludedCommand>CancelSearch</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>EndEdit</ExcludedCommand>
+										<ExcludedCommand>Find</ExcludedCommand>
+										<ExcludedCommand>MoveDown</ExcludedCommand>
+										<ExcludedCommand>MoveUp</ExcludedCommand>
+										<ExcludedCommand>OutputList</ExcludedCommand>
+										<ExcludedCommand>SelectAll</ExcludedCommand>
+										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+										<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+										<ExcludedCommand>SortListAsc</ExcludedCommand>
+										<ExcludedCommand>SortListDesc</ExcludedCommand>
+									</CommandSet>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ОптимальныйЗаказКоличествоПродажКонтекстноеМеню" id="335"/>
+									<AutoCommandBar name="ОптимальныйЗаказКоличествоПродажКоманднаяПанель" id="336">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажРасширеннаяПодсказка" id="337"/>
+									<SearchStringAddition name="ОптимальныйЗаказКоличествоПродажСтрокаПоиска" id="338">
+										<AdditionSource>
+											<Item>ОптимальныйЗаказКоличествоПродаж</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ОптимальныйЗаказКоличествоПродажСтрокаПоискаКонтекстноеМеню" id="339"/>
+										<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажСтрокаПоискаРасширеннаяПодсказка" id="340"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ОптимальныйЗаказКоличествоПродажСостояниеПросмотра" id="341">
+										<AdditionSource>
+											<Item>ОптимальныйЗаказКоличествоПродаж</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ОптимальныйЗаказКоличествоПродажСостояниеПросмотраКонтекстноеМеню" id="342"/>
+										<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажСостояниеПросмотраРасширеннаяПодсказка" id="343"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ОптимальныйЗаказКоличествоПродажУправлениеПоиском" id="344">
+										<AdditionSource>
+											<Item>ОптимальныйЗаказКоличествоПродаж</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ОптимальныйЗаказКоличествоПродажУправлениеПоискомКонтекстноеМеню" id="345"/>
+										<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажУправлениеПоискомРасширеннаяПодсказка" id="346"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ОптимальныйЗаказКоличествоПродажКоличествоПродажЗаПоследниеДни" id="383">
+											<DataPath>Объект.ОптимальныйЗаказ.КоличествоПродажЗаПоследниеДни</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажКоличествоПродажЗаПоследниеДниКонтекстноеМеню" id="384"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажКоличествоПродажЗаПоследниеДниРасширеннаяПодсказка" id="385"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажКоличествоПродажЗаПоследнийГод" id="386">
+											<DataPath>Объект.ОптимальныйЗаказ.КоличествоПродажЗаПоследнийГод</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажКоличествоПродажЗаПоследнийГодКонтекстноеМеню" id="387"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажКоличествоПродажЗаПоследнийГодРасширеннаяПодсказка" id="388"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажРасчетноеКоличествоПродажЗаПоследниеДни" id="389">
+											<DataPath>Объект.ОптимальныйЗаказ.РасчетноеКоличествоПродажЗаПоследниеДни</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажРасчетноеКоличествоПродажЗаПоследниеДниКонтекстноеМеню" id="390"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажРасчетноеКоличествоПродажЗаПоследниеДниРасширеннаяПодсказка" id="391"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажКоличествоПродажЗаПроизвольныйПериод" id="392">
+											<DataPath>Объект.ОптимальныйЗаказ.КоличествоПродажЗаПроизвольныйПериод</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажКоличествоПродажЗаПроизвольныйПериодКонтекстноеМеню" id="393"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажКоличествоПродажЗаПроизвольныйПериодРасширеннаяПодсказка" id="394"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц1" id="395">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц1</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц1КонтекстноеМеню" id="396"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц1РасширеннаяПодсказка" id="397"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц2" id="398">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц2</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц2КонтекстноеМеню" id="399"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц2РасширеннаяПодсказка" id="400"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц3" id="401">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц3</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц3КонтекстноеМеню" id="402"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц3РасширеннаяПодсказка" id="403"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц4" id="404">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц4</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц4КонтекстноеМеню" id="405"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц4РасширеннаяПодсказка" id="406"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц5" id="407">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц5</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц5КонтекстноеМеню" id="408"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц5РасширеннаяПодсказка" id="409"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц6" id="410">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц6</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц6КонтекстноеМеню" id="411"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц6РасширеннаяПодсказка" id="412"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц7" id="413">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц7</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц7КонтекстноеМеню" id="414"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц7РасширеннаяПодсказка" id="415"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц8" id="416">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц8</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц8КонтекстноеМеню" id="417"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц8РасширеннаяПодсказка" id="418"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц9" id="419">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц9</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц9КонтекстноеМеню" id="420"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц9РасширеннаяПодсказка" id="421"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц10" id="422">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц10</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц10КонтекстноеМеню" id="423"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц10РасширеннаяПодсказка" id="424"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц11" id="425">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц11</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц11КонтекстноеМеню" id="426"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц11РасширеннаяПодсказка" id="427"/>
+										</InputField>
+										<InputField name="ОптимальныйЗаказКоличествоПродажПродажиМесяц12" id="428">
+											<DataPath>Объект.ОптимальныйЗаказ.ПродажиМесяц12</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОптимальныйЗаказКоличествоПродажПродажиМесяц12КонтекстноеМеню" id="429"/>
+											<ExtendedTooltip name="ОптимальныйЗаказКоличествоПродажПродажиМесяц12РасширеннаяПодсказка" id="430"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.РасчетОптимальногоЗаказа</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="АдресСхемыКомпоновкиДанных" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес схемы компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КомпоновщикНастроекКомпоновкиДанных" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компоновщик настроек компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="РасcчитатьЗаказ" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расcчитать заказ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расcчитать заказ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GoForward</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РассчитатьЗаказ</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьВДокумент" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить в документ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить в документ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьВДокумент</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьПометки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить пометки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить пометки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьПометки</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьПометки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять пометки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять пометки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьПометки</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,737 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Передача распределения</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗакрыть" id="37">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="38"/>
+			</Button>
+			<Button name="ФормаПередатьРаспределение" id="42">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ПередатьРаспределение</CommandName>
+				<ExtendedTooltip name="ФормаПередатьРаспределениеРасширеннаяПодсказка" id="43"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Таблицы" id="99">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблицы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблицы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ТаблицыРасширеннаяПодсказка" id="100"/>
+			<ChildItems>
+				<UsualGroup name="Распределение" id="101">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Распределение</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Распределение</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Behavior>Usual</Behavior>
+					<ExtendedTooltip name="РаспределениеРасширеннаяПодсказка" id="102"/>
+					<ChildItems>
+						<Table name="ПозицииСРаспределением" id="133">
+							<HeightInTableRows>10</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ПозицииСРаспределением</DataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ПозицииСРаспределениемКонтекстноеМеню" id="134"/>
+							<AutoCommandBar name="ПозицииСРаспределениемКоманднаяПанель" id="135"/>
+							<ExtendedTooltip name="ПозицииСРаспределениемРасширеннаяПодсказка" id="136"/>
+							<SearchStringAddition name="ПозицииСРаспределениемСтрокаПоиска" id="137">
+								<AdditionSource>
+									<Item>ПозицииСРаспределением</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПозицииСРаспределениемСтрокаПоискаКонтекстноеМеню" id="138"/>
+								<ExtendedTooltip name="ПозицииСРаспределениемСтрокаПоискаРасширеннаяПодсказка" id="139"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПозицииСРаспределениемСостояниеПросмотра" id="140">
+								<AdditionSource>
+									<Item>ПозицииСРаспределением</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПозицииСРаспределениемСостояниеПросмотраКонтекстноеМеню" id="141"/>
+								<ExtendedTooltip name="ПозицииСРаспределениемСостояниеПросмотраРасширеннаяПодсказка" id="142"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПозицииСРаспределениемУправлениеПоиском" id="143">
+								<AdditionSource>
+									<Item>ПозицииСРаспределением</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПозицииСРаспределениемУправлениеПоискомКонтекстноеМеню" id="144"/>
+								<ExtendedTooltip name="ПозицииСРаспределениемУправлениеПоискомРасширеннаяПодсказка" id="145"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">ПозицииСРаспределениемПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ПозицииСРаспределениемНоменклатураАртикул" id="169">
+									<DataPath>ПозицииСРаспределением.Номенклатура.Артикул</DataPath>
+									<Width>10</Width>
+									<ContextMenu name="ПозицииСРаспределениемНоменклатураАртикулКонтекстноеМеню" id="170"/>
+									<ExtendedTooltip name="ПозицииСРаспределениемНоменклатураАртикулРасширеннаяПодсказка" id="171"/>
+								</LabelField>
+								<LabelField name="ПозицииСРаспределениемНоменклатура" id="152">
+									<DataPath>ПозицииСРаспределением.Номенклатура</DataPath>
+									<ContextMenu name="ПозицииСРаспределениемНоменклатураКонтекстноеМеню" id="153"/>
+									<ExtendedTooltip name="ПозицииСРаспределениемНоменклатураРасширеннаяПодсказка" id="154"/>
+								</LabelField>
+								<LabelField name="ПозицииСРаспределениемХарактеристикаНоменклатуры" id="155">
+									<DataPath>ПозицииСРаспределением.ХарактеристикаНоменклатуры</DataPath>
+									<ContextMenu name="ПозицииСРаспределениемХарактеристикаНоменклатурыКонтекстноеМеню" id="156"/>
+									<ExtendedTooltip name="ПозицииСРаспределениемХарактеристикаНоменклатурыРасширеннаяПодсказка" id="157"/>
+								</LabelField>
+								<ColumnGroup name="ПозицииСРаспределениемРаспределено" id="163">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Распределено</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Позиции с распределением распределено</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ПозицииСРаспределениемРаспределеноРасширеннаяПодсказка" id="164"/>
+									<ChildItems>
+										<LabelField name="ПозицииСРаспределениемЗаказПоставщика" id="149">
+											<DataPath>ПозицииСРаспределением.ЗаказПоставщика</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Заказ</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ПозицииСРаспределениемЗаказПоставщикаКонтекстноеМеню" id="150"/>
+											<ExtendedTooltip name="ПозицииСРаспределениемЗаказПоставщикаРасширеннаяПодсказка" id="151"/>
+										</LabelField>
+										<LabelField name="ПозицииСРаспределениемКоличествоОстаток" id="158">
+											<DataPath>ПозицииСРаспределением.КоличествоBalance</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Количество</v8:content>
+												</v8:item>
+											</Title>
+											<Width>8</Width>
+											<ContextMenu name="ПозицииСРаспределениемКоличествоОстатокКонтекстноеМеню" id="159"/>
+											<ExtendedTooltip name="ПозицииСРаспределениемКоличествоОстатокРасширеннаяПодсказка" id="160"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ЗаказыСПотребностями" id="103">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Потребности</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заказы с потребностями</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Behavior>Usual</Behavior>
+					<ExtendedTooltip name="ЗаказыСПотребностямиРасширеннаяПодсказка" id="104"/>
+					<ChildItems>
+						<Table name="ЗаказыПолучатели" id="77">
+							<HeightInTableRows>10</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ЗаказыПолучатели</DataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ЗаказыПолучателиКонтекстноеМеню" id="78">
+								<ChildItems>
+									<Button name="ЗаказыПолучателиКонтекстноеМенюОткрытьЗаказ" id="183">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОткрытьЗаказ</CommandName>
+										<ExtendedTooltip name="ЗаказыПолучателиКонтекстноеМенюОткрытьЗаказРасширеннаяПодсказка" id="184"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="ЗаказыПолучателиКоманднаяПанель" id="79">
+								<ChildItems>
+									<Button name="ЗаказыПолучателиОткрытьЗаказ" id="181">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОткрытьЗаказ</CommandName>
+										<ExtendedTooltip name="ЗаказыПолучателиОткрытьЗаказРасширеннаяПодсказка" id="182"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ЗаказыПолучателиРасширеннаяПодсказка" id="80"/>
+							<SearchStringAddition name="ЗаказыПолучателиСтрокаПоиска" id="81">
+								<AdditionSource>
+									<Item>ЗаказыПолучатели</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыПолучателиСтрокаПоискаКонтекстноеМеню" id="82"/>
+								<ExtendedTooltip name="ЗаказыПолучателиСтрокаПоискаРасширеннаяПодсказка" id="83"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЗаказыПолучателиСостояниеПросмотра" id="84">
+								<AdditionSource>
+									<Item>ЗаказыПолучатели</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыПолучателиСостояниеПросмотраКонтекстноеМеню" id="85"/>
+								<ExtendedTooltip name="ЗаказыПолучателиСостояниеПросмотраРасширеннаяПодсказка" id="86"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЗаказыПолучателиУправлениеПоиском" id="87">
+								<AdditionSource>
+									<Item>ЗаказыПолучатели</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыПолучателиУправлениеПоискомКонтекстноеМеню" id="88"/>
+								<ExtendedTooltip name="ЗаказыПолучателиУправлениеПоискомРасширеннаяПодсказка" id="89"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ЗаказыПолучателиВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ЗаказыПолучателиЗаказ" id="90">
+									<DataPath>ЗаказыПолучатели.Заказ</DataPath>
+									<ContextMenu name="ЗаказыПолучателиЗаказКонтекстноеМеню" id="91"/>
+									<ExtendedTooltip name="ЗаказыПолучателиЗаказРасширеннаяПодсказка" id="92"/>
+								</LabelField>
+								<LabelField name="ЗаказыПолучателиКонтрагент" id="93">
+									<DataPath>ЗаказыПолучатели.Контрагент</DataPath>
+									<ContextMenu name="ЗаказыПолучателиКонтрагентКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="ЗаказыПолучателиКонтрагентРасширеннаяПодсказка" id="95"/>
+								</LabelField>
+								<LabelField name="ЗаказыПолучателиЗаказОрганизация" id="175">
+									<DataPath>ЗаказыПолучатели.Заказ.Организация</DataPath>
+									<ContextMenu name="ЗаказыПолучателиЗаказОрганизацияКонтекстноеМеню" id="176"/>
+									<ExtendedTooltip name="ЗаказыПолучателиЗаказОрганизацияРасширеннаяПодсказка" id="177"/>
+								</LabelField>
+								<LabelField name="ЗаказыПолучателиЗаказПодразделениеКомпании" id="178">
+									<DataPath>ЗаказыПолучатели.Заказ.ПодразделениеКомпании</DataPath>
+									<ContextMenu name="ЗаказыПолучателиЗаказПодразделениеКомпанииКонтекстноеМеню" id="179"/>
+									<ExtendedTooltip name="ЗаказыПолучателиЗаказПодразделениеКомпанииРасширеннаяПодсказка" id="180"/>
+								</LabelField>
+								<LabelField name="ЗаказыПолучателиТребуетсяОбеспчить" id="96">
+									<DataPath>ЗаказыПолучатели.ТребуетсяОбеспечить</DataPath>
+									<ContextMenu name="ЗаказыПолучателиТребуетсяОбеспчитьКонтекстноеМеню" id="97"/>
+									<ExtendedTooltip name="ЗаказыПолучателиТребуетсяОбеспчитьРасширеннаяПодсказка" id="98"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ПозицииКПереносу" id="161">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К переносу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Позиции к переносу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ПозицииКПереносуРасширеннаяПодсказка" id="162"/>
+			<ChildItems>
+				<Table name="ПодобранныеПозиции" id="105">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ПодобранныеПозиции</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ПодобранныеПозицииКонтекстноеМеню" id="106"/>
+					<AutoCommandBar name="ПодобранныеПозицииКоманднаяПанель" id="107">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="ПодобранныеПозицииДобавить" id="167">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.ПодобранныеПозиции.StandardCommand.Add</CommandName>
+								<ExtendedTooltip name="ПодобранныеПозицииДобавитьРасширеннаяПодсказка" id="168"/>
+							</Button>
+							<ButtonGroup name="ПодобранныеПозицииОсновныеДействия" id="165">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Подобранные позиции основные действия</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Подобранные позиции основные действия</v8:content>
+									</v8:item>
+								</ToolTip>
+								<CommandSource>Item.ПодобранныеПозиции</CommandSource>
+								<ExtendedTooltip name="ПодобранныеПозицииОсновныеДействияРасширеннаяПодсказка" id="166"/>
+							</ButtonGroup>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ПодобранныеПозицииРасширеннаяПодсказка" id="108"/>
+					<SearchStringAddition name="ПодобранныеПозицииСтрокаПоиска" id="109">
+						<AdditionSource>
+							<Item>ПодобранныеПозиции</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПодобранныеПозицииСтрокаПоискаКонтекстноеМеню" id="110"/>
+						<ExtendedTooltip name="ПодобранныеПозицииСтрокаПоискаРасширеннаяПодсказка" id="111"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ПодобранныеПозицииСостояниеПросмотра" id="112">
+						<AdditionSource>
+							<Item>ПодобранныеПозиции</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПодобранныеПозицииСостояниеПросмотраКонтекстноеМеню" id="113"/>
+						<ExtendedTooltip name="ПодобранныеПозицииСостояниеПросмотраРасширеннаяПодсказка" id="114"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ПодобранныеПозицииУправлениеПоиском" id="115">
+						<AdditionSource>
+							<Item>ПодобранныеПозиции</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ПодобранныеПозицииУправлениеПоискомКонтекстноеМеню" id="116"/>
+						<ExtendedTooltip name="ПодобранныеПозицииУправлениеПоискомРасширеннаяПодсказка" id="117"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<InputField name="ПодобранныеПозицииНоменклатураАртикул" id="172">
+							<DataPath>ПодобранныеПозиции.Номенклатура.Артикул</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>10</Width>
+							<ContextMenu name="ПодобранныеПозицииНоменклатураАртикулКонтекстноеМеню" id="173"/>
+							<ExtendedTooltip name="ПодобранныеПозицииНоменклатураАртикулРасширеннаяПодсказка" id="174"/>
+						</InputField>
+						<InputField name="ПодобранныеПозицииНоменклатура" id="118">
+							<DataPath>ПодобранныеПозиции.Номенклатура</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ПодобранныеПозицииНоменклатураКонтекстноеМеню" id="119"/>
+							<ExtendedTooltip name="ПодобранныеПозицииНоменклатураРасширеннаяПодсказка" id="120"/>
+							<Events>
+								<Event name="OnChange">ПодобранныеПозицииНоменклатураПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ПодобранныеПозицииХарактеристикаНоменклатуры" id="121">
+							<DataPath>ПодобранныеПозиции.ХарактеристикаНоменклатуры</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Отбор.Владелец</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Items.ПодобранныеПозиции.CurrentData.ВладелецХарактеристики</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="ПодобранныеПозицииХарактеристикаНоменклатурыКонтекстноеМеню" id="122"/>
+							<ExtendedTooltip name="ПодобранныеПозицииХарактеристикаНоменклатурыРасширеннаяПодсказка" id="123"/>
+						</InputField>
+						<InputField name="ПодобранныеПозицииМестоРазмещения" id="124">
+							<DataPath>ПодобранныеПозиции.ЗаказПоставщика</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ПодобранныеПозицииМестоРазмещенияКонтекстноеМеню" id="125"/>
+							<ExtendedTooltip name="ПодобранныеПозицииМестоРазмещенияРасширеннаяПодсказка" id="126"/>
+						</InputField>
+						<InputField name="ПодобранныеПозицииКоличество" id="127">
+							<DataPath>ПодобранныеПозиции.Количество</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ПодобранныеПозицииКоличествоКонтекстноеМеню" id="128"/>
+							<ExtendedTooltip name="ПодобранныеПозицииКоличествоРасширеннаяПодсказка" id="129"/>
+						</InputField>
+						<InputField name="ПодобранныеПозицииЗаказ" id="130">
+							<DataPath>ПодобранныеПозиции.Заказ</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ПодобранныеПозицииЗаказКонтекстноеМеню" id="131"/>
+							<ExtendedTooltip name="ПодобранныеПозицииЗаказРасширеннаяПодсказка" id="132"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<InputField name="Комментарий" id="39">
+					<DataPath>Комментарий</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxHeight>3</MaxHeight>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="41"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Комментарий" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>500</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Заказ" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.ЗаказВнутренний</v8:Type>
+				<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаказПолучатель" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.ЗаказВнутренний</v8:Type>
+				<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаказыПолучатели" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы получатели</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~ЗаказыПолучатели.ТребуетсяОбеспчить</Field>
+				<Field>ЗаказыПолучатели.Заказ</Field>
+				<Field>ЗаказыПолучатели.ТребуетсяОбеспечить</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ЗаказыПокупателейОстатки.Контрагент КАК Контрагент,
+	ЗаказыПокупателейОстатки.Заказ КАК Заказ,
+	ЗаказыПокупателейОстатки.ЗаказаноОстаток - ЗаказыПокупателейОстатки.РезервОстаток КАК ТребуетсяОбеспечить
+ИЗ
+	РегистрНакопления.ЗаказыПокупателей.Остатки(
+			,
+			Заказ &lt;&gt; &amp;Заказ
+				И Номенклатура = &amp;Номенклатура
+				И ХарактеристикаНоменклатуры = &amp;ХарактеристикаНоменклатуры) КАК ЗаказыПокупателейОстатки
+ГДЕ
+	ЗаказыПокупателейОстатки.ЗаказаноОстаток - ЗаказыПокупателейОстатки.РезервОстаток &gt; 0</QueryText>
+				<MainTable>AccumulationRegister.ЗаказыПокупателей.Balance</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<GetInvisibleFieldPresentations>false</GetInvisibleFieldPresentations>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПодобранныеПозиции" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобранные позиции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Columns>
+				<Column name="Номенклатура" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ХарактеристикаНоменклатуры" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика номенклатуры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+					<FunctionalOptions>
+						<Item>FunctionalOption.ИспользоватьХарактеристики</Item>
+					</FunctionalOptions>
+				</Column>
+				<Column name="ЗаказПоставщика" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Место размещения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ЗаказПоставщику</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗаказВнутренний</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Заказ" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Получатель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ЗаказВнутренний</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВладелецХарактеристики" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец характеристики</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+						<v8:Type>cfg:CatalogRef.ТипыНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПозицииСРаспределением" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Позиции с распределением</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ПозицииСРаспределением.ЗаказПоставщика</Field>
+				<Field>ПозицииСРаспределением.КоличествоBalance</Field>
+				<Field>ПозицииСРаспределением.Номенклатура</Field>
+				<Field>ПозицииСРаспределением.ХарактеристикаНоменклатуры</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<MainTable>AccumulationRegister.ЗаказыРаспределение.Balance</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПередатьРаспределение" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Передать распределение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Передать распределение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПередатьРаспределение</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьЗаказ" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть заказ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть заказ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldOpen</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьЗаказ</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Заказ">
+			<Type>
+				<v8:Type>cfg:DocumentRef.ЗаказВнутренний</v8:Type>
+				<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Номенклатура">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ХарактеристикаНоменклатуры">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПодразделениеКомпании">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияКомпании</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

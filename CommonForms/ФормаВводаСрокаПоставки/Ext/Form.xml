@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<CommandBarLocation>Top</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаСохранить" id="41">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Сохранить</CommandName>
+				<ExtendedTooltip name="ФормаСохранитьРасширеннаяПодсказка" id="42"/>
+			</Button>
+			<Button name="ФормаЗакрыть" id="52">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Close</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="53"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаСрокПоставки" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок поставки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа срок поставки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаСрокПоставкиРасширеннаяПодсказка" id="48"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСрокНачалоИнтервала" id="1">
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСрокНачалоИнтервалаРасширеннаяПодсказка" id="2"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОтступ" id="59">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отступ</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отступ</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>3</Width>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтступРасширеннаяПодсказка" id="60"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация1" id="54">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<ContextMenu name="Декорация1КонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="56"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="МинДней" id="3">
+							<DataPath>МинДней</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>От</v8:content>
+								</v8:item>
+							</Title>
+							<Width>6</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<SpinButton>true</SpinButton>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧЦ=3; ЧВН=</v8:content>
+								</v8:item>
+							</EditFormat>
+							<MinValue xsi:type="xs:decimal">0</MinValue>
+							<MaxValue xsi:type="xs:decimal">365</MaxValue>
+							<ContextMenu name="МинДнейКонтекстноеМеню" id="4"/>
+							<ExtendedTooltip name="МинДнейРасширеннаяПодсказка" id="5"/>
+							<Events>
+								<Event name="OnChange">МинДнейПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияМинДн" id="12">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>дн.  </v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияМинДнКонтекстноеМеню" id="13"/>
+							<ExtendedTooltip name="ДекорацияМинДнРасширеннаяПодсказка" id="14"/>
+						</LabelDecoration>
+						<InputField name="МинЧасов" id="6">
+							<DataPath>МинЧасов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>час</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<Width>6</Width>
+							<SpinButton>true</SpinButton>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧЦ=2; ЧВН=</v8:content>
+								</v8:item>
+							</EditFormat>
+							<MinValue xsi:type="xs:decimal">0</MinValue>
+							<MaxValue xsi:type="xs:decimal">23</MaxValue>
+							<ContextMenu name="МинЧасовКонтекстноеМеню" id="7"/>
+							<ExtendedTooltip name="МинЧасовРасширеннаяПодсказка" id="8"/>
+							<Events>
+								<Event name="OnChange">СрокПоставкиМинимальныйПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="МинМинут" id="9">
+							<DataPath>МинМинут</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>минут</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<Width>6</Width>
+							<SpinButton>true</SpinButton>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧЦ=2; ЧВН=</v8:content>
+								</v8:item>
+							</EditFormat>
+							<MinValue xsi:type="xs:decimal">0</MinValue>
+							<MaxValue xsi:type="xs:decimal">59</MaxValue>
+							<ContextMenu name="МинМинутКонтекстноеМеню" id="10"/>
+							<ExtendedTooltip name="МинМинутРасширеннаяПодсказка" id="11"/>
+							<Events>
+								<Event name="OnChange">СрокПоставкиМинимальныйПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСрокОкончаниеИнтервала" id="21">
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСрокОкончаниеИнтервалаРасширеннаяПодсказка" id="22"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЭтоИнтервал" id="57">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа это интервал</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа это интервал</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>3</Width>
+							<HorizontalAlign>Center</HorizontalAlign>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЭтоИнтервалРасширеннаяПодсказка" id="58"/>
+							<ChildItems>
+								<CheckBoxField name="ЭтоИнтервал" id="23">
+									<DataPath>ЭтоИнтервал</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтоИнтервалКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="ЭтоИнтервалРасширеннаяПодсказка" id="25"/>
+									<Events>
+										<Event name="OnChange">ЭтоИнтервалПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="МаксДней" id="26">
+							<DataPath>МаксДней</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>До</v8:content>
+								</v8:item>
+							</Title>
+							<Width>6</Width>
+							<SpinButton>true</SpinButton>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧЦ=3; ЧВН=</v8:content>
+								</v8:item>
+							</EditFormat>
+							<MinValue xsi:type="xs:decimal">0</MinValue>
+							<MaxValue xsi:type="xs:decimal">365</MaxValue>
+							<ContextMenu name="МаксДнейКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="МаксДнейРасширеннаяПодсказка" id="28"/>
+							<Events>
+								<Event name="OnChange">МаксДнейПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорациямаксДн" id="32">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>дн.  </v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорациямаксДнКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="ДекорациямаксДнРасширеннаяПодсказка" id="34"/>
+						</LabelDecoration>
+						<InputField name="МаксЧасов" id="35">
+							<DataPath>МаксЧасов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>час</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<Width>6</Width>
+							<SpinButton>true</SpinButton>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧЦ=2; ЧВН=</v8:content>
+								</v8:item>
+							</EditFormat>
+							<MinValue xsi:type="xs:decimal">0</MinValue>
+							<MaxValue xsi:type="xs:decimal">23</MaxValue>
+							<ContextMenu name="МаксЧасовКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="МаксЧасовРасширеннаяПодсказка" id="37"/>
+							<Events>
+								<Event name="OnChange">СрокПоставкиМаксимальныйПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="МаксМинут" id="38">
+							<DataPath>МаксМинут</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>минут</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<Width>6</Width>
+							<SpinButton>true</SpinButton>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧЦ=2; ЧВН=</v8:content>
+								</v8:item>
+							</EditFormat>
+							<MinValue xsi:type="xs:decimal">0</MinValue>
+							<MaxValue xsi:type="xs:decimal">59</MaxValue>
+							<ContextMenu name="МаксМинутКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="МаксМинутРасширеннаяПодсказка" id="40"/>
+							<Events>
+								<Event name="OnChange">СрокПоставкиМаксимальныйПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПредставление" id="45">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаПредставлениеРасширеннаяПодсказка" id="46"/>
+			<ChildItems>
+				<LabelField name="СрокПоставкиПредставление" id="49">
+					<DataPath>СрокПоставкиПредставление</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>39</MaxWidth>
+					<ContextMenu name="СрокПоставкиПредставлениеКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="СрокПоставкиПредставлениеРасширеннаяПодсказка" id="51"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="МаксДней" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Макс дней</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МаксМинут" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Макс минут</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МаксЧасов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Макс часов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МинДней" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Мин дней</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МинМинут" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Мин минут</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МинЧасов" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Мин часов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтоИнтервал" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это интервал</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СрокПоставкиПредставление" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок поставки представление</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СрокПоставкиМинимальный" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок поставки минимальный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СрокПоставкиМаксимальный" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок поставки максимальный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Сохранить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Сохранить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="СрокПоставкиМаксимальный">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="СрокПоставкиМинимальный">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ЭтоИнтервал">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Width>55</Width>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаПрименить" id="20">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<DefaultItem>true</DefaultItem>
+				<CommandName>Form.Command.Применить</CommandName>
+				<ExtendedTooltip name="ФормаПрименитьРасширеннаяПодсказка" id="21"/>
+			</Button>
+			<Button name="ФормаОтменить" id="22">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отменить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОтменитьРасширеннаяПодсказка" id="23"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ТаблицаЗначенийДляВыбора" id="1">
+			<Representation>List</Representation>
+			<HeightInTableRows>8</HeightInTableRows>
+			<ChoiceMode>true</ChoiceMode>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ТаблицаЗначенийДляВыбора</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Choose</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаЗначенийДляВыбораКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ТаблицаЗначенийДляВыбораКоманднаяПанель" id="3">
+				<ChildItems>
+					<ButtonGroup name="ТаблицаЗначенийДляВыбораГруппаВыделение" id="24">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Таблица значений для выбора группа выделение</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Таблица значений для выбора группа выделение</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="ТаблицаЗначенийДляВыбораГруппаВыделениеРасширеннаяПодсказка" id="25"/>
+						<ChildItems>
+							<Button name="ТаблицаЗначенийДляВыбораВыделитьВсе" id="26">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВыделитьВсе</CommandName>
+								<ExtendedTooltip name="ТаблицаЗначенийДляВыбораВыделитьВсеРасширеннаяПодсказка" id="27"/>
+							</Button>
+							<Button name="ТаблицаЗначенийДляВыбораСнятьВыделение" id="28">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СнятьВыделение</CommandName>
+								<ExtendedTooltip name="ТаблицаЗначенийДляВыбораСнятьВыделениеРасширеннаяПодсказка" id="29"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаЗначенийДляВыбораРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ТаблицаЗначенийДляВыбораСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ТаблицаЗначенийДляВыбора</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаЗначенийДляВыбораСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ТаблицаЗначенийДляВыбораСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаЗначенийДляВыбораСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ТаблицаЗначенийДляВыбора</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаЗначенийДляВыбораСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ТаблицаЗначенийДляВыбораСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаЗначенийДляВыбораУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ТаблицаЗначенийДляВыбора</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаЗначенийДляВыбораУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ТаблицаЗначенийДляВыбораУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="ТаблицаЗначенийДляВыбораВыбрано" id="14">
+					<DataPath>ТаблицаЗначенийДляВыбора.Выбрано</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТаблицаЗначенийДляВыбораВыбраноКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ТаблицаЗначенийДляВыбораВыбраноРасширеннаяПодсказка" id="16"/>
+					<Events>
+						<Event name="OnChange">ТаблицаЗначенийДляВыбораВыбраноПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ТаблицаЗначенийДляВыбораЗначение" id="17">
+					<DataPath>ТаблицаЗначенийДляВыбора.Значение</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<CreateButton>false</CreateButton>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ТаблицаЗначенийДляВыбораЗначениеКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ТаблицаЗначенийДляВыбораЗначениеРасширеннаяПодсказка" id="19"/>
+					<Events>
+						<Event name="StartChoice">ТаблицаЗначенийДляВыбораЗначениеНачалоВыбора</Event>
+						<Event name="Clearing">ТаблицаЗначенийДляВыбораЗначениеОчистка</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТаблицаЗначенийДляВыбора" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица значений для выбора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Выбрано" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбрано</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Значение" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Автомобили</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Документ" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.РеализацияАвтомобилей</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПараметрыПечати" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры печати</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаЗначенийДляВыбора</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаЗначенийДляВыбора.Выбрано</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ДобавленныйРеквизитФон</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ВыбранноеЗначение</v8:content>
+					</v8:item>
+				</dcsset:presentation>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Применить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Применить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыделитьВсе" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выделить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выделить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыделитьВсе</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьВыделение" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять выделение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять выделение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьВыделение</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,774 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Отмена резервирования</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗакрыть" id="37">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="38"/>
+			</Button>
+			<Button name="ФормаВыполнитьДействиеСКорректировкой" id="142">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ВыполнитьДействиеСКорректировкой</CommandName>
+				<ExtendedTooltip name="ФормаВыполнитьДействиеСКорректировкойРасширеннаяПодсказка" id="143"/>
+			</Button>
+			<Button name="ФормаВыполнитьДействие" id="39">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ВыполнитьДействие</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Передать резервы</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаВыполнитьДействиеРасширеннаяПодсказка" id="40"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Таблицы" id="86">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблицы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблицы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ТаблицыРасширеннаяПодсказка" id="87"/>
+			<ChildItems>
+				<UsualGroup name="РезервыИсточника" id="144">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Резервы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Резервы источника</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Behavior>Usual</Behavior>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="РезервыИсточникаРасширеннаяПодсказка" id="145"/>
+					<ChildItems>
+						<Table name="ПозицииСРезервами" id="150">
+							<HeightInTableRows>10</HeightInTableRows>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ПозицииСРезервами</DataPath>
+							<CommandSet>
+								<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+								<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+							</CommandSet>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ПозицииСРезервамиКонтекстноеМеню" id="151"/>
+							<AutoCommandBar name="ПозицииСРезервамиКоманднаяПанель" id="152"/>
+							<ExtendedTooltip name="ПозицииСРезервамиРасширеннаяПодсказка" id="153"/>
+							<SearchStringAddition name="ПозицииСРезервамиСтрокаПоиска" id="154">
+								<AdditionSource>
+									<Item>ПозицииСРезервами</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПозицииСРезервамиСтрокаПоискаКонтекстноеМеню" id="155"/>
+								<ExtendedTooltip name="ПозицииСРезервамиСтрокаПоискаРасширеннаяПодсказка" id="156"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПозицииСРезервамиСостояниеПросмотра" id="157">
+								<AdditionSource>
+									<Item>ПозицииСРезервами</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПозицииСРезервамиСостояниеПросмотраКонтекстноеМеню" id="158"/>
+								<ExtendedTooltip name="ПозицииСРезервамиСостояниеПросмотраРасширеннаяПодсказка" id="159"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПозицииСРезервамиУправлениеПоиском" id="160">
+								<AdditionSource>
+									<Item>ПозицииСРезервами</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПозицииСРезервамиУправлениеПоискомКонтекстноеМеню" id="161"/>
+								<ExtendedTooltip name="ПозицииСРезервамиУправлениеПоискомРасширеннаяПодсказка" id="162"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">ПозицииСРезервамиПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ПозицииСРезервамиНоменклатураАртикул" id="184">
+									<DataPath>ПозицииСРезервами.Номенклатура.Артикул</DataPath>
+									<Width>10</Width>
+									<ContextMenu name="ПозицииСРезервамиНоменклатураАртикулКонтекстноеМеню" id="185"/>
+									<ExtendedTooltip name="ПозицииСРезервамиНоменклатураАртикулРасширеннаяПодсказка" id="186"/>
+								</LabelField>
+								<LabelField name="ПозицииСРезервамиНоменклатура" id="169">
+									<DataPath>ПозицииСРезервами.Номенклатура</DataPath>
+									<ContextMenu name="ПозицииСРезервамиНоменклатураКонтекстноеМеню" id="170"/>
+									<ExtendedTooltip name="ПозицииСРезервамиНоменклатураРасширеннаяПодсказка" id="171"/>
+								</LabelField>
+								<LabelField name="ПозицииСРезервамиХарактеристикаНоменклатуры" id="172">
+									<DataPath>ПозицииСРезервами.ХарактеристикаНоменклатуры</DataPath>
+									<ContextMenu name="ПозицииСРезервамиХарактеристикаНоменклатурыКонтекстноеМеню" id="173"/>
+									<ExtendedTooltip name="ПозицииСРезервамиХарактеристикаНоменклатурыРасширеннаяПодсказка" id="174"/>
+								</LabelField>
+								<ColumnGroup name="ПозицииСРезервамиГруппаРезерв" id="190">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Зарезервировано</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Позиции с резервами группа резерв</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ПозицииСРезервамиГруппаРезервРасширеннаяПодсказка" id="191"/>
+									<ChildItems>
+										<LabelField name="ПозицииСРезервамиСкладКомпании" id="175">
+											<DataPath>ПозицииСРезервами.СкладКомпании</DataPath>
+											<ContextMenu name="ПозицииСРезервамиСкладКомпанииКонтекстноеМеню" id="176"/>
+											<ExtendedTooltip name="ПозицииСРезервамиСкладКомпанииРасширеннаяПодсказка" id="177"/>
+										</LabelField>
+										<LabelField name="ПозицииСРезервамиРезервОстаток" id="178">
+											<DataPath>ПозицииСРезервами.РезервBalance</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Количество</v8:content>
+												</v8:item>
+											</Title>
+											<Width>8</Width>
+											<ContextMenu name="ПозицииСРезервамиРезервОстатокКонтекстноеМеню" id="179"/>
+											<ExtendedTooltip name="ПозицииСРезервамиРезервОстатокРасширеннаяПодсказка" id="180"/>
+										</LabelField>
+										<LabelField name="ПозицииСРезервамиРезервСвободныйОстаток" id="181">
+											<DataPath>ПозицииСРезервами.РезервСвободныйBalance</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Из свободного остатка</v8:content>
+												</v8:item>
+											</Title>
+											<Width>8</Width>
+											<ContextMenu name="ПозицииСРезервамиРезервСвободныйОстатокКонтекстноеМеню" id="182"/>
+											<ExtendedTooltip name="ПозицииСРезервамиРезервСвободныйОстатокРасширеннаяПодсказка" id="183"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ЗаказыСПотребностями" id="146">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Потребности</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заказы с потребностями</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Behavior>Usual</Behavior>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="ЗаказыСПотребностямиРасширеннаяПодсказка" id="147"/>
+					<ChildItems>
+						<Table name="ЗаказыПолучатели" id="88">
+							<HeightInTableRows>10</HeightInTableRows>
+							<SelectionMode>SingleRow</SelectionMode>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ЗаказыПолучатели</DataPath>
+							<CommandSet>
+								<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+								<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+							</CommandSet>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ЗаказыПолучателиКонтекстноеМеню" id="89">
+								<ChildItems>
+									<Button name="ЗаказыПолучателиКонтекстноеМенюОткрытьЗаказ" id="200">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОткрытьЗаказ</CommandName>
+										<ExtendedTooltip name="ЗаказыПолучателиКонтекстноеМенюОткрытьЗаказРасширеннаяПодсказка" id="201"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="ЗаказыПолучателиКоманднаяПанель" id="90">
+								<ChildItems>
+									<Button name="ЗаказыПолучателиОткрытьЗаказ" id="198">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОткрытьЗаказ</CommandName>
+										<ExtendedTooltip name="ЗаказыПолучателиОткрытьЗаказРасширеннаяПодсказка" id="199"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ЗаказыПолучателиРасширеннаяПодсказка" id="91"/>
+							<SearchStringAddition name="ЗаказыПолучателиСтрокаПоиска" id="92">
+								<AdditionSource>
+									<Item>ЗаказыПолучатели</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыПолучателиСтрокаПоискаКонтекстноеМеню" id="93"/>
+								<ExtendedTooltip name="ЗаказыПолучателиСтрокаПоискаРасширеннаяПодсказка" id="94"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЗаказыПолучателиСостояниеПросмотра" id="95">
+								<AdditionSource>
+									<Item>ЗаказыПолучатели</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыПолучателиСостояниеПросмотраКонтекстноеМеню" id="96"/>
+								<ExtendedTooltip name="ЗаказыПолучателиСостояниеПросмотраРасширеннаяПодсказка" id="97"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЗаказыПолучателиУправлениеПоиском" id="98">
+								<AdditionSource>
+									<Item>ЗаказыПолучатели</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыПолучателиУправлениеПоискомКонтекстноеМеню" id="99"/>
+								<ExtendedTooltip name="ЗаказыПолучателиУправлениеПоискомРасширеннаяПодсказка" id="100"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ЗаказыПолучателиВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ЗаказыПолучателиЗаказ" id="101">
+									<DataPath>ЗаказыПолучатели.Заказ</DataPath>
+									<ContextMenu name="ЗаказыПолучателиЗаказКонтекстноеМеню" id="102"/>
+									<ExtendedTooltip name="ЗаказыПолучателиЗаказРасширеннаяПодсказка" id="103"/>
+								</LabelField>
+								<LabelField name="ЗаказыПолучателиКонтрагент" id="104">
+									<DataPath>ЗаказыПолучатели.Контрагент</DataPath>
+									<ContextMenu name="ЗаказыПолучателиКонтрагентКонтекстноеМеню" id="105"/>
+									<ExtendedTooltip name="ЗаказыПолучателиКонтрагентРасширеннаяПодсказка" id="106"/>
+								</LabelField>
+								<LabelField name="ЗаказыПолучателиЗаказОрганизация" id="192">
+									<DataPath>ЗаказыПолучатели.Заказ.Организация</DataPath>
+									<ContextMenu name="ЗаказыПолучателиЗаказОрганизацияКонтекстноеМеню" id="193"/>
+									<ExtendedTooltip name="ЗаказыПолучателиЗаказОрганизацияРасширеннаяПодсказка" id="194"/>
+								</LabelField>
+								<LabelField name="ЗаказыПолучателиЗаказПодразделениеКомпании" id="195">
+									<DataPath>ЗаказыПолучатели.Заказ.ПодразделениеКомпании</DataPath>
+									<ContextMenu name="ЗаказыПолучателиЗаказПодразделениеКомпанииКонтекстноеМеню" id="196"/>
+									<ExtendedTooltip name="ЗаказыПолучателиЗаказПодразделениеКомпанииРасширеннаяПодсказка" id="197"/>
+								</LabelField>
+								<LabelField name="ЗаказыПолучателиТребуетсяОбеспечить" id="107">
+									<DataPath>ЗаказыПолучатели.ТребуетсяОбеспечить</DataPath>
+									<ContextMenu name="ЗаказыПолучателиТребуетсяОбеспечитьКонтекстноеМеню" id="108"/>
+									<ExtendedTooltip name="ЗаказыПолучателиТребуетсяОбеспечитьРасширеннаяПодсказка" id="109"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ПозицииКПереносу" id="148">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К переносу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Позиции к переносу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ПозицииКПереносуРасширеннаяПодсказка" id="149"/>
+			<ChildItems>
+				<Table name="ПодобранныеПозиции" id="110">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ПодобранныеПозиции</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ПодобранныеПозицииКонтекстноеМеню" id="111"/>
+					<AutoCommandBar name="ПодобранныеПозицииКоманднаяПанель" id="112">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="ПодобранныеПозицииДобавить" id="135">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Item.ПодобранныеПозиции.StandardCommand.Add</CommandName>
+								<ExtendedTooltip name="ПодобранныеПозицииДобавитьРасширеннаяПодсказка" id="136"/>
+							</Button>
+							<ButtonGroup name="ПодобранныеПозицииОсновныеДействия" id="137">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Подобранные позиции основные действия</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Подобранные позиции основные действия</v8:content>
+									</v8:item>
+								</ToolTip>
+								<CommandSource>Item.ПодобранныеПозиции</CommandSource>
+								<ExtendedTooltip name="ПодобранныеПозицииОсновныеДействияРасширеннаяПодсказка" id="138"/>
+							</ButtonGroup>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ПодобранныеПозицииРасширеннаяПодсказка" id="113"/>
+					<SearchStringAddition name="ПодобранныеПозицииСтрокаПоиска" id="114">
+						<AdditionSource>
+							<Item>ПодобранныеПозиции</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПодобранныеПозицииСтрокаПоискаКонтекстноеМеню" id="115"/>
+						<ExtendedTooltip name="ПодобранныеПозицииСтрокаПоискаРасширеннаяПодсказка" id="116"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ПодобранныеПозицииСостояниеПросмотра" id="117">
+						<AdditionSource>
+							<Item>ПодобранныеПозиции</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПодобранныеПозицииСостояниеПросмотраКонтекстноеМеню" id="118"/>
+						<ExtendedTooltip name="ПодобранныеПозицииСостояниеПросмотраРасширеннаяПодсказка" id="119"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ПодобранныеПозицииУправлениеПоиском" id="120">
+						<AdditionSource>
+							<Item>ПодобранныеПозиции</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ПодобранныеПозицииУправлениеПоискомКонтекстноеМеню" id="121"/>
+						<ExtendedTooltip name="ПодобранныеПозицииУправлениеПоискомРасширеннаяПодсказка" id="122"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<InputField name="ПодобранныеПозицииНоменклатураАртикул" id="187">
+							<DataPath>ПодобранныеПозиции.Номенклатура.Артикул</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>10</Width>
+							<ContextMenu name="ПодобранныеПозицииНоменклатураАртикулКонтекстноеМеню" id="188"/>
+							<ExtendedTooltip name="ПодобранныеПозицииНоменклатураАртикулРасширеннаяПодсказка" id="189"/>
+						</InputField>
+						<InputField name="ПодобранныеПозицииНоменклатура" id="123">
+							<DataPath>ПодобранныеПозиции.Номенклатура</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ПодобранныеПозицииНоменклатураКонтекстноеМеню" id="124"/>
+							<ExtendedTooltip name="ПодобранныеПозицииНоменклатураРасширеннаяПодсказка" id="125"/>
+							<Events>
+								<Event name="OnChange">ПодобранныеПозицииНоменклатураПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ПодобранныеПозицииХарактеристикаНоменклатуры" id="126">
+							<DataPath>ПодобранныеПозиции.ХарактеристикаНоменклатуры</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Отбор.Владелец</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Items.ПодобранныеПозиции.CurrentData.ВладелецХарактеристики</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="ПодобранныеПозицииХарактеристикаНоменклатурыКонтекстноеМеню" id="127"/>
+							<ExtendedTooltip name="ПодобранныеПозицииХарактеристикаНоменклатурыРасширеннаяПодсказка" id="128"/>
+						</InputField>
+						<InputField name="ПодобранныеПозицииМестоРазмещения" id="129">
+							<DataPath>ПодобранныеПозиции.МестоРазмещения</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ПодобранныеПозицииМестоРазмещенияКонтекстноеМеню" id="130"/>
+							<ExtendedTooltip name="ПодобранныеПозицииМестоРазмещенияРасширеннаяПодсказка" id="131"/>
+						</InputField>
+						<InputField name="ПодобранныеПозицииКоличество" id="132">
+							<DataPath>ПодобранныеПозиции.Количество</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ПодобранныеПозицииКоличествоКонтекстноеМеню" id="133"/>
+							<ExtendedTooltip name="ПодобранныеПозицииКоличествоРасширеннаяПодсказка" id="134"/>
+						</InputField>
+						<InputField name="ПодобранныеПозицииЗаказПолучатель" id="139">
+							<DataPath>ПодобранныеПозиции.Заказ</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ПодобранныеПозицииЗаказПолучательКонтекстноеМеню" id="140"/>
+							<ExtendedTooltip name="ПодобранныеПозицииЗаказПолучательРасширеннаяПодсказка" id="141"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<InputField name="Комментарий" id="41">
+					<DataPath>Комментарий</DataPath>
+					<Height>2</Height>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="43"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Комментарий" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>500</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Заказ" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.ЗаказВнутренний</v8:Type>
+				<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаказыПолучатели" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы получатели</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~ЗаказыПолучатели.ТребуетсяОбеспчить</Field>
+				<Field>ЗаказыПолучатели.Заказ</Field>
+				<Field>ЗаказыПолучатели.ТребуетсяОбеспечить</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ЗаказыПокупателейОстатки.Контрагент КАК Контрагент,
+	ЗаказыПокупателейОстатки.Заказ КАК Заказ,
+	ЗаказыПокупателейОстатки.ЗаказаноОстаток - ЗаказыПокупателейОстатки.РезервОстаток КАК ТребуетсяОбеспечить
+ИЗ
+	РегистрНакопления.ЗаказыПокупателей.Остатки(
+			,
+			Заказ &lt;&gt; &amp;Заказ
+				И Номенклатура = &amp;Номенклатура
+				И ХарактеристикаНоменклатуры = &amp;ХарактеристикаНоменклатуры) КАК ЗаказыПокупателейОстатки
+ГДЕ
+	ЗаказыПокупателейОстатки.ЗаказаноОстаток - ЗаказыПокупателейОстатки.РезервОстаток &gt; 0</QueryText>
+				<MainTable>AccumulationRegister.ЗаказыПокупателей.Balance</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<GetInvisibleFieldPresentations>false</GetInvisibleFieldPresentations>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПодобранныеПозиции" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобранные позиции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Columns>
+				<Column name="Номенклатура" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ХарактеристикаНоменклатуры" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика номенклатуры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+					<FunctionalOptions>
+						<Item>FunctionalOption.ИспользоватьХарактеристики</Item>
+					</FunctionalOptions>
+				</Column>
+				<Column name="МестоРазмещения" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Место размещения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СкладыКомпании</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Заказ" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Получатель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ЗаказВнутренний</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВладелецХарактеристики" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец характеристики</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+						<v8:Type>cfg:CatalogRef.ТипыНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПозицииСРезервами" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Позиции с резервами</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ПозицииСРезервами.Номенклатура</Field>
+				<Field>ПозицииСРезервами.РезервBalance</Field>
+				<Field>ПозицииСРезервами.СкладКомпании</Field>
+				<Field>ПозицииСРезервами.ХарактеристикаНоменклатуры</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<MainTable>AccumulationRegister.ЗаказыПокупателей.Balance</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыполнитьДействие" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Передать резервы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить действие</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыполнитьДействие</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыполнитьДействиеСКорректировкой" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Передать резервы с корректировкой</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить действие с корректировкой</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыполнитьДействиеСКорректировкой</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьЗаказ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть заказ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть заказ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldOpen</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьЗаказ</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Заказ">
+			<Type>
+				<v8:Type>cfg:DocumentRef.ЗаказВнутренний</v8:Type>
+				<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Номенклатура">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ХарактеристикаНоменклатуры">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПодразделениеКомпании">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияКомпании</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

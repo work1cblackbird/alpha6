@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗаписатьИЗакрыть" id="58">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="59"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="46">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаписатьАльфаАвто</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="47"/>
+			</Button>
+			<Button name="ФормаСкопировать" id="48">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Copy</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.СоздатьКопированиемТекущегоАльфаАвто</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаСкопироватьРасширеннаяПодсказка" id="49"/>
+			</Button>
+			<ButtonGroup name="ОсновныеДействия" id="50">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основные действия</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основные действия</v8:content>
+					</v8:item>
+				</ToolTip>
+				<CommandSource>Form</CommandSource>
+				<ExtendedTooltip name="ОсновныеДействияРасширеннаяПодсказка" id="51"/>
+			</ButtonGroup>
+			<ButtonGroup name="ГлобальныеКоманды" id="52">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Глобальные команды</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Глобальные команды</v8:content>
+					</v8:item>
+				</ToolTip>
+				<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
+				<ExtendedTooltip name="ГлобальныеКомандыРасширеннаяПодсказка" id="53"/>
+			</ButtonGroup>
+			<Button name="ФормаИзменитьФорму" id="54">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="55"/>
+			</Button>
+			<Button name="ФормаСправка" id="56">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="57"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="Используется" id="25">
+			<DataPath>Запись.Используется</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ИспользуетсяКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="ИспользуетсяРасширеннаяПодсказка" id="27"/>
+		</CheckBoxField>
+		<InputField name="ПодразделениеКомпании" id="1">
+			<DataPath>Запись.ПодразделениеКомпании</DataPath>
+			<ContextMenu name="ПодразделениеКомпанииКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ПодразделениеКомпанииРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="ТипДокумента" id="4">
+			<DataPath>Запись.ТипДокумента</DataPath>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ChooseType>false</ChooseType>
+			<ContextMenu name="ТипДокументаКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ТипДокументаРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="ВидУведомления" id="7">
+			<DataPath>Запись.ВидУведомления</DataPath>
+			<ContextMenu name="ВидУведомленияКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ВидУведомленияРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="КаналСвязи" id="10">
+			<DataPath>Запись.КаналСвязи</DataPath>
+			<ContextMenu name="КаналСвязиКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="КаналСвязиРасширеннаяПодсказка" id="12"/>
+			<Events>
+				<Event name="OnChange">КаналСвязиПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ШаблонСообщения" id="13">
+			<DataPath>Запись.ШаблонСообщения</DataPath>
+			<ContextMenu name="ШаблонСообщенияКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ШаблонСообщенияРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="Контакт" id="40">
+			<DataPath>Запись.Контакт</DataPath>
+			<ContextMenu name="КонтактКонтекстноеМеню" id="41"/>
+			<ExtendedTooltip name="КонтактРасширеннаяПодсказка" id="42"/>
+		</InputField>
+		<InputField name="НомерТелефона" id="19">
+			<DataPath>Запись.КонтактнаяИнформация</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер телефона</v8:content>
+				</v8:item>
+			</Title>
+			<Width>30</Width>
+			<ChoiceButton>true</ChoiceButton>
+			<ContextMenu name="НомерТелефонаКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="НомерТелефонаРасширеннаяПодсказка" id="21"/>
+			<Events>
+				<Event name="StartChoice">НомерТелефонаНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<InputField name="КонтактнаяИнформация" id="37">
+			<DataPath>Запись.КонтактнаяИнформация</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес эл. почты</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="КонтактнаяИнформацияКонтекстноеМеню" id="38"/>
+			<ExtendedTooltip name="КонтактнаяИнформацияРасширеннаяПодсказка" id="39"/>
+		</InputField>
+		<InputField name="УчетнаяЗапись" id="22">
+			<DataPath>Запись.УчетнаяЗапись</DataPath>
+			<ContextMenu name="УчетнаяЗаписьКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="УчетнаяЗаписьРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<InputField name="Ответственный" id="16">
+			<DataPath>Запись.Ответственный</DataPath>
+			<ContextMenu name="ОтветственныйКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<CheckBoxField name="ОтправлятьСразу" id="43">
+			<DataPath>Запись.ОтправлятьСразу</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОтправлятьСразуКонтекстноеМеню" id="44"/>
+			<ExtendedTooltip name="ОтправлятьСразуРасширеннаяПодсказка" id="45"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.НастройкаУведомлений</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="СписокДокументов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

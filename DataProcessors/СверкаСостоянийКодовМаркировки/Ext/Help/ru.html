@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link></head><body>
+<h1 style="font-size: 17.920000076293945px;"><font color="#000080">Обработка "Сверка состояний кодов маркировки"</font></h1>
+<h3 style="font-size: 13.4399995803833px;">Назначение</h3>
+<p class="Usual">Служит для сверки состояний кодов маркировки (КМ) по одной организации (организации которой принадлежит сертификат) текущей базы данных и данных из "Честного знака" (ЧЗ). Для корректного сопоставления данных необходимо заполнение регистра "Штрихкоды", где происходит привязка GTIN к номенклатуре, обязательным является активация флага GTIN. В таблице выделяются салатовым цветом данные, где совпали сопоставленные состояния КМ. </p>
+<p class="Usual">Обработка выгружает данные за указанный период, если период выгрузки не задан, выгружаются документы за всю работу текущей базы.</p>
+<h3 align="justify" style="font-size: 13.4399995803833px;">Отборы</h3>
+<ul><li>
+<div align="justify"><strong>Эмитирован с ... по</strong>. Реквизиты являются не обязательными для заполнения. При отсутствии периода выгружается срез данных из ЧЗ и текущей базы для последующей сверки. При заполненном значении происходит отбор по дате эмиссии соответственно.</div></li>
+<li>
+<div align="justify"><strong>Организация</strong>. Реквизит является обязательным для заполнения. При смене отбора по организации произойдет смена сертификата, подключенного к базе данных.</div></li>
+<li>
+<div align="justify">
+<div align="justify" style="text-align: left;"><strong>Отбор GTIN</strong>. Реквизит является не обязательным для заполнения. Добавляет отбор по GTIN. </div></div></li>
+<li>
+<div align="justify">
+<div align="justify" style="text-align: left;"><strong>Выводить КМ переданные другому собственнику</strong>. По умолчанию отключен. При получении КМ из ЧЗ с активным флагом данные получены не будут т.к. в ЧЗ срез текущих данных по КМ (при передаче другому собственнику в ЧЗ изменяется владелец).</div></div></li></ul><p align="justify"></p>
+<p align="justify"></p>
+<h3 align="justify" style="font-size: 13.4399995803833px;">Основная табличная часть «Таблица сверки»</h3>
+<div><br></div>
+<ul><li>
+<div align="justify"><strong>Артикул</strong>. Реквизит выводится если произошло сопоставление или в базе есть документы с участием номенклатуры при указании КМ. </div></li>
+<li>
+<div align="justify"><strong>Номенклатура</strong>. <span style="text-align: left;">Реквизит выводится если произошло сопоставление или в базе есть документы с участием номенклатуры при указании КМ</span><span style="text-align: left;">.</span><span style="text-align: left;"> </span> </div></li>
+<li>
+<div align="justify"><strong>Характеристика</strong>. Реквизит выводится если произошло сопоставление или в базе есть документы с участием номенклатуры при указании КМ. </div></li>
+<li>
+<div align="justify"><strong>GTIN</strong>. <span style="text-align: left;">Реквизит выводится если произошло сопоставление или в базе есть документы с участием номенклатуры при указании КМ</span><span style="text-align: left;">.</span><span style="text-align: left;"> </span> </div></li>
+<li>
+<div align="justify"><strong>Наименование ЧЗ</strong>. Реквизит выводится если произошло сопоставление или в ЧЗ есть данные по номенклатуре и КМ. </div></li>
+<li>
+<div align="justify"><strong>КМ 1С</strong>. <span style="text-align: left;">Реквизит выводится если произошло сопоставление или в базе есть документы с участием номенклатуры при указании КМ</span><span style="text-align: left;">.</span><span style="text-align: left;"> </span> </div></li>
+<li>
+<div align="justify"><strong>Состояние 1С</strong>. Текущее состояние КМ из базы. Реквизит выводится если произошло сопоставление или в базе есть документы с участием номенклатуры при указании КМ. </div></li>
+<li>
+<div align="justify"><strong>Дата состояния 1С</strong>. Дата последнего состояния КМ в текущей базе. <span style="text-align: left;">Реквизит выводится если произошло сопоставление или в базе есть документы с участием номенклатуры при указании КМ</span><span style="text-align: left;">.</span><span style="text-align: left;"> </span> </div></li>
+<li>
+<div align="justify"><strong>КМ ЧЗ</strong>. Реквизит выводится если произошло сопоставление или в ЧЗ есть данные по номенклатуре и КМ.</div></li>
+<li>
+<div align="justify"><b>Состояние ЧЗ</b>. Текущее состояние КМ из ЧЗ. Реквизит выводится если произошло сопоставление или в ЧЗ есть данные по номенклатуре и КМ. </div></li>
+<li>
+<div align="justify"><strong>Дата состояния ЧЗ</strong>. Дата последнего изменения состояния КМ. Реквизит выводится если произошло сопоставление или в ЧЗ есть данные по номенклатуре и КМ.</div></li>
+<li>
+<div align="justify"><strong>Расхождение</strong>. ИСТИНА если состояния равны.</div></li></ul><p align="justify"></p>
+<h3 align="justify" style="font-size: 13.4399995803833px;">Дополнительная табличная часть «Данные учета»</h3>
+<div><br></div>
+<div>
+<ul><li>
+<div align="justify"><strong>На складах</strong>. <span style="text-align: left;">Текущий остаток (все склады) по выбранной номенклатуре, выводится при условии, что в строке таблицы сверки заполнено поле "Номенклатура"</span><span style="text-align: left;">.</span><span style="text-align: left;"> </span> </div></li>
+<li>
+<div align="justify"><strong>В производстве</strong>. <span style="text-align: left;">Текущий остаток (в производстве) по выбранной номенклатуре, выводится при условии, что в строке таблицы сверки заполнено поле "Номенклатура"</span>. </div></li>
+<li>
+<div align="justify"><strong>Общий остаток</strong>. Сумма остатка в производстве и остатка на складах<span style="text-align: left;">.</span><span style="text-align: left;"> </span> </div></li>
+<li>
+<div align="justify"><b>Количество КМ в 1С</b>. Количество КМ (в текущей базе) по выбранной номенклатуре, выводится при условии, что в строке таблицы сверки заполнено поле "Номенклатура" . </div></li></ul><ul><li>
+<div align="justify"><strong style="text-align: start;">Количество КМ в ЧЗ</strong><span style="text-align: start;">. Количество КМ (из ЧЗ) по выбранной номенклатуре, выводится при условии, что в строке таблицы сверки заполнено поле "Наименование ЧЗ".</span></div>
+<div align="justify"><span style="text-align: start;"><br></span></div></li></ul>Для сопоставления по статусам КМ используется следующее соответствие (остальные статусы КМ из базы выводятся без соответствия):</div>
+<div><br></div>
+<div>
+<table width="100%" rules="all" border="1" style="font-size: 11.199999809265137px;"><tbody><tr><td height="30px">Наименование состояния КМ из ЧЗ</td>
+<td height="30px">Альфа-Авто «Состояния Кодов Маркировки»</td></tr><tr><td height="30px">EMITTED, "Эмитирован"</td>
+<td height="30px">Эмитирован</td></tr><tr><td height="30px">APPLIED, "Эмитирован. Получен"</td>
+<td height="30px">Эмитирован</td></tr><tr><td height="30px">INTRODUCED, "Введён в оборот"</td>
+<td height="30px">Введен в оборот</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Введен в оборот при возврате</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Введен в оборот ожидает перемаркировки</td></tr><tr><td height="30px">WRITTEN_OFF, "Списан"</td>
+<td height="30px">Списан</td></tr><tr><td height="30px">RETIRED, "Выведен из оборота"</td>
+<td height="30px">Выведен из оборота</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота розничная продажа</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота экспортирован в страны ЕАЭС</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота экспортирован за пределы стран ЕАЭС</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота возвращен физическому лицу</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота при утрате или повреждении</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота при уничтожении</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота конфискация</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота ликвидация предприятия</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота использован для собственных нужд предприятия</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота по договору рассрочки</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота при перемаркировке</td></tr><tr><td height="30px"><br></td>
+<td height="30px">Выведен из оборота в результате списания</td></tr><tr><td height="30px">DISAGGREGATION, "Расформирован"</td>
+<td height="30px">Разагрегирован</td></tr></tbody></table>  </div>
+
+
+</body></html>

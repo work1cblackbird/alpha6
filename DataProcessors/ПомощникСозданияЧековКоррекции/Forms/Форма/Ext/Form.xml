@@ -1,0 +1,2154 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаПробитьЧек" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ПробитьЧек</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пробить чек</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПробитьЧекРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="3">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.Записать</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать чек</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="4"/>
+			</Button>
+			<Button name="ФормаНастроитьПараметрыДокумента" id="260">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.НастроитьПараметрыДокумента</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Параметры</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаНастроитьПараметрыДокументаРасширеннаяПодсказка" id="261"/>
+			</Button>
+			<Button name="ФормаУправлениеККМ" id="517">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.УправлениеККМ</CommandName>
+				<ExtendedTooltip name="ФормаУправлениеККМРасширеннаяПодсказка" id="518"/>
+			</Button>
+			<Button name="ФормаУправлениеЭТ" id="556">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.УправлениеЭТ</CommandName>
+				<ExtendedTooltip name="ФормаУправлениеЭТРасширеннаяПодсказка" id="557"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ИнформацияПечатиЧека" id="521">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация печати чека</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация печати чека</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ЦветФонаВиджета</BackColor>
+			<ExtendedTooltip name="ИнформацияПечатиЧекаРасширеннаяПодсказка" id="522"/>
+			<ChildItems>
+				<PictureDecoration name="КартинкаИнформация" id="523">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка информация</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.Information</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="КартинкаИнформацияКонтекстноеМеню" id="524"/>
+					<ExtendedTooltip name="КартинкаИнформацияРасширеннаяПодсказка" id="525"/>
+				</PictureDecoration>
+				<LabelField name="ПредставлениеИнформацииПечатиЧека" id="526">
+					<DataPath>ПредставлениеИнформацииПечатиЧека</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="ПредставлениеИнформацииПечатиЧекаКонтекстноеМеню" id="527"/>
+					<ExtendedTooltip name="ПредставлениеИнформацииПечатиЧекаРасширеннаяПодсказка" id="528"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<RadioButtonField name="РежимИспользованияОбработки" id="5">
+			<DataPath>РежимИспользованияОбработки</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Неприменение ККТ</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">1</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Исправление пробитого чека</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">0</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="РежимИспользованияОбработкиКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="РежимИспользованияОбработкиРасширеннаяПодсказка" id="7"/>
+			<Events>
+				<Event name="OnChange">РежимИспользованияОбработкиПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<Pages name="Страницы" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="9"/>
+			<ChildItems>
+				<Page name="ГлавнаяСтраница" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Главное</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Главная страница</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>AlwaysHorizontal</Group>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="ГлавнаяСтраницаРасширеннаяПодсказка" id="11"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОбщая" id="519">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа общая</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа общая</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОбщаяРасширеннаяПодсказка" id="520"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаГлавнаяСтраница" id="127">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа главная страница</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа главная страница</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаГлавнаяСтраницаРасширеннаяПодсказка" id="128"/>
+									<ChildItems>
+										<UsualGroup name="ГлавнаяСтраницаЛево" id="123">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Главная страница лево</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Главная страница лево</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГлавнаяСтраницаЛевоРасширеннаяПодсказка" id="124"/>
+											<ChildItems>
+												<UsualGroup name="ГруппаЗаголовокКонтрагент" id="546">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа контрагент</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа заголовок контрагент</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>AlwaysHorizontal</Group>
+													<Representation>None</Representation>
+													<United>false</United>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаЗаголовокКонтрагентРасширеннаяПодсказка" id="547"/>
+													<ChildItems>
+														<LabelDecoration name="ЗаголовокКонтрагентЧекКоррекции" id="548">
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<AutoMaxHeight>false</AutoMaxHeight>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Контрагент:</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ЗаголовокКонтрагентЧекКоррекцииКонтекстноеМеню" id="549"/>
+															<ExtendedTooltip name="ЗаголовокКонтрагентЧекКоррекцииРасширеннаяПодсказка" id="550"/>
+														</LabelDecoration>
+														<InputField name="КонтрагентЧекКоррекции" id="12">
+															<DataPath>Объект.ЧекКоррекции.Контрагент</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<MaxWidth>52</MaxWidth>
+															<ContextMenu name="КонтрагентЧекКоррекцииКонтекстноеМеню" id="13"/>
+															<ExtendedTooltip name="КонтрагентЧекКоррекцииРасширеннаяПодсказка" id="14"/>
+															<Events>
+																<Event name="OnChange">КонтрагентЧекКоррекцииПриИзменении</Event>
+															</Events>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаЗаголовокДоговор" id="551">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа договор</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа заголовок договор</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>AlwaysHorizontal</Group>
+													<Representation>None</Representation>
+													<United>false</United>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаЗаголовокДоговорРасширеннаяПодсказка" id="552"/>
+													<ChildItems>
+														<LabelDecoration name="ЗаголовокДоговорВзаиморасчетовЧекКоррекции" id="553">
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Договор:</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ЗаголовокДоговорВзаиморасчетовЧекКоррекцииКонтекстноеМеню" id="554"/>
+															<ExtendedTooltip name="ЗаголовокДоговорВзаиморасчетовЧекКоррекцииРасширеннаяПодсказка" id="555"/>
+														</LabelDecoration>
+														<InputField name="ДоговорВзаиморасчетовЧекКоррекции" id="15">
+															<DataPath>Объект.ЧекКоррекции.ДоговорВзаиморасчетов</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<MaxWidth>52</MaxWidth>
+															<ContextMenu name="ДоговорВзаиморасчетовЧекКоррекцииКонтекстноеМеню" id="16"/>
+															<ExtendedTooltip name="ДоговорВзаиморасчетовЧекКоррекцииРасширеннаяПодсказка" id="17">
+																<Title formatted="false">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>По договору долг клиента составляет 45 USD</v8:content>
+																	</v8:item>
+																</Title>
+																<Hyperlink>true</Hyperlink>
+																<Events>
+																	<Event name="Click">ЧекКоррекцииНадписьВзаиморасчетыНажатие</Event>
+																</Events>
+															</ExtendedTooltip>
+															<Events>
+																<Event name="OnChange">ДоговорВзаиморасчетовЧекКоррекцииПриИзменении</Event>
+															</Events>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаПатент" id="532">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа патент</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа патент</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>AlwaysHorizontal</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<United>false</United>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаПатентРасширеннаяПодсказка" id="533"/>
+													<ChildItems>
+														<CheckBoxField name="ИспользуетсяПСН" id="534">
+															<DataPath>ИспользуетсяПСН</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Патент:</v8:content>
+																</v8:item>
+															</Title>
+															<TitleLocation>Right</TitleLocation>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="ИспользуетсяПСНКонтекстноеМеню" id="535"/>
+															<ExtendedTooltip name="ИспользуетсяПСНРасширеннаяПодсказка" id="536"/>
+															<Events>
+																<Event name="OnChange">ИспользуетсяПСНПриИзменении</Event>
+															</Events>
+														</CheckBoxField>
+														<InputField name="Патент" id="537">
+															<DataPath>Объект.ЧекКоррекции.Патент</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<MaxWidth>52</MaxWidth>
+															<ChoiceButton>true</ChoiceButton>
+															<ClearButton>true</ClearButton>
+															<ContextMenu name="ПатентКонтекстноеМеню" id="538"/>
+															<ExtendedTooltip name="ПатентРасширеннаяПодсказка" id="539"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГлавнаяСтраницаПраво" id="125">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Главная страница право</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Главная страница лево</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГлавнаяСтраницаПравоРасширеннаяПодсказка" id="126"/>
+											<ChildItems>
+												<InputField name="ПараметрыДокумента" id="514">
+													<DataPath>ПараметрыДокумента</DataPath>
+													<Visible>false</Visible>
+													<ContextMenu name="ПараметрыДокументаКонтекстноеМеню" id="515"/>
+													<ExtendedTooltip name="ПараметрыДокументаРасширеннаяПодсказка" id="516"/>
+												</InputField>
+												<InputField name="ДокументОснованиеЧекКоррекции" id="262">
+													<DataPath>Объект.ЧекКоррекции.ДокументОснование</DataPath>
+													<ContextMenu name="ДокументОснованиеЧекКоррекцииКонтекстноеМеню" id="263"/>
+													<ExtendedTooltip name="ДокументОснованиеЧекКоррекцииРасширеннаяПодсказка" id="264"/>
+													<Events>
+														<Event name="OnChange">ДокументОснованиеЧекКоррекцииПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="СделкаЧекКоррекции" id="42">
+													<DataPath>Объект.ЧекКоррекции.Сделка</DataPath>
+													<UserVisible>
+														<xr:Common>false</xr:Common>
+													</UserVisible>
+													<ContextMenu name="СделкаЧекКоррекцииКонтекстноеМеню" id="43"/>
+													<ExtendedTooltip name="СделкаЧекКоррекцииРасширеннаяПодсказка" id="44"/>
+													<Events>
+														<Event name="OnChange">СделкаЧекКоррекцииПриИзменении</Event>
+													</Events>
+												</InputField>
+												<RadioButtonField name="СпособЗачетаАвансовЧекКоррекции" id="543">
+													<DataPath>Объект.ЧекКоррекции.СпособЗачетаАвансов</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Способ зачета сделок</v8:content>
+														</v8:item>
+													</Title>
+													<RadioButtonType>RadioButtons</RadioButtonType>
+													<ChoiceList>
+														<xr:Item>
+															<xr:Presentation/>
+															<xr:CheckState>0</xr:CheckState>
+															<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Автоматически</v8:content>
+																	</v8:item>
+																</Presentation>
+																<Value xsi:type="xr:DesignTimeRef">Enum.СпособыЗачетаАвансов.EnumValue.Автоматически</Value>
+															</xr:Value>
+														</xr:Item>
+														<xr:Item>
+															<xr:Presentation/>
+															<xr:CheckState>0</xr:CheckState>
+															<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Не зачитывать</v8:content>
+																	</v8:item>
+																</Presentation>
+																<Value xsi:type="xr:DesignTimeRef">Enum.СпособыЗачетаАвансов.EnumValue.НеЗачитывать</Value>
+															</xr:Value>
+														</xr:Item>
+													</ChoiceList>
+													<ContextMenu name="СпособЗачетаАвансовЧекКоррекцииКонтекстноеМеню" id="544"/>
+													<ExtendedTooltip name="СпособЗачетаАвансовЧекКоррекцииРасширеннаяПодсказка" id="545"/>
+													<Events>
+														<Event name="OnChange">СпособЗачетаАвансовПриИзменении</Event>
+													</Events>
+												</RadioButtonField>
+												<InputField name="КассаККМЧекКоррекции" id="27">
+													<DataPath>Объект.ЧекКоррекции.КассаККМ</DataPath>
+													<ContextMenu name="КассаККМЧекКоррекцииКонтекстноеМеню" id="28"/>
+													<ExtendedTooltip name="КассаККМЧекКоррекцииРасширеннаяПодсказка" id="29"/>
+													<Events>
+														<Event name="OnChange">КассаККМЧекКоррекцииПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="ФРЧекКоррекции" id="33">
+													<DataPath>Объект.ЧекКоррекции.ФР</DataPath>
+													<ContextMenu name="ФРЧекКоррекцииКонтекстноеМеню" id="34"/>
+													<ExtendedTooltip name="ФРЧекКоррекцииРасширеннаяПодсказка" id="35"/>
+													<Events>
+														<Event name="OnChange">ФРЧекКоррекцииПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаФискальныеРеквизиты" id="133">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа фискальные реквизиты</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа фискальные реквизиты</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>NormalSeparation</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаФискальныеРеквизитыРасширеннаяПодсказка" id="134"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаФискальныеРеквизитыЛево" id="137">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа фискальные реквизиты</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа фискальные реквизиты</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаФискальныеРеквизитыЛевоРасширеннаяПодсказка" id="138"/>
+											<ChildItems>
+												<InputField name="ДатаКоррекцииЧекКоррекции" id="57">
+													<DataPath>Объект.ЧекКоррекции.ДатаКоррекции</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Дата корректируемого расчета</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДатаКоррекцииЧекКоррекцииКонтекстноеМеню" id="58"/>
+													<ExtendedTooltip name="ДатаКоррекцииЧекКоррекцииРасширеннаяПодсказка" id="59"/>
+												</InputField>
+												<UsualGroup name="ТипКоррекцииНомерПредписания" id="135">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Тип коррекции номер предписания</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Тип коррекции номер предписания</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Behavior>Usual</Behavior>
+													<ShowTitle>false</ShowTitle>
+													<ThroughAlign>Use</ThroughAlign>
+													<ExtendedTooltip name="ТипКоррекцииНомерПредписанияРасширеннаяПодсказка" id="136"/>
+													<ChildItems>
+														<InputField name="ТипКоррекцииЧекКоррекции" id="54">
+															<DataPath>Объект.ЧекКоррекции.ТипКоррекции</DataPath>
+															<ContextMenu name="ТипКоррекцииЧекКоррекцииКонтекстноеМеню" id="55"/>
+															<ExtendedTooltip name="ТипКоррекцииЧекКоррекцииРасширеннаяПодсказка" id="56"/>
+															<Events>
+																<Event name="OnChange">ТипКоррекцииЧекКоррекцииПриИзменении</Event>
+															</Events>
+														</InputField>
+														<InputField name="НомерПредписанияЧекКоррекции" id="60">
+															<DataPath>Объект.ЧекКоррекции.НомерПредписания</DataPath>
+															<ContextMenu name="НомерПредписанияЧекКоррекцииКонтекстноеМеню" id="61"/>
+															<ExtendedTooltip name="НомерПредписанияЧекКоррекцииРасширеннаяПодсказка" id="62"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<InputField name="ДополнительныйРеквизитЧекаЧекКоррекции" id="69">
+													<DataPath>Объект.ЧекКоррекции.ДополнительныйРеквизитЧека</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Номер корректируемого чека</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДополнительныйРеквизитЧекаЧекКоррекцииКонтекстноеМеню" id="70"/>
+													<ExtendedTooltip name="ДополнительныйРеквизитЧекаЧекКоррекцииРасширеннаяПодсказка" id="71"/>
+												</InputField>
+												<InputField name="ОписаниеКоррекцииЧекКоррекции" id="63">
+													<DataPath>Объект.ЧекКоррекции.ОписаниеКоррекции</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>59</MaxWidth>
+													<AutoMaxHeight>false</AutoMaxHeight>
+													<MaxHeight>4</MaxHeight>
+													<MultiLine>true</MultiLine>
+													<ContextMenu name="ОписаниеКоррекцииЧекКоррекцииКонтекстноеМеню" id="64"/>
+													<ExtendedTooltip name="ОписаниеКоррекцииЧекКоррекцииРасширеннаяПодсказка" id="65"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаФискальныеРеквизитыПраво" id="145">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа фискальные реквизиты</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа фискальные реквизиты</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаФискальныеРеквизитыПравоРасширеннаяПодсказка" id="146"/>
+											<ChildItems>
+												<InputField name="ТипРасчетаЧекКоррекции" id="66">
+													<DataPath>Объект.ЧекКоррекции.ТипРасчета</DataPath>
+													<ListChoiceMode>true</ListChoiceMode>
+													<ContextMenu name="ТипРасчетаЧекКоррекцииКонтекстноеМеню" id="67"/>
+													<ExtendedTooltip name="ТипРасчетаЧекКоррекцииРасширеннаяПодсказка" id="68"/>
+												</InputField>
+												<InputField name="ПризнакСпособаРасчетаЧекКоррекции" id="48">
+													<DataPath>Объект.ЧекКоррекции.ПризнакСпособаРасчета</DataPath>
+													<ContextMenu name="ПризнакСпособаРасчетаЧекКоррекцииКонтекстноеМеню" id="49"/>
+													<ExtendedTooltip name="ПризнакСпособаРасчетаЧекКоррекцииРасширеннаяПодсказка" id="50"/>
+													<Events>
+														<Event name="OnChange">ПризнакСпособаРасчетаЧекКоррекцииПриИзменении</Event>
+													</Events>
+												</InputField>
+												<InputField name="АдресПокупателяЧекКоррекции" id="51">
+													<DataPath>Объект.ЧекКоррекции.АдресПокупателя</DataPath>
+													<DropListButton>true</DropListButton>
+													<ContextMenu name="АдресПокупателяЧекКоррекцииКонтекстноеМеню" id="52"/>
+													<ExtendedTooltip name="АдресПокупателяЧекКоррекцииРасширеннаяПодсказка" id="53"/>
+												</InputField>
+												<InputField name="ТелефонEmailПокупателяЧекКоррекции" id="45">
+													<DataPath>Объект.ЧекКоррекции.ТелефонEmailПокупателя</DataPath>
+													<ContextMenu name="ТелефонEmailПокупателяЧекКоррекцииКонтекстноеМеню" id="46"/>
+													<ExtendedTooltip name="ТелефонEmailПокупателяЧекКоррекцииРасширеннаяПодсказка" id="47"/>
+													<Events>
+														<Event name="OnChange">ТелефонEmailПокупателяЧекКоррекцииПриИзменении</Event>
+													</Events>
+												</InputField>
+												<UsualGroup name="ОплатаНалБезнал" id="268">
+													<ReadOnly>true</ReadOnly>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Дата номер чека</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Horizontal</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ОплатаНалБезналРасширеннаяПодсказка" id="269"/>
+													<ChildItems>
+														<UsualGroup name="ДатаНомерЧека" id="270">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Дата номер чека</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Дата номер чека</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ДатаНомерЧекаРасширеннаяПодсказка" id="271"/>
+															<ChildItems>
+																<InputField name="НомерСменыЧекКоррекции" id="272">
+																	<DataPath>Объект.ЧекКоррекции.НомерСмены</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Номер смены</v8:content>
+																		</v8:item>
+																	</Title>
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<MaxWidth>10</MaxWidth>
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<ContextMenu name="НомерСменыЧекКоррекцииКонтекстноеМеню" id="273"/>
+																	<ExtendedTooltip name="НомерСменыЧекКоррекцииРасширеннаяПодсказка" id="274"/>
+																</InputField>
+																<InputField name="НомерЧекаЧекКоррекции" id="275">
+																	<DataPath>Объект.ЧекКоррекции.НомерЧека</DataPath>
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<MaxWidth>10</MaxWidth>
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<ContextMenu name="НомерЧекаЧекКоррекцииКонтекстноеМеню" id="276"/>
+																	<ExtendedTooltip name="НомерЧекаЧекКоррекцииРасширеннаяПодсказка" id="277"/>
+																</InputField>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="ДатаСменыДокумента" id="278">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Дата номер чека</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Дата номер чека</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ДатаСменыДокументаРасширеннаяПодсказка" id="279"/>
+															<ChildItems>
+																<InputField name="ДатаФРЧекКоррекции" id="280">
+																	<DataPath>Объект.ЧекКоррекции.ДатаФР</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>от</v8:content>
+																		</v8:item>
+																	</Title>
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<MaxWidth>19</MaxWidth>
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<ContextMenu name="ДатаФРЧекКоррекцииКонтекстноеМеню" id="281"/>
+																	<ExtendedTooltip name="ДатаФРЧекКоррекцииРасширеннаяПодсказка" id="282"/>
+																</InputField>
+																<InputField name="НомерДокументаЧекКоррекции" id="283">
+																	<DataPath>Объект.ЧекКоррекции.НомерДокумента</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>№ документа</v8:content>
+																		</v8:item>
+																	</Title>
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<MaxWidth>19</MaxWidth>
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<ContextMenu name="НомерДокументаЧекКоррекцииКонтекстноеМеню" id="284"/>
+																	<ExtendedTooltip name="НомерДокументаЧекКоррекцииРасширеннаяПодсказка" id="285"/>
+																</InputField>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</UsualGroup>
+												<CheckBoxField name="ЧекКоррекцииПечататьАртикулНоменклатуры" id="529">
+													<DataPath>Объект.ЧекКоррекции.ПечататьАртикулНоменклатуры</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ЧекКоррекцииПечататьАртикулНоменклатурыКонтекстноеМеню" id="530"/>
+													<ExtendedTooltip name="ЧекКоррекцииПечататьАртикулНоменклатурыРасширеннаяПодсказка" id="531"/>
+													<Events>
+														<Event name="OnChange">ЧекКоррекцииПечататьАртикулНоменклатурыПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
+												<CheckBoxField name="ЧекКоррекцииОтправлятьКомандуНаЭТ" id="540">
+													<DataPath>Объект.ЧекКоррекции.ОтправлятьКомандуНаЭТ</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ЧекКоррекцииОтправлятьКомандуНаЭТКонтекстноеМеню" id="541"/>
+													<ExtendedTooltip name="ЧекКоррекцииОтправлятьКомандуНаЭТРасширеннаяПодсказка" id="542"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОплаты" id="371">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница оплаты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.ЧекКоррекции.Оплаты.RowsCount</TitleDataPath>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаОплатыРасширеннаяПодсказка" id="372"/>
+					<ChildItems>
+						<UsualGroup name="ШапкаОплаты" id="373">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Шапка оплаты</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Шапка оплаты</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ШапкаОплатыРасширеннаяПодсказка" id="374"/>
+							<ChildItems>
+								<InputField name="СуммаДокументаЧекКоррекции" id="375">
+									<DataPath>Объект.ЧекКоррекции.СуммаДокумента</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма к оплате</v8:content>
+										</v8:item>
+									</Title>
+									<Width>16</Width>
+									<HorizontalStretch>true</HorizontalStretch>
+									<MinValue xsi:type="xs:decimal">0</MinValue>
+									<ContextMenu name="СуммаДокументаЧекКоррекцииКонтекстноеМеню" id="376"/>
+									<ExtendedTooltip name="СуммаДокументаЧекКоррекцииРасширеннаяПодсказка" id="377"/>
+									<Events>
+										<Event name="OnChange">СуммаДокументаЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<Button name="Распределить" id="378">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.Распределить</CommandName>
+									<ExtendedTooltip name="РаспределитьРасширеннаяПодсказка" id="379"/>
+								</Button>
+								<InputField name="СтавкаНДСЧекКоррекции" id="380">
+									<DataPath>Объект.ЧекКоррекции.СтавкаНДС</DataPath>
+									<Width>16</Width>
+									<HorizontalStretch>true</HorizontalStretch>
+									<OpenButton>false</OpenButton>
+									<ContextMenu name="СтавкаНДСЧекКоррекцииКонтекстноеМеню" id="381"/>
+									<ExtendedTooltip name="СтавкаНДСЧекКоррекцииРасширеннаяПодсказка" id="382"/>
+									<Events>
+										<Event name="OnChange">СтавкаНДСЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="СуммаНДСЧекКоррекции" id="383">
+									<DataPath>Объект.ЧекКоррекции.СуммаНДС</DataPath>
+									<Width>16</Width>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="СуммаНДСЧекКоррекцииКонтекстноеМеню" id="384"/>
+									<ExtendedTooltip name="СуммаНДСЧекКоррекцииРасширеннаяПодсказка" id="385"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ОплатыЧекКоррекции" id="386">
+							<Height>5</Height>
+							<SelectionMode>SingleRow</SelectionMode>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.ЧекКоррекции.Оплаты</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ОплатыЧекКоррекцииКонтекстноеМеню" id="387"/>
+							<AutoCommandBar name="ОплатыЧекКоррекцииКоманднаяПанель" id="388">
+								<ChildItems>
+									<Button name="ОплатаНаличные" id="426">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОплатаНаличные</CommandName>
+										<ExtendedTooltip name="ОплатаНаличныеРасширеннаяПодсказка" id="427"/>
+									</Button>
+									<Button name="ОплатаПлатежнаяКарта" id="428">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОплатаПлатежнаяКарта</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Платежная карта</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ОплатаПлатежнаяКартаРасширеннаяПодсказка" id="429"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ОплатыЧекКоррекцииРасширеннаяПодсказка" id="389"/>
+							<SearchStringAddition name="ОплатыЧекКоррекцииСтрокаПоиска" id="390">
+								<AdditionSource>
+									<Item>ОплатыЧекКоррекции</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОплатыЧекКоррекцииСтрокаПоискаКонтекстноеМеню" id="391"/>
+								<ExtendedTooltip name="ОплатыЧекКоррекцииСтрокаПоискаРасширеннаяПодсказка" id="392"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ОплатыЧекКоррекцииСостояниеПросмотра" id="393">
+								<AdditionSource>
+									<Item>ОплатыЧекКоррекции</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОплатыЧекКоррекцииСостояниеПросмотраКонтекстноеМеню" id="394"/>
+								<ExtendedTooltip name="ОплатыЧекКоррекцииСостояниеПросмотраРасширеннаяПодсказка" id="395"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ОплатыЧекКоррекцииУправлениеПоиском" id="396">
+								<AdditionSource>
+									<Item>ОплатыЧекКоррекции</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ОплатыЧекКоррекцииУправлениеПоискомКонтекстноеМеню" id="397"/>
+								<ExtendedTooltip name="ОплатыЧекКоррекцииУправлениеПоискомРасширеннаяПодсказка" id="398"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnStartEdit">ОплатыЧекКоррекцииПриНачалеРедактирования</Event>
+								<Event name="AfterDeleteRow">ОплатыЧекКоррекцииПослеУдаления</Event>
+								<Event name="OnChange">ОплатыЧекКоррекцииПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ОплатыНомерСтрокиЧекКоррекции" id="447">
+									<DataPath>Объект.ЧекКоррекции.Оплаты.LineNumber</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОплатыНомерСтрокиЧекКоррекцииКонтекстноеМеню" id="448"/>
+									<ExtendedTooltip name="ОплатыНомерСтрокиЧекКоррекцииРасширеннаяПодсказка" id="449"/>
+								</LabelField>
+								<InputField name="ОплатыТипОплатыЧекКоррекции" id="474">
+									<DataPath>Объект.ЧекКоррекции.Оплаты.ТипОплаты</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОплатыТипОплатыЧекКоррекцииКонтекстноеМеню" id="475"/>
+									<ExtendedTooltip name="ОплатыТипОплатыЧекКоррекцииРасширеннаяПодсказка" id="476"/>
+									<Events>
+										<Event name="OnChange">ОплатыТипОплатыЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОплатыСуммаЧекКоррекции" id="465">
+									<DataPath>Объект.ЧекКоррекции.Оплаты.Сумма</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ОплатыСуммаЧекКоррекцииКонтекстноеМеню" id="466"/>
+									<ExtendedTooltip name="ОплатыСуммаЧекКоррекцииРасширеннаяПодсказка" id="467"/>
+									<Events>
+										<Event name="OnChange">ОплатыСуммаЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОплатыСдачаЧекКоррекции" id="468">
+									<DataPath>Объект.ЧекКоррекции.Оплаты.Сдача</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ОплатыСдачаЧекКоррекцииКонтекстноеМеню" id="469"/>
+									<ExtendedTooltip name="ОплатыСдачаЧекКоррекцииРасширеннаяПодсказка" id="470"/>
+								</InputField>
+								<InputField name="ОплатыТипПлатежнойКартыЧекКоррекции" id="453">
+									<DataPath>Объект.ЧекКоррекции.Оплаты.ТипПлатежнойКарты</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОплатыТипПлатежнойКартыЧекКоррекцииКонтекстноеМеню" id="454"/>
+									<ExtendedTooltip name="ОплатыТипПлатежнойКартыЧекКоррекцииРасширеннаяПодсказка" id="455"/>
+								</InputField>
+								<InputField name="ОплатыКонтрагентЧекКоррекции" id="459">
+									<DataPath>Объект.ЧекКоррекции.Оплаты.Контрагент</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>16</Width>
+									<ContextMenu name="ОплатыКонтрагентЧекКоррекцииКонтекстноеМеню" id="460"/>
+									<ExtendedTooltip name="ОплатыКонтрагентЧекКоррекцииРасширеннаяПодсказка" id="461"/>
+								</InputField>
+								<InputField name="ОплатыДоговорВзаиморасчетовЧекКоррекции" id="462">
+									<DataPath>Объект.ЧекКоррекции.Оплаты.ДоговорВзаиморасчетов</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ОплатыДоговорВзаиморасчетовЧекКоррекцииКонтекстноеМеню" id="463"/>
+									<ExtendedTooltip name="ОплатыДоговорВзаиморасчетовЧекКоррекцииРасширеннаяПодсказка" id="464"/>
+									<Events>
+										<Event name="OnChange">ОплатыДоговорВзаиморасчетовЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОплатыКарточкаЧекКоррекции" id="456">
+									<DataPath>Объект.ЧекКоррекции.Оплаты.Карточка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ОплатыКарточкаЧекКоррекцииКонтекстноеМеню" id="457"/>
+									<ExtendedTooltip name="ОплатыКарточкаЧекКоррекцииРасширеннаяПодсказка" id="458"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаТовары" id="159">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Товары</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница товары</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.ЧекКоррекции.Товары.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="СтраницаТоварыРасширеннаяПодсказка" id="160"/>
+					<ChildItems>
+						<Table name="ТоварыЧекКоррекции" id="286">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ЧекКоррекции.Товары</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТоварыЧекКоррекцииКонтекстноеМеню" id="287"/>
+							<AutoCommandBar name="ТоварыЧекКоррекцииКоманднаяПанель" id="288">
+								<ChildItems>
+									<Button name="ТоварыПодборНоменклатурыЧекКоррекции" id="482">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПодборНоменклатуры</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Подбор</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ТоварыПодборНоменклатурыЧекКоррекцииРасширеннаяПодсказка" id="483"/>
+									</Button>
+									<Popup name="ТоварыГруппаПроверитьСтатусы" id="484">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Проверить коды маркировки</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Товары группа проверить статусы</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ТоварыГруппаПроверитьСтатусыРасширеннаяПодсказка" id="485"/>
+										<ChildItems>
+											<Button name="ТоварыЗапроситьСтатусыКодовМаркировки" id="486">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗапроситьСтатусыКодовМаркировки</CommandName>
+												<ExtendedTooltip name="ТоварыЗапроситьСтатусыКодовМаркировкиРасширеннаяПодсказка" id="487">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Для избежания ошибок в учете оборота кодов маркировки  необходимо выполнить проверку состояний кодов маркировки в базе и по данным "Честного знака"</v8:content>
+														</v8:item>
+													</Title>
+												</ExtendedTooltip>
+											</Button>
+											<Button name="ТоварыЗапроситьСтатусыКодовМаркировкиККТ" id="488">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗапроситьСтатусыКодовМаркировкиККТ</CommandName>
+												<ExtendedTooltip name="ТоварыЗапроситьСтатусыКодовМаркировкиККТРасширеннаяПодсказка" id="489"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ТоварыЧекКоррекцииРасширеннаяПодсказка" id="289"/>
+							<SearchStringAddition name="ТоварыЧекКоррекцииСтрокаПоиска" id="290">
+								<AdditionSource>
+									<Item>ТоварыЧекКоррекции</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТоварыЧекКоррекцииСтрокаПоискаКонтекстноеМеню" id="291"/>
+								<ExtendedTooltip name="ТоварыЧекКоррекцииСтрокаПоискаРасширеннаяПодсказка" id="292"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТоварыЧекКоррекцииСостояниеПросмотра" id="293">
+								<AdditionSource>
+									<Item>ТоварыЧекКоррекции</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТоварыЧекКоррекцииСостояниеПросмотраКонтекстноеМеню" id="294"/>
+								<ExtendedTooltip name="ТоварыЧекКоррекцииСостояниеПросмотраРасширеннаяПодсказка" id="295"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТоварыЧекКоррекцииУправлениеПоиском" id="296">
+								<AdditionSource>
+									<Item>ТоварыЧекКоррекции</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТоварыЧекКоррекцииУправлениеПоискомКонтекстноеМеню" id="297"/>
+								<ExtendedTooltip name="ТоварыЧекКоррекцииУправлениеПоискомРасширеннаяПодсказка" id="298"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnEditEnd">ТоварыЧекКоррекцииПриОкончанииРедактирования</Event>
+								<Event name="DragCheck">ТоварыЧекКоррекцииПроверкаПеретаскивания</Event>
+								<Event name="Selection">ТоварыЧекКоррекцииВыбор</Event>
+								<Event name="BeforeAddRow">ТоварыЧекКоррекцииПередНачаломДобавления</Event>
+								<Event name="BeforeDeleteRow">ТоварыЧекКоррекцииПередУдалением</Event>
+								<Event name="BeforeRowChange">ТоварыЧекКоррекцииПередНачаломИзменения</Event>
+								<Event name="OnStartEdit">ТоварыЧекКоррекцииПриНачалеРедактирования</Event>
+								<Event name="AfterDeleteRow">ТоварыЧекКоррекцииПослеУдаления</Event>
+								<Event name="OnChange">ТоварыЧекКоррекцииПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ТоварыНомерСтрокиЧекКоррекции" id="299">
+									<DataPath>Объект.ЧекКоррекции.Товары.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыНомерСтрокиЧекКоррекцииКонтекстноеМеню" id="300"/>
+									<ExtendedTooltip name="ТоварыНомерСтрокиЧекКоррекцииРасширеннаяПодсказка" id="301"/>
+								</LabelField>
+								<LabelField name="ТоварыКодЧекКоррекции" id="490">
+									<DataPath>Объект.ЧекКоррекции.Товары.Номенклатура.Code</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>8</Width>
+									<ContextMenu name="ТоварыКодЧекКоррекцииКонтекстноеМеню" id="491"/>
+									<ExtendedTooltip name="ТоварыКодЧекКоррекцииРасширеннаяПодсказка" id="492"/>
+								</LabelField>
+								<LabelField name="ТоварыАртикулЧекКоррекции" id="493">
+									<DataPath>Объект.ЧекКоррекции.Товары.Номенклатура.Артикул</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<ContextMenu name="ТоварыАртикулЧекКоррекцииКонтекстноеМеню" id="494"/>
+									<ExtendedTooltip name="ТоварыАртикулЧекКоррекцииРасширеннаяПодсказка" id="495"/>
+								</LabelField>
+								<ColumnGroup name="ТоварыГруппаНоменклатураЧекКоррекции" id="496">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Товары группа номенклатура чек коррекции</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Товары группа номенклатура чек коррекции</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ExtendedTooltip name="ТоварыГруппаНоменклатураЧекКоррекцииРасширеннаяПодсказка" id="497"/>
+									<ChildItems>
+										<PictureField name="ТоварыИндикаторСебестоимостиАвтомобиляЧекКоррекции" id="498">
+											<DataPath>Объект.ЧекКоррекции.Товары.ИндикаторСебестоимостиАвтомобиля</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТоварыИндикаторСебестоимостиАвтомобиляЧекКоррекцииКонтекстноеМеню" id="499"/>
+											<ExtendedTooltip name="ТоварыИндикаторСебестоимостиАвтомобиляЧекКоррекцииРасширеннаяПодсказка" id="500"/>
+										</PictureField>
+										<InputField name="ТоварыНоменклатураЧекКоррекции" id="302">
+											<DataPath>Объект.ЧекКоррекции.Товары.Номенклатура</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<FooterDataPath>ТоварыНоменклатурыТекстПодвала</FooterDataPath>
+											<Width>20</Width>
+											<ContextMenu name="ТоварыНоменклатураЧекКоррекцииКонтекстноеМеню" id="303"/>
+											<ExtendedTooltip name="ТоварыНоменклатураЧекКоррекцииРасширеннаяПодсказка" id="304"/>
+											<Events>
+												<Event name="OnChange">ТоварыНоменклатураЧекКоррекцииПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ТоварыХарактеристикаНоменклатурыЧекКоррекции" id="341">
+									<DataPath>Объект.ЧекКоррекции.Товары.ХарактеристикаНоменклатуры</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>16</Width>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.Владелец</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Items.ТоварыЧекКоррекции.CurrentData.ВладелецХарактеристики</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ContextMenu name="ТоварыХарактеристикаНоменклатурыЧекКоррекцииКонтекстноеМеню" id="342"/>
+									<ExtendedTooltip name="ТоварыХарактеристикаНоменклатурыЧекКоррекцииРасширеннаяПодсказка" id="343"/>
+									<Events>
+										<Event name="OnChange">ТоварыХарактеристикаНоменклатурыЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<PictureField name="ТоварыКартинкаПроверкиМаркировкиККТЧекКоррекции" id="501">
+									<DataPath>Объект.ЧекКоррекции.Товары.КартинкаПроверкиМаркировкиККТ</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>3</Width>
+									<ContextMenu name="ТоварыКартинкаПроверкиМаркировкиККТЧекКоррекцииКонтекстноеМеню" id="502"/>
+									<ExtendedTooltip name="ТоварыКартинкаПроверкиМаркировкиККТЧекКоррекцииРасширеннаяПодсказка" id="503"/>
+								</PictureField>
+								<ColumnGroup name="ТоварыГруппаКодыМаркировки" id="504">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Товары группа коды маркировки</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Товары группа коды маркировки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="ТоварыГруппаКодыМаркировкиРасширеннаяПодсказка" id="505"/>
+									<ChildItems>
+										<PictureField name="ТоварыКартинкаМаркировкиЧекКоррекции" id="506">
+											<DataPath>Объект.ЧекКоррекции.Товары.КартинкаМаркировки</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ContextMenu name="ТоварыКартинкаМаркировкиЧекКоррекцииКонтекстноеМеню" id="507"/>
+											<ExtendedTooltip name="ТоварыКартинкаМаркировкиЧекКоррекцииРасширеннаяПодсказка" id="508"/>
+										</PictureField>
+										<InputField name="ТоварыКодыМаркировкиЧекКоррекции" id="509">
+											<DataPath>Объект.ЧекКоррекции.Товары.КодыМаркировки</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<CellHyperlink>true</CellHyperlink>
+											<Width>20</Width>
+											<ContextMenu name="ТоварыКодыМаркировкиЧекКоррекцииКонтекстноеМеню" id="510"/>
+											<ExtendedTooltip name="ТоварыКодыМаркировкиЧекКоррекцииРасширеннаяПодсказка" id="511"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ТоварыКоличествоЧекКоррекции" id="305">
+									<DataPath>Объект.ЧекКоррекции.Товары.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<ContextMenu name="ТоварыКоличествоЧекКоррекцииКонтекстноеМеню" id="306"/>
+									<ExtendedTooltip name="ТоварыКоличествоЧекКоррекцииРасширеннаяПодсказка" id="307"/>
+									<Events>
+										<Event name="OnChange">ТоварыКоличествоЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<ColumnGroup name="ТоварыЕдиницаКоэффициентЧекКоррекции" id="512">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Товары единица коэффициент чек коррекции</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Товары единица коэффициент чек коррекции</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="ТоварыЕдиницаКоэффициентЧекКоррекцииРасширеннаяПодсказка" id="513"/>
+									<ChildItems>
+										<InputField name="ТоварыЕдиницаИзмеренияЧекКоррекции" id="308">
+											<DataPath>Объект.ЧекКоррекции.Товары.ЕдиницаИзмерения</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Отбор.Владелец</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Items.ТоварыЧекКоррекции.CurrentData.ВладелецЕдиницыИзмерения</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ContextMenu name="ТоварыЕдиницаИзмеренияЧекКоррекцииКонтекстноеМеню" id="309"/>
+											<ExtendedTooltip name="ТоварыЕдиницаИзмеренияЧекКоррекцииРасширеннаяПодсказка" id="310"/>
+											<Events>
+												<Event name="OnChange">ТоварыЕдиницаИзмеренияЧекКоррекцииПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ТоварыКоэффициентЧекКоррекции" id="311">
+											<DataPath>Объект.ЧекКоррекции.Товары.Коэффициент</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ContextMenu name="ТоварыКоэффициентЧекКоррекцииКонтекстноеМеню" id="312"/>
+											<ExtendedTooltip name="ТоварыКоэффициентЧекКоррекцииРасширеннаяПодсказка" id="313"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ТоварыЦенаЧекКоррекции" id="314">
+									<DataPath>Объект.ЧекКоррекции.Товары.Цена</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<ContextMenu name="ТоварыЦенаЧекКоррекцииКонтекстноеМеню" id="315"/>
+									<ExtendedTooltip name="ТоварыЦенаЧекКоррекцииРасширеннаяПодсказка" id="316"/>
+									<Events>
+										<Event name="OnChange">ТоварыЦенаЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТоварыСуммаЧекКоррекции" id="317">
+									<DataPath>Объект.ЧекКоррекции.Товары.Сумма</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ТоварыСуммаЧекКоррекцииКонтекстноеМеню" id="318"/>
+									<ExtendedTooltip name="ТоварыСуммаЧекКоррекцииРасширеннаяПодсказка" id="319"/>
+									<Events>
+										<Event name="OnChange">ТоварыСуммаЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТоварыПроцентСкидкиЧекКоррекции" id="320">
+									<DataPath>Объект.ЧекКоррекции.Товары.ПроцентСкидки</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<ContextMenu name="ТоварыПроцентСкидкиЧекКоррекцииКонтекстноеМеню" id="321"/>
+									<ExtendedTooltip name="ТоварыПроцентСкидкиЧекКоррекцииРасширеннаяПодсказка" id="322"/>
+									<Events>
+										<Event name="OnChange">ТоварыПроцентСкидкиЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТоварыСуммаСкидкиЧекКоррекции" id="323">
+									<DataPath>Объект.ЧекКоррекции.Товары.СуммаСкидки</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ТоварыСуммаСкидкиЧекКоррекцииКонтекстноеМеню" id="324"/>
+									<ExtendedTooltip name="ТоварыСуммаСкидкиЧекКоррекцииРасширеннаяПодсказка" id="325"/>
+									<Events>
+										<Event name="OnChange">ТоварыСуммаСкидкиЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТоварыСкидкаНаТоварЧекКоррекции" id="326">
+									<DataPath>Объект.ЧекКоррекции.Товары.СкидкаНаТовар</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ТоварыСкидкаНаТоварЧекКоррекцииКонтекстноеМеню" id="327"/>
+									<ExtendedTooltip name="ТоварыСкидкаНаТоварЧекКоррекцииРасширеннаяПодсказка" id="328"/>
+									<Events>
+										<Event name="OnChange">ТоварыСкидкаНаТоварЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТоварыПроцентСкидкиСтрокиЧекКоррекции" id="329">
+									<DataPath>Объект.ЧекКоррекции.Товары.ПроцентСкидкиСтроки</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>14</Width>
+									<ContextMenu name="ТоварыПроцентСкидкиСтрокиЧекКоррекцииКонтекстноеМеню" id="330"/>
+									<ExtendedTooltip name="ТоварыПроцентСкидкиСтрокиЧекКоррекцииРасширеннаяПодсказка" id="331"/>
+									<Events>
+										<Event name="OnChange">ТоварыПроцентСкидкиСтрокиЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТоварыСуммаСкидкиСтрокиЧекКоррекции" id="332">
+									<DataPath>Объект.ЧекКоррекции.Товары.СуммаСкидкиСтроки</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>16</Width>
+									<ContextMenu name="ТоварыСуммаСкидкиСтрокиЧекКоррекцииКонтекстноеМеню" id="333"/>
+									<ExtendedTooltip name="ТоварыСуммаСкидкиСтрокиЧекКоррекцииРасширеннаяПодсказка" id="334"/>
+									<Events>
+										<Event name="OnChange">ТоварыСуммаСкидкиСтрокиЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТоварыСуммаОплатыЧекКоррекции" id="347">
+									<DataPath>Объект.ЧекКоррекции.Товары.СуммаОплаты</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыСуммаОплатыЧекКоррекцииКонтекстноеМеню" id="348"/>
+									<ExtendedTooltip name="ТоварыСуммаОплатыЧекКоррекцииРасширеннаяПодсказка" id="349"/>
+								</InputField>
+								<InputField name="ТоварыСуммаВсегоЧекКоррекции" id="344">
+									<DataPath>Объект.ЧекКоррекции.Товары.СуммаВсего</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ТоварыСуммаВсегоЧекКоррекцииКонтекстноеМеню" id="345"/>
+									<ExtendedTooltip name="ТоварыСуммаВсегоЧекКоррекцииРасширеннаяПодсказка" id="346"/>
+									<Events>
+										<Event name="OnChange">ТоварыСуммаВсегоЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТоварыСтавкаНДСЧекКоррекции" id="335">
+									<DataPath>Объект.ЧекКоррекции.Товары.СтавкаНДС</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>8</Width>
+									<ContextMenu name="ТоварыСтавкаНДСЧекКоррекцииКонтекстноеМеню" id="336"/>
+									<ExtendedTooltip name="ТоварыСтавкаНДСЧекКоррекцииРасширеннаяПодсказка" id="337"/>
+									<Events>
+										<Event name="OnChange">ТоварыСтавкаНДСЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТоварыСуммаНДСЧекКоррекции" id="338">
+									<DataPath>Объект.ЧекКоррекции.Товары.СуммаНДС</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<ContextMenu name="ТоварыСуммаНДСЧекКоррекцииКонтекстноеМеню" id="339"/>
+									<ExtendedTooltip name="ТоварыСуммаНДСЧекКоррекцииРасширеннаяПодсказка" id="340"/>
+									<Events>
+										<Event name="OnChange">ТоварыСуммаНДСЧекКоррекцииПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТоварыГТДЧекКоррекции" id="359">
+									<DataPath>Объект.ЧекКоррекции.Товары.ГТД</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыГТДЧекКоррекцииКонтекстноеМеню" id="360"/>
+									<ExtendedTooltip name="ТоварыГТДЧекКоррекцииРасширеннаяПодсказка" id="361"/>
+								</InputField>
+								<InputField name="ТоварыСуммаСкидкиБонусамиЧекКоррекции" id="353">
+									<DataPath>Объект.ЧекКоррекции.Товары.СуммаСкидкиБонусами</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ТоварыСуммаСкидкиБонусамиЧекКоррекцииКонтекстноеМеню" id="354"/>
+									<ExtendedTooltip name="ТоварыСуммаСкидкиБонусамиЧекКоррекцииРасширеннаяПодсказка" id="355"/>
+								</InputField>
+								<InputField name="ТоварыСебестоимостьАвтомобиляЧекКоррекции" id="350">
+									<DataPath>Объект.ЧекКоррекции.Товары.СебестоимостьАвтомобиля</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ТоварыСебестоимостьАвтомобиляЧекКоррекцииКонтекстноеМеню" id="351"/>
+									<ExtendedTooltip name="ТоварыСебестоимостьАвтомобиляЧекКоррекцииРасширеннаяПодсказка" id="352"/>
+								</InputField>
+								<InputField name="ТоварыДоговорВзаиморасчетовЧекКоррекции" id="356">
+									<DataPath>Объект.ЧекКоррекции.Товары.ДоговорВзаиморасчетов</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыДоговорВзаиморасчетовЧекКоррекцииКонтекстноеМеню" id="357"/>
+									<ExtendedTooltip name="ТоварыДоговорВзаиморасчетовЧекКоррекцииРасширеннаяПодсказка" id="358"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СозданныеДокументы" id="147">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Созданные документы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Созданные документы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СозданныеДокументыРасширеннаяПодсказка" id="148"/>
+					<ChildItems>
+						<LabelField name="ЧекСторно" id="149">
+							<DataPath>Объект.ЧекСторно.Ref</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отменяющий чек</v8:content>
+								</v8:item>
+							</Title>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="ЧекСторноКонтекстноеМеню" id="150"/>
+							<ExtendedTooltip name="ЧекСторноРасширеннаяПодсказка" id="151"/>
+						</LabelField>
+						<LabelField name="ЧекКоррекции" id="152">
+							<DataPath>Объект.ЧекКоррекции.Ref</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Чек коррекции</v8:content>
+								</v8:item>
+							</Title>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="ЧекКоррекцииКонтекстноеМеню" id="153"/>
+							<ExtendedTooltip name="ЧекКоррекцииРасширеннаяПодсказка" id="154"/>
+						</LabelField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="Подвал" id="480">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ПодвалРасширеннаяПодсказка" id="481"/>
+			<ChildItems>
+				<InputField name="КомментарийЧекКоррекции" id="78">
+					<DataPath>Объект.ЧекКоррекции.Комментарий</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ChoiceButton>false</ChoiceButton>
+					<OpenButton>true</OpenButton>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Введите комментарий</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="КомментарийЧекКоррекцииКонтекстноеМеню" id="79"/>
+					<ExtendedTooltip name="КомментарийЧекКоррекцииРасширеннаяПодсказка" id="80"/>
+					<Events>
+						<Event name="Opening">ЧекКоррекцииКомментарийОткрытие</Event>
+					</Events>
+				</InputField>
+				<LabelField name="НадписьСуммаДокумента" id="477">
+					<DataPath>НадписьСуммаДокумента</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<Width>31</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Hiperlink>true</Hiperlink>
+					<TextColor>style:ToolTipTextColor</TextColor>
+					<Font ref="sys:DefaultGUIFont" height="14" kind="WindowsFont"/>
+					<ContextMenu name="НадписьСуммаДокументаКонтекстноеМеню" id="478"/>
+					<ExtendedTooltip name="НадписьСуммаДокументаРасширеннаяПодсказка" id="479"/>
+					<Events>
+						<Event name="Click">НадписьСуммаДокументаНажатие</Event>
+					</Events>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПомощникСозданияЧековКоррекции</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="Объект.ЧекКоррекции.Товары">
+					<Column name="ВладелецХарактеристики" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Владелец характеристики</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+							<v8:Type>cfg:CatalogRef.ТипыНоменклатуры</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ВладелецЕдиницыИзмерения" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Владелец единицы измерения</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+							<v8:Type>cfg:CatalogRef.ТипыНоменклатуры</v8:Type>
+						</Type>
+					</Column>
+					<Column name="РучноеСписаниеХарактеристик" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ручное списание характеристик</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ИндикаторСебестоимостиАвтомобиля" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Индикатор себестоимости автомобиля</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>v8ui:Picture</v8:Type>
+						</Type>
+					</Column>
+					<Column name="МаркируемыйТовар" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Маркируемый товар</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="КодыМаркировки" id="6">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Коды маркировки</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>200</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="КартинкаМаркировки" id="7">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Картинка маркировки</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>v8ui:Picture</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ЕстьРазличияСостоянийКМ" id="8">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Есть различия состояний КМ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ПроверкаСоответствияКодовМаркировкиПроводилась" id="9">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Проверка соответствия кодов маркировки проводилась</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="КартинкаПроверкиМаркировкиККТ" id="10">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Картинка проверки маркировки ККТ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>v8ui:Picture</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СкидкаСтрокиИзменена" id="11">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Скидка строки изменена</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+				<AdditionalColumns table="Объект.ЧекКоррекции.КодыМаркировки">
+					<Column name="СостояниеКодаМаркировкиИБ" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Состояние кода маркировки ИБ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:EnumRef.СостоянияКодовМаркировки</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СостояниеКодаМаркировкиСМТ" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Состояние кода маркировки СМТ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>50</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Примечание" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Примечание</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>200</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Соответствует" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Соответствует</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ПроверкаСоответствияКодовМаркировкиПроводилась" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Проверка соответствия кодов маркировки проводилась</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="РежимИспользованияОбработки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим использования обработки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="КэшРезультатаПроверкиКодовМаркировки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кэш результата проверки кодов маркировки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АвторПроверкиКМ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автор проверки КМ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаПроверкиКМ" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата проверки КМ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПараметрыДокумента" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверкаСоответствияКодовМаркировкиПроводилась" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверка соответствия кодов маркировки проводилась</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СуммаДоплатить" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доплатить</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СуммаПереплата" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переплата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ФормаСобственности" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Форма собственности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ФормыСобственности</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТоварыСуммаВсегоТолькоПросмотр" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Товары сумма всего только просмотр</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТоварыНоменклатурыТекстПодвала" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Товары номенклатуры текст подвала</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:FormattedString</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НадписьСуммаДокумента" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Надпись сумма документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:FormattedString</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДокументОснованиеПробит" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ основание пробит</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПризнакЗакрытияФормы" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Признак закрытия формы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоддерживаемыеТипыПодключаемогоОборудования" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поддерживаемые типы подключаемого оборудования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьПодключаемоеОборудование" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать подключаемое оборудование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПредставлениеИнформацииПечатиЧека" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление информации печати чека</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользуетсяПСН" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используется ПСН</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПробитьЧек" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пробить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пробить чек</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ПробитьЧек</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПробитьЧек</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользованиеПодключаемогоОборудования</Item>
+			</FunctionalOptions>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Записать" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать чеки коррекции</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Записать</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="ЗапроситьСтатусыКодовМаркировкиККТ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перед пробитием чека на ККТ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запросить статусы кодов маркировки ККТ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗапроситьСтатусыКодовМаркировкиККТ</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="ЗапроситьСтатусыКодовМаркировки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Через Честный Знак</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запросить статусы кодов маркировки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗапроситьСтатусыКодовМаркировки</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="ПодборНоменклатуры" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор номенклатуры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ПодборНоменклатуры</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПодборНоменклатуры</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Распределить" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Распределить</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УправлениеККМ" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление ККМ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление ККМ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УправлениеККМ</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользованиеПодключаемогоОборудования</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НастроитьПараметрыДокумента" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить параметры документа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить параметры документа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ПараметрыДокумента</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НастроитьПараметрыДокумента</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="ОплатаНаличные" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наличные</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ОплатитьЧерезКассу</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОплатаНаличные</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОплатаПлатежнаяКарта" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Платежная карта</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ТипОплатыПлатежнаяКарта</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОплатаПлатежнаяКарта</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УправлениеЭТ" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление ЭТ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление ЭТ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УправлениеЭТ</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользованиеПодключаемогоОборудования</Item>
+			</FunctionalOptions>
+		</Command>
+	</Commands>
+</Form>

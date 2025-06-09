@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Рассылка информации о бонусных баллах</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Top</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Справка" id="83">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="84"/>
+			</Button>
+			<Button name="Закрыть" id="85">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="86"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Дата" id="1">
+			<DataPath>Объект.Дата</DataPath>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<UsualGroup name="ГруппаУчетныеДанные" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа учетные данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа учетные данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаУчетныеДанныеРасширеннаяПодсказка" id="14"/>
+			<ChildItems>
+				<InputField name="УчетнаяЗаписьЭлектроннойПочты" id="4">
+					<DataPath>Объект.УчетнаяЗаписьЭлектроннойПочты</DataPath>
+					<ContextMenu name="УчетнаяЗаписьЭлектроннойПочтыКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="УчетнаяЗаписьЭлектроннойПочтыРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="ШаблонРассылкиEMail" id="7">
+					<DataPath>Объект.ШаблонРассылкиEMail</DataPath>
+					<ContextMenu name="ШаблонРассылкиEMailКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ШаблонРассылкиEMailРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="ШаблонРассылкиSMS" id="10">
+					<DataPath>Объект.ШаблонРассылкиSMS</DataPath>
+					<ContextMenu name="ШаблонРассылкиSMSКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ШаблонРассылкиSMSРасширеннаяПодсказка" id="12"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="СтраницыДанных" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыДанныхРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<Page name="СтраницаДанныеДляРассылки" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные для рассылки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница данные для рассылки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаДанныеДляРассылкиРасширеннаяПодсказка" id="18"/>
+					<ChildItems>
+						<Table name="ДанныеДляРассылки" id="19">
+							<CommandBarLocation>Top</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<Height>7</Height>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.ДанныеДляРассылки</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+							</CommandSet>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Список активных бонусных баллов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДанныеДляРассылкиКонтекстноеМеню" id="20"/>
+							<AutoCommandBar name="ДанныеДляРассылкиКоманднаяПанель" id="21">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ДанныеДляРассылкиСформировать" id="56">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Сформировать</CommandName>
+										<ExtendedTooltip name="ДанныеДляРассылкиСформироватьРасширеннаяПодсказка" id="57"/>
+									</Button>
+									<Button name="ДанныеДляРассылкиВыполнитьРассылку" id="58">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВыполнитьРассылку</CommandName>
+										<ExtendedTooltip name="ДанныеДляРассылкиВыполнитьРассылкуРасширеннаяПодсказка" id="59"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ДанныеДляРассылкиРасширеннаяПодсказка" id="22"/>
+							<SearchStringAddition name="ДанныеДляРассылкиСтрокаПоиска" id="23">
+								<AdditionSource>
+									<Item>ДанныеДляРассылки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеДляРассылкиСтрокаПоискаКонтекстноеМеню" id="24"/>
+								<ExtendedTooltip name="ДанныеДляРассылкиСтрокаПоискаРасширеннаяПодсказка" id="25"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДанныеДляРассылкиСостояниеПросмотра" id="26">
+								<AdditionSource>
+									<Item>ДанныеДляРассылки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеДляРассылкиСостояниеПросмотраКонтекстноеМеню" id="27"/>
+								<ExtendedTooltip name="ДанныеДляРассылкиСостояниеПросмотраРасширеннаяПодсказка" id="28"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДанныеДляРассылкиУправлениеПоиском" id="29">
+								<AdditionSource>
+									<Item>ДанныеДляРассылки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеДляРассылкиУправлениеПоискомКонтекстноеМеню" id="30"/>
+								<ExtendedTooltip name="ДанныеДляРассылкиУправлениеПоискомРасширеннаяПодсказка" id="31"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДанныеДляРассылкиНомерСтроки" id="32">
+									<DataPath>Объект.ДанныеДляРассылки.LineNumber</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номер строки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеДляРассылкиНомерСтрокиКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="ДанныеДляРассылкиНомерСтрокиРасширеннаяПодсказка" id="34"/>
+								</LabelField>
+								<InputField name="ДанныеДляРассылкиКонтрагент" id="35">
+									<DataPath>Объект.ДанныеДляРассылки.Контрагент</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеДляРассылкиКонтрагентКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="ДанныеДляРассылкиКонтрагентРасширеннаяПодсказка" id="37"/>
+								</InputField>
+								<InputField name="ДанныеДляРассылкиБонуснаяПрограмма" id="38">
+									<DataPath>Объект.ДанныеДляРассылки.БонуснаяПрограмма</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеДляРассылкиБонуснаяПрограммаКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ДанныеДляРассылкиБонуснаяПрограммаРасширеннаяПодсказка" id="40"/>
+								</InputField>
+								<InputField name="ДанныеДляРассылкиКарточка" id="41">
+									<DataPath>Объект.ДанныеДляРассылки.Карточка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеДляРассылкиКарточкаКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ДанныеДляРассылкиКарточкаРасширеннаяПодсказка" id="43"/>
+								</InputField>
+								<InputField name="ДанныеДляРассылкиКоличество" id="44">
+									<DataPath>Объект.ДанныеДляРассылки.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеДляРассылкиКоличествоКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="ДанныеДляРассылкиКоличествоРасширеннаяПодсказка" id="46"/>
+								</InputField>
+								<InputField name="ДанныеДляРассылкиДатаСписания" id="47">
+									<DataPath>Объект.ДанныеДляРассылки.ДатаСписания</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеДляРассылкиДатаСписанияКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="ДанныеДляРассылкиДатаСписанияРасширеннаяПодсказка" id="49"/>
+								</InputField>
+								<CheckBoxField name="ДанныеДляРассылкиИспользоватьEMailРассылку" id="50">
+									<DataPath>Объект.ДанныеДляРассылки.ИспользоватьEMailРассылку</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДанныеДляРассылкиИспользоватьEMailРассылкуКонтекстноеМеню" id="51"/>
+									<ExtendedTooltip name="ДанныеДляРассылкиИспользоватьEMailРассылкуРасширеннаяПодсказка" id="52"/>
+								</CheckBoxField>
+								<CheckBoxField name="ДанныеДляРассылкиИспользоватьSMSРассылку" id="53">
+									<DataPath>Объект.ДанныеДляРассылки.ИспользоватьSMSРассылку</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДанныеДляРассылкиИспользоватьSMSРассылкуКонтекстноеМеню" id="54"/>
+									<ExtendedTooltip name="ДанныеДляРассылкиИспользоватьSMSРассылкуРасширеннаяПодсказка" id="55"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+						<Table name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор" id="60">
+							<Representation>Tree</Representation>
+							<Autofill>true</Autofill>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>КомпоновщикНастроекКомпоновкиДанных.Settings.Filter</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отбор </v8:content>
+								</v8:item>
+							</ToolTip>
+							<ViewMode>All</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+							<ContextMenu name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборКонтекстноеМеню" id="61"/>
+							<AutoCommandBar name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборКоманднаяПанель" id="62">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборДобавитьЭлементОтбора" id="73">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Item.КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор.StandardCommand.AddFilterItem</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборДобавитьЭлементОтбораРасширеннаяПодсказка" id="74"/>
+									</Button>
+									<Button name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборДобавитьГруппуЭлементовОтбора" id="75">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор.StandardCommand.AddFilterItemGroup</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.CreateFolder</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборДобавитьГруппуЭлементовОтбораРасширеннаяПодсказка" id="76"/>
+									</Button>
+									<Button name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПереместитьВверх" id="77">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор.StandardCommand.MoveUp</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПереместитьВверхРасширеннаяПодсказка" id="78"/>
+									</Button>
+									<Button name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПереместитьВниз" id="79">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор.StandardCommand.MoveDown</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПереместитьВнизРасширеннаяПодсказка" id="80"/>
+									</Button>
+									<Button name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПодробно" id="81">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор.StandardCommand.Detailed</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборПодробноРасширеннаяПодсказка" id="82"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборРасширеннаяПодсказка" id="63"/>
+							<SearchStringAddition name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСтрокаПоиска" id="64">
+								<AdditionSource>
+									<Item>КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСтрокаПоискаКонтекстноеМеню" id="65"/>
+								<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСтрокаПоискаРасширеннаяПодсказка" id="66"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСостояниеПросмотра" id="67">
+								<AdditionSource>
+									<Item>КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСостояниеПросмотраКонтекстноеМеню" id="68"/>
+								<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборСостояниеПросмотраРасширеннаяПодсказка" id="69"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборУправлениеПоиском" id="70">
+								<AdditionSource>
+									<Item>КомпоновщикНастроекКомпоновкиДанныхНастройкиОтбор</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборУправлениеПоискомКонтекстноеМеню" id="71"/>
+								<ExtendedTooltip name="КомпоновщикНастроекКомпоновкиДанныхНастройкиОтборУправлениеПоискомРасширеннаяПодсказка" id="72"/>
+							</SearchControlAddition>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.РассылкаИнформацииОБонусныхБаллах</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="КомпоновщикНастроекКомпоновкиДанных" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компоновщик настроек компоновки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресСхемыКомпановкиДанных" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес схемы компановки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Сформировать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Сформировать</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыполнитьРассылку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить рассылку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить рассылку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.НаписатьSMS</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыполнитьРассылку</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

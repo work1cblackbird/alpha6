@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОрганизацияНаДату" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа организация на дату</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа организация на дату</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОрганизацияНаДатуРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<InputField name="НаДату" id="1">
+					<DataPath>Объект.НаДату</DataPath>
+					<ContextMenu name="НаДатуКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НаДатуРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">НаДатуПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Организация" id="4">
+					<DataPath>Объект.Организация</DataPath>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ОрганизацияПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="10"/>
+			<ChildItems>
+				<Page name="СтраницаИнвентаризация" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Инвентаризация</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница инвентаризация</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаИнвентаризацияРасширеннаяПодсказка" id="12"/>
+					<ChildItems>
+						<Table name="ТаблицаИнвентаризации" id="13">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ТаблицаИнвентаризации</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+								<ExcludedCommand>SearchHistory</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаИнвентаризацииКонтекстноеМеню" id="14"/>
+							<AutoCommandBar name="ТаблицаИнвентаризацииКоманднаяПанель" id="15">
+								<ChildItems>
+									<Button name="ОбновитьДокументыИнвентаризации" id="66">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОбновитьДокументыИнвентаризации</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.Refresh</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="ОбновитьДокументыИнвентаризацииРасширеннаяПодсказка" id="67"/>
+									</Button>
+									<Button name="СформироватьИнвентаризации" id="62">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.СформироватьИнвентаризации</CommandName>
+										<ExtendedTooltip name="СформироватьИнвентаризацииРасширеннаяПодсказка" id="63"/>
+									</Button>
+									<Button name="СформироватьУведомления" id="64">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.СформироватьУведомления</CommandName>
+										<ExtendedTooltip name="СформироватьУведомленияРасширеннаяПодсказка" id="65"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ТаблицаИнвентаризацииРасширеннаяПодсказка" id="16"/>
+							<SearchStringAddition name="ТаблицаИнвентаризацииСтрокаПоиска" id="17">
+								<AdditionSource>
+									<Item>ТаблицаИнвентаризации</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаИнвентаризацииСтрокаПоискаКонтекстноеМеню" id="18"/>
+								<ExtendedTooltip name="ТаблицаИнвентаризацииСтрокаПоискаРасширеннаяПодсказка" id="19"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаИнвентаризацииСостояниеПросмотра" id="20">
+								<AdditionSource>
+									<Item>ТаблицаИнвентаризации</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаИнвентаризацииСостояниеПросмотраКонтекстноеМеню" id="21"/>
+								<ExtendedTooltip name="ТаблицаИнвентаризацииСостояниеПросмотраРасширеннаяПодсказка" id="22"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаИнвентаризацииУправлениеПоиском" id="23">
+								<AdditionSource>
+									<Item>ТаблицаИнвентаризации</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаИнвентаризацииУправлениеПоискомКонтекстноеМеню" id="24"/>
+								<ExtendedTooltip name="ТаблицаИнвентаризацииУправлениеПоискомРасширеннаяПодсказка" id="25"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ТаблицаИнвентаризацииВидТовара" id="26">
+									<DataPath>ТаблицаИнвентаризации.ВидТовара</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаИнвентаризацииВидТовараКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="ТаблицаИнвентаризацииВидТовараРасширеннаяПодсказка" id="28"/>
+								</LabelField>
+								<LabelField name="ТаблицаИнвентаризацииСкладКомпании" id="29">
+									<DataPath>ТаблицаИнвентаризации.СкладКомпании</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаИнвентаризацииСкладКомпанииКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="ТаблицаИнвентаризацииСкладКомпанииРасширеннаяПодсказка" id="31"/>
+								</LabelField>
+								<InputField name="ТаблицаИнвентаризацииИнвентаризация" id="32">
+									<DataPath>ТаблицаИнвентаризации.Инвентаризация</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceParameterLinks>
+										<xr:Link>
+											<xr:Name>Отбор.СкладКомпании</xr:Name>
+											<xr:DataPath xsi:type="xs:string">Items.ТаблицаИнвентаризации.CurrentData.СкладКомпании</xr:DataPath>
+											<xr:ValueChange>Clear</xr:ValueChange>
+										</xr:Link>
+									</ChoiceParameterLinks>
+									<ContextMenu name="ТаблицаИнвентаризацииИнвентаризацияКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="ТаблицаИнвентаризацииИнвентаризацияРасширеннаяПодсказка" id="34"/>
+									<Events>
+										<Event name="StartChoice">ТаблицаИнвентаризацииИнвентаризацияНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаУведомления" id="38">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Уведомления</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница уведомления</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаУведомленияРасширеннаяПодсказка" id="39"/>
+					<ChildItems>
+						<Table name="СписокУведомлений" id="40">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>СписокУведомлений</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СписокУведомленийКонтекстноеМеню" id="41"/>
+							<AutoCommandBar name="СписокУведомленийКоманднаяПанель" id="42"/>
+							<ExtendedTooltip name="СписокУведомленийРасширеннаяПодсказка" id="43"/>
+							<SearchStringAddition name="СписокУведомленийСтрокаПоиска" id="44">
+								<AdditionSource>
+									<Item>СписокУведомлений</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокУведомленийСтрокаПоискаКонтекстноеМеню" id="45"/>
+								<ExtendedTooltip name="СписокУведомленийСтрокаПоискаРасширеннаяПодсказка" id="46"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокУведомленийСостояниеПросмотра" id="47">
+								<AdditionSource>
+									<Item>СписокУведомлений</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокУведомленийСостояниеПросмотраКонтекстноеМеню" id="48"/>
+								<ExtendedTooltip name="СписокУведомленийСостояниеПросмотраРасширеннаяПодсказка" id="49"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокУведомленийУправлениеПоиском" id="50">
+								<AdditionSource>
+									<Item>СписокУведомлений</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокУведомленийУправлениеПоискомКонтекстноеМеню" id="51"/>
+								<ExtendedTooltip name="СписокУведомленийУправлениеПоискомРасширеннаяПодсказка" id="52"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="СписокУведомленийПервичныйДокумент" id="53">
+									<DataPath>СписокУведомлений.ПервичныйДокумент</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокУведомленийПервичныйДокументКонтекстноеМеню" id="54"/>
+									<ExtendedTooltip name="СписокУведомленийПервичныйДокументРасширеннаяПодсказка" id="55"/>
+								</InputField>
+								<InputField name="СписокУведомленийКодТНВЭД" id="56">
+									<DataPath>СписокУведомлений.КодТНВЭД</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокУведомленийКодТНВЭДКонтекстноеМеню" id="57"/>
+									<ExtendedTooltip name="СписокУведомленийКодТНВЭДРасширеннаяПодсказка" id="58"/>
+								</InputField>
+								<InputField name="СписокУведомленийУведомлениеОбОстатках" id="59">
+									<DataPath>СписокУведомлений.УведомлениеОбОстатках</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокУведомленийУведомлениеОбОстаткахКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="СписокУведомленийУведомлениеОбОстаткахРасширеннаяПодсказка" id="61"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ОстаткиПрослеживаемыхТоваров</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТаблицаИнвентаризации" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица инвентаризации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ВидТовара" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид товара</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СкладКомпании" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Склад компании</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СкладыКомпании</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Инвентаризация" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Инвентаризация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.Инвентаризация</v8:Type>
+						<v8:Type>cfg:DocumentRef.ИнвентаризацияАвтомобилей</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЭтоТовар" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это товар</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СписокУведомлений" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список уведомлений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПервичныйДокумент" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Первичный документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.Инвентаризация</v8:Type>
+						<v8:Type>cfg:DocumentRef.ИнвентаризацияАвтомобилей</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КодТНВЭД" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код ТНВЭД</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.КлассификаторТНВЭД</v8:Type>
+					</Type>
+				</Column>
+				<Column name="УведомлениеОбОстатках" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Уведомление об остатках</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.УведомлениеОбОстаткахПрослеживаемыхТоваров</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СформироватьИнвентаризации" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать инвентаризации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать инвентаризации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьИнвентаризации</Action>
+		</Command>
+		<Command name="СформироватьУведомления" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать уведомления</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать уведомления</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьУведомления</Action>
+		</Command>
+		<Command name="ОбновитьДокументыИнвентаризации" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить документы инвентаризации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить документы инвентаризации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьДокументыИнвентаризации</Action>
+		</Command>
+	</Commands>
+</Form>

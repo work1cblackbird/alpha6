@@ -1,0 +1,1376 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ЗаказыКомандаВыполнитьСнятиеРезервов" id="190">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.КомандаВыполнитьСнятиеРезервов</CommandName>
+				<ExtendedTooltip name="ЗаказыКомандаВыполнитьСнятиеРезервовРасширеннаяПодсказка" id="191"/>
+			</Button>
+			<Popup name="ПодменюСнятиеРезервов" id="194">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Снятие резервов</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ПодменюСнятиеРезервовРасширеннаяПодсказка" id="195"/>
+				<ChildItems>
+					<Button name="ЗаказыКомандаИзменитьОтметкуИспользование" id="198">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаСнятиеРезервовОтметитьВсе</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.CheckAll</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ЗаказыКомандаИзменитьОтметкуИспользованиеРасширеннаяПодсказка" id="199"/>
+					</Button>
+					<Button name="ЗаказыКомандаСнятиеРезервовОтметитьПросроченные" id="208">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаСнятиеРезервовОтметитьПросроченные</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.CheckAll</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ЗаказыКомандаСнятиеРезервовОтметитьПросроченныеРасширеннаяПодсказка" id="209"/>
+					</Button>
+					<Button name="ЗаказыКомандаСнятиеРезервовСнятьВсе" id="210">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаСнятиеРезервовСнятьВсе</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ЗаказыКомандаСнятиеРезервовСнятьВсеРасширеннаяПодсказка" id="211"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+			<Popup name="ПодменюКорректировкаЗаказов" id="196">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Корректировка заказов</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ПодменюКорректировкаЗаказовРасширеннаяПодсказка" id="197"/>
+				<ChildItems>
+					<Button name="ЗаказыКомандаИзменитьОтметкуКорректировка" id="204">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаКорректировкаОтметитьВсе</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.CheckAll</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ЗаказыКомандаИзменитьОтметкуКорректировкаРасширеннаяПодсказка" id="205"/>
+					</Button>
+					<Button name="ЗаказыКомандаКорректировкаСнятьВсе" id="212">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КомандаКорректировкаСнятьВсе</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ЗаказыКомандаКорректировкаСнятьВсеРасширеннаяПодсказка" id="213"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+			<Button name="ЗаказыКомандаОбновитьСписокЗаказов" id="192">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.Command.КомандаОбновитьСписокЗаказов</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Refresh</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Обновить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ЗаказыКомандаОбновитьСписокЗаказовРасширеннаяПодсказка" id="193"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="81">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="82"/>
+			<Events>
+				<Event name="OnCurrentPageChange">ГруппаСтраницыПриСменеСтраницы</Event>
+			</Events>
+			<ChildItems>
+				<Page name="СтраницаЗаказыПокупателей" id="83">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заказы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документы к обработке</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаЗаказыПокупателейРасширеннаяПодсказка" id="84"/>
+					<ChildItems>
+						<CheckBoxField name="СоздаватьНапоминание" id="214">
+							<DataPath>СоздаватьНапоминание</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Создавать напоминание автору (менеджеру) заказа покупателя</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Создавать напоминание автору (менеджеру)</v8:content>
+								</v8:item>
+							</ToolTip>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СоздаватьНапоминаниеКонтекстноеМеню" id="215"/>
+							<ExtendedTooltip name="СоздаватьНапоминаниеРасширеннаяПодсказка" id="216"/>
+						</CheckBoxField>
+						<Table name="Заказы" id="132">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Заказы</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заказы</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Список заказов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ЗаказыКонтекстноеМеню" id="133"/>
+							<AutoCommandBar name="ЗаказыКоманднаяПанель" id="134">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ЗаказыРасширеннаяПодсказка" id="135"/>
+							<SearchStringAddition name="ЗаказыСтрокаПоиска" id="136">
+								<AdditionSource>
+									<Item>Заказы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыСтрокаПоискаКонтекстноеМеню" id="139"/>
+								<ExtendedTooltip name="ЗаказыСтрокаПоискаРасширеннаяПодсказка" id="140"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЗаказыСостояниеПросмотра" id="141">
+								<AdditionSource>
+									<Item>Заказы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыСостояниеПросмотраКонтекстноеМеню" id="144"/>
+								<ExtendedTooltip name="ЗаказыСостояниеПросмотраРасширеннаяПодсказка" id="145"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЗаказыУправлениеПоиском" id="146">
+								<AdditionSource>
+									<Item>Заказы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыУправлениеПоискомКонтекстноеМеню" id="149"/>
+								<ExtendedTooltip name="ЗаказыУправлениеПоискомРасширеннаяПодсказка" id="150"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ЗаказыВыбор</Event>
+								<Event name="OnActivateRow">ЗаказыПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<CheckBoxField name="ЗаказыСнятиеРезервов" id="151">
+									<DataPath>Заказы.СнятиеРезервов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Снятие резервов</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Требуется обработка данного документа</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЗаказыСнятиеРезервовКонтекстноеМеню" id="152"/>
+									<ExtendedTooltip name="ЗаказыСнятиеРезервовРасширеннаяПодсказка" id="153"/>
+								</CheckBoxField>
+								<CheckBoxField name="ЗаказыКорректировка" id="154">
+									<DataPath>Заказы.Корректировка</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Корректировка</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЗаказыКорректировкаКонтекстноеМеню" id="155"/>
+									<ExtendedTooltip name="ЗаказыКорректировкаРасширеннаяПодсказка" id="156"/>
+								</CheckBoxField>
+								<InputField name="ЗаказыНомер" id="157">
+									<DataPath>Заказы.Номер</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номер документа</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаказыНомерКонтекстноеМеню" id="158"/>
+									<ExtendedTooltip name="ЗаказыНомерРасширеннаяПодсказка" id="159"/>
+								</InputField>
+								<InputField name="ЗаказыДата" id="160">
+									<DataPath>Заказы.Дата</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата документа</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаказыДатаКонтекстноеМеню" id="161"/>
+									<ExtendedTooltip name="ЗаказыДатаРасширеннаяПодсказка" id="162"/>
+								</InputField>
+								<InputField name="ЗаказыЗаказ" id="163">
+									<DataPath>Заказы.Заказ</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Документ заказ</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаказыЗаказКонтекстноеМеню" id="164"/>
+									<ExtendedTooltip name="ЗаказыЗаказРасширеннаяПодсказка" id="165"/>
+								</InputField>
+								<InputField name="ЗаказыАвтор" id="166">
+									<DataPath>Заказы.Автор</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Автор документа</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаказыАвторКонтекстноеМеню" id="167"/>
+									<ExtendedTooltip name="ЗаказыАвторРасширеннаяПодсказка" id="168"/>
+								</InputField>
+								<InputField name="ЗаказыОрганизация" id="169">
+									<DataPath>Заказы.Организация</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Организация</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаказыОрганизацияКонтекстноеМеню" id="170"/>
+									<ExtendedTooltip name="ЗаказыОрганизацияРасширеннаяПодсказка" id="171"/>
+								</InputField>
+								<InputField name="ЗаказыПодразделения" id="172">
+									<DataPath>Заказы.Подразделения</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подразделения</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаказыПодразделенияКонтекстноеМеню" id="173"/>
+									<ExtendedTooltip name="ЗаказыПодразделенияРасширеннаяПодсказка" id="174"/>
+								</InputField>
+								<InputField name="ЗаказыКонтрагент" id="175">
+									<DataPath>Заказы.Контрагент</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Контрагент</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаказыКонтрагентКонтекстноеМеню" id="176"/>
+									<ExtendedTooltip name="ЗаказыКонтрагентРасширеннаяПодсказка" id="177"/>
+								</InputField>
+								<InputField name="ЗаказыСкладКомпании" id="178">
+									<DataPath>Заказы.СкладКомпании</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Склад</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаказыСкладКомпанииКонтекстноеМеню" id="179"/>
+									<ExtendedTooltip name="ЗаказыСкладКомпанииРасширеннаяПодсказка" id="180"/>
+								</InputField>
+								<InputField name="ЗаказыСрокСнятияРезерва" id="181">
+									<DataPath>Заказы.СрокСнятияРезерва</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Планируемая дата снятия с резерва</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаказыСрокСнятияРезерваКонтекстноеМеню" id="182"/>
+									<ExtendedTooltip name="ЗаказыСрокСнятияРезерваРасширеннаяПодсказка" id="183"/>
+								</InputField>
+								<InputField name="ЗаказыОплата" id="184">
+									<DataPath>Заказы.Оплата</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оплата по документу</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаказыОплатаКонтекстноеМеню" id="185"/>
+									<ExtendedTooltip name="ЗаказыОплатаРасширеннаяПодсказка" id="186"/>
+								</InputField>
+								<InputField name="ЗаказыСумма" id="187">
+									<DataPath>Заказы.Сумма</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма документа</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаказыСуммаКонтекстноеМеню" id="188"/>
+									<ExtendedTooltip name="ЗаказыСуммаРасширеннаяПодсказка" id="189"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<Table name="ЗаказыТовары" id="89">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ЗаказыТовары</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заказы товары</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Расшифровка документа</v8:content>
+								</v8:item>
+							</ToolTip>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ЗаказыТоварыКонтекстноеМеню" id="90"/>
+							<AutoCommandBar name="ЗаказыТоварыКоманднаяПанель" id="91"/>
+							<ExtendedTooltip name="ЗаказыТоварыРасширеннаяПодсказка" id="92"/>
+							<SearchStringAddition name="ЗаказыТоварыСтрокаПоиска" id="93">
+								<AdditionSource>
+									<Item>ЗаказыТовары</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыТоварыСтрокаПоискаКонтекстноеМеню" id="96"/>
+								<ExtendedTooltip name="ЗаказыТоварыСтрокаПоискаРасширеннаяПодсказка" id="97"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЗаказыТоварыСостояниеПросмотра" id="98">
+								<AdditionSource>
+									<Item>ЗаказыТовары</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыТоварыСостояниеПросмотраКонтекстноеМеню" id="101"/>
+								<ExtendedTooltip name="ЗаказыТоварыСостояниеПросмотраРасширеннаяПодсказка" id="102"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЗаказыТоварыУправлениеПоиском" id="103">
+								<AdditionSource>
+									<Item>ЗаказыТовары</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаказыТоварыУправлениеПоискомКонтекстноеМеню" id="106"/>
+								<ExtendedTooltip name="ЗаказыТоварыУправлениеПоискомРасширеннаяПодсказка" id="107"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ТоварыЗаказ" id="129">
+									<DataPath>ЗаказыТовары.Заказ</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыЗаказКонтекстноеМеню" id="130"/>
+									<ExtendedTooltip name="ТоварыЗаказРасширеннаяПодсказка" id="131"/>
+								</InputField>
+								<InputField name="ЗаказыТоварыКод" id="239">
+									<DataPath>ЗаказыТовары.Номенклатура.Code</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Код товара</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>8</Width>
+									<ContextMenu name="ЗаказыТоварыКодКонтекстноеМеню" id="240"/>
+									<ExtendedTooltip name="ЗаказыТоварыКодРасширеннаяПодсказка" id="241"/>
+								</InputField>
+								<InputField name="ЗаказыТоварыАртикул" id="242">
+									<DataPath>ЗаказыТовары.Номенклатура.Артикул</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Артикул</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>11</Width>
+									<ContextMenu name="ЗаказыТоварыАртикулКонтекстноеМеню" id="243"/>
+									<ExtendedTooltip name="ЗаказыТоварыАртикулРасширеннаяПодсказка" id="244"/>
+								</InputField>
+								<InputField name="ТоварыНоменклатура" id="108">
+									<DataPath>ЗаказыТовары.Номенклатура</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номенклатура</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыНоменклатураКонтекстноеМеню" id="109"/>
+									<ExtendedTooltip name="ТоварыНоменклатураРасширеннаяПодсказка" id="110"/>
+								</InputField>
+								<InputField name="ТоварыХарактеристикаНоменклатуры" id="111">
+									<DataPath>ЗаказыТовары.ХарактеристикаНоменклатуры</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Характеристика номенклатуры</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыХарактеристикаНоменклатурыКонтекстноеМеню" id="112"/>
+									<ExtendedTooltip name="ТоварыХарактеристикаНоменклатурыРасширеннаяПодсказка" id="113"/>
+								</InputField>
+								<InputField name="ТоварыМестоРазмещения" id="114">
+									<DataPath>ЗаказыТовары.МестоРазмещения</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Склад</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыМестоРазмещенияКонтекстноеМеню" id="115"/>
+									<ExtendedTooltip name="ТоварыМестоРазмещенияРасширеннаяПодсказка" id="116"/>
+								</InputField>
+								<InputField name="ТоварыДатаРезервирования" id="117">
+									<DataPath>ЗаказыТовары.ДатаРезервирования</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата резервирования</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыДатаРезервированияКонтекстноеМеню" id="118"/>
+									<ExtendedTooltip name="ТоварыДатаРезервированияРасширеннаяПодсказка" id="119"/>
+								</InputField>
+								<InputField name="ТоварыСрокРезервирования" id="120">
+									<DataPath>ЗаказыТовары.СрокРезервирования</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество дней резервирования</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыСрокРезервированияКонтекстноеМеню" id="121"/>
+									<ExtendedTooltip name="ТоварыСрокРезервированияРасширеннаяПодсказка" id="122"/>
+								</InputField>
+								<InputField name="ТоварыРезервОстаток" id="123">
+									<DataPath>ЗаказыТовары.РезервОстаток</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Зарезервированное количество</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыРезервОстатокКонтекстноеМеню" id="124"/>
+									<ExtendedTooltip name="ТоварыРезервОстатокРасширеннаяПодсказка" id="125"/>
+								</InputField>
+								<InputField name="ТоварыРезервСвободныйОстаток" id="126">
+									<DataPath>ЗаказыТовары.РезервСвободныйОстаток</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество зарезервированного товара, присутствующего на складе</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТоварыРезервСвободныйОстатокКонтекстноеМеню" id="127"/>
+									<ExtendedTooltip name="ТоварыРезервСвободныйОстатокРасширеннаяПодсказка" id="128"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаСнятиеРезервов" id="85">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Снятие резервов</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Созданные документа</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаСнятиеРезервовРасширеннаяПодсказка" id="86"/>
+					<ChildItems>
+						<Table name="СнятиеРезервов" id="217">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>СнятиеРезервов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Снятие резервов</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Список созданных документов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СнятиеРезервовКонтекстноеМеню" id="218"/>
+							<AutoCommandBar name="СнятиеРезервовКоманднаяПанель" id="219"/>
+							<ExtendedTooltip name="СнятиеРезервовРасширеннаяПодсказка" id="220"/>
+							<SearchStringAddition name="СнятиеРезервовСтрокаПоиска" id="221">
+								<AdditionSource>
+									<Item>СнятиеРезервов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СнятиеРезервовСтрокаПоискаКонтекстноеМеню" id="224"/>
+								<ExtendedTooltip name="СнятиеРезервовСтрокаПоискаРасширеннаяПодсказка" id="225"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СнятиеРезервовСостояниеПросмотра" id="226">
+								<AdditionSource>
+									<Item>СнятиеРезервов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СнятиеРезервовСостояниеПросмотраКонтекстноеМеню" id="229"/>
+								<ExtendedTooltip name="СнятиеРезервовСостояниеПросмотраРасширеннаяПодсказка" id="230"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СнятиеРезервовУправлениеПоиском" id="231">
+								<AdditionSource>
+									<Item>СнятиеРезервов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СнятиеРезервовУправлениеПоискомКонтекстноеМеню" id="234"/>
+								<ExtendedTooltip name="СнятиеРезервовУправлениеПоискомРасширеннаяПодсказка" id="235"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СнятиеРезервовВыбор</Event>
+								<Event name="OnActivateRow">СнятиеРезервовДокументыПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="СнятиеРезервовСнятиеРезервов" id="236">
+									<DataPath>СнятиеРезервов.СнятиеРезервов</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Документ</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СнятиеРезервовСнятиеРезервовКонтекстноеМеню" id="237"/>
+									<ExtendedTooltip name="СнятиеРезервовСнятиеРезервовРасширеннаяПодсказка" id="238"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<Table name="СнятиеРезервовТовары" id="245">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>СнятиеРезервовТовары</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Снятие резервов товары</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Расшифровка документа</v8:content>
+								</v8:item>
+							</ToolTip>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СнятиеРезервовТоварыКонтекстноеМеню" id="246"/>
+							<AutoCommandBar name="СнятиеРезервовТоварыКоманднаяПанель" id="247"/>
+							<ExtendedTooltip name="СнятиеРезервовТоварыРасширеннаяПодсказка" id="248"/>
+							<SearchStringAddition name="СнятиеРезервовТоварыСтрокаПоиска" id="249">
+								<AdditionSource>
+									<Item>СнятиеРезервовТовары</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СнятиеРезервовТоварыСтрокаПоискаКонтекстноеМеню" id="252"/>
+								<ExtendedTooltip name="СнятиеРезервовТоварыСтрокаПоискаРасширеннаяПодсказка" id="253"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СнятиеРезервовТоварыСостояниеПросмотра" id="254">
+								<AdditionSource>
+									<Item>СнятиеРезервовТовары</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СнятиеРезервовТоварыСостояниеПросмотраКонтекстноеМеню" id="257"/>
+								<ExtendedTooltip name="СнятиеРезервовТоварыСостояниеПросмотраРасширеннаяПодсказка" id="258"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СнятиеРезервовТоварыУправлениеПоиском" id="259">
+								<AdditionSource>
+									<Item>СнятиеРезервовТовары</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СнятиеРезервовТоварыУправлениеПоискомКонтекстноеМеню" id="262"/>
+								<ExtendedTooltip name="СнятиеРезервовТоварыУправлениеПоискомРасширеннаяПодсказка" id="263"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="СнятиеРезервовТоварыКод" id="285">
+									<DataPath>СнятиеРезервовТовары.Номенклатура.Code</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Код товара</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>8</Width>
+									<ContextMenu name="СнятиеРезервовТоварыКодКонтекстноеМеню" id="286"/>
+									<ExtendedTooltip name="СнятиеРезервовТоварыКодРасширеннаяПодсказка" id="287"/>
+								</InputField>
+								<InputField name="СнятиеРезервовТоварыАртикул" id="288">
+									<DataPath>СнятиеРезервовТовары.Номенклатура.Артикул</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Артикул</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>11</Width>
+									<ContextMenu name="СнятиеРезервовТоварыАртикулКонтекстноеМеню" id="289"/>
+									<ExtendedTooltip name="СнятиеРезервовТоварыАртикулРасширеннаяПодсказка" id="290"/>
+								</InputField>
+								<InputField name="СнятиеРезервовТоварыНоменклатура" id="264">
+									<DataPath>СнятиеРезервовТовары.Номенклатура</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номенклатура</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СнятиеРезервовТоварыНоменклатураКонтекстноеМеню" id="265"/>
+									<ExtendedTooltip name="СнятиеРезервовТоварыНоменклатураРасширеннаяПодсказка" id="266"/>
+								</InputField>
+								<InputField name="СнятиеРезервовТоварыХарактеристикаНоменклатуры" id="267">
+									<DataPath>СнятиеРезервовТовары.ХарактеристикаНоменклатуры</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Характеристика номенклатуры</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СнятиеРезервовТоварыХарактеристикаНоменклатурыКонтекстноеМеню" id="268"/>
+									<ExtendedTooltip name="СнятиеРезервовТоварыХарактеристикаНоменклатурыРасширеннаяПодсказка" id="269"/>
+								</InputField>
+								<InputField name="СнятиеРезервовТоварыМестоРазмещения" id="270">
+									<DataPath>СнятиеРезервовТовары.МестоРазмещения</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Склад размещения</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СнятиеРезервовТоварыМестоРазмещенияКонтекстноеМеню" id="271"/>
+									<ExtendedTooltip name="СнятиеРезервовТоварыМестоРазмещенияРасширеннаяПодсказка" id="272"/>
+								</InputField>
+								<InputField name="СнятиеРезервовТоварыКоличество" id="273">
+									<DataPath>СнятиеРезервовТовары.Количество</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СнятиеРезервовТоварыКоличествоКонтекстноеМеню" id="274"/>
+									<ExtendedTooltip name="СнятиеРезервовТоварыКоличествоРасширеннаяПодсказка" id="275"/>
+								</InputField>
+								<InputField name="СнятиеРезервовТоварыЕдиницаИзмерения" id="276">
+									<DataPath>СнятиеРезервовТовары.ЕдиницаИзмерения</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Единица измерения</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СнятиеРезервовТоварыЕдиницаИзмеренияКонтекстноеМеню" id="277"/>
+									<ExtendedTooltip name="СнятиеРезервовТоварыЕдиницаИзмеренияРасширеннаяПодсказка" id="278"/>
+								</InputField>
+								<InputField name="СнятиеРезервовТоварыКоэффициент" id="279">
+									<DataPath>СнятиеРезервовТовары.Коэффициент</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коэффициент</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СнятиеРезервовТоварыКоэффициентКонтекстноеМеню" id="280"/>
+									<ExtendedTooltip name="СнятиеРезервовТоварыКоэффициентРасширеннаяПодсказка" id="281"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.АвтоматическоеСнятиеРезервов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СнятиеРезервов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снятие резервов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СнятиеРезервов" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Снятие резервов</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.СнятиеРезервовЗаказовПокупателя</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СнятиеРезервовТовары" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Товары</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Номенклатура" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ХарактеристикаНоменклатуры" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика номенклатуры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+					<FunctionalOptions>
+						<Item>FunctionalOption.ИспользоватьХарактеристики</Item>
+					</FunctionalOptions>
+				</Column>
+				<Column name="МестоРазмещения" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Место размещения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СкладыКомпании</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕдиницаИзмерения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Единица измерения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ЕдиницыИзмерения</v8:Type>
+					</Type>
+					<FunctionalOptions>
+						<Item>FunctionalOption.ИспользоватьЕдиницыИзмерения</Item>
+					</FunctionalOptions>
+				</Column>
+				<Column name="Коэффициент" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Коэффициент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<FunctionalOptions>
+						<Item>FunctionalOption.ИспользоватьКоэффициентЕдиницИзмерения</Item>
+					</FunctionalOptions>
+				</Column>
+				<Column name="СнятиеРезервов" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Снятие резервов</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.СнятиеРезервовЗаказовПокупателя</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СоздаватьНапоминание" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создавать напоминание</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаказыТовары" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Товары</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Номенклатура" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ХарактеристикаНоменклатуры" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика номенклатуры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+					<FunctionalOptions>
+						<Item>FunctionalOption.ИспользоватьХарактеристики</Item>
+					</FunctionalOptions>
+				</Column>
+				<Column name="МестоРазмещения" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Место размещения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СкладыКомпании</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаРезервирования" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата резервирования</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="СрокРезервирования" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок резервирования</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="РезервОстаток" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Резерв (остаток)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="РезервСвободныйОстаток" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Резерв из свободного запаса (остаток)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Заказ" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заказ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ЗаказВнутренний</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Заказы" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СнятиеРезервов" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Снятие резервов</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Корректировка" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Корректировка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Номер" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Дата" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Заказ" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заказ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ЗаказВнутренний</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Автор" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Организация" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+					</Type>
+					<FunctionalOptions>
+						<Item>FunctionalOption.ИспользоватьМногофирменныйУчет</Item>
+					</FunctionalOptions>
+				</Column>
+				<Column name="Подразделения" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ПодразделенияКомпании</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Контрагент" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контрагент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+						<v8:Type>cfg:CatalogRef.ПодразделенияКомпании</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СкладКомпании" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Склад компании</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СкладыКомпании</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СрокСнятияРезерва" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок снятия резерва</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Оплата" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оплата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаВыполнитьСнятиеРезервов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить снятие резервов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить снятие резервов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаВыполнитьСнятиеРезервов</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОбновитьСписокЗаказов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда обновить список заказов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда обновить список заказов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОбновитьСписокЗаказов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСнятиеРезервовОтметитьВсе" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда снятие резервов отметить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСнятиеРезервовОтметитьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаКорректировкаОтметитьВсе" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда корректировка отметить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ВыбратьВыбранное</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаКорректировкаОтметитьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСнятиеРезервовОтметитьПросроченные" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить просроченные и неоплаченные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда снятие резервов отметить просроченные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСнятиеРезервовОтметитьПросроченные</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСнятиеРезервовСнятьВсе" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все отметки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда снятие резервов снять все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСнятиеРезервовСнятьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаКорректировкаСнятьВсе" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все отметки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда корректировка снять все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаКорректировкаСнятьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

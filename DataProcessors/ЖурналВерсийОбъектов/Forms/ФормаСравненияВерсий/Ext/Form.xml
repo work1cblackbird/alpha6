@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Сравнение версий объекта</v8:content>
+		</v8:item>
+	</Title>
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОбъект" id="59">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОбъектРасширеннаяПодсказка" id="60"/>
+			<ChildItems>
+				<InputField name="ОбъектВерсионирования" id="50">
+					<DataPath>ОбъектВерсионирования</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="ОбъектВерсионированияКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ОбъектВерсионированияРасширеннаяПодсказка" id="52"/>
+				</InputField>
+				<InputField name="ДатаПредыдущейВерсии" id="53">
+					<DataPath>ДатаПредыдущейВерсии</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ДатаПредыдущейВерсииКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="ДатаПредыдущейВерсииРасширеннаяПодсказка" id="55"/>
+				</InputField>
+				<InputField name="ДатаТекущейВерсии" id="56">
+					<DataPath>ДатаТекущейВерсии</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ДатаТекущейВерсииКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ДатаТекущейВерсииРасширеннаяПодсказка" id="58"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ДеревоИзменений" id="1">
+			<Representation>Tree</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<ReadOnly>true</ReadOnly>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ДеревоИзменений</DataPath>
+			<RowPictureDataPath>ДеревоИзменений.НомерМакета</RowPictureDataPath>
+			<RowsPicture>
+				<xr:Ref>CommonPicture.ПиктограммыЖурналаВерсий</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</RowsPicture>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево изменений</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДеревоИзмененийКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ДеревоИзмененийКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="ДеревоИзмененийРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ДеревоИзмененийСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ДеревоИзменений</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоИзмененийСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="ДеревоИзмененийСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоИзмененийСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>ДеревоИзменений</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоИзмененийСостояниеПросмотраКонтекстноеМеню" id="13"/>
+				<ExtendedTooltip name="ДеревоИзмененийСостояниеПросмотраРасширеннаяПодсказка" id="14"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоИзмененийУправлениеПоиском" id="15">
+				<AdditionSource>
+					<Item>ДеревоИзменений</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоИзмененийУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ДеревоИзмененийУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="ДеревоИзмененийОбъект" id="29">
+					<DataPath>ДеревоИзменений.Объект</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>50</Width>
+					<ContextMenu name="ДеревоИзмененийОбъектКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ДеревоИзмененийОбъектРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийПериод" id="20">
+					<DataPath>ДеревоИзменений.Период</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийПериодКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ДеревоИзмененийПериодРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийСтароеЗначение" id="35">
+					<DataPath>ДеревоИзменений.СтароеЗначение</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийСтароеЗначениеКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ДеревоИзмененийСтароеЗначениеРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийНовоеЗначение" id="38">
+					<DataPath>ДеревоИзменений.НовоеЗначение</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийНовоеЗначениеКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ДеревоИзмененийНовоеЗначениеРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийПользователь" id="23">
+					<DataPath>ДеревоИзменений.Пользователь</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>17</Width>
+					<ContextMenu name="ДеревоИзмененийПользовательКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ДеревоИзмененийПользовательРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийКомпьютер" id="26">
+					<DataPath>ДеревоИзменений.Компьютер</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>17</Width>
+					<ContextMenu name="ДеревоИзмененийКомпьютерКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ДеревоИзмененийКомпьютерРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийСобытие" id="32">
+					<DataPath>ДеревоИзменений.Событие</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>17</Width>
+					<ContextMenu name="ДеревоИзмененийСобытиеКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ДеревоИзмененийСобытиеРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийНомерМакета" id="41">
+					<DataPath>ДеревоИзменений.НомерМакета</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийНомерМакетаКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ДеревоИзмененийНомерМакетаРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийОбъектВXML" id="44">
+					<DataPath>ДеревоИзменений.ОбъектВXML</DataPath>
+					<Visible>false</Visible>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийОбъектВXMLКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ДеревоИзмененийОбъектВXMLРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийИзмененныеРеквизиты" id="47">
+					<DataPath>ДеревоИзменений.ИзмененныеРеквизиты</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийИзмененныеРеквизитыКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ДеревоИзмененийИзмененныеРеквизитыРасширеннаяПодсказка" id="49"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ЖурналВерсийОбъектов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДеревоИзменений" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево изменений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Период" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата изменения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Пользователь" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>30</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Компьютер" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Компьютер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>30</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Объект" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Событие" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Событие</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>30</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтароеЗначение" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Старое значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>4</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="НовоеЗначение" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Новое значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>4</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="НомерМакета" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер макета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОбъектВXML" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект ВXML</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИзмененныеРеквизиты" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Измененные реквизиты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ОбъектСтарыйXML" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект старый XML</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбъектНовыйXML" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект новый XML</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбъектВерсионирования" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаПредыдущейВерсии" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата предыдущей версии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаТекущейВерсии" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата текущей версии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Пользователь" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>30</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Компьютер" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компьютер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>30</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Событие" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Событие</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>30</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

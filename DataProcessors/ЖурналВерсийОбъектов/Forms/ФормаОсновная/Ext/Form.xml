@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОткрытьВерсию" id="79">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ОткрытьВерсию</CommandName>
+				<ExtendedTooltip name="ФормаОткрытьВерсиюРасширеннаяПодсказка" id="80"/>
+			</Button>
+			<Button name="ФормаВосстановитьВерсию" id="81">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ВосстановитьВерсию</CommandName>
+				<ExtendedTooltip name="ФормаВосстановитьВерсиюРасширеннаяПодсказка" id="82"/>
+			</Button>
+			<Button name="ФормаОбновить" id="53">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Обновить</CommandName>
+				<ExtendedTooltip name="ФормаОбновитьРасширеннаяПодсказка" id="54"/>
+			</Button>
+			<Button name="ФормаВыгрузитьВоВнешнююБазу" id="68">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ВыгрузитьВоВнешнююБазу</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаВыгрузитьВоВнешнююБазуРасширеннаяПодсказка" id="69"/>
+			</Button>
+			<Button name="ФормаСравнитьВерсии" id="85">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СравнитьВерсии</CommandName>
+				<ExtendedTooltip name="ФормаСравнитьВерсииРасширеннаяПодсказка" id="86"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПараметрыОтбора" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры отбора</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПараметрыОтбораРасширеннаяПодсказка" id="18"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаЛевая" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Левая</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЛеваяРасширеннаяПодсказка" id="14"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПериод" id="55">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Период</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПериодРасширеннаяПодсказка" id="56"/>
+							<ChildItems>
+								<InputField name="ПериодВариант" id="57">
+									<DataPath>Объект.Период.Variant</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Период</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПериодВариантКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ПериодВариантРасширеннаяПодсказка" id="59"/>
+									<Events>
+										<Event name="OnChange">ПериодВариантПриИзменении</Event>
+									</Events>
+								</InputField>
+								<UsualGroup name="ГруппаПериодДаты" id="87">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Период даты</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<HorizontalSpacing>Half</HorizontalSpacing>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПериодДатыРасширеннаяПодсказка" id="88"/>
+									<ChildItems>
+										<InputField name="ПериодДатаНачала" id="60">
+											<DataPath>Объект.Период.StartDate</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Начало</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ПериодДатаНачалаКонтекстноеМеню" id="61"/>
+											<ExtendedTooltip name="ПериодДатаНачалаРасширеннаяПодсказка" id="62"/>
+											<Events>
+												<Event name="OnChange">ПериодДатаНачалаПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ПериодДатаОкончания" id="63">
+											<DataPath>Объект.Период.EndDate</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Окончание</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ПериодДатаОкончанияКонтекстноеМеню" id="64"/>
+											<ExtendedTooltip name="ПериодДатаОкончанияРасширеннаяПодсказка" id="65"/>
+											<Events>
+												<Event name="OnChange">ПериодДатаОкончанияПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОбъект" id="66">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Объект</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОбъектРасширеннаяПодсказка" id="67"/>
+							<ChildItems>
+								<InputField name="Объект" id="4">
+									<DataPath>Объект.Объект</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Объект</v8:content>
+										</v8:item>
+									</Title>
+									<WarningOnEditRepresentation>DontShow</WarningOnEditRepresentation>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>75</MaxWidth>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ClearButton>true</ClearButton>
+									<OpenButton>true</OpenButton>
+									<ContextMenu name="ОбъектКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="ОбъектРасширеннаяПодсказка" id="6"/>
+									<Events>
+										<Event name="OnChange">ОбъектПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПравая" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правая</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПраваяРасширеннаяПодсказка" id="16"/>
+					<ChildItems>
+						<InputField name="Пользователь" id="7">
+							<DataPath>Объект.Пользователь</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="ПользовательКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="9"/>
+							<Events>
+								<Event name="OnChange">ПользовательПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Компьютер" id="10">
+							<DataPath>Объект.Компьютер</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Компьютер </v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="КомпьютерКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="КомпьютерРасширеннаяПодсказка" id="12"/>
+							<Events>
+								<Event name="OnChange">КомпьютерПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ДеревоИзменений" id="19">
+			<Representation>Tree</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<ReadOnly>true</ReadOnly>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ДеревоИзменений</DataPath>
+			<RowPictureDataPath>ДеревоИзменений.НомерМакета</RowPictureDataPath>
+			<RowsPicture>
+				<xr:Ref>CommonPicture.ПиктограммыЖурналаВерсий</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</RowsPicture>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево изменений</v8:content>
+				</v8:item>
+			</Title>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<ContextMenu name="ДеревоИзмененийКонтекстноеМеню" id="20"/>
+			<AutoCommandBar name="ДеревоИзмененийКоманднаяПанель" id="21">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ДеревоИзмененийСравнитьВерсии" id="83">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СравнитьВерсии</CommandName>
+						<ExtendedTooltip name="ДеревоИзмененийСравнитьВерсииРасширеннаяПодсказка" id="84"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ДеревоИзмененийРасширеннаяПодсказка" id="22"/>
+			<SearchStringAddition name="ДеревоИзмененийСтрокаПоиска" id="70">
+				<AdditionSource>
+					<Item>ДеревоИзменений</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоИзмененийСтрокаПоискаКонтекстноеМеню" id="71"/>
+				<ExtendedTooltip name="ДеревоИзмененийСтрокаПоискаРасширеннаяПодсказка" id="72"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоИзмененийСостояниеПросмотра" id="73">
+				<AdditionSource>
+					<Item>ДеревоИзменений</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоИзмененийСостояниеПросмотраКонтекстноеМеню" id="74"/>
+				<ExtendedTooltip name="ДеревоИзмененийСостояниеПросмотраРасширеннаяПодсказка" id="75"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоИзмененийУправлениеПоиском" id="76">
+				<AdditionSource>
+					<Item>ДеревоИзменений</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоИзмененийУправлениеПоискомКонтекстноеМеню" id="77"/>
+				<ExtendedTooltip name="ДеревоИзмененийУправлениеПоискомРасширеннаяПодсказка" id="78"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">ДеревоИзмененийВыбор</Event>
+				<Event name="BeforeExpand">ДеревоИзмененийПередРазворачиванием</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="ДеревоИзмененийОбъект" id="32">
+					<DataPath>ДеревоИзменений.Объект</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>50</Width>
+					<ContextMenu name="ДеревоИзмененийОбъектКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ДеревоИзмененийОбъектРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийПериод" id="23">
+					<DataPath>ДеревоИзменений.Период</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийПериодКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ДеревоИзмененийПериодРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийСтароеЗначение" id="38">
+					<DataPath>ДеревоИзменений.СтароеЗначение</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийСтароеЗначениеКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ДеревоИзмененийСтароеЗначениеРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийНовоеЗначение" id="41">
+					<DataPath>ДеревоИзменений.НовоеЗначение</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийНовоеЗначениеКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ДеревоИзмененийНовоеЗначениеРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийПользователь" id="26">
+					<DataPath>ДеревоИзменений.Пользователь</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>17</Width>
+					<ContextMenu name="ДеревоИзмененийПользовательКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ДеревоИзмененийПользовательРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийКомпьютер" id="29">
+					<DataPath>ДеревоИзменений.Компьютер</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>17</Width>
+					<ContextMenu name="ДеревоИзмененийКомпьютерКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ДеревоИзмененийКомпьютерРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийСобытие" id="35">
+					<DataPath>ДеревоИзменений.Событие</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>17</Width>
+					<ContextMenu name="ДеревоИзмененийСобытиеКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ДеревоИзмененийСобытиеРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийНомерМакета" id="44">
+					<DataPath>ДеревоИзменений.НомерМакета</DataPath>
+					<Visible>false</Visible>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийНомерМакетаКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ДеревоИзмененийНомерМакетаРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийОбъектВXML" id="47">
+					<DataPath>ДеревоИзменений.ОбъектВXML</DataPath>
+					<Visible>false</Visible>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийОбъектВXMLКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ДеревоИзмененийОбъектВXMLРасширеннаяПодсказка" id="49"/>
+				</InputField>
+				<InputField name="ДеревоИзмененийИзмененныеРеквизиты" id="50">
+					<DataPath>ДеревоИзменений.ИзмененныеРеквизиты</DataPath>
+					<Visible>false</Visible>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоИзмененийИзмененныеРеквизитыКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ДеревоИзмененийИзмененныеРеквизитыРасширеннаяПодсказка" id="52"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ЖурналВерсийОбъектов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДеревоИзменений" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево изменений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Период" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата изменения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Пользователь" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>30</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Компьютер" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Компьютер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>30</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Объект" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Событие" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Событие</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>30</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтароеЗначение" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Старое значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>4</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="НовоеЗначение" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текущее значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>4</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="НомерМакета" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер макета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОбъектВXML" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект ВXML</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИзмененныеРеквизиты" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Измененные реквизиты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Местоположение" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Местоположение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаПредыдущейВерсии" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата предыдущей версии</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Обновить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Обновить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыгрузитьВоВнешнююБазу" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить все записи регистра во внешнюю БД</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить все записи регистра во внешнюю базу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыгрузитьВоВнешнююБазу</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьВерсию" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть версию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть версию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОткрытьВыбранныйФайл</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьВерсию</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВосстановитьВерсию" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Восстановить версию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Восстановить версию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаполнитьФорму</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВосстановитьВерсию</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СравнитьВерсии" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сравнить версии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сравнить версии</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.МетаданныеПодсистема</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СравнитьВерсии</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

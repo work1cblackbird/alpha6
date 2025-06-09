@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Автозаполнение ячеистого склада</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаКомандаВыполнить" id="61">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ВыполнитьЗаполнениеЯчеек</CommandName>
+				<ExtendedTooltip name="ФормаКомандаВыполнитьРасширеннаяПодсказка" id="62"/>
+			</Button>
+			<Button name="ФормаЗакрыть" id="96">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="97"/>
+			</Button>
+			<Button name="ФормаСправка" id="98">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="99"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Склад" id="121">
+			<DataPath>Склад</DataPath>
+			<ContextMenu name="СкладКонтекстноеМеню" id="122"/>
+			<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="123"/>
+			<Events>
+				<Event name="OnChange">СкладПриИзменении</Event>
+				<Event name="ChoiceProcessing">СкладОбработкаВыбора</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаПараметрыСклада" id="4">
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры склада</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ChildItemsWidth>Equal</ChildItemsWidth>
+			<ExtendedTooltip name="ГруппаПараметрыСкладаРасширеннаяПодсказка" id="5"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаДлинаИЧисло" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Длина и число</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДлинаИЧислоРасширеннаяПодсказка" id="7"/>
+					<ChildItems>
+						<InputField name="ДлинаСклада" id="31">
+							<DataPath>ДлинаСклада</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>24</MaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ДлинаСкладаКонтекстноеМеню" id="32"/>
+							<ExtendedTooltip name="ДлинаСкладаРасширеннаяПодсказка" id="33"/>
+							<Events>
+								<Event name="OnChange">ПараметрыЯчеекПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ШиринаСклада" id="37">
+							<DataPath>ШиринаСклада</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>24</MaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ШиринаСкладаКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="ШиринаСкладаРасширеннаяПодсказка" id="39"/>
+							<Events>
+								<Event name="OnChange">ПараметрыЯчеекПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаШиринаИЕдиница" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ширина и единица</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШиринаИЕдиницаРасширеннаяПодсказка" id="9"/>
+					<ChildItems>
+						<InputField name="ЧислоУровней" id="34">
+							<DataPath>ЧислоУровней</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>24</MaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ЧислоУровнейКонтекстноеМеню" id="35"/>
+							<ExtendedTooltip name="ЧислоУровнейРасширеннаяПодсказка" id="36"/>
+							<Events>
+								<Event name="OnChange">ПараметрыЯчеекПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ЕдиницаРазмерности" id="40">
+							<DataPath>ЕдиницаРазмерности</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>24</MaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<ContextMenu name="ЕдиницаРазмерностиКонтекстноеМеню" id="41"/>
+							<ExtendedTooltip name="ЕдиницаРазмерностиРасширеннаяПодсказка" id="42"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<RadioButtonField name="СтратегияЗаполнения" id="115">
+			<DataPath>СтратегияЗаполнения</DataPath>
+			<RadioButtonType>RadioButtons</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Рассчитывать количество, исходя из размеров</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">1</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Рассчитывать размеры, исходя из количества</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">2</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="СтратегияЗаполненияКонтекстноеМеню" id="116"/>
+			<ExtendedTooltip name="СтратегияЗаполненияРасширеннаяПодсказка" id="117"/>
+			<Events>
+				<Event name="OnChange">СтратегияЗаполненияПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ГруппаПараметрыЗаполнения" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры ячеек</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<HorizontalSpacing>OneAndHalf</HorizontalSpacing>
+			<Behavior>Collapsible</Behavior>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ChildItemsWidth>Equal</ChildItemsWidth>
+			<ExtendedTooltip name="ГруппаПараметрыЗаполненияРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаДлинаШиринаЗазор" id="100">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры ячеек</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Behavior>Collapsible</Behavior>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДлинаШиринаЗазорРасширеннаяПодсказка" id="101"/>
+					<ChildItems>
+						<InputField name="ДлинаЧислоВРяду" id="105">
+							<DataPath>ДлинаЧислоВРяду</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Длина</v8:content>
+								</v8:item>
+							</Title>
+							<Width>12</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>29</MaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ДлинаЧислоВРядуКонтекстноеМеню" id="106"/>
+							<ExtendedTooltip name="ДлинаЧислоВРядуРасширеннаяПодсказка" id="107"/>
+							<Events>
+								<Event name="OnChange">ДлинаЧислоВРядуПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ШиринаЧислоРядов" id="108">
+							<DataPath>ШиринаЧислоРядов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ширина</v8:content>
+								</v8:item>
+							</Title>
+							<Width>12</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>29</MaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ШиринаЧислоРядовКонтекстноеМеню" id="109"/>
+							<ExtendedTooltip name="ШиринаЧислоРядовРасширеннаяПодсказка" id="110"/>
+							<Events>
+								<Event name="OnChange">ШиринаЧислоРядовПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Зазор" id="23">
+							<DataPath>Зазор</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проход</v8:content>
+								</v8:item>
+							</Title>
+							<Width>10</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>29</MaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ЗазорКонтекстноеМеню" id="24"/>
+							<ExtendedTooltip name="ЗазорРасширеннаяПодсказка" id="25"/>
+							<Events>
+								<Event name="OnChange">ПараметрыЯчеекПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаРасчетныеЗначения" id="85">
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рассчитанные значения</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Behavior>Collapsible</Behavior>
+					<ShowLeftMargin>false</ShowLeftMargin>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаРасчетныеЗначенияРасширеннаяПодсказка" id="86"/>
+					<ChildItems>
+						<InputField name="КоличествоЯчеекДлина" id="87">
+							<DataPath>КоличествоЯчеекДлина</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ячеек в ряде / Длина ячейки</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>19</MaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="КоличествоЯчеекДлинаКонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="КоличествоЯчеекДлинаРасширеннаяПодсказка" id="89"/>
+						</InputField>
+						<InputField name="КоличествоРядовШирина" id="90">
+							<DataPath>КоличествоРядовШирина</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>К-во рядов / Ширина ячейки</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>19</MaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="КоличествоРядовШиринаКонтекстноеМеню" id="91"/>
+							<ExtendedTooltip name="КоличествоРядовШиринаРасширеннаяПодсказка" id="92"/>
+						</InputField>
+						<InputField name="ОбщееЧислоЯчеек" id="93">
+							<DataPath>ОбщееЧислоЯчеек</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Общее число ячеек</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>19</MaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ОбщееЧислоЯчеекКонтекстноеМеню" id="94"/>
+							<ExtendedTooltip name="ОбщееЧислоЯчеекРасширеннаяПодсказка" id="95"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="ДекорацияПредупреждение" id="118">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>75</MaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формирование большого количества ячеек склада может занять продолжительное время.</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<ContextMenu name="ДекорацияПредупреждениеКонтекстноеМеню" id="119"/>
+			<ExtendedTooltip name="ДекорацияПредупреждениеРасширеннаяПодсказка" id="120"/>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.АвтозаполнениеЯчеистогоСклада</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДлинаСклада" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длина склада</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЧислоУровней" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Число уровней</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ШиринаСклада" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ширина склада</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕдиницаРазмерности" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Единица размерности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.КлассификаторЕдиницИзмерения</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоЯчеекДлина" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ячеек в ряде / Длина ячейки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбщееЧислоЯчеек" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общее число ячеек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоРядовШирина" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К-во рядов / Ширина ячейки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДлинаЧислоВРяду" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длина / К-во в ряду</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ШиринаЧислоРядов" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ширина / Кол-во рядов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Зазор" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зазор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЧислоРядов" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Число рядов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЧислоЯчеек" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Число ячеек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДлинаЯчейки" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длина ячейки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ШиринаЯчейки" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ширина ячейки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтратегияЗаполнения" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стратегия заполнения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Склад" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склад</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СкладыКомпании</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыполнитьЗаполнениеЯчеек" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить заполнение ячеек склада</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыполнитьЗаполнениеЯчеек</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

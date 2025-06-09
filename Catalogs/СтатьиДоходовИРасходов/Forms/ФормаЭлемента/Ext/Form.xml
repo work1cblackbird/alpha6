@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗаписатьИЗакрыть" id="182">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="183"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="184">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаписатьАльфаАвто</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="185"/>
+			</Button>
+			<Button name="ФормаСкопировать" id="194">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Copy</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.СоздатьКопированиемТекущегоАльфаАвто</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаСкопироватьРасширеннаяПодсказка" id="195"/>
+			</Button>
+			<ButtonGroup name="ОсновныеДействия" id="175">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основные действия</v8:content>
+					</v8:item>
+				</Title>
+				<CommandSource>Form</CommandSource>
+				<ExtendedTooltip name="ОсновныеДействияРасширеннаяПодсказка" id="176"/>
+			</ButtonGroup>
+			<ButtonGroup name="ДополнительныеДействия" id="91">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дополнительные действия</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ДополнительныеДействияРасширеннаяПодсказка" id="92"/>
+			</ButtonGroup>
+			<ButtonGroup name="ГлобальныеКоманды" id="177">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Глобальные команды</v8:content>
+					</v8:item>
+				</Title>
+				<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
+				<ExtendedTooltip name="ГлобальныеКомандыРасширеннаяПодсказка" id="178"/>
+			</ButtonGroup>
+			<Button name="ФормаИзменитьФорму" id="190">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="191"/>
+			</Button>
+			<Button name="ФормаСправка" id="192">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="193"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="Ссылка" id="179">
+			<DataPath>Объект.Ref</DataPath>
+			<UserVisible>
+				<xr:Common>false</xr:Common>
+			</UserVisible>
+			<ContextMenu name="СсылкаКонтекстноеМеню" id="180"/>
+			<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="181"/>
+		</LabelField>
+		<UsualGroup name="НаименованиеКод" id="79">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование и код</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="НаименованиеКодРасширеннаяПодсказка" id="80"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>28</Width>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Родитель" id="7">
+			<DataPath>Объект.Parent</DataPath>
+			<UserVisible>
+				<xr:Common>false</xr:Common>
+			</UserVisible>
+			<EditMode>EnterOnInput</EditMode>
+			<Width>41</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>53</MaxWidth>
+			<ContextMenu name="РодительКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="ВидДоходаИРасхода" id="147">
+			<DataPath>Объект.ВидДоходаИРасхода</DataPath>
+			<Width>41</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>53</MaxWidth>
+			<ContextMenu name="ВидДоходаИРасходаКонтекстноеМеню" id="148"/>
+			<ExtendedTooltip name="ВидДоходаИРасходаРасширеннаяПодсказка" id="149"/>
+		</InputField>
+		<InputField name="КоррСчет" id="150">
+			<DataPath>Объект.КоррСчет</DataPath>
+			<Width>41</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>53</MaxWidth>
+			<ContextMenu name="КоррСчетКонтекстноеМеню" id="151"/>
+			<ExtendedTooltip name="КоррСчетРасширеннаяПодсказка" id="152"/>
+		</InputField>
+		<InputField name="ВидСтатьи" id="153">
+			<DataPath>Объект.ВидСтатьи</DataPath>
+			<Width>41</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>53</MaxWidth>
+			<ContextMenu name="ВидСтатьиКонтекстноеМеню" id="154"/>
+			<ExtendedTooltip name="ВидСтатьиРасширеннаяПодсказка" id="155"/>
+		</InputField>
+		<Pages name="Страницы" id="81">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="82"/>
+			<ChildItems>
+				<Page name="СтраницаСтатьиРаспределения" id="85">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статьи распределения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ячеистый склад</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.СтатьиРаспределения.RowsCount</TitleDataPath>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаСтатьиРаспределенияРасширеннаяПодсказка" id="86"/>
+					<ChildItems>
+						<Table name="СтатьиРаспределения" id="156">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.СтатьиРаспределения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статьи распределения</v8:content>
+								</v8:item>
+							</Title>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СтатьиРаспределенияКонтекстноеМеню" id="157"/>
+							<AutoCommandBar name="СтатьиРаспределенияКоманднаяПанель" id="158"/>
+							<ExtendedTooltip name="СтатьиРаспределенияРасширеннаяПодсказка" id="159"/>
+							<SearchStringAddition name="СтатьиРаспределенияСтрокаПоиска" id="166">
+								<AdditionSource>
+									<Item>СтатьиРаспределения</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтатьиРаспределенияСтрокаПоискаКонтекстноеМеню" id="167"/>
+								<ExtendedTooltip name="СтатьиРаспределенияСтрокаПоискаРасширеннаяПодсказка" id="168"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СтатьиРаспределенияСостояниеПросмотра" id="169">
+								<AdditionSource>
+									<Item>СтатьиРаспределения</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтатьиРаспределенияСостояниеПросмотраКонтекстноеМеню" id="170"/>
+								<ExtendedTooltip name="СтатьиРаспределенияСостояниеПросмотраРасширеннаяПодсказка" id="171"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СтатьиРаспределенияУправлениеПоиском" id="172">
+								<AdditionSource>
+									<Item>СтатьиРаспределения</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СтатьиРаспределенияУправлениеПоискомКонтекстноеМеню" id="173"/>
+								<ExtendedTooltip name="СтатьиРаспределенияУправлениеПоискомРасширеннаяПодсказка" id="174"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="СтатьиРаспределенияСтатьяРаспределения" id="163">
+									<DataPath>Объект.СтатьиРаспределения.СтатьяРаспределения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СтатьиРаспределенияСтатьяРаспределенияКонтекстноеМеню" id="164"/>
+									<ExtendedTooltip name="СтатьиРаспределенияСтатьяРаспределенияРасширеннаяПодсказка" id="165"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.СтатьиДоходовИРасходов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>Catalog.ЯчейкиХранения.StandardCommand.OpenByValue</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+		<CommandBar>
+			<Item>
+				<Command>CommonCommand.СозданиеСвязанныхОбъектов</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

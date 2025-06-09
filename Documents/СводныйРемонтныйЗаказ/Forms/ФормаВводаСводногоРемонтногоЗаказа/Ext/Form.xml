@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Width>90</Width>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаОК" id="23">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ОК</CommandName>
+				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="24"/>
+			</Button>
+			<Button name="ФормаОтмена" id="27">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Cancel</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Close</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="28"/>
+			</Button>
+			<Button name="ФормаСправка" id="25">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="26"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="ПересчитатьЦены" id="56">
+			<DataPath>ПересчитатьЦены</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ПересчитатьЦеныКонтекстноеМеню" id="57"/>
+			<ExtendedTooltip name="ПересчитатьЦеныРасширеннаяПодсказка" id="58"/>
+		</CheckBoxField>
+		<Table name="ДеревоПричинОбращения" id="1">
+			<Representation>Tree</Representation>
+			<CommandBarLocation>Top</CommandBarLocation>
+			<Width>72</Width>
+			<SelectionMode>SingleRow</SelectionMode>
+			<RowSelectionMode>Row</RowSelectionMode>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<InitialTreeView>ExpandAllLevels</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ДеревоПричинОбращения</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>HierarchicalList</ExcludedCommand>
+				<ExcludedCommand>List</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>OutputList</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+				<ExcludedCommand>Tree</ExcludedCommand>
+			</CommandSet>
+			<ContextMenu name="ДеревоПричинОбращенияКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ДеревоПричинОбращенияКоманднаяПанель" id="3">
+				<ChildItems>
+					<Button name="ФормаВОдинЗаказНаряд" id="40">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ВОдинЗаказНаряд</CommandName>
+						<ExtendedTooltip name="ФормаВОдинЗаказНарядРасширеннаяПодсказка" id="41"/>
+					</Button>
+					<Button name="ФормаВРазныеЗаказНаряды" id="42">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ВРазныеЗаказНаряды</CommandName>
+						<ExtendedTooltip name="ФормаВРазныеЗаказНарядыРасширеннаяПодсказка" id="43"/>
+					</Button>
+					<Button name="ПоТипуПричины" id="54">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПоТипуПричины</CommandName>
+						<ExtendedTooltip name="ПоТипуПричиныРасширеннаяПодсказка" id="55"/>
+					</Button>
+					<Button name="ПоВидуРемонтаПричины" id="52">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПоВидуРемонта</CommandName>
+						<ExtendedTooltip name="ПоВидуРемонтаПричиныРасширеннаяПодсказка" id="53"/>
+					</Button>
+					<Button name="ФормаПоЗаявке" id="44">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПоЗаявке</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>По умолчанию</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаПоЗаявкеРасширеннаяПодсказка" id="45"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ДеревоПричинОбращенияРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ДеревоПричинОбращенияСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ДеревоПричинОбращения</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоПричинОбращенияСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="ДеревоПричинОбращенияСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоПричинОбращенияСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>ДеревоПричинОбращения</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоПричинОбращенияСостояниеПросмотраКонтекстноеМеню" id="13"/>
+				<ExtendedTooltip name="ДеревоПричинОбращенияСостояниеПросмотраРасширеннаяПодсказка" id="14"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоПричинОбращенияУправлениеПоиском" id="15">
+				<AdditionSource>
+					<Item>ДеревоПричинОбращения</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоПричинОбращенияУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ДеревоПричинОбращенияУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="DragCheck">ДеревоПричинОбращенияПроверкаПеретаскивания</Event>
+				<Event name="BeforeAddRow">ДеревоПричинОбращенияПередНачаломДобавления</Event>
+				<Event name="Drag">ДеревоПричинОбращенияПеретаскивание</Event>
+			</Events>
+			<ChildItems>
+				<ColumnGroup name="ДеревоПричинОбращенияГруппаПредставление" id="35">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дерево причин обращения группа представление</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дерево причин обращения группа представление</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="ДеревоПричинОбращенияГруппаПредставлениеРасширеннаяПодсказка" id="36"/>
+					<ChildItems>
+						<CheckBoxField name="ДеревоПричинОбращенияИспользование" id="37">
+							<DataPath>ДеревоПричинОбращения.Использование</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<ThreeState>true</ThreeState>
+							<ContextMenu name="ДеревоПричинОбращенияИспользованиеКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="ДеревоПричинОбращенияИспользованиеРасширеннаяПодсказка" id="39"/>
+							<Events>
+								<Event name="OnChange">ДеревоПричинОбращенияИспользованиеПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="ДеревоПричинОбращенияПредставление" id="20">
+							<DataPath>ДеревоПричинОбращения.Представление</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Причина обращения</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>22</Width>
+							<ContextMenu name="ДеревоПричинОбращенияПредставлениеКонтекстноеМеню" id="21"/>
+							<ExtendedTooltip name="ДеревоПричинОбращенияПредставлениеРасширеннаяПодсказка" id="22"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="ДеревоПричинОбращенияТипПричиныОбращения" id="46">
+					<DataPath>ДеревоПричинОбращения.ТипПричиныОбращения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип причины</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>20</Width>
+					<ContextMenu name="ДеревоПричинОбращенияТипПричиныОбращенияКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ДеревоПричинОбращенияТипПричиныОбращенияРасширеннаяПодсказка" id="48"/>
+				</InputField>
+				<InputField name="ДеревоПричинОбращенияВидРемонтаПричиныОбращения" id="49">
+					<DataPath>ДеревоПричинОбращения.ВидРемонтаПричиныОбращения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид ремонта</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>20</Width>
+					<ContextMenu name="ДеревоПричинОбращенияВидРемонтаПричиныОбращенияКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="ДеревоПричинОбращенияВидРемонтаПричиныОбращенияРасширеннаяПодсказка" id="51"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ДеревоПричинОбращения" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево причин обращения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПричинаОбращения" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Причина обращения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ПричиныОбращений</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Представление" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипПричиныОбращения" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип причины обращения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ТипыПричинОбращения</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторПричиныОбращения" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор причины обращения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПричинаОбращенияСодержание" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Причина обращения содержание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>300</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЭтоГруппа" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это группа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Использование" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Счетчик" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счетчик</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидРемонтаПричиныОбращения" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид ремонта причины обращения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВидыРемонта</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СтандартныйВвод" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стандартный ввод</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаявкаНаРемонт" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявка на ремонт</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.ЗаявкаНаРемонт</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗапретитьВвод" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запретить ввод</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗначенияРеквизитовДокумента" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значения реквизитов документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="СводныйРемонтныйЗаказДляОткрытия" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сводный ремонтный заказ для открытия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.СводныйРемонтныйЗаказ</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПересчитатьЦены" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пересчет цен при создании заказ-наряда</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОК</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВОдинЗаказНаряд" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Один заказ-наряд</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В один заказ наряд</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВОдинЗаказНаряд</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВРазныеЗаказНаряды" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В разные заказ-наряды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В разные заказ наряды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВРазныеЗаказНаряды</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоЗаявке" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По заявке</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По типу причины и виду ремонта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоЗаявке</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоТипуПричины" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По типу причины</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По типу причины</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоТипуПричины</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоВидуРемонта" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По виду ремонта</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По виду ремонта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоВидуРемонтаПричины</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

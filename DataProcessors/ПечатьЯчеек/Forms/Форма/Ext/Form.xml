@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаСформироватьПечатьЯчеек" id="23">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СформироватьПечатьЯчеек</CommandName>
+				<ExtendedTooltip name="ФормаСформироватьПечатьЯчеекРасширеннаяПодсказка" id="24"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаСкладИПризнак" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склад и признак</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСкладИПризнакРасширеннаяПодсказка" id="18"/>
+			<ChildItems>
+				<InputField name="СкладКомпании" id="1">
+					<DataPath>Объект.СкладКомпании</DataPath>
+					<ContextMenu name="СкладКомпанииКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="СкладКомпанииРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<CheckBoxField name="ВесьСклад" id="4">
+					<DataPath>Объект.ВесьСклад</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВесьСкладКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ВесьСкладРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ВесьСкладПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ГруппаСтраницы" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<Page name="СтраницаТаблицаЯчеек" id="21">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ячейки</v8:content>
+						</v8:item>
+					</Title>
+					<TitleDataPath>Объект.ТаблицаЯчеек.RowsCount</TitleDataPath>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаТаблицаЯчеекРасширеннаяПодсказка" id="22"/>
+					<ChildItems>
+						<Table name="ТаблицаЯчеек" id="7">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.ТаблицаЯчеек</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Таблица ячеек</v8:content>
+								</v8:item>
+							</Title>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаЯчеекКонтекстноеМеню" id="8"/>
+							<AutoCommandBar name="ТаблицаЯчеекКоманднаяПанель" id="9"/>
+							<ExtendedTooltip name="ТаблицаЯчеекРасширеннаяПодсказка" id="10"/>
+							<SearchStringAddition name="ТаблицаЯчеекСтрокаПоиска" id="25">
+								<AdditionSource>
+									<Item>ТаблицаЯчеек</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаЯчеекСтрокаПоискаКонтекстноеМеню" id="26"/>
+								<ExtendedTooltip name="ТаблицаЯчеекСтрокаПоискаРасширеннаяПодсказка" id="27"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаЯчеекСостояниеПросмотра" id="28">
+								<AdditionSource>
+									<Item>ТаблицаЯчеек</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаЯчеекСостояниеПросмотраКонтекстноеМеню" id="29"/>
+								<ExtendedTooltip name="ТаблицаЯчеекСостояниеПросмотраРасширеннаяПодсказка" id="30"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаЯчеекУправлениеПоиском" id="31">
+								<AdditionSource>
+									<Item>ТаблицаЯчеек</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаЯчеекУправлениеПоискомКонтекстноеМеню" id="32"/>
+								<ExtendedTooltip name="ТаблицаЯчеекУправлениеПоискомРасширеннаяПодсказка" id="33"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ТаблицаЯчеекНомерСтроки" id="11">
+									<DataPath>Объект.ТаблицаЯчеек.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаЯчеекНомерСтрокиКонтекстноеМеню" id="12"/>
+									<ExtendedTooltip name="ТаблицаЯчеекНомерСтрокиРасширеннаяПодсказка" id="13"/>
+								</LabelField>
+								<InputField name="ТаблицаЯчеекЯчейка" id="14">
+									<DataPath>Объект.ТаблицаЯчеек.Ячейка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаЯчеекЯчейкаКонтекстноеМеню" id="15"/>
+									<ExtendedTooltip name="ТаблицаЯчеекЯчейкаРасширеннаяПодсказка" id="16"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПечатьЯчеек</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СформироватьПечатьЯчеек" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать печать ячеек</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СформироватьПечатьЯчеек</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

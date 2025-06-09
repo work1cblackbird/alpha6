@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<DocumentJournal uuid="7ed0ea14-d5a6-4a3f-acc4-b66f19ea567a">
+		<InternalInfo>
+			<xr:GeneratedType name="DocumentJournalSelection.СкладскиеОрдера" category="Selection">
+				<xr:TypeId>2f17b4de-4f8a-4264-8072-3e05144cd4e8</xr:TypeId>
+				<xr:ValueId>7f903385-c905-4138-8160-0f45b6e02f2f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentJournalList.СкладскиеОрдера" category="List">
+				<xr:TypeId>00020807-e081-42f4-9c39-9991b3c625c0</xr:TypeId>
+				<xr:ValueId>8041ac04-2358-4a10-9d30-1a226d74e987</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentJournalManager.СкладскиеОрдера" category="Manager">
+				<xr:TypeId>b62a8420-737d-45b6-b299-7a07afd0c552</xr:TypeId>
+				<xr:ValueId>f6e76220-1f24-4f53-8290-c128c22e303f</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>СкладскиеОрдера</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Складские ордера</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>Журнал складских ордеров</Comment>
+			<DefaultForm>DocumentJournal.СкладскиеОрдера.Form.ФормаСписка</DefaultForm>
+			<AuxiliaryForm/>
+			<UseStandardCommands>true</UseStandardCommands>
+			<RegisteredDocuments>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходныйСкладскойОрдер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.РасходныйСкладскойОрдер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ПереразмещениеТоваров</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ИнвентаризацияОрдерногоСклада</xr:Item>
+			</RegisteredDocuments>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<ListPresentation>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Складские ордера</v8:content>
+				</v8:item>
+			</ListPresentation>
+			<ExtendedListPresentation/>
+			<Explanation>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал документов предназначен для группировки и отображения документов, имеющих общую учетную сущность.</v8:content>
+				</v8:item>
+			</Explanation>
+		</Properties>
+		<ChildObjects>
+			<Column uuid="c73347b1-7d50-4779-a89d-f1fe80669f51">
+				<Properties>
+					<Name>Склад</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Склад</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Склад компании на котором выполняется складская операция</Comment>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.РасходныйСкладскойОрдер.Attribute.СкладКомпании</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходныйСкладскойОрдер.Attribute.СкладКомпании</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ПереразмещениеТоваров.Attribute.СкладКомпании</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ИнвентаризацияОрдерногоСклада.Attribute.СкладКомпании</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="85783681-bbec-41e0-94f6-3b929393c972">
+				<Properties>
+					<Name>ВладелецТовара</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец товара</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Контрагент/склад, получающий товар</Comment>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.РасходныйСкладскойОрдер.Attribute.ВладелецТовара</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходныйСкладскойОрдер.Attribute.ВладелецТовара</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Form>ФормаСписка</Form>
+		</ChildObjects>
+	</DocumentJournal>
+</MetaDataObject>

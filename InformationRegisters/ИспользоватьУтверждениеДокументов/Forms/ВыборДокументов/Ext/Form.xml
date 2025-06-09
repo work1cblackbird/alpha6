@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Использовать утверждение документов</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Top</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ЗаписатьИЗакрыть" id="315">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать и закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="316"/>
+			</Button>
+			<Button name="Записать" id="257">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Записать</CommandName>
+				<ExtendedTooltip name="ЗаписатьРасширеннаяПодсказка" id="258"/>
+			</Button>
+			<ButtonGroup name="ДействияСДанными" id="245">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Действия с данными</v8:content>
+					</v8:item>
+				</Title>
+				<HorizontalStretch>false</HorizontalStretch>
+				<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
+				<ExtendedTooltip name="ДействияСДаннымиРасширеннаяПодсказка" id="246"/>
+			</ButtonGroup>
+			<Button name="ФормаНастроитьИспользованиеУтвержденияПоПользователям" id="674">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.НастроитьИспользованиеУтвержденияПоПользователям</CommandName>
+				<ExtendedTooltip name="ФормаНастроитьИспользованиеУтвержденияПоПользователямРасширеннаяПодсказка" id="675"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ПереченьДокументов" id="611">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ПереченьДокументов</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перечень документов</v8:content>
+				</v8:item>
+			</Title>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+			</CommandSet>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перечень документов информационной базы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ПереченьДокументовКонтекстноеМеню" id="612"/>
+			<AutoCommandBar name="ПереченьДокументовКоманднаяПанель" id="613">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ПереченьДокументовРасширеннаяПодсказка" id="614"/>
+			<SearchStringAddition name="ПереченьДокументовСтрокаПоиска" id="615">
+				<AdditionSource>
+					<Item>ПереченьДокументов</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПереченьДокументовСтрокаПоискаКонтекстноеМеню" id="618"/>
+				<ExtendedTooltip name="ПереченьДокументовСтрокаПоискаРасширеннаяПодсказка" id="619"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПереченьДокументовСостояниеПросмотра" id="620">
+				<AdditionSource>
+					<Item>ПереченьДокументов</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПереченьДокументовСостояниеПросмотраКонтекстноеМеню" id="623"/>
+				<ExtendedTooltip name="ПереченьДокументовСостояниеПросмотраРасширеннаяПодсказка" id="624"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПереченьДокументовУправлениеПоиском" id="625">
+				<AdditionSource>
+					<Item>ПереченьДокументов</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПереченьДокументовУправлениеПоискомКонтекстноеМеню" id="628"/>
+				<ExtendedTooltip name="ПереченьДокументовУправлениеПоискомРасширеннаяПодсказка" id="629"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="ПереченьДокументовДокументСиноним" id="647">
+					<DataPath>ПереченьДокументов.ДокументСиноним</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПереченьДокументовДокументСинонимКонтекстноеМеню" id="648"/>
+					<ExtendedTooltip name="ПереченьДокументовДокументСинонимРасширеннаяПодсказка" id="649"/>
+				</InputField>
+				<CheckBoxField name="ПереченьДокументовИспользовать" id="671">
+					<DataPath>ПереченьДокументов.Использование</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПереченьДокументовИспользоватьКонтекстноеМеню" id="672"/>
+					<ExtendedTooltip name="ПереченьДокументовИспользоватьРасширеннаяПодсказка" id="673"/>
+					<Events>
+						<Event name="OnChange">ПереченьДокументовИспользоватьПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="ПереченьДокументовОтклонениеПриОтменеПроведения" id="668">
+					<DataPath>ПереченьДокументов.ОтклонениеПриОтменеПроведения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПереченьДокументовОтклонениеПриОтменеПроведенияКонтекстноеМеню" id="669"/>
+					<ExtendedTooltip name="ПереченьДокументовОтклонениеПриОтменеПроведенияРасширеннаяПодсказка" id="670"/>
+					<Events>
+						<Event name="OnChange">ПереченьДокументовИспользованиеОтклонениеПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ПереченьДокументов" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перечень документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ДокументИмя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя документа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Изменено" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Изменено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Использование" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДокументСиноним" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтклонениеПриОтменеПроведения" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отклонение при отмене проведения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаписатьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Записать" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+S</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Записать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НастроитьИспользованиеУтвержденияПоПользователям" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить использование утверждения по пользователям</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить использование утверждения по пользователям</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастроитьИспользованиеУтвержденияПоПользователям</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ОбъектНастройки">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияКомпании</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

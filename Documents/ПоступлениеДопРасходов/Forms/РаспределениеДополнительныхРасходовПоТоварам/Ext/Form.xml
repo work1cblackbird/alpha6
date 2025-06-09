@@ -1,0 +1,1381 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Распределение дополнительных расходов по товарам</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Применить" id="7">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Применить</CommandName>
+				<ExtendedTooltip name="ПрименитьРасширеннаяПодсказка" id="8"/>
+			</Button>
+			<Button name="Закрыть" id="9">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="10"/>
+			</Button>
+			<Button name="Справка" id="11">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="12"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<RadioButtonField name="РежимРаспределения" id="13">
+			<DataPath>РежимРаспределения</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ распределения услуги</v8:content>
+				</v8:item>
+			</ToolTip>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<EqualColumnsWidth>true</EqualColumnsWidth>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Автоматическое распределение</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">0</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ручное распределение</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">1</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="РежимРаспределенияКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="РежимРаспределенияРасширеннаяПодсказка" id="15"/>
+			<Events>
+				<Event name="OnChange">РежимРаспределенияПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ОднаУслуга" id="119">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Одна услуга</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Одна услуга</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ОднаУслугаРасширеннаяПодсказка" id="120"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаРаспределениеУслуги" id="59">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа распределение услуги</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа распределение услуги</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаРаспределениеУслугиРасширеннаяПодсказка" id="60"/>
+					<ChildItems>
+						<InputField name="Номенклатура" id="44">
+							<DataPath>Услуга</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Услуга, сумма которой распредляется по товарам</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ContextMenu name="НоменклатураКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="НоменклатураРасширеннаяПодсказка" id="46"/>
+						</InputField>
+						<InputField name="Характеристика" id="121">
+							<DataPath>Характеристика</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="ХарактеристикаКонтекстноеМеню" id="122"/>
+							<ExtendedTooltip name="ХарактеристикаРасширеннаяПодсказка" id="123"/>
+						</InputField>
+						<InputField name="Сумма" id="47">
+							<DataPath>СуммаУслуги</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сумма услуги с учетом НДС</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>10</Width>
+							<ContextMenu name="СуммаКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="49"/>
+						</InputField>
+						<InputField name="СуммаБезНДСУслуги" id="50">
+							<DataPath>СуммаБезНДСУслуги</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сумма услуги без учета НДС</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>10</Width>
+							<ContextMenu name="СуммаБезНДСУслугиКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="СуммаБезНДСУслугиРасширеннаяПодсказка" id="52"/>
+						</InputField>
+						<InputField name="НеРаспределено" id="53">
+							<DataPath>НеРаспределеноУслуги</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нераспределенная сумма дополнительных расходов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>10</Width>
+							<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<ContextMenu name="НеРаспределеноКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="НеРаспределеноРасширеннаяПодсказка" id="55"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<CheckBoxField name="НаДоходыИРасходыУслуги" id="56">
+					<DataPath>НаДоходыИРасходыУслуги</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Распределение суммы услуги на доходы и расходы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="НаДоходыИРасходыУслугиКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="НаДоходыИРасходыУслугиРасширеннаяПодсказка" id="58"/>
+					<Events>
+						<Event name="OnChange">НаДоходыИРасходыУслугиПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ТаблицаУслуг" id="16">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<Height>5</Height>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<VerticalStretch>false</VerticalStretch>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ТаблицаУслуг</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+			</CommandSet>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Услуги</v8:content>
+				</v8:item>
+			</ToolTip>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаУслугКонтекстноеМеню" id="17"/>
+			<AutoCommandBar name="ТаблицаУслугКоманднаяПанель" id="18"/>
+			<ExtendedTooltip name="ТаблицаУслугРасширеннаяПодсказка" id="19"/>
+			<SearchStringAddition name="ТаблицаУслугСтрокаПоиска" id="20">
+				<AdditionSource>
+					<Item>ТаблицаУслуг</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаУслугСтрокаПоискаКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ТаблицаУслугСтрокаПоискаРасширеннаяПодсказка" id="22"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаУслугСостояниеПросмотра" id="23">
+				<AdditionSource>
+					<Item>ТаблицаУслуг</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаУслугСостояниеПросмотраКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="ТаблицаУслугСостояниеПросмотраРасширеннаяПодсказка" id="25"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаУслугУправлениеПоиском" id="26">
+				<AdditionSource>
+					<Item>ТаблицаУслуг</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаУслугУправлениеПоискомКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="ТаблицаУслугУправлениеПоискомРасширеннаяПодсказка" id="28"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">ТаблицаУслугПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="ТаблицаУслугНоменклатура" id="29">
+					<DataPath>ТаблицаУслуг.Номенклатура</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>20</Width>
+					<ContextMenu name="ТаблицаУслугНоменклатураКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ТаблицаУслугНоменклатураРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ТаблицаУслугХарактеристика" id="116">
+					<DataPath>ТаблицаУслуг.Характеристика</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаУслугХарактеристикаКонтекстноеМеню" id="117"/>
+					<ExtendedTooltip name="ТаблицаУслугХарактеристикаРасширеннаяПодсказка" id="118"/>
+				</InputField>
+				<InputField name="ТаблицаУслугСумма" id="35">
+					<DataPath>ТаблицаУслуг.Сумма</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма услуг с учетом НДС</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ТаблицаУслугСуммаКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ТаблицаУслугСуммаРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ТаблицаУслугСуммаБезНДС" id="38">
+					<DataPath>ТаблицаУслуг.СуммаБезНДС</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма услуг без учета НДС</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ТаблицаУслугСуммаБезНДСКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ТаблицаУслугСуммаБезНДСРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<CheckBoxField name="ТаблицаУслугНаДоходыИРасходы" id="32">
+					<DataPath>ТаблицаУслуг.НаДоходыИРасходы</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Признак распределения услуги на доходы и расходы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТаблицаУслугНаДоходыИРасходыКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ТаблицаУслугНаДоходыИРасходыРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">ТаблицаУслугНаДоходыИРасходыПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ТаблицаУслугНеРаспределено" id="41">
+					<DataPath>ТаблицаУслуг.НеРаспределено</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество нераспределенной суммы услуги</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>13</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="ТаблицаУслугНеРаспределеноКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ТаблицаУслугНеРаспределеноРасширеннаяПодсказка" id="43"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Table name="ДеревоНоменклатуры" id="61">
+			<Representation>Tree</Representation>
+			<Width>90</Width>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ДеревоНоменклатуры</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>HierarchicalList</ExcludedCommand>
+				<ExcludedCommand>List</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+				<ExcludedCommand>Tree</ExcludedCommand>
+			</CommandSet>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево документов-оснований и выбранных номенклатур для распределения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ContextMenu name="ДеревоНоменклатурыКонтекстноеМеню" id="62"/>
+			<AutoCommandBar name="ДеревоНоменклатурыКоманднаяПанель" id="63">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ПодборНоменклатурыДокументовОснований" id="106">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПодборНоменклатурыДокументовОснований</CommandName>
+						<ExtendedTooltip name="ПодборНоменклатурыДокументовОснованийРасширеннаяПодсказка" id="107"/>
+					</Button>
+					<Button name="УдалитьНоменклатуру" id="108">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.Item.ДеревоНоменклатуры.StandardCommand.Delete</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="УдалитьНоменклатуруРасширеннаяПодсказка" id="109"/>
+					</Button>
+					<Popup name="ПодменюРаспределить" id="110">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Распределить</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подменю распределить</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="ПодменюРаспределитьРасширеннаяПодсказка" id="111"/>
+						<ChildItems>
+							<Button name="ДеревоНоменклатурыРаспределитьПоУслуге" id="112">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.РаспределитьПоУслуге</CommandName>
+								<ExtendedTooltip name="ДеревоНоменклатурыРаспределитьПоУслугеРасширеннаяПодсказка" id="113"/>
+							</Button>
+							<Button name="ДеревоНоменклатурыРаспределитьРавномерно" id="114">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.РаспределитьРавномерно</CommandName>
+								<ExtendedTooltip name="ДеревоНоменклатурыРаспределитьРавномерноРасширеннаяПодсказка" id="115"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ДеревоНоменклатурыРасширеннаяПодсказка" id="64"/>
+			<SearchStringAddition name="ДеревоНоменклатурыСтрокаПоиска" id="65">
+				<AdditionSource>
+					<Item>ДеревоНоменклатуры</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоНоменклатурыСтрокаПоискаКонтекстноеМеню" id="66"/>
+				<ExtendedTooltip name="ДеревоНоменклатурыСтрокаПоискаРасширеннаяПодсказка" id="67"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоНоменклатурыСостояниеПросмотра" id="68">
+				<AdditionSource>
+					<Item>ДеревоНоменклатуры</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоНоменклатурыСостояниеПросмотраКонтекстноеМеню" id="69"/>
+				<ExtendedTooltip name="ДеревоНоменклатурыСостояниеПросмотраРасширеннаяПодсказка" id="70"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоНоменклатурыУправлениеПоиском" id="71">
+				<AdditionSource>
+					<Item>ДеревоНоменклатуры</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоНоменклатурыУправлениеПоискомКонтекстноеМеню" id="72"/>
+				<ExtendedTooltip name="ДеревоНоменклатурыУправлениеПоискомРасширеннаяПодсказка" id="73"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeDeleteRow">ДеревоНоменклатурыПередУдалением</Event>
+				<Event name="AfterDeleteRow">ДеревоНоменклатурыПослеУдаления</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="ДеревоНоменклатурыДокументОснование" id="74">
+					<DataPath>ДеревоНоменклатуры.ДокументОснование</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ-основание</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterText>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ-основание</v8:content>
+						</v8:item>
+					</FooterText>
+					<Width>30</Width>
+					<ContextMenu name="ДеревоНоменклатурыДокументОснованиеКонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="ДеревоНоменклатурыДокументОснованиеРасширеннаяПодсказка" id="76"/>
+				</InputField>
+				<InputField name="ДеревоНоменклатурыНоменклатураКод" id="103">
+					<DataPath>ДеревоНоменклатуры.Код</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>9</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ДеревоНоменклатурыНоменклатураКодКонтекстноеМеню" id="104"/>
+					<ExtendedTooltip name="ДеревоНоменклатурыНоменклатураКодРасширеннаяПодсказка" id="105"/>
+				</InputField>
+				<InputField name="ДеревоНоменклатурыНоменклатураАртикул" id="100">
+					<DataPath>ДеревоНоменклатуры.Артикул</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>10</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ДеревоНоменклатурыНоменклатураАртикулКонтекстноеМеню" id="101"/>
+					<ExtendedTooltip name="ДеревоНоменклатурыНоменклатураАртикулРасширеннаяПодсказка" id="102"/>
+				</InputField>
+				<InputField name="ДеревоНоменклатурыНоменклатура" id="77">
+					<DataPath>ДеревоНоменклатуры.Номенклатура</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура/Автомобиль</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>20</Width>
+					<ContextMenu name="ДеревоНоменклатурыНоменклатураКонтекстноеМеню" id="78"/>
+					<ExtendedTooltip name="ДеревоНоменклатурыНоменклатураРасширеннаяПодсказка" id="79"/>
+				</InputField>
+				<InputField name="ДеревоНоменклатурыХарактеристикаНоменклатуры" id="80">
+					<DataPath>ДеревоНоменклатуры.ХарактеристикаНоменклатуры</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>16</Width>
+					<ContextMenu name="ДеревоНоменклатурыХарактеристикаНоменклатурыКонтекстноеМеню" id="81"/>
+					<ExtendedTooltip name="ДеревоНоменклатурыХарактеристикаНоменклатурыРасширеннаяПодсказка" id="82"/>
+				</InputField>
+				<ColumnGroup name="ДеревоНоменклатурыЕдиницаКоэффициент" id="98">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дерево номенклатуры единица коэффициент</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Единица, коэффициент</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="ДеревоНоменклатурыЕдиницаКоэффициентРасширеннаяПодсказка" id="99"/>
+					<ChildItems>
+						<InputField name="ДеревоНоменклатурыЕдиницаИзмерения" id="86">
+							<DataPath>ДеревоНоменклатуры.ЕдиницаИзмерения</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>4</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ДеревоНоменклатурыЕдиницаИзмеренияКонтекстноеМеню" id="87"/>
+							<ExtendedTooltip name="ДеревоНоменклатурыЕдиницаИзмеренияРасширеннаяПодсказка" id="88"/>
+						</InputField>
+						<InputField name="ДеревоНоменклатурыКоэффициент" id="83">
+							<DataPath>ДеревоНоменклатуры.Коэффициент</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>4</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ДеревоНоменклатурыКоэффициентКонтекстноеМеню" id="84"/>
+							<ExtendedTooltip name="ДеревоНоменклатурыКоэффициентРасширеннаяПодсказка" id="85"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="ДеревоНоменклатурыСуммаДопРасходов" id="89">
+					<DataPath>ДеревоНоменклатуры.СуммаДопРасходов</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма дополнительных расходов с учетом НДС</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>13</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ДеревоНоменклатурыСуммаДопРасходовКонтекстноеМеню" id="90"/>
+					<ExtendedTooltip name="ДеревоНоменклатурыСуммаДопРасходовРасширеннаяПодсказка" id="91"/>
+					<Events>
+						<Event name="OnChange">ДеревоНоменклатурыСуммаДопРасходовПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДеревоНоменклатурыСуммаДопРасходовБезНДС" id="92">
+					<DataPath>ДеревоНоменклатуры.СуммаДопРасходовБезНДС</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма дополнительных расходов без учета НДС</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>19</Width>
+					<ContextMenu name="ДеревоНоменклатурыСуммаДопРасходовБезНДСКонтекстноеМеню" id="93"/>
+					<ExtendedTooltip name="ДеревоНоменклатурыСуммаДопРасходовБезНДСРасширеннаяПодсказка" id="94"/>
+				</InputField>
+				<InputField name="ДеревоНоменклатурыГТД" id="95">
+					<DataPath>ДеревоНоменклатуры.ГТД</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер грузовой таможенной декларации (для товаров поступивших по импорту)</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>16</Width>
+					<ContextMenu name="ДеревоНоменклатурыГТДКонтекстноеМеню" id="96"/>
+					<ExtendedTooltip name="ДеревоНоменклатурыГТДРасширеннаяПодсказка" id="97"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="РежимРаспределения" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим распределения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаУслуг" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица услуг</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Номенклатура" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Услуга</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НаДоходыИРасходы" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>На ДиР</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма с НДС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаБезНДС" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма без НДС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="НеРаспределено" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Не распределено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Характеристика" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КлючСтроки" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ строки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СпособРаспределения" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ распределения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="БлокироватьРедактирование" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Блокировать редактирование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="РедактированиеУслуги" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактирование услуги</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Услуга" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Услуга</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СуммаУслуги" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СуммаБезНДСУслуги" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма без НДС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НаДоходыИРасходыУслуги" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>На доходы и расходы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НеРаспределеноУслуги" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не распределено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДеревоНоменклатуры" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ДокументОснование" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ-основание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ОснованияДопРасходов</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Номенклатура" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+						<v8:Type>cfg:CatalogRef.Автомобили</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ХарактеристикаНоменклатуры" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Коэффициент" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Коэф.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕдиницаИзмерения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ед.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ЕдиницыИзмерения</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СуммаДопРасходов" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма доп. расх.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаДопРасходовБезНДС" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма доп. расх. без НДС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ГТД" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ГТД</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ГТД</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Услуга" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Услуга</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Код" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>8</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Артикул" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Артикул</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>25</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТаблицаРаспределения" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица распределения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ДокументОснование" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ-основание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ОснованияДопРасходов</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Номенклатура" id="3">
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+						<v8:Type>cfg:CatalogRef.Автомобили</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ХарактеристикаНоменклатуры" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЕдиницаИзмерения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ед.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ЕдиницыИзмерения</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Коэффициент" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Коэф.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ГТД" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ГТД</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ГТД</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаБезНДС" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма без НДС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КлючСтроки" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ строки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТаблицаОснований" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица оснований</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ДокументОснование" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ-основание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ОснованияДопРасходов</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Номенклатура" id="2">
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+						<v8:Type>cfg:CatalogRef.Автомобили</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ХарактеристикаНоменклатуры" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЕдиницаИзмерения" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ед.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ЕдиницыИзмерения</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Коэффициент" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Коэф.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ГТД" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ГТД</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ГТД</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Вес" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вес</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаНДС" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма НДС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаВсего" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма всего</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="АдресРезультатаРаспределения" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес результата распределения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ХозОперация" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Хоз операция</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ХозОперации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РаспределениеУслугПоАвтомобилям" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределение услуг по автомобилям</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИзменениеДиР" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменение ди Р</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АктивизацияУслуги" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активизация услуги</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Характеристика" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Характеристика</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Применить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершить распределение дополнительных расходов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Применить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПодборНоменклатурыДокументовОснований" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать номенклатуру</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать номенклатуру из документов-оснований</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодборНоменклатурыДокументовОснований</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="РаспределитьПоУслуге" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределить по статье распределения услуги</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределить по услуге</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РаспределитьПоУслуге</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="РаспределитьРавномерно" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределить равномерно</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределить равномерно</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РаспределитьРавномерно</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

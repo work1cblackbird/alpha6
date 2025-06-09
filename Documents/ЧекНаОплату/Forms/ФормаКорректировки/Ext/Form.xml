@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Корректировка чека на оплату</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ПробитьЧеки" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ПробитьЧеки</CommandName>
+				<ExtendedTooltip name="ПробитьЧекиРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ЗаписатьЧеки" id="30">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.ЗаписатьЧеки</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаписатьАльфаАвто</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ЗаписатьЧекиРасширеннаяПодсказка" id="31"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="РежимФормированияЧека" id="24">
+			<DataPath>РежимФормированияЧека</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим "Возврат" формирует чек на возврат покупателю/продавцу. Режим "Исправление" - формирует два чека: чек на возврат - оформляется  возврат по документу основанию, чек на оплату - оформяем продажу/покупку; в доп. реквизит записывается ФПД</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<CheckBoxType>Tumbler</CheckBoxType>
+			<EditFormat>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БИ=Возврат; БЛ=Исправление</v8:content>
+				</v8:item>
+			</EditFormat>
+			<ContextMenu name="РежимФормированияЧекаКонтекстноеМеню" id="25"/>
+			<ExtendedTooltip name="РежимФормированияЧекаРасширеннаяПодсказка" id="26"/>
+			<Events>
+				<Event name="OnChange">РежимФормированияЧекаПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<InputField name="КассаККМ" id="3">
+			<DataPath>КассаККМ</DataPath>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="КассаККМКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="КассаККМРасширеннаяПодсказка" id="5"/>
+			<Events>
+				<Event name="OnChange">КассаККМПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ФР" id="6">
+			<DataPath>ФР</DataPath>
+			<ChoiceParameters>
+				<app:item name="Отбор.ТипОборудования">
+					<app:value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation/>
+						<Value xsi:type="v8:FixedArray">
+							<v8:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ТипыПодключаемогоОборудования.EnumValue.ККТ</Value>
+							</v8:Value>
+							<v8:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ТипыПодключаемогоОборудования.EnumValue.ФискальныйРегистратор</Value>
+							</v8:Value>
+						</Value>
+					</app:value>
+				</app:item>
+				<app:item name="Отбор.УстройствоИспользуется">
+					<app:value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation/>
+						<Value xsi:type="xs:boolean">true</Value>
+					</app:value>
+				</app:item>
+			</ChoiceParameters>
+			<ContextMenu name="ФРКонтекстноеМеню" id="7"/>
+			<ExtendedTooltip name="ФРРасширеннаяПодсказка" id="8"/>
+			<Events>
+				<Event name="OnChange">ФРПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ТипОплаты" id="27">
+			<DataPath>ТипОплаты</DataPath>
+			<ContextMenu name="ТипОплатыКонтекстноеМеню" id="28"/>
+			<ExtendedTooltip name="ТипОплатыРасширеннаяПодсказка" id="29"/>
+			<Events>
+				<Event name="OnChange">ТипОплатыПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ТелефонEmailПокупателя" id="15">
+			<DataPath>ТелефонEmailПокупателя</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефон/e-mail</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефон или электронный адрес покупателя для отправки электронного чека</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ContextMenu name="ТелефонEmailПокупателяКонтекстноеМеню" id="16"/>
+			<ExtendedTooltip name="ТелефонEmailПокупателяРасширеннаяПодсказка" id="17"/>
+			<Events>
+				<Event name="OnChange">ТелефонEmailПокупателяПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ЧекНаОплатуОснование" id="9">
+			<DataPath>ЧекНаОплатуОснование</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Корректируемый документ</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ЧекНаОплатуОснованиеКонтекстноеМеню" id="10"/>
+			<ExtendedTooltip name="ЧекНаОплатуОснованиеРасширеннаяПодсказка" id="11"/>
+		</InputField>
+		<LabelDecoration name="ИнформацияОСформированныхЧеках" id="12">
+			<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация о сформированных чеках</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ИнформацияОСформированныхЧекахКонтекстноеМеню" id="13"/>
+			<ExtendedTooltip name="ИнформацияОСформированныхЧекахРасширеннаяПодсказка" id="14"/>
+		</LabelDecoration>
+		<LabelField name="ЧекНаОплатуВозвратСсылка" id="18">
+			<DataPath>ЧекНаОплатуВозврат.Ref</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="ЧекНаОплатуВозвратСсылкаКонтекстноеМеню" id="19"/>
+			<ExtendedTooltip name="ЧекНаОплатуВозвратСсылкаРасширеннаяПодсказка" id="20"/>
+		</LabelField>
+		<LabelField name="ЧекНаОплатуКорректировкаСсылка" id="21">
+			<DataPath>ЧекНаОплатуКорректировка.Ref</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="ЧекНаОплатуКорректировкаСсылкаКонтекстноеМеню" id="22"/>
+			<ExtendedTooltip name="ЧекНаОплатуКорректировкаСсылкаРасширеннаяПодсказка" id="23"/>
+		</LabelField>
+		<LabelField name="ЧекНаОплатуВозвратБезИсправленияСсылка" id="32">
+			<DataPath>ЧекНаОплатуВозвратБезИсправления.Ref</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="ЧекНаОплатуВозвратБезИсправленияСсылкаКонтекстноеМеню" id="33"/>
+			<ExtendedTooltip name="ЧекНаОплатуВозвратБезИсправленияСсылкаРасширеннаяПодсказка" id="34"/>
+		</LabelField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ЧекНаОплатуВозврат" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Чек на оплату возврат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentObject.ЧекНаОплату</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ЧекНаОплатуВозврат.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ЧекНаОплатуКорректировка" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Чек на оплату возврат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentObject.ЧекНаОплату</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ЧекНаОплатуКорректировка.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="КассаККМ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Касса ККМ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.КассыККМ</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФР" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ФР</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодключаемоеОборудование</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТелефонEmailПокупателя" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефон email покупателя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЧекНаОплатуОснование" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Чек на оплату основание</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.ЧекНаОплату</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФискальныйПризнакНекорректногоЧека" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фискальный признак некорректного чека</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КорректировкаПоПриходу" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Корректировка по приходу</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТолькоВозврат" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только возврат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкаПриПробитии" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибка при пробитии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимФормированияЧека" id="11">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ОснованиеКорректировки" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основание корректировки</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ВозвратБезИсправления" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возврат без исправления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипОплаты" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыОплатыККТ</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЧекНаОплатуВозвратБезИсправления" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Чек на оплату возврат без исправления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentObject.ЧекНаОплату</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ЧекНаОплатуВозвратБезИсправления.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПробитьЧеки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пробить чеки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пробить чек возврата и корректного чека</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ПробитьЧек</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПробитьЧеки</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ЗаписатьЧеки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать чеки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать чеки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьЧеки</Action>
+		</Command>
+	</Commands>
+</Form>

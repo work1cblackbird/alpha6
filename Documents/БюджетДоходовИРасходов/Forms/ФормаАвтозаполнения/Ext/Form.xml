@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Применить" id="47">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Применить</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ПрименитьРасширеннаяПодсказка" id="48"/>
+			</Button>
+			<Button name="Закрыть" id="49">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="50"/>
+			</Button>
+			<Button name="Справка" id="51">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="52"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаСтатьиДоходовОтОсновнойДеятельности" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статьи доходов от основной деятельности</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаСтатьиДоходовОтОсновнойДеятельностиРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<CheckBoxField name="ЗаполнятьСтатьиВыручки" id="1">
+					<DataPath>ЗаполнятьСтатьиВыручки</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использовать заполнение</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использовать заполнение</v8:content>
+						</v8:item>
+					</ToolTip>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗаполнятьСтатьиВыручкиКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ЗаполнятьСтатьиВыручкиРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">ЗаполнитьСтатьиВыручкиПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="СпособРасчетаВыручки" id="4">
+					<DataPath>СпособРасчетаВыручки</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ расчета выручки</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ расчета выручки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>40</Width>
+					<DropListButton>true</DropListButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>По фактическим данным продаж</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">0</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>На основании бюджета продаж</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">1</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="СпособРасчетаВыручкиКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="СпособРасчетаВыручкиРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">СпособРасчетаВыручкиПриИзменении</Event>
+					</Events>
+				</InputField>
+				<Pages name="ГруппаСтраницыСтатьиДоходов" id="53">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страницы статьи доходов</v8:content>
+						</v8:item>
+					</Title>
+					<PagesRepresentation>TabsOnTop</PagesRepresentation>
+					<ExtendedTooltip name="ГруппаСтраницыСтатьиДоходовРасширеннаяПодсказка" id="54"/>
+					<ChildItems>
+						<Page name="ГруппаПараметрыЗаполненияСтаьиДоходов" id="9">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры заполнения</v8:content>
+								</v8:item>
+							</Title>
+							<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+							<ExtendedTooltip name="ГруппаПараметрыЗаполненияСтаьиДоходовРасширеннаяПодсказка" id="10"/>
+							<ChildItems>
+								<InputField name="КоличествоПериодовВыручка" id="11">
+									<DataPath>КоличествоПериодовВыручка</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество периодов для анализа</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество периодов для анализа</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>17</Width>
+									<SpinButton>true</SpinButton>
+									<ContextMenu name="КоличествоПериодовВыручкаКонтекстноеМеню" id="12"/>
+									<ExtendedTooltip name="КоличествоПериодовВыручкаРасширеннаяПодсказка" id="13"/>
+								</InputField>
+								<InputField name="КоэффициентРостаВыручка" id="14">
+									<DataPath>КоэффициентРостаВыручка</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коэффициент роста продаж</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коэффициент роста продаж</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>17</Width>
+									<ContextMenu name="КоэффициентРостаВыручкаКонтекстноеМеню" id="15"/>
+									<ExtendedTooltip name="КоэффициентРостаВыручкаРасширеннаяПодсказка" id="16"/>
+								</InputField>
+								<InputField name="КоэффициентСезонностиВыручка" id="17">
+									<DataPath>КоэффициентСезонностиВыручка</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коэффициент сезонности</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коэффициент сезонности</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>17</Width>
+									<ContextMenu name="КоэффициентСезонностиВыручкаКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="КоэффициентСезонностиВыручкаРасширеннаяПодсказка" id="19"/>
+								</InputField>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаДокументОснованиеСтатьиДоходов" id="55">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Документ основание</v8:content>
+								</v8:item>
+							</Title>
+							<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+							<ExtendedTooltip name="ГруппаДокументОснованиеСтатьиДоходовРасширеннаяПодсказка" id="56"/>
+							<ChildItems>
+								<InputField name="ДокументОснованиеВыручка" id="57">
+									<DataPath>ДокументОснованиеВыручка</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Документ основание</v8:content>
+										</v8:item>
+									</ToolTip>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ContextMenu name="ДокументОснованиеВыручкаКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ДокументОснованиеВыручкаРасширеннаяПодсказка" id="59"/>
+									<Events>
+										<Event name="StartChoice">ДокументОснованиеВыручкаНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСтатьиРасходовОтОсновнойДеятельности" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статьи расходов от основной деятельности</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаСтатьиРасходовОтОсновнойДеятельностиРасширеннаяПодсказка" id="21"/>
+			<ChildItems>
+				<CheckBoxField name="ЗаполнитьСтатьиСебестоимость" id="22">
+					<DataPath>ЗаполнитьСтатьиСебестоимость</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использовать заполнение</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использовать заполнение</v8:content>
+						</v8:item>
+					</ToolTip>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗаполнитьСтатьиСебестоимостьКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ЗаполнитьСтатьиСебестоимостьРасширеннаяПодсказка" id="24"/>
+					<Events>
+						<Event name="OnChange">ЗаполнитьСтатьиСебестоимостьПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="СпособРасчетаСебестоимости" id="25">
+					<DataPath>СпособРасчетаСебестоимости</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ расчета себестоимости</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>40</Width>
+					<DropListButton>true</DropListButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>По фактическим данным продаж</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">0</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>По фактическим данным закупок</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">1</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>На основании бюджета продаж</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">2</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>На основании бюджета закупок</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">3</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="СпособРасчетаСебестоимостиКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="СпособРасчетаСебестоимостиРасширеннаяПодсказка" id="27"/>
+					<Events>
+						<Event name="OnChange">СпособРасчетаСебестоимостиПриИзменении</Event>
+					</Events>
+				</InputField>
+				<Pages name="ГруппаСтраницыСтатьиРасходов" id="60">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страницы статьи расходов</v8:content>
+						</v8:item>
+					</Title>
+					<PagesRepresentation>TabsOnTop</PagesRepresentation>
+					<ExtendedTooltip name="ГруппаСтраницыСтатьиРасходовРасширеннаяПодсказка" id="61"/>
+					<ChildItems>
+						<Page name="ГруппаПараметрыЗаполненияСтатьиРасходов" id="28">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры заполнения</v8:content>
+								</v8:item>
+							</Title>
+							<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+							<ExtendedTooltip name="ГруппаПараметрыЗаполненияСтатьиРасходовРасширеннаяПодсказка" id="29"/>
+							<ChildItems>
+								<InputField name="КоличествоПериодовСебестоимость" id="30">
+									<DataPath>КоличествоПериодовСебестоимость</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество периодов для анализа</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество периодов для анализа</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>17</Width>
+									<SpinButton>true</SpinButton>
+									<ContextMenu name="КоличествоПериодовСебестоимостьКонтекстноеМеню" id="31"/>
+									<ExtendedTooltip name="КоличествоПериодовСебестоимостьРасширеннаяПодсказка" id="32"/>
+								</InputField>
+								<InputField name="КоэффициентРостаСебестоимость" id="33">
+									<DataPath>КоэффициентРостаСебестоимость</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коэффициент роста продаж</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коэффициент роста продаж</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>17</Width>
+									<ContextMenu name="КоэффициентРостаСебестоимостьКонтекстноеМеню" id="34"/>
+									<ExtendedTooltip name="КоэффициентРостаСебестоимостьРасширеннаяПодсказка" id="35"/>
+								</InputField>
+								<InputField name="КоэффициентСезонностиСебестоимость" id="36">
+									<DataPath>КоэффициентСезонностиСебестоимость</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коэффициент сезонности</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коэффициент сезонности</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>17</Width>
+									<ContextMenu name="КоэффициентСезонностиСебестоимостьКонтекстноеМеню" id="37"/>
+									<ExtendedTooltip name="КоэффициентСезонностиСебестоимостьРасширеннаяПодсказка" id="38"/>
+								</InputField>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаДокументОснованиеСтатьиРасходов" id="62">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Документ основание</v8:content>
+								</v8:item>
+							</Title>
+							<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+							<ExtendedTooltip name="ГруппаДокументОснованиеСтатьиРасходовРасширеннаяПодсказка" id="63"/>
+							<ChildItems>
+								<InputField name="ДокументОснованиеСебестоимость" id="64">
+									<DataPath>ДокументОснованиеСебестоимость</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Документ основание</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Документ основание</v8:content>
+										</v8:item>
+									</ToolTip>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<OpenButton>true</OpenButton>
+									<ChoiceParameters>
+										<app:item name="Отбор.Проведен">
+											<app:value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:boolean">true</Value>
+											</app:value>
+										</app:item>
+									</ChoiceParameters>
+									<ContextMenu name="ДокументОснованиеСебестоимостьКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ДокументОснованиеСебестоимостьРасширеннаяПодсказка" id="66"/>
+									<Events>
+										<Event name="StartChoice">ДокументОснованиеСебестоимостьНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСтатьиНакладныхРасходовИДоходов" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статьи накладных расходов и доходов</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаСтатьиНакладныхРасходовИДоходовРасширеннаяПодсказка" id="40"/>
+			<ChildItems>
+				<CheckBoxField name="ЗаполнитьСтатьиНакладныхДоходовИРасходов" id="41">
+					<DataPath>ЗаполнитьСтатьиНакладныхДоходовИРасходов</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использовать заполнение</v8:content>
+						</v8:item>
+					</ToolTip>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗаполнитьСтатьиНакладныхДоходовИРасходовКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ЗаполнитьСтатьиНакладныхДоходовИРасходовРасширеннаяПодсказка" id="43"/>
+				</CheckBoxField>
+				<LabelDecoration name="ПолучитьСтатьи" id="44">
+					<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Получить все статьи накладных расходов и доходов</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПолучитьСтатьиКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ПолучитьСтатьиРасширеннаяПодсказка" id="46"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ДокументОснованиеВыручка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ основание выручка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.БюджетПродаж</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДокументОснованиеСебестоимость" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ основание себестоимость</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.БюджетПродаж</v8:Type>
+				<v8:Type>cfg:DocumentRef.БюджетЗакупок</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаполнитьСтатьиНакладныхДоходовИРасходов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить статьи накладных доходов и расходов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаполнитьСтатьиСебестоимость" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить статьи себестоимость</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаполнятьСтатьиВыручки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнять статьи выручки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоПериодовВыручка" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество периодов выручка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоПериодовСебестоимость" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество периодов себестоимость</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоэффициентРостаВыручка" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коэффициент роста выручка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоэффициентРостаСебестоимость" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коэффициент роста себестоимость</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоэффициентСезонностиВыручка" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коэффициент сезонности выручка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоэффициентСезонностиСебестоимость" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коэффициент сезонности себестоимость</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СпособРасчетаВыручки" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ расчета выручки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СпособРасчетаСебестоимости" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ расчета себестоимости</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаПланирования" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата планирования</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ПодразделениеКомпании" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение компании</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="СценарийПланирования" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сценарий планирования</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="РасходыИДоходыТЗ" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расходы и доходы ТЗ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Применить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Применить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

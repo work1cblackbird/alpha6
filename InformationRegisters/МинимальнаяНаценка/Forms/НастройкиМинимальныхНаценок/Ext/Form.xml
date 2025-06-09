@@ -1,0 +1,850 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ТипНоменклатурыПользователь" id="110">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип номенклатуры пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ТипНоменклатурыПользовательРасширеннаяПодсказка" id="111"/>
+			<ChildItems>
+				<UsualGroup name="ПериодКоманднаяПанель" id="63">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период командная панель</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПериодКоманднаяПанельРасширеннаяПодсказка" id="64"/>
+					<ChildItems>
+						<CommandBar name="ПанельУправления" id="9">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Панель управления</v8:content>
+								</v8:item>
+							</Title>
+							<Width>18</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<ExtendedTooltip name="ПанельУправленияРасширеннаяПодсказка" id="10"/>
+							<ChildItems>
+								<Popup name="ВыборТиповНоменклатурПользователей" id="11">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип номенклатуры</v8:content>
+										</v8:item>
+									</Title>
+									<Width>18</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<Picture>
+										<xr:Ref>CommonPicture.Подменю</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<Representation>PictureAndText</Representation>
+									<ExtendedTooltip name="ВыборТиповНоменклатурПользователейРасширеннаяПодсказка" id="12"/>
+									<ChildItems>
+										<Button name="Назначение1" id="5">
+											<Type>CommandBarButton</Type>
+											<Width>18</Width>
+											<MaxWidth>18</MaxWidth>
+											<CommandName>Form.Command.ВыборНазначения1</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пользователь        </v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="Назначение1РасширеннаяПодсказка" id="6"/>
+										</Button>
+										<Button name="Назначение2" id="70">
+											<Type>CommandBarButton</Type>
+											<Width>18</Width>
+											<MaxWidth>18</MaxWidth>
+											<CommandName>Form.Command.ВыборНазначения2</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа доступа      </v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="Назначение2РасширеннаяПодсказка" id="71"/>
+										</Button>
+										<Button name="Назначение3" id="7">
+											<Type>CommandBarButton</Type>
+											<Width>18</Width>
+											<MaxWidth>18</MaxWidth>
+											<CommandName>Form.Command.ВыборНазначения3</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип номенклатуры  </v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="Назначение3РасширеннаяПодсказка" id="8"/>
+										</Button>
+									</ChildItems>
+								</Popup>
+							</ChildItems>
+						</CommandBar>
+						<InputField name="ВыборПользовательТипНоменклатуры" id="67">
+							<DataPath>ВыборПользовательТипНоменклатуры</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<DropListButton>true</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInDropList</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<OpenButton>false</OpenButton>
+							<ContextMenu name="ВыборПользовательТипНоменклатурыКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="ВыборПользовательТипНоменклатурыРасширеннаяПодсказка" id="69"/>
+							<Events>
+								<Event name="OnChange">ВыборПользовательТипНоменклатурыПриИзменении</Event>
+							</Events>
+						</InputField>
+						<CommandBar name="ОбщиеКоманды" id="65">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Общие команды</v8:content>
+								</v8:item>
+							</Title>
+							<CommandSource>Item.ЗначенияМинимальныхНаценок</CommandSource>
+							<ExtendedTooltip name="ОбщиеКомандыРасширеннаяПодсказка" id="66"/>
+							<ChildItems>
+								<Button name="ЗначенияМинимальныхНаценокЗаписать" id="116">
+									<Type>CommandBarButton</Type>
+									<Representation>Picture</Representation>
+									<CommandName>Form.Command.Записать</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.ЗаписатьАльфаАвто</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="ЗначенияМинимальныхНаценокЗаписатьРасширеннаяПодсказка" id="117"/>
+								</Button>
+								<Button name="ЗначенияМинимальныхНаценокДобавитьГруппуДоступа" id="118">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ДобавитьГруппуДоступа</CommandName>
+									<ExtendedTooltip name="ЗначенияМинимальныхНаценокДобавитьГруппуДоступаРасширеннаяПодсказка" id="119"/>
+								</Button>
+								<Button name="ЗначенияМинимальныхНаценокДобавитьПользователя" id="120">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ДобавитьПользователя</CommandName>
+									<ExtendedTooltip name="ЗначенияМинимальныхНаценокДобавитьПользователяРасширеннаяПодсказка" id="121"/>
+								</Button>
+								<Button name="ЗначенияМинимальныхНаценокДобавитьТипНоменклатуры" id="122">
+									<Type>CommandBarButton</Type>
+									<Representation>Picture</Representation>
+									<CommandName>Form.Command.ДобавитьТипНоменклатуры</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.СоздатьАльфаАвто</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="ЗначенияМинимальныхНаценокДобавитьТипНоменклатурыРасширеннаяПодсказка" id="123"/>
+								</Button>
+								<Button name="ЗначенияМинимальныхНаценокУдалитьЗначение" id="124">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.УдалитьЗначение</CommandName>
+									<ExtendedTooltip name="ЗначенияМинимальныхНаценокУдалитьЗначениеРасширеннаяПодсказка" id="125"/>
+								</Button>
+								<Button name="ЗначенияМинимальныхНаценокОтчетМинимальныеНаценкиСформироватьОтчетМинимальныеНаценки" id="128">
+									<Type>CommandBarButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Report.МинимальныеНаценки.Command.СформироватьОтчетМинимальныеНаценки</CommandName>
+									<Picture>
+										<xr:Ref>StdPicture.Report</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Минимальные наценки</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ЗначенияМинимальныхНаценокОтчетМинимальныеНаценкиСформироватьОтчетМинимальныеНаценкиРасширеннаяПодсказка" id="129"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="СпискиИТаблицы" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Списки и таблицы</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="СпискиИТаблицыРасширеннаяПодсказка" id="14"/>
+					<ChildItems>
+						<UsualGroup name="Список" id="15">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Список</v8:content>
+								</v8:item>
+							</Title>
+							<Width>18</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="16"/>
+							<ChildItems>
+								<Table name="СписокДат" id="72">
+									<Representation>List</Representation>
+									<CommandBarLocation>None</CommandBarLocation>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<Width>18</Width>
+									<Header>false</Header>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<HorizontalStretch>false</HorizontalStretch>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>СписокДат</DataPath>
+									<RowPictureDataPath>СписокДат.Picture</RowPictureDataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Список дат</v8:content>
+										</v8:item>
+									</Title>
+									<CommandSet>
+										<ExcludedCommand>Add</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>CheckAll</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>EndEdit</ExcludedCommand>
+										<ExcludedCommand>MoveDown</ExcludedCommand>
+										<ExcludedCommand>MoveUp</ExcludedCommand>
+										<ExcludedCommand>Pickup</ExcludedCommand>
+										<ExcludedCommand>SelectAll</ExcludedCommand>
+										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+										<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+										<ExcludedCommand>SortListAsc</ExcludedCommand>
+										<ExcludedCommand>SortListDesc</ExcludedCommand>
+										<ExcludedCommand>UncheckAll</ExcludedCommand>
+									</CommandSet>
+									<ContextMenu name="СписокДатКонтекстноеМеню" id="73">
+										<ChildItems>
+											<Button name="СписокДатКонтекстноеМенюВыбратьДату" id="112">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ВыбратьДату</CommandName>
+												<ExtendedTooltip name="СписокДатКонтекстноеМенюВыбратьДатуРасширеннаяПодсказка" id="113"/>
+											</Button>
+											<Button name="СписокДатКонтекстноеМенюУдалитьДату" id="114">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.УдалитьДату</CommandName>
+												<ExtendedTooltip name="СписокДатКонтекстноеМенюУдалитьДатуРасширеннаяПодсказка" id="115"/>
+											</Button>
+										</ChildItems>
+									</ContextMenu>
+									<AutoCommandBar name="СписокДатКоманднаяПанель" id="74">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="СписокДатРасширеннаяПодсказка" id="75"/>
+									<SearchStringAddition name="СписокДатСтрокаПоиска" id="76">
+										<AdditionSource>
+											<Item>СписокДат</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокДатСтрокаПоискаКонтекстноеМеню" id="77"/>
+										<ExtendedTooltip name="СписокДатСтрокаПоискаРасширеннаяПодсказка" id="78"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="СписокДатСостояниеПросмотра" id="79">
+										<AdditionSource>
+											<Item>СписокДат</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокДатСостояниеПросмотраКонтекстноеМеню" id="80"/>
+										<ExtendedTooltip name="СписокДатСостояниеПросмотраРасширеннаяПодсказка" id="81"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="СписокДатУправлениеПоиском" id="82">
+										<AdditionSource>
+											<Item>СписокДат</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокДатУправлениеПоискомКонтекстноеМеню" id="83"/>
+										<ExtendedTooltip name="СписокДатУправлениеПоискомРасширеннаяПодсказка" id="84"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">СписокДатВыбор</Event>
+										<Event name="OnActivateRow">СписокДатПриАктивизацииСтроки</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="СписокДатЗначение" id="85">
+											<DataPath>СписокДат.Value</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<HorizontalStretch>true</HorizontalStretch>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДЛФ=D</v8:content>
+												</v8:item>
+											</Format>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДЛФ=D</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="СписокДатЗначениеКонтекстноеМеню" id="86"/>
+											<ExtendedTooltip name="СписокДатЗначениеРасширеннаяПодсказка" id="87"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ЗначенияМинимальныхНаценокСПояснением" id="133">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значения минимальных наценок с пояснением</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Значения минимальных наценок с пояснением</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ЗначенияМинимальныхНаценокСПояснениемРасширеннаяПодсказка" id="134"/>
+							<ChildItems>
+								<Table name="ЗначенияМинимальныхНаценок" id="88">
+									<Representation>List</Representation>
+									<CommandBarLocation>None</CommandBarLocation>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<Width>6</Width>
+									<RowSelectionMode>Row</RowSelectionMode>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ЗначенияМинимальныхНаценок</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значения минимальных наценок</v8:content>
+										</v8:item>
+									</Title>
+									<CommandSet>
+										<ExcludedCommand>Add</ExcludedCommand>
+										<ExcludedCommand>CancelSearch</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>EndEdit</ExcludedCommand>
+										<ExcludedCommand>Find</ExcludedCommand>
+										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+										<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+									</CommandSet>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ЗначенияМинимальныхНаценокКонтекстноеМеню" id="89"/>
+									<AutoCommandBar name="ЗначенияМинимальныхНаценокКоманднаяПанель" id="90">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ЗначенияМинимальныхНаценокРасширеннаяПодсказка" id="91"/>
+									<SearchStringAddition name="ЗначенияМинимальныхНаценокСтрокаПоиска" id="92">
+										<AdditionSource>
+											<Item>ЗначенияМинимальныхНаценок</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗначенияМинимальныхНаценокСтрокаПоискаКонтекстноеМеню" id="93"/>
+										<ExtendedTooltip name="ЗначенияМинимальныхНаценокСтрокаПоискаРасширеннаяПодсказка" id="94"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ЗначенияМинимальныхНаценокСостояниеПросмотра" id="95">
+										<AdditionSource>
+											<Item>ЗначенияМинимальныхНаценок</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗначенияМинимальныхНаценокСостояниеПросмотраКонтекстноеМеню" id="96"/>
+										<ExtendedTooltip name="ЗначенияМинимальныхНаценокСостояниеПросмотраРасширеннаяПодсказка" id="97"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ЗначенияМинимальныхНаценокУправлениеПоиском" id="98">
+										<AdditionSource>
+											<Item>ЗначенияМинимальныхНаценок</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗначенияМинимальныхНаценокУправлениеПоискомКонтекстноеМеню" id="99"/>
+										<ExtendedTooltip name="ЗначенияМинимальныхНаценокУправлениеПоискомРасширеннаяПодсказка" id="100"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="BeforeAddRow">ЗначенияМинимальныхНаценокПередНачаломДобавления</Event>
+										<Event name="BeforeEditEnd">ЗначенияМинимальныхНаценокПередОкончаниемРедактирования</Event>
+										<Event name="ChoiceProcessing">ЗначенияМинимальныхНаценокОбработкаВыбора</Event>
+										<Event name="OnChange">ЗначенияМинимальныхНаценокПриИзменении</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="ЗначенияМинимальныхНаценокЗначение" id="101">
+											<DataPath>ЗначенияМинимальныхНаценок.Значение</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ЗначенияМинимальныхНаценокЗначениеКонтекстноеМеню" id="102"/>
+											<ExtendedTooltip name="ЗначенияМинимальныхНаценокЗначениеРасширеннаяПодсказка" id="103"/>
+										</InputField>
+										<InputField name="ЗначенияМинимальныхНаценокПроцентНаценки" id="104">
+											<DataPath>ЗначенияМинимальныхНаценок.ПроцентНаценки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>8</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="ЗначенияМинимальныхНаценокПроцентНаценкиКонтекстноеМеню" id="105"/>
+											<ExtendedTooltip name="ЗначенияМинимальныхНаценокПроцентНаценкиРасширеннаяПодсказка" id="106"/>
+										</InputField>
+										<CheckBoxField name="ЗначенияМинимальныхНаценокАктивна" id="107">
+											<DataPath>ЗначенияМинимальныхНаценок.Активна</DataPath>
+											<Visible>false</Visible>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗначенияМинимальныхНаценокАктивнаКонтекстноеМеню" id="108"/>
+											<ExtendedTooltip name="ЗначенияМинимальныхНаценокАктивнаРасширеннаяПодсказка" id="109"/>
+										</CheckBoxField>
+									</ChildItems>
+								</Table>
+								<LabelDecoration name="Декорация1" id="130">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Черный - данная наценка установлена в текущем периоде.
+&lt;colorstyle 0:ea36c426-2b43-4232-9978-0104bafd345d&gt;Серый&lt;/&gt; - данная наценка не установлена в текущем периоде, но есть значение, установленное ранее.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация1КонтекстноеМеню" id="131"/>
+									<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="132"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СписокДат" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список дат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="ЗначенияМинимальныхНаценок" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значения минимальных наценок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Значение" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+						<v8:Type>cfg:CatalogRef.ГруппыДоступа</v8:Type>
+						<v8:Type>cfg:CatalogRef.ТипыНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПроцентНаценки" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наценка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>5</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Активна" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Активна</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЗначениеНаТекущуюДату" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение на текущую дату</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Период" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="УстДата" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыборПользовательТипНоменклатуры" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор пользователь тип номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+				<v8:Type>cfg:CatalogRef.ГруппыДоступа</v8:Type>
+				<v8:Type>cfg:CatalogRef.ТипыНоменклатуры</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Дата" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтоПользователь" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтоГруппаДоступа" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это группа доступа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтоТипНоменклатуры" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это тип номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяКоманды" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя команды</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекСтрокаСписка" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тек строка списка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыборНазначения1" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор назначения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор назначения1</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Пользователь</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыборНазначения3" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор назначения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор назначения3</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ТипНоменклатуры</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыборНазначения2" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор назначения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор назначения2</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ГруппаДоступа</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыбратьДату" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать дату</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать дату</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ChooseValue</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыбратьДату</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УдалитьДату" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить дату</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УдалитьДату</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Записать" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Записать</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьПользователя" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить пользователя</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить пользователя</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СостояниеПользователя08</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьПользователя</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьГруппуДоступа" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить группу доступа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить группу доступа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СостояниеПользователя10</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьГруппуДоступа</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьТипНоменклатуры" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить тип номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить тип номенклатуры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьТипНоменклатуры</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УдалитьЗначение" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить значение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить значение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УдалитьЗначение</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,958 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заказчик</dataPath>
+			<field>Заказчик</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПервогоРемонта</dataPath>
+			<field>ДатаПервогоРемонта</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата первого ремонта</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=дд.ММ.гггг</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидРемонта</dataPath>
+			<field>ВидРемонта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеКомпании</dataPath>
+			<field>ПодразделениеКомпании</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Мастер</dataPath>
+			<field>Мастер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цех</dataPath>
+			<field>Цех</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Автомобиль</dataPath>
+			<field>Автомобиль</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автомобиль</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПоследнегоРемонта</dataPath>
+			<field>ДатаПоследнегоРемонта</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата последнего ремонта</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=дд.ММ.гггг</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипКлиента</dataPath>
+			<field>ТипКлиента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип клиента</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипДанных</dataPath>
+			<field>ТипДанных</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип данных</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодКвартал</dataPath>
+			<field>ПериодКвартал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По кварталам</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='к "квартал" гггг "г."'</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ-наряд</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаЗН</dataPath>
+			<field>СуммаЗН</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма заказ-нарядов (Упр.)</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаТО</dataPath>
+			<field>СуммаТО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма техобслуживаний (Упр.)</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоЗН</dataPath>
+			<field>КоличествоЗН</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество заказ-нарядов</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоТО</dataPath>
+			<field>КоличествоТО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество ТО</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<group>true</group>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтервалСуммыРабот</dataPath>
+			<field>ИнтервалСуммыРабот</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интервал суммы работ</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПорядокИнтервалаСуммыРабот</dataPath>
+			<field>ПорядокИнтервалаСуммыРабот</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Порядок интервала суммы работ</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтервалОбращений</dataPath>
+			<field>ИнтервалОбращений</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интервал обращений</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПорядокИнтервалаОбращений</dataPath>
+			<field>ПорядокИнтервалаОбращений</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Порядок интервала обращений</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗаказНаряды.Ссылка КАК ЗаказНаряд,
+	КорректировкаРеализации.Ссылка КАК Корректировка,
+	КорректировкаРеализации.ДокументОснование КАК ДокументОснование,
+	КорректировкаРеализации.СуммаДокумента * КорректировкаРеализации.КурсДокумента / КорректировкаРеализации.КурсВалютыУпр - ЗаказНаряды.СуммаДокумента * ЗаказНаряды.КурсДокумента / ЗаказНаряды.КурсВалютыУпр КАК СуммаДокумента
+ПОМЕСТИТЬ ТаблицаКорректировок
+ИЗ
+	Документ.КорректировкаРеализации КАК КорректировкаРеализации
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ЗаказНаряд КАК ЗаказНаряды
+		ПО КорректировкаРеализации.Сделка = ЗаказНаряды.Ссылка
+ГДЕ
+	КорректировкаРеализации.Проведен
+	И КорректировкаРеализации.Сделка ССЫЛКА Документ.ЗаказНаряд
+	И ВЫБОР
+			КОГДА ЗаказНаряды.Ссылка.Состояние = ЗНАЧЕНИЕ(Справочник.ВидыСостоянийЗаказНарядов.Закрыт)
+				ТОГДА ЗаказНаряды.Ссылка.ДатаЗакрытия &lt; &amp;КонецПериода
+			КОГДА ЗаказНаряды.Ссылка.Состояние = ЗНАЧЕНИЕ(Справочник.ВидыСостоянийЗаказНарядов.Выполнен)
+				ТОГДА ЗаказНаряды.Ссылка.ДатаОкончания &lt; &amp;КонецПериода
+			ИНАЧЕ ЗаказНаряды.Ссылка.ДатаСоздания &lt; &amp;КонецПериода
+		КОНЕЦ
+	И ЗаказНаряды.ПометкаУдаления = ЛОЖЬ
+{ГДЕ
+	ЗаказНаряды.СводныйРемонтныйЗаказ.Заказчик.* КАК Заказчик,
+	ЗаказНаряды.ВидРемонта.* КАК ВидРемонта,
+	ЗаказНаряды.ПодразделениеКомпании.* КАК ПодразделениеКомпании,
+	ЗаказНаряды.Менеджер.* КАК Менеджер,
+	ЗаказНаряды.СводныйРемонтныйЗаказ.Автомобиль.* КАК Автомобиль,
+	ЗаказНаряды.Цех.* КАК Цех,
+	ЗаказНаряды.Мастер.* КАК Мастер,
+	(МИНИМУМ(ЗаказНаряды.ДатаСоздания)) КАК ДатаПервогоРемонта,
+	(МАКСИМУМ(ЗаказНаряды.ДатаЗакрытия)) КАК ДатаПоследнегоРемонта}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаКорректировок.ЗаказНаряд КАК Сделка,
+	СУММА(ТаблицаКорректировок.СуммаДокумента) КАК СуммаДокумента
+ПОМЕСТИТЬ ДокументКорректировкаРеализации
+ИЗ
+	ТаблицаКорректировок КАК ТаблицаКорректировок
+ГДЕ
+	НЕ ТаблицаКорректировок.Корректировка В
+				(ВЫБРАТЬ
+					ТаблицаКорректировок.ДокументОснование
+				ИЗ
+					ТаблицаКорректировок)
+
+СГРУППИРОВАТЬ ПО
+	ТаблицаКорректировок.ЗаказНаряд
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ТаблицаКорректировок
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗаказНаряды.Ссылка КАК Сделка,
+	СУММА(АктыРазногласий.СуммаДокумента * АктыРазногласий.КурсДокумента / АктыРазногласий.КурсВалютыУпр - ЗаказНаряды.СуммаДокумента * ЗаказНаряды.КурсДокумента / ЗаказНаряды.КурсВалютыУпр) КАК СуммаДокумента
+ПОМЕСТИТЬ ДокументАктРазногласий
+ИЗ
+	Документ.ЗаказНаряд КАК ЗаказНаряды
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.АктРазногласий КАК АктыРазногласий
+		ПО ЗаказНаряды.Ссылка = АктыРазногласий.ДокументОснование
+ГДЕ
+	АктыРазногласий.Проведен
+	И ВЫБОР
+			КОГДА ЗаказНаряды.Ссылка.Состояние = ЗНАЧЕНИЕ(Справочник.ВидыСостоянийЗаказНарядов.Закрыт)
+				ТОГДА ЗаказНаряды.Ссылка.ДатаЗакрытия &lt; &amp;КонецПериода
+			КОГДА ЗаказНаряды.Ссылка.Состояние = ЗНАЧЕНИЕ(Справочник.ВидыСостоянийЗаказНарядов.Выполнен)
+				ТОГДА ЗаказНаряды.Ссылка.ДатаОкончания &lt; &amp;КонецПериода
+			ИНАЧЕ ЗаказНаряды.Ссылка.ДатаСоздания &lt; &amp;КонецПериода
+		КОНЕЦ
+	И ЗаказНаряды.ПометкаУдаления = ЛОЖЬ
+{ГДЕ
+	ЗаказНаряды.СводныйРемонтныйЗаказ.Заказчик.* КАК Заказчик,
+	ЗаказНаряды.ВидРемонта.* КАК ВидРемонта,
+	ЗаказНаряды.ПодразделениеКомпании.* КАК ПодразделениеКомпании,
+	ЗаказНаряды.Менеджер.* КАК Менеджер,
+	ЗаказНаряды.СводныйРемонтныйЗаказ.Автомобиль.* КАК Автомобиль,
+	ЗаказНаряды.Цех.* КАК Цех,
+	ЗаказНаряды.Мастер.* КАК Мастер,
+	(МИНИМУМ(ЗаказНаряды.ДатаСоздания)) КАК ДатаПервогоРемонта,
+	(МАКСИМУМ(ЗаказНаряды.ДатаЗакрытия)) КАК ДатаПоследнегоРемонта}
+
+СГРУППИРОВАТЬ ПО
+	ЗаказНаряды.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	0 КАК МинПредел,
+	9999999999999 КАК МаксПредел,
+	"Все" КАК Представление,
+	0 КАК Порядок
+ПОМЕСТИТЬ ИнтервалыСумм
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	0 КАК МинПредел,
+	50000 КАК МаксПредел,
+	"Все" КАК Представление,
+	0 КАК Порядок
+ПОМЕСТИТЬ ИнтервалыОбращений
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	"Постоянные клиенты" КАК ТипКлиента,
+	"Текущие данные" КАК ТипДанных,
+	НАЧАЛОПЕРИОДА(ЗаказНаряд.ДатаСоздания, КВАРТАЛ) КАК ПериодКвартал,
+	ЗаказНаряд.ВидРемонта КАК ВидРемонта,
+	ЗаказНаряд.СводныйРемонтныйЗаказ.Заказчик КАК Заказчик,
+	ЗаказНаряд.ПодразделениеКомпании КАК ПодразделениеКомпании,
+	ЗаказНаряд.Менеджер КАК Менеджер,
+	ЗаказНаряд.СводныйРемонтныйЗаказ.Автомобиль КАК Автомобиль,
+	ЗаказНаряд.Цех КАК Цех,
+	ЗаказНаряд.Мастер КАК Мастер,
+	ЗаказНаряд.Ссылка КАК Ссылка,
+	ЗаказНаряд.ДатаСоздания КАК ДатаПервогоРемонта,
+	ЗаказНаряд.ДатаЗакрытия КАК ДатаПоследнегоРемонта,
+	ВЫБОР
+		КОГДА ЗаказНаряд.КурсВалютыУпр = 0
+			ТОГДА 0
+		ИНАЧЕ ЗаказНаряд.СуммаДокумента * ЗаказНаряд.КурсДокумента / ЗаказНаряд.КурсВалютыУпр
+	КОНЕЦ КАК СуммаЗН,
+	1 КАК КоличествоЗН,
+	ВЫБОР
+		КОГДА ЗаказНаряд.ВидРемонта.ТехОбслуживание
+				И НЕ ЗаказНаряд.КурсВалютыУпр = 0
+			ТОГДА ЗаказНаряд.СуммаДокумента * ЗаказНаряд.КурсДокумента / ЗаказНаряд.КурсВалютыУпр
+		ИНАЧЕ 0
+	КОНЕЦ КАК СуммаТО,
+	ВЫБОР
+		КОГДА ЗаказНаряд.ВидРемонта.ТехОбслуживание
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК КоличествоТО
+ПОМЕСТИТЬ ВТ_ПостоянныеКлиенты
+ИЗ
+	Документ.ЗаказНаряд КАК ЗаказНаряд
+ГДЕ
+	ВЫБОР
+			КОГДА ЗаказНаряд.Ссылка.Состояние = ЗНАЧЕНИЕ(Справочник.ВидыСостоянийЗаказНарядов.Закрыт)
+				ТОГДА ЗаказНаряд.Ссылка.ДатаЗакрытия МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+			КОГДА ЗаказНаряд.Ссылка.Состояние = ЗНАЧЕНИЕ(Справочник.ВидыСостоянийЗаказНарядов.Выполнен)
+				ТОГДА ЗаказНаряд.Ссылка.ДатаОкончания МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+			ИНАЧЕ ЗаказНаряд.Ссылка.ДатаСоздания МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+		КОНЕЦ
+{ГДЕ
+	ЗаказНаряд.ВидРемонта.* КАК ВидРемонта,
+	ЗаказНаряд.СводныйРемонтныйЗаказ.Заказчик.* КАК Заказчик,
+	ЗаказНаряд.ПодразделениеКомпании.* КАК ПодразделениеКомпании,
+	ЗаказНаряд.Менеджер.* КАК Менеджер,
+	ЗаказНаряд.СводныйРемонтныйЗаказ.Автомобиль.* КАК Автомобиль,
+	ЗаказНаряд.Цех.* КАК Цех,
+	ЗаказНаряд.Мастер.* КАК Мастер,
+	(МИНИМУМ(ЗаказНаряд.ДатаСоздания)) КАК ДатаПервогоРемонта,
+	(МАКСИМУМ(ЗаказНаряд.ДатаЗакрытия)) КАК ДатаПоследнегоРемонта}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	"Потерянные клиенты" КАК ТипКлиента,
+	"Прошлые данные" КАК ТипДанных,
+	ДАТАВРЕМЯ(1, 1, 1) КАК ПериодКвартал,
+	ЗаказНаряд.ВидРемонта КАК ВидРемонта,
+	ЗаказНаряд.СводныйРемонтныйЗаказ.Заказчик КАК Заказчик,
+	ЗаказНаряд.ПодразделениеКомпании КАК ПодразделениеКомпании,
+	ЗаказНаряд.Менеджер КАК Менеджер,
+	ЗаказНаряд.СводныйРемонтныйЗаказ.Автомобиль КАК Автомобиль,
+	ЗаказНаряд.Цех КАК Цех,
+	ЗаказНаряд.Мастер КАК Мастер,
+	ЗаказНаряд.Ссылка КАК Ссылка,
+	ЗаказНаряд.ДатаСоздания КАК ДатаПервогоРемонта,
+	ЗаказНаряд.ДатаЗакрытия КАК ДатаПоследнегоРемонта,
+	ВЫБОР
+		КОГДА НЕ ЗаказНаряд.КурсВалютыУпр = 0
+			ТОГДА ЗаказНаряд.СуммаДокумента * ЗаказНаряд.КурсДокумента / ЗаказНаряд.КурсВалютыУпр
+		ИНАЧЕ 0
+	КОНЕЦ КАК СуммаЗН,
+	1 КАК КоличествоЗН,
+	ВЫБОР
+		КОГДА ЗаказНаряд.ВидРемонта.ТехОбслуживание
+				И НЕ ЗаказНаряд.КурсВалютыУпр = 0
+			ТОГДА ЗаказНаряд.СуммаДокумента * ЗаказНаряд.КурсДокумента / ЗаказНаряд.КурсВалютыУпр
+		ИНАЧЕ 0
+	КОНЕЦ КАК СуммаТО,
+	ВЫБОР
+		КОГДА ЗаказНаряд.ВидРемонта.ТехОбслуживание
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК КоличествоТО
+ПОМЕСТИТЬ ВТ_ПотерянныеКлиенты
+ИЗ
+	Документ.ЗаказНаряд КАК ЗаказНаряд
+ГДЕ
+	ВЫБОР
+			КОГДА ЗаказНаряд.Ссылка.Состояние = ЗНАЧЕНИЕ(Справочник.ВидыСостоянийЗаказНарядов.Закрыт)
+				ТОГДА ЗаказНаряд.Ссылка.ДатаЗакрытия &lt; &amp;НачалоПериода
+			КОГДА ЗаказНаряд.Ссылка.Состояние = ЗНАЧЕНИЕ(Справочник.ВидыСостоянийЗаказНарядов.Выполнен)
+				ТОГДА ЗаказНаряд.Ссылка.ДатаОкончания &lt; &amp;НачалоПериода
+			ИНАЧЕ ЗаказНаряд.Ссылка.ДатаСоздания &lt; &amp;НачалоПериода
+		КОНЕЦ
+	И НЕ ЗаказНаряд.Ссылка В
+				(ВЫБРАТЬ
+					ВТ_ПостоянныеКлиенты.Ссылка КАК Ссылка
+				ИЗ
+					ВТ_ПостоянныеКлиенты КАК ВТ_ПостоянныеКлиенты)
+	И НЕ ЗаказНаряд.СводныйРемонтныйЗаказ.Заказчик В
+				(ВЫБРАТЬ РАЗЛИЧНЫЕ
+					ВТ_ПостоянныеКлиенты.Заказчик КАК Заказчик
+				ИЗ
+					ВТ_ПостоянныеКлиенты КАК ВТ_ПостоянныеКлиенты)
+{ГДЕ
+	ЗаказНаряд.ВидРемонта.* КАК ВидРемонта,
+	ЗаказНаряд.СводныйРемонтныйЗаказ.Заказчик.* КАК Заказчик,
+	ЗаказНаряд.ПодразделениеКомпании.* КАК ПодразделениеКомпании,
+	ЗаказНаряд.Менеджер.* КАК Менеджер,
+	ЗаказНаряд.СводныйРемонтныйЗаказ.Автомобиль.* КАК Автомобиль,
+	ЗаказНаряд.Цех.* КАК Цех,
+	ЗаказНаряд.Мастер.* КАК Мастер,
+	(МИНИМУМ(ЗаказНаряд.ДатаСоздания)) КАК ДатаПервогоРемонта,
+	(МАКСИМУМ(ЗаказНаряд.ДатаЗакрытия)) КАК ДатаПоследнегоРемонта}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ПостоянныеКлиенты.Ссылка КАК Ссылка,
+	СУММА(ВТ_ПостоянныеКлиенты.КоличествоЗН) КАК КоличествоЗН,
+	ВТ_ПостоянныеКлиенты.ТипКлиента КАК ТипКлиента
+ПОМЕСТИТЬ ВТ_КоличествоЗНПогруппировкеПоТипу
+ИЗ
+	ВТ_ПостоянныеКлиенты КАК ВТ_ПостоянныеКлиенты
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ПостоянныеКлиенты.Ссылка,
+	ВТ_ПостоянныеКлиенты.ТипКлиента
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ПотерянныеКлиенты.Ссылка,
+	СУММА(ВТ_ПотерянныеКлиенты.КоличествоЗН),
+	ВТ_ПотерянныеКлиенты.ТипКлиента
+ИЗ
+	ВТ_ПотерянныеКлиенты КАК ВТ_ПотерянныеКлиенты
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ПотерянныеКлиенты.Ссылка,
+	ВТ_ПотерянныеКлиенты.ТипКлиента
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_КоличествоЗНПогруппировкеПоТипу.Ссылка КАК Ссылка,
+	СУММА(ВТ_КоличествоЗНПогруппировкеПоТипу.КоличествоЗН) КАК КоличествоЗН,
+	ВТ_КоличествоЗНПогруппировкеПоТипу.ТипКлиента КАК ТипКлиента
+ПОМЕСТИТЬ ВТ_ГруппировкаПоТипу
+ИЗ
+	ВТ_КоличествоЗНПогруппировкеПоТипу КАК ВТ_КоличествоЗНПогруппировкеПоТипу
+
+СГРУППИРОВАТЬ ПО
+	ВТ_КоличествоЗНПогруппировкеПоТипу.Ссылка,
+	ВТ_КоличествоЗНПогруппировкеПоТипу.ТипКлиента
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИтоговаяТаблица.ТипКлиента КАК ТипКлиента,
+	ИтоговаяТаблица.ТипДанных КАК ТипДанных,
+	ИтоговаяТаблица.ПериодКвартал КАК ПериодКвартал,
+	ИтоговаяТаблица.ВидРемонта КАК ВидРемонта,
+	ИтоговаяТаблица.Заказчик КАК Заказчик,
+	ИтоговаяТаблица.ПодразделениеКомпании КАК ПодразделениеКомпании,
+	ИтоговаяТаблица.Менеджер КАК Менеджер,
+	ИтоговаяТаблица.Автомобиль КАК Автомобиль,
+	ИтоговаяТаблица.Цех КАК Цех,
+	ИтоговаяТаблица.Мастер КАК Мастер,
+	ИтоговаяТаблица.Ссылка КАК Ссылка,
+	ИтоговаяТаблица.ДатаПервогоРемонта КАК ДатаПервогоРемонта,
+	ИтоговаяТаблица.ДатаПоследнегоРемонта КАК ДатаПоследнегоРемонта,
+	ИтоговаяТаблица.СуммаЗН КАК СуммаЗН,
+	ИтоговаяТаблица.КоличествоЗН КАК КоличествоЗН,
+	ИтоговаяТаблица.СуммаТО КАК СуммаТО,
+	ИтоговаяТаблица.КоличествоТО КАК КоличествоТО,
+	ИнтервалыСумм.Представление КАК ИнтервалСуммыРабот,
+	ИнтервалыСумм.Порядок КАК ПорядокИнтервалаСуммыРабот,
+	ИнтервалыОбращений.Представление КАК ИнтервалОбращений,
+	ИнтервалыОбращений.Порядок КАК ПорядокИнтервалаОбращений
+ИЗ
+	(ВЫБРАТЬ
+		ВТ_ПостоянныеКлиенты.ТипКлиента КАК ТипКлиента,
+		ВТ_ПостоянныеКлиенты.ТипДанных КАК ТипДанных,
+		ВТ_ПостоянныеКлиенты.ПериодКвартал КАК ПериодКвартал,
+		ВТ_ПостоянныеКлиенты.ВидРемонта КАК ВидРемонта,
+		ВТ_ПостоянныеКлиенты.Заказчик КАК Заказчик,
+		ВТ_ПостоянныеКлиенты.ПодразделениеКомпании КАК ПодразделениеКомпании,
+		ВТ_ПостоянныеКлиенты.Менеджер КАК Менеджер,
+		ВТ_ПостоянныеКлиенты.Автомобиль КАК Автомобиль,
+		ВТ_ПостоянныеКлиенты.Цех КАК Цех,
+		ВТ_ПостоянныеКлиенты.Мастер КАК Мастер,
+		ВТ_ПостоянныеКлиенты.Ссылка КАК Ссылка,
+		ВТ_ПостоянныеКлиенты.ДатаПервогоРемонта КАК ДатаПервогоРемонта,
+		ВТ_ПостоянныеКлиенты.ДатаПоследнегоРемонта КАК ДатаПоследнегоРемонта,
+		ВТ_ПостоянныеКлиенты.СуммаЗН КАК СуммаЗН,
+		ВТ_ПостоянныеКлиенты.КоличествоЗН КАК КоличествоЗН,
+		ВТ_ПостоянныеКлиенты.СуммаТО КАК СуммаТО,
+		ВТ_ПостоянныеКлиенты.КоличествоТО КАК КоличествоТО
+	ИЗ
+		ВТ_ПостоянныеКлиенты КАК ВТ_ПостоянныеКлиенты
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ВТ_ПотерянныеКлиенты.ТипКлиента,
+		ВТ_ПотерянныеКлиенты.ТипДанных,
+		ВТ_ПотерянныеКлиенты.ПериодКвартал,
+		ВТ_ПотерянныеКлиенты.ВидРемонта,
+		ВТ_ПотерянныеКлиенты.Заказчик,
+		ВТ_ПотерянныеКлиенты.ПодразделениеКомпании,
+		ВТ_ПотерянныеКлиенты.Менеджер,
+		ВТ_ПотерянныеКлиенты.Автомобиль,
+		ВТ_ПотерянныеКлиенты.Цех,
+		ВТ_ПотерянныеКлиенты.Мастер,
+		ВТ_ПотерянныеКлиенты.Ссылка,
+		ВТ_ПотерянныеКлиенты.ДатаПервогоРемонта,
+		ВТ_ПотерянныеКлиенты.ДатаПоследнегоРемонта,
+		ВТ_ПотерянныеКлиенты.СуммаЗН,
+		ВТ_ПотерянныеКлиенты.КоличествоЗН,
+		ВТ_ПотерянныеКлиенты.СуммаТО,
+		ВТ_ПотерянныеКлиенты.КоличествоТО
+	ИЗ
+		ВТ_ПотерянныеКлиенты КАК ВТ_ПотерянныеКлиенты) КАК ИтоговаяТаблица
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ИнтервалыСумм КАК ИнтервалыСумм
+		ПО (ВЫБОР
+				КОГДА ИтоговаяТаблица.СуммаЗН = 0
+					ТОГДА ИнтервалыСумм.МинПредел = 0
+				ИНАЧЕ ИтоговаяТаблица.СуммаЗН &gt; ИнтервалыСумм.МинПредел
+						И ИтоговаяТаблица.СуммаЗН &lt;= ИнтервалыСумм.МаксПредел
+			КОНЕЦ)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ГруппировкаПоТипу КАК ВТ_ГруппировкаПоТипу
+			ЛЕВОЕ СОЕДИНЕНИЕ ИнтервалыОбращений КАК ИнтервалыОбращений
+			ПО (ВЫБОР
+					КОГДА ВТ_ГруппировкаПоТипу.КоличествоЗН = 0
+						ТОГДА ИнтервалыОбращений.МинПредел = 0
+					ИНАЧЕ ВТ_ГруппировкаПоТипу.КоличествоЗН &gt; ИнтервалыОбращений.МинПредел
+							И ВТ_ГруппировкаПоТипу.КоличествоЗН &lt;= ИнтервалыОбращений.МаксПредел
+				КОНЕЦ)
+		ПО ИтоговаяТаблица.Ссылка = ВТ_ГруппировкаПоТипу.Ссылка
+			И ИтоговаяТаблица.ТипКлиента = ВТ_ГруппировкаПоТипу.ТипКлиента</query>
+	</dataSet>
+	<totalField>
+		<dataPath>СуммаЗН</dataPath>
+		<expression>Сумма(СуммаЗН)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаТО</dataPath>
+		<expression>Сумма(СуммаТО)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоЗН</dataPath>
+		<expression>Сумма(КоличествоЗН)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоТО</dataPath>
+		<expression>Сумма(КоличествоТО)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДатаПервогоРемонта</dataPath>
+		<expression>Минимум(Выбор Когда ДатаПервогоРемонта &lt;&gt; ДатаВремя(1,1,1) Тогда ДатаПервогоРемонта Конец)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДатаПоследнегоРемонта</dataPath>
+		<expression>Максимум(ДатаПоследнегоРемонта)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПорядокИнтервалаОбращений</dataPath>
+		<expression>ВЫБОР
+            КОГДА ИнтервалОбращений ЕСТЬ NULL ТОГДА 0
+            ИНАЧЕ МАКСИМУМ(ПорядокИнтервалаОбращений)
+        КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПорядокИнтервалаСуммыРабот</dataPath>
+		<expression>ВЫБОР
+            КОГДА ИнтервалСуммыРабот ЕСТЬ NULL ТОГДА 0
+            ИНАЧЕ МАКСИМУМ(ПорядокИнтервалаСуммыРабот)
+    КОНЕЦ</expression>
+	</totalField>
+	<parameter>
+		<name>СуммовыеГруппы</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Суммовые группы</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:ValueStorage</v8:Type>
+		</valueType>
+		<value xsi:type="v8:ValueStorage">AQEIAAAAAAAAAO+7v3siVSJ9</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>КоличественныеГруппы</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количественные группы</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:ValueStorage</v8:Type>
+		</valueType>
+		<value xsi:type="v8:ValueStorage">AQEIAAAAAAAAAO+7v3siVSJ9</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Анализ потерянных клиентов</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ДатаПервогоРемонта</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПоследнегоРемонта</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаЗН</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>СуммаТО</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоЗН</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>КоличествоТО</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ДатаПервогоРемонта</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>0001-01-01T00:00:00</v8:date>
+					</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ДатаПоследнегоРемонта</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>0001-01-01T00:00:00</v8:date>
+					</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидРемонта</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Заказчик</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ПодразделениеКомпании</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Менеджер</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Автомобиль</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Цех</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Мастер</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ПериодКвартал</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодКвартал</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ТипКлиента</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ИнтервалОбращений</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>Заказчик</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

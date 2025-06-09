@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Запрос</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодразделениеКомпании</dataPath>
+			<field>ПодразделениеКомпании</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатьяДДС</dataPath>
+			<field>СтатьяДДС</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статья ДДС</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтклонениеСуммаУпрРасход</dataPath>
+			<field>ОтклонениеСуммаУпрРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтклонениеСуммаРегРасход</dataPath>
+			<field>ОтклонениеСуммаРегРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаУпрФактДоход</dataPath>
+			<field>СуммаУпрФактДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактические показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРегФактДоход</dataPath>
+			<field>СуммаРегФактДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактические показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПланСуммаУпрДоход</dataPath>
+			<field>ПланСуммаУпрДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плановые показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПланСуммаРегДоход</dataPath>
+			<field>ПланСуммаРегДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плановые показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтклонениеСуммаУпрДоход</dataPath>
+			<field>ОтклонениеСуммаУпрДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаУпрПланДоход</dataPath>
+			<field>СуммаУпрПланДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плановые показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРегПланДоход</dataPath>
+			<field>СуммаРегПланДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плановые показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтклонениеСуммаРегДоход</dataPath>
+			<field>ОтклонениеСуммаРегДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПланСуммаРегРасход</dataPath>
+			<field>ПланСуммаРегРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плановые показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПланСуммаУпрРасход</dataPath>
+			<field>ПланСуммаУпрРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плановые показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаУпрПланРасход</dataPath>
+			<field>СуммаУпрПланРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плановые показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаУпрФактРасход</dataPath>
+			<field>СуммаУпрФактРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактические показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФактСуммаУпрДоход</dataPath>
+			<field>ФактСуммаУпрДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактические показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРегПланРасход</dataPath>
+			<field>СуммаРегПланРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плановые показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРегФактРасход</dataPath>
+			<field>СуммаРегФактРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактические показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФактСуммаУпрРасход</dataPath>
+			<field>ФактСуммаУпрРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактические показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СценарийПланирования</dataPath>
+			<field>СценарийПланирования</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сценарий планирования</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФактСуммаРегРасход</dataPath>
+			<field>ФактСуммаРегРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактические показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФактСуммаРегДоход</dataPath>
+			<field>ФактСуммаРегДоход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактические показатели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОбъединенныйЗапрос.ПодразделениеКомпании.Организация КАК Организация,
+	ОбъединенныйЗапрос.ПодразделениеКомпании КАК ПодразделениеКомпании,
+	ОбъединенныйЗапрос.СтатьяДДС КАК СтатьяДДС,
+	ОбъединенныйЗапрос.Период КАК Период,
+	СУММА(ОбъединенныйЗапрос.СуммаРегПланДоход) КАК ПланСуммаРегДоход,
+	СУММА(ОбъединенныйЗапрос.СуммаРегПланРасход) КАК ПланСуммаРегРасход,
+	СУММА(ОбъединенныйЗапрос.СуммаУпрПланДоход) КАК ПланСуммаУпрДоход,
+	СУММА(ОбъединенныйЗапрос.СуммаУпрПланРасход) КАК ПланСуммаУпрРасход,
+	СУММА(ОбъединенныйЗапрос.СуммаРегФактДоход) КАК ФактСуммаРегДоход,
+	СУММА(ОбъединенныйЗапрос.СуммаРегФактРасход) КАК ФактСуммаРегРасход,
+	СУММА(ОбъединенныйЗапрос.СуммаУпрФактДоход) КАК ФактСуммаУпрДоход,
+	СУММА(ОбъединенныйЗапрос.СуммаУпрФактРасход) КАК ФактСуммаУпрРасход,
+	СУММА(ОбъединенныйЗапрос.СуммаРегФактДоход - ОбъединенныйЗапрос.СуммаРегПланДоход) КАК ОтклонениеСуммаРегДоход,
+	СУММА(ОбъединенныйЗапрос.СуммаРегФактРасход - ОбъединенныйЗапрос.СуммаРегПланРасход) КАК ОтклонениеСуммаРегРасход,
+	СУММА(ОбъединенныйЗапрос.СуммаУпрФактДоход - ОбъединенныйЗапрос.СуммаУпрПланДоход) КАК ОтклонениеСуммаУпрДоход,
+	СУММА(ОбъединенныйЗапрос.СуммаУпрФактРасход - ОбъединенныйЗапрос.СуммаУпрПланРасход) КАК ОтклонениеСуммаУпрРасход
+{ВЫБРАТЬ
+	Организация.* КАК Организация,
+	ПодразделениеКомпании.* КАК ПодразделениеКомпании,
+	СтатьяДДС.* КАК СтатьяДДС,
+	Период КАК Период}
+ИЗ
+	(ВЫБРАТЬ
+		БюджетДДС.ПодразделениеКомпании КАК ПодразделениеКомпании,
+		БюджетДДС.СтатьяДДС КАК СтатьяДДС,
+		БюджетДДС.Период КАК Период,
+		ВЫБОР
+			КОГДА НЕ БюджетДДС.СтатьяДДС.ВидДвижения = ЗНАЧЕНИЕ(Перечисление.ВидыДвижений.Расход)
+					И БюджетДДС.СуммаРегОборот &gt;= 0
+				ТОГДА БюджетДДС.СуммаРегОборот
+			КОГДА БюджетДДС.СтатьяДДС.ВидДвижения = ЗНАЧЕНИЕ(Перечисление.ВидыДвижений.Расход)
+					И БюджетДДС.СуммаРегОборот &lt; 0
+				ТОГДА БюджетДДС.СуммаРегОборот
+			ИНАЧЕ 0
+		КОНЕЦ КАК СуммаРегПланДоход,
+		ВЫБОР
+			КОГДА НЕ БюджетДДС.СтатьяДДС.ВидДвижения = ЗНАЧЕНИЕ(Перечисление.ВидыДвижений.Приход)
+					И БюджетДДС.СуммаРегОборот &gt;= 0
+				ТОГДА БюджетДДС.СуммаРегОборот
+			КОГДА БюджетДДС.СтатьяДДС.ВидДвижения = ЗНАЧЕНИЕ(Перечисление.ВидыДвижений.Приход)
+					И БюджетДДС.СуммаРегОборот &lt; 0
+				ТОГДА БюджетДДС.СуммаРегОборот
+			ИНАЧЕ 0
+		КОНЕЦ КАК СуммаРегПланРасход,
+		ВЫБОР
+			КОГДА НЕ БюджетДДС.СтатьяДДС.ВидДвижения = ЗНАЧЕНИЕ(Перечисление.ВидыДвижений.Расход)
+					И БюджетДДС.СуммаУпрОборот &gt;= 0
+				ТОГДА БюджетДДС.СуммаУпрОборот
+			КОГДА БюджетДДС.СтатьяДДС.ВидДвижения = ЗНАЧЕНИЕ(Перечисление.ВидыДвижений.Расход)
+					И БюджетДДС.СуммаУпрОборот &lt; 0
+				ТОГДА БюджетДДС.СуммаУпрОборот
+			ИНАЧЕ 0
+		КОНЕЦ КАК СуммаУпрПланДоход,
+		ВЫБОР
+			КОГДА НЕ БюджетДДС.СтатьяДДС.ВидДвижения = ЗНАЧЕНИЕ(Перечисление.ВидыДвижений.Приход)
+					И БюджетДДС.СуммаУпрОборот &gt;= 0
+				ТОГДА БюджетДДС.СуммаУпрОборот
+			КОГДА БюджетДДС.СтатьяДДС.ВидДвижения = ЗНАЧЕНИЕ(Перечисление.ВидыДвижений.Приход)
+					И БюджетДДС.СуммаУпрОборот &lt; 0
+				ТОГДА БюджетДДС.СуммаУпрОборот
+			ИНАЧЕ 0
+		КОНЕЦ КАК СуммаУпрПланРасход,
+		0 КАК СуммаРегФактДоход,
+		0 КАК СуммаРегФактРасход,
+		0 КАК СуммаУпрФактДоход,
+		0 КАК СуммаУпрФактРасход
+	ИЗ
+		РегистрНакопления.БюджетДДС.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Месяц, СценарийПланирования = &amp;СценарийПланирования {(ПодразделениеКомпании.Организация).* КАК Организация, (ПодразделениеКомпании).* КАК ПодразделениеКомпании, (СтатьяДДС).* КАК СтатьяДДС}) КАК БюджетДДС
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ДенежныеСредстваКомпании.Регистратор.ПодразделениеКомпании,
+		ДенежныеСредстваКомпании.СтатьяДДС,
+		НАЧАЛОПЕРИОДА(ДенежныеСредстваКомпании.Период, МЕСЯЦ),
+		0,
+		0,
+		0,
+		0,
+		ВЫБОР
+			КОГДА ДенежныеСредстваКомпании.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+						И ДенежныеСредстваКомпании.Сумма &gt;= 0
+					ИЛИ ДенежныеСредстваКомпании.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+						И ДенежныеСредстваКомпании.Сумма &lt;= 0
+				ТОГДА ДенежныеСредстваКомпании.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ,
+		ВЫБОР
+			КОГДА ДенежныеСредстваКомпании.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+						И ДенежныеСредстваКомпании.Сумма &lt;= 0
+					ИЛИ ДенежныеСредстваКомпании.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+						И ДенежныеСредстваКомпании.Сумма &gt;= 0
+				ТОГДА ДенежныеСредстваКомпании.Сумма
+			ИНАЧЕ 0
+		КОНЕЦ,
+		ВЫБОР
+			КОГДА ДенежныеСредстваКомпании.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+						И ДенежныеСредстваКомпании.СуммаУпр &gt;= 0
+					ИЛИ ДенежныеСредстваКомпании.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+						И ДенежныеСредстваКомпании.СуммаУпр &lt;= 0
+				ТОГДА ДенежныеСредстваКомпании.СуммаУпр
+			ИНАЧЕ 0
+		КОНЕЦ,
+		ВЫБОР
+			КОГДА ДенежныеСредстваКомпании.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+						И ДенежныеСредстваКомпании.СуммаУпр &lt;= 0
+					ИЛИ ДенежныеСредстваКомпании.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+						И ДенежныеСредстваКомпании.СуммаУпр &gt;= 0
+				ТОГДА ДенежныеСредстваКомпании.СуммаУпр
+			ИНАЧЕ 0
+		КОНЕЦ
+	ИЗ
+		РегистрНакопления.ДенежныеСредстваКомпании КАК ДенежныеСредстваКомпании
+	ГДЕ
+		ДенежныеСредстваКомпании.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+		И ДенежныеСредстваКомпании.Валюта = &amp;ВалютаРегл
+	{ГДЕ
+		ДенежныеСредстваКомпании.Регистратор.ПодразделениеКомпании.Организация.* КАК Организация,
+		ДенежныеСредстваКомпании.Регистратор.ПодразделениеКомпании.* КАК ПодразделениеКомпании,
+		ДенежныеСредстваКомпании.СтатьяДДС.* КАК СтатьяДДС}) КАК ОбъединенныйЗапрос
+{ГДЕ
+	ОбъединенныйЗапрос.ПодразделениеКомпании.Организация.* КАК Организация,
+	ОбъединенныйЗапрос.ПодразделениеКомпании.* КАК ПодразделениеКомпании,
+	ОбъединенныйЗапрос.СтатьяДДС.* КАК СтатьяДДС}
+
+СГРУППИРОВАТЬ ПО
+	ОбъединенныйЗапрос.ПодразделениеКомпании,
+	ОбъединенныйЗапрос.СтатьяДДС,
+	ОбъединенныйЗапрос.Период,
+	ОбъединенныйЗапрос.ПодразделениеКомпании.Организация
+
+ИМЕЮЩИЕ
+	(&amp;ВыводитьВсеЗаписи
+		ИЛИ СУММА(ОбъединенныйЗапрос.СуммаУпрПланДоход) - СУММА(ОбъединенныйЗапрос.СуммаУпрПланРасход) &lt;&gt; 0)</query>
+	</dataSet>
+	<totalField>
+		<dataPath>ОтклонениеСуммаРегДоход</dataPath>
+		<expression>Сумма(ОтклонениеСуммаРегДоход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОтклонениеСуммаРегРасход</dataPath>
+		<expression>Сумма(ОтклонениеСуммаРегРасход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОтклонениеСуммаУпрДоход</dataPath>
+		<expression>Сумма(ОтклонениеСуммаУпрДоход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОтклонениеСуммаУпрРасход</dataPath>
+		<expression>Сумма(ОтклонениеСуммаУпрРасход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПланСуммаРегДоход</dataPath>
+		<expression>Сумма(ПланСуммаРегДоход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПланСуммаРегРасход</dataPath>
+		<expression>Сумма(ПланСуммаРегРасход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПланСуммаУпрДоход</dataPath>
+		<expression>Сумма(ПланСуммаУпрДоход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПланСуммаУпрРасход</dataPath>
+		<expression>Сумма(ПланСуммаУпрРасход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ФактСуммаРегДоход</dataPath>
+		<expression>Сумма(ФактСуммаРегДоход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ФактСуммаРегРасход</dataPath>
+		<expression>Сумма(ФактСуммаРегРасход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ФактСуммаУпрДоход</dataPath>
+		<expression>Сумма(ФактСуммаУпрДоход)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ФактСуммаУпрРасход</dataPath>
+		<expression>Сумма(ФактСуммаУпрРасход)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ВалютаРегл</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Валюта</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Валюты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ВыводитьВсеЗаписи</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить все записи</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">true</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>СценарийПланирования</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сценарий планирования</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СценарииПланирования</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>План-фактный анализ бюджета движения денежных средств</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доход</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма (Рег.)</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПланСуммаРегДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ФактСуммаРегДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОтклонениеСуммаРегДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма (Упр.)</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПланСуммаУпрДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ФактСуммаУпрДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОтклонениеСуммаУпрДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расход</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма (Рег.)</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПланСуммаРегРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ФактСуммаРегРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОтклонениеСуммаРегРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма (Упр.)</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПланСуммаУпрРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ФактСуммаУпрРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОтклонениеСуммаУпрРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ПодразделениеКомпании</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">СтатьяДДС</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьВсеЗаписи</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СценарийПланирования</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ПодразделениеКомпании</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СтатьяДДС</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ПоПериодам</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>По периодам</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доход</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма (Рег.)</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПланСуммаРегДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ФактСуммаРегДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОтклонениеСуммаРегДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма (Упр.)</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПланСуммаУпрДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ФактСуммаУпрДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОтклонениеСуммаУпрДоход</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расход</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма (Рег.)</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПланСуммаРегРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ФактСуммаРегРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОтклонениеСуммаРегРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма (Упр.)</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПланСуммаУпрРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ФактСуммаУпрРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОтклонениеСуммаУпрРасход</dcsset:field>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ПодразделениеКомпании</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">СтатьяДДС</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВалютаРегл</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьВсеЗаписи</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СценарийПланирования</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Период</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПодразделениеКомпании</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>СтатьяДДС</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

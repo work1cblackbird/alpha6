@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ТекстЗапроса</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ресурс</dataPath>
+			<field>Ресурс</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ресурс</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=d.M.yy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РабочееВремя</dataPath>
+			<field>РабочееВремя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рабочее время (ч.)</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=5; ЧДЦ=1; ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НерабочееВремя</dataPath>
+			<field>НерабочееВремя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нерабочее время (ч.)</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=5; ЧДЦ=1; ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДОБАВИТЬКДАТЕ(&amp;НачалоПериода, ДЕНЬ, ТысячиДней.НомерДня * 1000 + СотниДней.НомерДня * 100 + ДесяткиДней.НомерДня * 10 + ЕдиницыДней.НомерДня) КАК Период
+ПОМЕСТИТЬ ТаблицаПериодов
+{ВЫБРАТЬ
+	Период}
+ИЗ
+	(ВЫБРАТЬ
+		0 КАК НомерДня
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		1
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		2
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		3
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		4
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		5
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		6
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		7
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		8
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ
+		9) КАК ТысячиДней
+		ПОЛНОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			0 КАК НомерДня
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			1
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			2
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			3
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			4
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			5
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			6
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			7
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			8
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			9) КАК СотниДней
+		ПО (ИСТИНА)
+		ПОЛНОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			0 КАК НомерДня
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			1
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			2
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			3
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			4
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			5
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			6
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			7
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			8
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			9) КАК ДесяткиДней
+		ПО (ИСТИНА)
+		ПОЛНОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			0 КАК НомерДня
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			1
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			2
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			3
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			4
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			5
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			6
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			7
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			8
+		
+		ОБЪЕДИНИТЬ
+		
+		ВЫБРАТЬ
+			9) КАК ЕдиницыДней
+		ПО (ИСТИНА)
+ГДЕ
+	ТысячиДней.НомерДня * 1000 + СотниДней.НомерДня * 100 + ДесяткиДней.НомерДня * 10 + ЕдиницыДней.НомерДня &lt;= РАЗНОСТЬДАТ(&amp;НачалоПериода, &amp;КонецПериода, ДЕНЬ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	УРВ_ТабельноеВремяСрезПоследних.Ресурс КАК Ресурс,
+	СУММА(ВЫБОР
+			КОГДА УРВ_ТабельноеВремяСрезПоследних.ВидИнтервала.РабочийИнтервал
+				ТОГДА УРВ_ТабельноеВремяСрезПоследних.Значение
+			ИНАЧЕ 0
+		КОНЕЦ) КАК РабочееВремя,
+	УРВ_ТабельноеВремяСрезПоследних.Период КАК Период,
+	СУММА(ВЫБОР
+			КОГДА УРВ_ТабельноеВремяСрезПоследних.ВидИнтервала.РабочийИнтервал
+				ТОГДА 0
+			ИНАЧЕ УРВ_ТабельноеВремяСрезПоследних.Значение
+		КОНЕЦ) КАК НерабочееВремя
+ПОМЕСТИТЬ ГрафикРаботы
+{ВЫБРАТЬ
+	Ресурс.*,
+	РабочееВремя}
+ИЗ
+	РегистрСведений.УРВ_ТабельноеВремя КАК УРВ_ТабельноеВремяСрезПоследних
+ГДЕ
+	УРВ_ТабельноеВремяСрезПоследних.Период &lt;= &amp;КонецПериода
+	И УРВ_ТабельноеВремяСрезПоследних.Период &gt;= &amp;НачалоПериода
+{ГДЕ
+	УРВ_ТабельноеВремяСрезПоследних.Ресурс.*}
+
+СГРУППИРОВАТЬ ПО
+	УРВ_ТабельноеВремяСрезПоследних.Период,
+	УРВ_ТабельноеВремяСрезПоследних.Ресурс
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаПериодов.Период КАК Период,
+	ГрафикРаботы.Ресурс КАК Ресурс
+ПОМЕСТИТЬ ТаблицаРесурсов
+ИЗ
+	ТаблицаПериодов КАК ТаблицаПериодов
+		ЛЕВОЕ СОЕДИНЕНИЕ ГрафикРаботы КАК ГрафикРаботы
+		ПО ТаблицаПериодов.Период = ГрафикРаботы.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ТаблицаРесурсов.Период КАК Период,
+	ТаблицаРесурсов.Ресурс КАК Ресурс,
+	ЕСТЬNULL(ГрафикРаботы.РабочееВремя, 0) КАК РабочееВремя,
+	ЕСТЬNULL(ГрафикРаботы.НерабочееВремя, 0) КАК НерабочееВремя
+{ВЫБРАТЬ
+	Период,
+	Ресурс.*,
+	РабочееВремя,
+	НерабочееВремя}
+ИЗ
+	ТаблицаРесурсов КАК ТаблицаРесурсов
+		ЛЕВОЕ СОЕДИНЕНИЕ ГрафикРаботы КАК ГрафикРаботы
+		ПО ТаблицаРесурсов.Период = ГрафикРаботы.Период
+			И ТаблицаРесурсов.Ресурс = ГрафикРаботы.Ресурс
+{ГДЕ
+	ТаблицаРесурсов.Ресурс.*}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>РабочееВремя</dataPath>
+		<expression>Сумма(РабочееВремя)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НерабочееВремя</dataPath>
+		<expression>Сумма(НерабочееВремя)</expression>
+	</totalField>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отчет по табельному времени</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РабочееВремя</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НерабочееВремя</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Ресурс</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Период</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">SeparatelyAndInTotalsOnly</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Период</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Ресурс</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ЗаписатьИЗакрыть" id="146">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="147"/>
+			</Button>
+			<Button name="Записать" id="148">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаписатьАльфаАвто</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ЗаписатьРасширеннаяПодсказка" id="149"/>
+			</Button>
+			<Button name="ФормаСкопировать" id="162">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Copy</CommandName>
+				<ExtendedTooltip name="ФормаСкопироватьРасширеннаяПодсказка" id="163"/>
+			</Button>
+			<ButtonGroup name="ОсновныеДействия" id="150">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основные действия</v8:content>
+					</v8:item>
+				</Title>
+				<CommandSource>Form</CommandSource>
+				<ExtendedTooltip name="ОсновныеДействияРасширеннаяПодсказка" id="151"/>
+			</ButtonGroup>
+			<Popup name="ПодменюПечать" id="164">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать с предварительным просмотром</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Picture>
+					<xr:Ref>CommonPicture.ПодменюПечать</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<Representation>Picture</Representation>
+				<ExtendedTooltip name="ПодменюПечатьРасширеннаяПодсказка" id="165"/>
+			</Popup>
+			<Popup name="ПодменюОтчеты" id="166">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отчеты</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>CommonPicture.Отчеты</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<Representation>PictureAndText</Representation>
+				<ExtendedTooltip name="ПодменюОтчетыРасширеннаяПодсказка" id="167"/>
+			</Popup>
+			<ButtonGroup name="ГлобальныеКоманды" id="156">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Глобальные команды</v8:content>
+					</v8:item>
+				</Title>
+				<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
+				<ExtendedTooltip name="ГлобальныеКомандыРасширеннаяПодсказка" id="157"/>
+			</ButtonGroup>
+			<Button name="ФормаИзменитьФорму" id="158">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="159"/>
+			</Button>
+			<Button name="ФормаСправка" id="160">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="161"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Владелец" id="96">
+			<DataPath>Объект.Owner</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>46</MaxWidth>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="97"/>
+			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="98"/>
+		</InputField>
+		<InputField name="Родитель" id="93">
+			<DataPath>Объект.Parent</DataPath>
+			<UserVisible>
+				<xr:Common>false</xr:Common>
+			</UserVisible>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>46</MaxWidth>
+			<ContextMenu name="РодительКонтекстноеМеню" id="94"/>
+			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="95"/>
+		</InputField>
+		<UsualGroup name="ГруппаОсновныеДанные" id="99">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основные данные</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновныеДанныеРасширеннаяПодсказка" id="100"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаДанныеЛево" id="101">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные лево</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДанныеЛевоРасширеннаяПодсказка" id="102"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОтступКоордината" id="125">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отступ координата</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<HorizontalSpacing>OneAndHalf</HorizontalSpacing>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтступКоординатаРасширеннаяПодсказка" id="126"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияОтступКоординатаХ" id="127">
+									<Width>9</Width>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Координата Х:   </v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияОтступКоординатаХКонтекстноеМеню" id="128"/>
+									<ExtendedTooltip name="ДекорацияОтступКоординатаХРасширеннаяПодсказка" id="129"/>
+								</LabelDecoration>
+								<InputField name="КоординатаX" id="103">
+									<DataPath>Объект.КоординатаX</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Координата X  ячейки в единицах размерности склада</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>8</MaxWidth>
+									<ContextMenu name="КоординатаXКонтекстноеМеню" id="104"/>
+									<ExtendedTooltip name="КоординатаXРасширеннаяПодсказка" id="105"/>
+									<Events>
+										<Event name="OnChange">КоординатаXПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОтступДлина" id="130">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отступ длина</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<HorizontalSpacing>OneAndHalf</HorizontalSpacing>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтступДлинаРасширеннаяПодсказка" id="131"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияОтступДлина" id="132">
+									<Width>9</Width>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Длина:             </v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияОтступДлинаКонтекстноеМеню" id="133"/>
+									<ExtendedTooltip name="ДекорацияОтступДлинаРасширеннаяПодсказка" id="134"/>
+								</LabelDecoration>
+								<InputField name="ДлинаЯчейки" id="106">
+									<DataPath>Объект.ДлинаЯчейки</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Длина ячейки в единицах размерности склада</v8:content>
+										</v8:item>
+									</ToolTip>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>8</MaxWidth>
+									<ContextMenu name="ДлинаЯчейкиКонтекстноеМеню" id="107"/>
+									<ExtendedTooltip name="ДлинаЯчейкиРасширеннаяПодсказка" id="108"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаДанныеСередина" id="109">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные середина</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДанныеСерединаРасширеннаяПодсказка" id="110"/>
+					<ChildItems>
+						<InputField name="КоординатаY" id="116">
+							<DataPath>Объект.КоординатаY</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Координата Y ячейки в единицах размерности склада</v8:content>
+								</v8:item>
+							</ToolTip>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>8</MaxWidth>
+							<ContextMenu name="КоординатаYКонтекстноеМеню" id="117"/>
+							<ExtendedTooltip name="КоординатаYРасширеннаяПодсказка" id="118"/>
+							<Events>
+								<Event name="OnChange">КоординатаYПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ШиринаЯчейки" id="113">
+							<DataPath>Объект.ШиринаЯчейки</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ширина ячейки в единицах размерности склада</v8:content>
+								</v8:item>
+							</ToolTip>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>8</MaxWidth>
+							<ContextMenu name="ШиринаЯчейкиКонтекстноеМеню" id="114"/>
+							<ExtendedTooltip name="ШиринаЯчейкиРасширеннаяПодсказка" id="115"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаДанныеПраво" id="111">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные право</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДанныеПравоРасширеннаяПодсказка" id="112"/>
+					<ChildItems>
+						<InputField name="Уровень" id="119">
+							<DataPath>Объект.Уровень</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер уровня ячейки склада (нумерация уровней склада начинается с нуля)</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="УровеньКонтекстноеМеню" id="120"/>
+							<ExtendedTooltip name="УровеньРасширеннаяПодсказка" id="121"/>
+							<Events>
+								<Event name="OnChange">УровеньПриИзменении</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="Недоступна" id="122">
+							<DataPath>Объект.Недоступна</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>К ячейке нет доступа</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ячейка может существовать,  но быть недоступна (сломана, на покраске и т.д.)</v8:content>
+								</v8:item>
+							</ToolTip>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НедоступнаКонтекстноеМеню" id="123"/>
+							<ExtendedTooltip name="НедоступнаРасширеннаяПодсказка" id="124"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="НаименованиеКод" id="79">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование и код</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="НаименованиеКодРасширеннаяПодсказка" id="80"/>
+			<ChildItems>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование ячейки (при нажатии кнопки выбора производится автогенерация номера)</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>46</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="StartChoice">КодНачалоВыбора</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="СтраницаДополнительно" id="135">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="СтраницаДополнительноРасширеннаяПодсказка" id="136"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаДополнительныеРеквизиты" id="137">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительные реквизиты</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="138"/>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ЯчейкиХранения</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПараметрыПодключаемыхКоманд" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры подключаемых команд</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>Catalog.ЯчейкиХранения.StandardCommand.OpenByValue</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

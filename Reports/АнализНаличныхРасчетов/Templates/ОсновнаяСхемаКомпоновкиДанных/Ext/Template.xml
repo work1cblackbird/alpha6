@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоговорВзаиморасчетов</dataPath>
+			<field>ДоговорВзаиморасчетов</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВалютаВзаиморасчетов</dataPath>
+			<field>ВалютаВзаиморасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта взаиморасчетов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объект</dataPath>
+			<field>Объект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Параметр</dataPath>
+			<field>Параметр</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОборотВВалютеДоговора</dataPath>
+			<field>СуммаОборотВВалютеДоговора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма в валюте договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОборотБаз</dataPath>
+			<field>СуммаОборотБаз</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма (баз.)</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПревышениеБаз</dataPath>
+			<field>ПревышениеБаз</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Превышение (баз.)</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредельныйРазмерБаз</dataPath>
+			<field>ПредельныйРазмерБаз</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предельный размер (баз.)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	НаличныеРасчетыОбороты.СуммаОборот КАК СуммаОборотВВалютеДоговора,
+	НаличныеРасчетыОбороты.ДоговорВзаиморасчетов КАК ДоговорВзаиморасчетов,
+	НаличныеРасчетыОбороты.ДоговорВзаиморасчетов.Владелец КАК ДоговорВзаиморасчетовВладелец,
+	НаличныеРасчетыОбороты.ДоговорВзаиморасчетов.ВалютаВзаиморасчетов КАК ДоговорВзаиморасчетовВалютаВзаиморасчетов
+ПОМЕСТИТЬ НаличныеРасчеты
+ИЗ
+	РегистрНакопления.НаличныеРасчеты.Обороты КАК НаличныеРасчетыОбороты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВЫРАЗИТЬ(ВЫБОР
+			КОГДА УчетныеПолитикиСрезПоследних.Значение ЕСТЬ NULL
+				ТОГДА УчетныеПолитики.ЗначениеПоУмолчанию
+			ИНАЧЕ УчетныеПолитикиСрезПоследних.Значение
+		КОНЕЦ КАК ЧИСЛО) КАК ПредельныйРазмерНаличныхРасчетов
+ПОМЕСТИТЬ ПредельныйРазмерНаличных
+ИЗ
+	ПланВидовХарактеристик.УчетныеПолитики КАК УчетныеПолитики
+		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.УчетныеПолитики.СрезПоследних(, Параметр = ЗНАЧЕНИЕ(ПланВидовХарактеристик.УчетныеПолитики.ПредельныйРазмерНаличныхРасчетов)) КАК УчетныеПолитикиСрезПоследних
+		ПО УчетныеПолитики.Ссылка = УчетныеПолитикиСрезПоследних.Параметр}
+ГДЕ
+	УчетныеПолитики.Ссылка = ЗНАЧЕНИЕ(ПланВидовХарактеристик.УчетныеПолитики.ПредельныйРазмерНаличныхРасчетов)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НаличныеРасчеты.СуммаОборотВВалютеДоговора КАК СуммаОборотВВалютеДоговора,
+	НаличныеРасчеты.ДоговорВзаиморасчетов КАК ДоговорВзаиморасчетов,
+	НаличныеРасчеты.ДоговорВзаиморасчетовВладелец КАК Контрагент,
+	НаличныеРасчеты.ДоговорВзаиморасчетовВалютаВзаиморасчетов КАК ВалютаВзаиморасчетов,
+	ВЫРАЗИТЬ(НаличныеРасчеты.СуммаОборотВВалютеДоговора * ВЫБОР
+			КОГДА КурсыВалютСрезПоследних.Кратность = 0
+					ИЛИ КурсыВалютСрезПоследних.Кратность = 1
+				ТОГДА КурсыВалютСрезПоследних.Курс
+			ИНАЧЕ КурсыВалютСрезПоследних.Курс / КурсыВалютСрезПоследних.Кратность
+		КОНЕЦ КАК ЧИСЛО(15, 2)) КАК СуммаОборотВВалютеРеглУчета
+ПОМЕСТИТЬ НаличныеРасчетыВВалюте
+ИЗ
+	НаличныеРасчеты КАК НаличныеРасчеты
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КурсыВалют.СрезПоследних(
+				,
+				Валюта В
+					(ВЫБРАТЬ
+						НаличныеРасчеты.ДоговорВзаиморасчетовВалютаВзаиморасчетов КАК ДоговорВзаиморасчетовВалютаВзаиморасчетов
+					ИЗ
+						НаличныеРасчеты КАК НаличныеРасчеты)) КАК КурсыВалютСрезПоследних
+		ПО НаличныеРасчеты.ДоговорВзаиморасчетовВалютаВзаиморасчетов = КурсыВалютСрезПоследних.Валюта
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НаличныеРасчетыВВалюте.СуммаОборотВВалютеДоговора КАК СуммаОборотВВалютеДоговора,
+	НаличныеРасчетыВВалюте.ДоговорВзаиморасчетов КАК ДоговорВзаиморасчетов,
+	НаличныеРасчетыВВалюте.Контрагент КАК Контрагент,
+	НаличныеРасчетыВВалюте.ВалютаВзаиморасчетов КАК ВалютаВзаиморасчетов,
+	НаличныеРасчетыВВалюте.СуммаОборотВВалютеРеглУчета КАК СуммаОборотБаз,
+	ВЫРАЗИТЬ(ВЫБОР
+			КОГДА НаличныеРасчетыВВалюте.СуммаОборотВВалютеРеглУчета &gt; ПредельныйРазмерНаличных.ПредельныйРазмерНаличныхРасчетов
+					ИЛИ НаличныеРасчетыВВалюте.СуммаОборотВВалютеРеглУчета &lt; -ПредельныйРазмерНаличных.ПредельныйРазмерНаличныхРасчетов
+				ТОГДА ВЫБОР
+						КОГДА НаличныеРасчетыВВалюте.СуммаОборотВВалютеРеглУчета &gt; ПредельныйРазмерНаличных.ПредельныйРазмерНаличныхРасчетов
+							ТОГДА НаличныеРасчетыВВалюте.СуммаОборотВВалютеРеглУчета - ПредельныйРазмерНаличных.ПредельныйРазмерНаличныхРасчетов
+						ИНАЧЕ НаличныеРасчетыВВалюте.СуммаОборотВВалютеРеглУчета + ПредельныйРазмерНаличных.ПредельныйРазмерНаличныхРасчетов
+					КОНЕЦ
+			ИНАЧЕ 0
+		КОНЕЦ КАК ЧИСЛО(15, 2)) КАК ПревышениеБаз,
+	ПредельныйРазмерНаличных.ПредельныйРазмерНаличныхРасчетов КАК ПредельныйРазмерБаз
+ИЗ
+	НаличныеРасчетыВВалюте КАК НаличныеРасчетыВВалюте,
+	ПредельныйРазмерНаличных КАК ПредельныйРазмерНаличных</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Анализ наличных расчетов</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДоговорВзаиморасчетов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВалютаВзаиморасчетов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаОборотВВалютеДоговора</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаОборотБаз</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПревышениеБаз</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Контрагент</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

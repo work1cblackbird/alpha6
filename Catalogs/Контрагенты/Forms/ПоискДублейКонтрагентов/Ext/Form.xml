@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ЗаписатьИЗакрыть" id="15">
+				<Type>CommandBarButton</Type>
+				<Representation>Text</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="18"/>
+			</Button>
+			<Button name="Записать" id="46">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.Command.Записать</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Write</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ЗаписатьРасширеннаяПодсказка" id="47"/>
+			</Button>
+			<Button name="ПерейтиКНайденному" id="16">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.ПерейтиКНайденному</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Forward</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ПерейтиКНайденномуРасширеннаяПодсказка" id="19"/>
+			</Button>
+			<Button name="КнопкаОтмена" id="17">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Cancel</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Close</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="КнопкаОтменаРасширеннаяПодсказка" id="20"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаДекорация" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Декорация</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДекорацияРасширеннаяПодсказка" id="21"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация1" id="2">
+					<Width>81</Width>
+					<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Найдены объекты с аналогичными данными, примите решение о дальнейших действиях</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="3"/>
+					<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="22"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаТаблицыНайдено" id="4">
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Совпадения:</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаТаблицыНайденоРасширеннаяПодсказка" id="23"/>
+			<ChildItems>
+				<Table name="ТаблицаНайдено" id="5">
+					<Representation>List</Representation>
+					<ReadOnly>true</ReadOnly>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ТаблицаНайдено</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таблица найдено</v8:content>
+						</v8:item>
+					</Title>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ТаблицаНайденоКонтекстноеМеню" id="6"/>
+					<AutoCommandBar name="ТаблицаНайденоКоманднаяПанель" id="7">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ТаблицаНайденоРасширеннаяПодсказка" id="24"/>
+					<SearchStringAddition name="ТаблицаНайденоСтрокаПоиска" id="25">
+						<AdditionSource>
+							<Item>ТаблицаНайдено</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаНайденоСтрокаПоискаКонтекстноеМеню" id="26"/>
+						<ExtendedTooltip name="ТаблицаНайденоСтрокаПоискаРасширеннаяПодсказка" id="27"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ТаблицаНайденоСостояниеПросмотра" id="28">
+						<AdditionSource>
+							<Item>ТаблицаНайдено</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаНайденоСостояниеПросмотраКонтекстноеМеню" id="29"/>
+						<ExtendedTooltip name="ТаблицаНайденоСостояниеПросмотраРасширеннаяПодсказка" id="30"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ТаблицаНайденоУправлениеПоиском" id="31">
+						<AdditionSource>
+							<Item>ТаблицаНайдено</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаНайденоУправлениеПоискомКонтекстноеМеню" id="32"/>
+						<ExtendedTooltip name="ТаблицаНайденоУправлениеПоискомРасширеннаяПодсказка" id="33"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">ТаблицаНайденоВыбор</Event>
+						<Event name="OnActivateRow">ТаблицаНайденоПриАктивизацииСтроки</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="ТаблицаНайденоОбъект" id="8">
+							<DataPath>ТаблицаНайдено.Объект</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Найденные объекты</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="ТаблицаНайденоОбъектКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="ТаблицаНайденоОбъектРасширеннаяПодсказка" id="34"/>
+						</InputField>
+						<CheckBoxField name="ТаблицаНайденоДубльПоИННИКПП" id="54">
+							<DataPath>ТаблицаНайдено.ДубльПоИННИКПП</DataPath>
+							<Visible>false</Visible>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дубль</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ТаблицаНайденоДубльПоИННИКППКонтекстноеМеню" id="55"/>
+							<ExtendedTooltip name="ТаблицаНайденоДубльПоИННИКППРасширеннаяПодсказка" id="56"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Table>
+				<Table name="ТаблицаРасшифровкаНайдено" id="10">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ТаблицаРасшифровкаНайдено</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Совпадения:</v8:content>
+						</v8:item>
+					</Title>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ТаблицаРасшифровкаНайденоКонтекстноеМеню" id="11">
+						<Autofill>false</Autofill>
+					</ContextMenu>
+					<AutoCommandBar name="ТаблицаРасшифровкаНайденоКоманднаяПанель" id="12">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ТаблицаРасшифровкаНайденоРасширеннаяПодсказка" id="35"/>
+					<SearchStringAddition name="ТаблицаРасшифровкаНайденоСтрокаПоиска" id="36">
+						<AdditionSource>
+							<Item>ТаблицаРасшифровкаНайдено</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаРасшифровкаНайденоСтрокаПоискаКонтекстноеМеню" id="37"/>
+						<ExtendedTooltip name="ТаблицаРасшифровкаНайденоСтрокаПоискаРасширеннаяПодсказка" id="38"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ТаблицаРасшифровкаНайденоСостояниеПросмотра" id="39">
+						<AdditionSource>
+							<Item>ТаблицаРасшифровкаНайдено</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаРасшифровкаНайденоСостояниеПросмотраКонтекстноеМеню" id="40"/>
+						<ExtendedTooltip name="ТаблицаРасшифровкаНайденоСостояниеПросмотраРасширеннаяПодсказка" id="41"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ТаблицаРасшифровкаНайденоУправлениеПоиском" id="42">
+						<AdditionSource>
+							<Item>ТаблицаРасшифровкаНайдено</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ТаблицаРасшифровкаНайденоУправлениеПоискомКонтекстноеМеню" id="43"/>
+						<ExtendedTooltip name="ТаблицаРасшифровкаНайденоУправлениеПоискомРасширеннаяПодсказка" id="44"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<InputField name="ТаблицаРасшифровкаНайденоПредставлениеНайденоПо" id="13">
+							<DataPath>ТаблицаРасшифровкаНайдено.ПредставлениеНайденоПо</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Совпадения:</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТаблицаРасшифровкаНайденоПредставлениеНайденоПоКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="ТаблицаРасшифровкаНайденоПредставлениеНайденоПоРасширеннаяПодсказка" id="45"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТаблицаНайдено" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица найдено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Объект" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ДубльПоИННИКПП" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дубль по ИНН и КПП</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТаблицаРасшифровкаНайдено" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица расшифровка найдено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПредставлениеНайденоПо" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление найдено по</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>300</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Объект" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЕстьДубли" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть дубли</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаписатьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПерейтиКНайденному" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к найденному</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к найденному</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПерейтиКНайденному</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Записать" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Записать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

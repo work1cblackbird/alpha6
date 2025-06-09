@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаКнопкаСформировать" id="60">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаЗапроситьОтчет</CommandName>
+				<ExtendedTooltip name="ФормаКнопкаСформироватьРасширеннаяПодсказка" id="61"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Интерфейс" id="1">
+			<DataPath>Интерфейс</DataPath>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="ИнтерфейсКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ИнтерфейсРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ИнтерфейсПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Период" id="4">
+			<DataPath>Период</DataPath>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="ПериодКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<Table name="СверкаОпераций" id="7">
+			<ChangeRowSet>false</ChangeRowSet>
+			<Footer>true</Footer>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.СверкаОпераций</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СверкаОперацийКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="СверкаОперацийКоманднаяПанель" id="9"/>
+			<ExtendedTooltip name="СверкаОперацийРасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="СверкаОперацийСтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>СверкаОпераций</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СверкаОперацийСтрокаПоискаКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СверкаОперацийСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СверкаОперацийСостояниеПросмотра" id="14">
+				<AdditionSource>
+					<Item>СверкаОпераций</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СверкаОперацийСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="СверкаОперацийСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СверкаОперацийУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>СверкаОпераций</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СверкаОперацийУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="СверкаОперацийУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="СверкаОперацийНомерСтроки" id="20">
+					<DataPath>Объект.СверкаОпераций.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СверкаОперацийНомерСтрокиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СверкаОперацийНомерСтрокиРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<InputField name="СверкаОперацийСчетНаОплату" id="23">
+					<DataPath>Объект.СверкаОпераций.СчетНаОплату</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СверкаОперацийСчетНаОплатуКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="СверкаОперацийСчетНаОплатуРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="СверкаОперацийЗаявкаНаРасходДС" id="26">
+					<DataPath>Объект.СверкаОпераций.ЗаявкаНаРасходДС</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СверкаОперацийЗаявкаНаРасходДСКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="СверкаОперацийЗаявкаНаРасходДСРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="СверкаОперацийТипОперации" id="29">
+					<DataPath>Объект.СверкаОпераций.ТипОперации</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СверкаОперацийТипОперацииКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СверкаОперацийТипОперацииРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="СверкаОперацийДатаОперации" id="32">
+					<DataPath>Объект.СверкаОпераций.ДатаОперации</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>12</Width>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='dd.MM.yyyy HH:mm'</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="СверкаОперацийДатаОперацииКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="СверкаОперацийДатаОперацииРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<ColumnGroup name="СверкаОперацийГруппаОплата" id="56">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Суммы оплат</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сверка операций группа оплата</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="СверкаОперацийГруппаОплатаРасширеннаяПодсказка" id="57"/>
+					<ChildItems>
+						<InputField name="СверкаОперацийСуммаОплатыБанк" id="47">
+							<DataPath>Объект.СверкаОпераций.СуммаОплатыБанк</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Оплата (банк)</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterDataPath>Объект.СверкаОпераций.TotalСуммаОплатыБанк</FooterDataPath>
+							<Width>10</Width>
+							<ContextMenu name="СверкаОперацийСуммаОплатыБанкКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="СверкаОперацийСуммаОплатыБанкРасширеннаяПодсказка" id="49"/>
+						</InputField>
+						<InputField name="СверкаОперацийСуммаОплатыРегистр" id="35">
+							<DataPath>Объект.СверкаОпераций.СуммаОплатыРегистр</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Оплата (регистр)</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterDataPath>Объект.СверкаОпераций.TotalСуммаОплатыРегистр</FooterDataPath>
+							<Width>10</Width>
+							<ContextMenu name="СверкаОперацийСуммаОплатыРегистрКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="СверкаОперацийСуммаОплатыРегистрРасширеннаяПодсказка" id="37"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="СверкаОперацийГруппаВозврат" id="58">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Суммы возвратов</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сверка операций группа возврат</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="СверкаОперацийГруппаВозвратРасширеннаяПодсказка" id="59"/>
+					<ChildItems>
+						<InputField name="СверкаОперацийСуммаВозвратаБанк" id="50">
+							<DataPath>Объект.СверкаОпераций.СуммаВозвратаБанк</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Возврат (банк)</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterDataPath>Объект.СверкаОпераций.TotalСуммаВозвратаБанк</FooterDataPath>
+							<Width>10</Width>
+							<ContextMenu name="СверкаОперацийСуммаВозвратаБанкКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="СверкаОперацийСуммаВозвратаБанкРасширеннаяПодсказка" id="52"/>
+						</InputField>
+						<InputField name="СверкаОперацийСуммаВозвратаРегистр" id="38">
+							<DataPath>Объект.СверкаОпераций.СуммаВозвратаРегистр</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Возврат (регистр)</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterDataPath>Объект.СверкаОпераций.TotalСуммаВозвратаРегистр</FooterDataPath>
+							<Width>10</Width>
+							<ContextMenu name="СверкаОперацийСуммаВозвратаРегистрКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="СверкаОперацийСуммаВозвратаРегистрРасширеннаяПодсказка" id="40"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="СверкаОперацийИдентификаторОперации" id="41">
+					<DataPath>Объект.СверкаОпераций.ИдентификаторОперации</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СверкаОперацийИдентификаторОперацииКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="СверкаОперацийИдентификаторОперацииРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="СверкаОперацийИдентификаторОперацииОплаты" id="44">
+					<DataPath>Объект.СверкаОпераций.ИдентификаторОперацииОплаты</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СверкаОперацийИдентификаторОперацииОплатыКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="СверкаОперацийИдентификаторОперацииОплатыРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<CheckBoxField name="СверкаОперацийЕстьРасхождения" id="53">
+					<DataPath>Объект.СверкаОпераций.ЕстьРасхождения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СверкаОперацийЕстьРасхожденияКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="СверкаОперацийЕстьРасхожденияРасширеннаяПодсказка" id="55"/>
+				</CheckBoxField>
+				<InputField name="СверкаОперацийСуммаКомиссии" id="62">
+					<DataPath>Объект.СверкаОпераций.СуммаКомиссии</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.СверкаОпераций.TotalСуммаКомиссии</FooterDataPath>
+					<Width>10</Width>
+					<ContextMenu name="СверкаОперацийСуммаКомиссииКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="СверкаОперацийСуммаКомиссииРасширеннаяПодсказка" id="64"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.СверкаВзаиморасчетовПоОнлайнОплатам</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="URLФайла" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>URLФайла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаСтатусаСтрокой" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата статуса строкой</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдОтчета" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ид отчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>36</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПараметрыВзаимодействия" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры взаимодействия</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="Период" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтатусОтчета" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус отчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипОшибки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип ошибки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Интерфейс" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интерфейс</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ИнтерфейсыДляВнешнихСистем</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипИнтерфейса" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип интерфейса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыИнтерфейсовДляВнешнихСистем</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДопустимыеТипыИнтерфейсов" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Допустимые типы интерфейсов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СверкаОпераций</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.СверкаОпераций.ЕстьРасхождения</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFC8C8</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаЗапроситьОтчет" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда запросить отчет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗапроситьОтчет</Action>
+		</Command>
+	</Commands>
+</Form>

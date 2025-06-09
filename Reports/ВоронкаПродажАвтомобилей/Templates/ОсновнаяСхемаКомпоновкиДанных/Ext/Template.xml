@@ -1,0 +1,806 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ТекстЗапроса</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объект</dataPath>
+			<field>Объект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодГод</dataPath>
+			<field>ПериодГод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период год</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='гггг "г."'</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидОбращения</dataPath>
+			<field>ВидОбращения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид обращения</v8:content>
+				</v8:item>
+			</title>
+			<orderExpression>
+				<dcscom:expression>Порядок</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+			</useRestriction>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Порядок</dataPath>
+			<field>Порядок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Порядок</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерКвартала</dataPath>
+			<field>НомерКвартала</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер квартала</v8:content>
+				</v8:item>
+			</title>
+			<orderExpression>
+				<dcscom:expression>НомерКвартала</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<availableValue>
+				<value xsi:type="xs:decimal">1</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1 квартал</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">2</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>2 квартал</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">3</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>3 квартал</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">4</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>4 квартал</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РабочийЛист</dataPath>
+			<field>РабочийЛист</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рабочий лист</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:DocumentRef.РабочийЛист</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодКвартал</dataPath>
+			<field>ПериодКвартал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период квартал</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='к "квартал" гггг "г."'</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодМесяц</dataPath>
+			<field>ПериодМесяц</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период месяц</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='ММММ гггг "г."'</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерМесяца</dataPath>
+			<field>НомерМесяца</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер месяца</v8:content>
+				</v8:item>
+			</title>
+			<orderExpression>
+				<dcscom:expression>НомерМесяца</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<availableValue>
+				<value xsi:type="xs:decimal">1</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Январь</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">2</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Февраль</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">3</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Март</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">4</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Апрель</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">5</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Май</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">6</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Июнь</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">7</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Июль</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">8</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Август</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">9</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сентябрь</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">10</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Октябрь</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">11</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Ноябрь</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">12</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Декабрь</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЖурналСостоянийСрезПоследних.Период КАК ДатаЗавершения,
+	ВЫРАЗИТЬ(ЖурналСостоянийСрезПоследних.Объект КАК Документ.Событие) КАК Событие
+ПОМЕСТИТЬ ЗавершенныеСобытия
+ИЗ
+	РегистрСведений.ЖурналСостояний.СрезПоследних(&amp;КонецПериода, (ВЫРАЗИТЬ(Объект КАК Документ.Событие)) &lt;&gt; ЗНАЧЕНИЕ(Документ.Событие.ПустаяСсылка)) КАК ЖурналСостоянийСрезПоследних
+ГДЕ
+	ЖурналСостоянийСрезПоследних.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ЖурналСостоянийСрезПоследних.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияСобытий.Завершено)
+	И ВЫРАЗИТЬ(ЖурналСостоянийСрезПоследних.Объект КАК Документ.Событие).ПодразделениеКомпании В ИЕРАРХИИ (&amp;ПодразделениеКомпании)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗавершенныеСобытия.ДатаЗавершения КАК ДатаЗавершения,
+	ЗавершенныеСобытия.Событие КАК Событие,
+	РабочийЛист.Ссылка КАК РабочийЛист
+ПОМЕСТИТЬ ПервичныйКонтакт
+ИЗ
+	Документ.РабочийЛист КАК РабочийЛист
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ЗавершенныеСобытия КАК ЗавершенныеСобытия
+		ПО РабочийЛист.ДокументОснование = ЗавершенныеСобытия.Событие
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МИНИМУМ(ЗавершенныеСобытия.ДатаЗавершения) КАК ДатаЗавершения,
+	ВЫРАЗИТЬ(ЗавершенныеСобытия.Событие.ДокументОснование КАК Документ.РабочийЛист) КАК РабочийЛист
+ПОМЕСТИТЬ РабочиеЛистыСобытий
+ИЗ
+	ЗавершенныеСобытия КАК ЗавершенныеСобытия
+ГДЕ
+	(ВЫРАЗИТЬ(ЗавершенныеСобытия.Событие.ДокументОснование КАК Документ.РабочийЛист)) &lt;&gt; ЗНАЧЕНИЕ(Документ.РабочийЛист.ПустаяСсылка)
+	И ЗавершенныеСобытия.Событие.ВидСобытия = ЗНАЧЕНИЕ(Справочник.ВидыСобытий.Встреча)
+
+СГРУППИРОВАТЬ ПО
+	ВЫРАЗИТЬ(ЗавершенныеСобытия.Событие.ДокументОснование КАК Документ.РабочийЛист)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗавершенныеСобытия.ДатаЗавершения КАК ДатаЗавершения,
+	ЗавершенныеСобытия.Событие КАК Событие,
+	РабочиеЛистыСобытий.РабочийЛист КАК РабочийЛист
+ПОМЕСТИТЬ ВстречиРабочихЛистов
+ИЗ
+	ЗавершенныеСобытия КАК ЗавершенныеСобытия
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РабочиеЛистыСобытий КАК РабочиеЛистыСобытий
+		ПО ЗавершенныеСобытия.ДатаЗавершения = РабочиеЛистыСобытий.ДатаЗавершения
+			И ((ВЫРАЗИТЬ(ЗавершенныеСобытия.Событие.ДокументОснование КАК Документ.РабочийЛист)) = РабочиеЛистыСобытий.РабочийЛист)
+ГДЕ
+	(ВЫРАЗИТЬ(ЗавершенныеСобытия.Событие.ДокументОснование КАК Документ.РабочийЛист)) &lt;&gt; ЗНАЧЕНИЕ(Документ.РабочийЛист.ПустаяСсылка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВстречиРабочихЛистов.РабочийЛист КАК РабочийЛист,
+	МИНИМУМ(ВстречиРабочихЛистов.ДатаЗавершения) КАК ДатаЗавершения
+ПОМЕСТИТЬ Визиты
+ИЗ
+	ВстречиРабочихЛистов КАК ВстречиРабочихЛистов
+
+СГРУППИРОВАТЬ ПО
+	ВстречиРабочихЛистов.РабочийЛист
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ЗавершенныеСобытия
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ РабочиеЛистыСобытий
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ВстречиРабочихЛистов
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ТестДрайв.ДатаФактическогоЗавершения КАК ДатаФактическогоЗавершения,
+	ВЫРАЗИТЬ(ТестДрайв.ДокументОснование КАК Документ.РабочийЛист) КАК РабочийЛист
+ПОМЕСТИТЬ ТестДрайвыРабочихЛистов
+ИЗ
+	Документ.ТестДрайв КАК ТестДрайв
+ГДЕ
+	ТестДрайв.ДатаФактическогоЗавершения МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ТестДрайв.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияСобытий.Завершено)
+	И ТестДрайв.ПодразделениеКомпании В ИЕРАРХИИ(&amp;ПодразделениеКомпании)
+	И (ВЫРАЗИТЬ(ТестДрайв.ДокументОснование КАК Документ.РабочийЛист)) &lt;&gt; ЗНАЧЕНИЕ(Документ.РабочийЛист.ПустаяСсылка)
+	И ТестДрайв.Проведен
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТестДрайвыРабочихЛистов.РабочийЛист КАК РабочийЛист,
+	МИНИМУМ(ТестДрайвыРабочихЛистов.ДатаФактическогоЗавершения) КАК ДатаФактическогоЗавершения
+ПОМЕСТИТЬ ТестДрайв
+ИЗ
+	ТестДрайвыРабочихЛистов КАК ТестДрайвыРабочихЛистов
+
+СГРУППИРОВАТЬ ПО
+	ТестДрайвыРабочихЛистов.РабочийЛист
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ТестДрайвыРабочихЛистов
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗаказНаАвтомобиль.Дата КАК Дата,
+	ВЫРАЗИТЬ(ЗаказНаАвтомобиль.ДокументОснование КАК Документ.РабочийЛист) КАК РабочийЛист,
+	ЗаказНаАвтомобиль.Ссылка КАК ЗаказНаАвтомобиль
+ПОМЕСТИТЬ Контракты
+ИЗ
+	Документ.ЗаказНаАвтомобиль КАК ЗаказНаАвтомобиль
+ГДЕ
+	ЗаказНаАвтомобиль.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ЗаказНаАвтомобиль.Проведен
+	И ЗаказНаАвтомобиль.ПодразделениеКомпании В ИЕРАРХИИ(&amp;ПодразделениеКомпании)
+	И (ВЫРАЗИТЬ(ЗаказНаАвтомобиль.ДокументОснование КАК Документ.РабочийЛист)) &lt;&gt; ЗНАЧЕНИЕ(Документ.РабочийЛист.ПустаяСсылка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	РеализацияАвтомобилей.Дата КАК Дата,
+	РеализацияАвтомобилей.Ссылка КАК РеализацияАвтомобилей,
+	Контракты.РабочийЛист КАК РабочийЛист
+ПОМЕСТИТЬ Выписка
+ИЗ
+	Документ.РеализацияАвтомобилей КАК РеализацияАвтомобилей
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Контракты КАК Контракты
+		ПО РеализацияАвтомобилей.ДокументОснование = Контракты.ЗаказНаАвтомобиль
+ГДЕ
+	РеализацияАвтомобилей.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И РеализацияАвтомобилей.ПодразделениеКомпании В ИЕРАРХИИ(&amp;ПодразделениеКомпании)
+	И РеализацияАвтомобилей.Проведен
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Выписка.РабочийЛист КАК РабочийЛист,
+	ВозвратОтПокупателяАвтомобилей.Дата КАК Дата
+ПОМЕСТИТЬ ВозвратАвтомобилей
+ИЗ
+	Выписка КАК Выписка
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ВозвратОтПокупателяАвтомобилей КАК ВозвратОтПокупателяАвтомобилей
+		ПО Выписка.РеализацияАвтомобилей = ВозвратОтПокупателяАвтомобилей.ДокументОснование
+ГДЕ
+	ВозвратОтПокупателяАвтомобилей.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ВозвратОтПокупателяАвтомобилей.Проведен
+	И ВозвратОтПокупателяАвтомобилей.ПодразделениеКомпании В ИЕРАРХИИ(&amp;ПодразделениеКомпании)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	"Первичный контакт" КАК ВидОбращения,
+	1 КАК Количество,
+	1 КАК Порядок,
+	ПервичныйКонтакт.РабочийЛист КАК РабочийЛист,
+	НАЧАЛОПЕРИОДА(ПервичныйКонтакт.ДатаЗавершения, ГОД) КАК ПериодГод,
+	НАЧАЛОПЕРИОДА(ПервичныйКонтакт.ДатаЗавершения, КВАРТАЛ) КАК ПериодКвартал,
+	НАЧАЛОПЕРИОДА(ПервичныйКонтакт.ДатаЗавершения, МЕСЯЦ) КАК ПериодМесяц,
+	КВАРТАЛ(ПервичныйКонтакт.ДатаЗавершения) КАК НомерКвартала,
+	МЕСЯЦ(ПервичныйКонтакт.ДатаЗавершения) КАК НомерМесяца
+{ВЫБРАТЬ
+	ПериодГод,
+	ПериодКвартал,
+	ПериодМесяц,
+	НомерКвартала,
+	НомерМесяца,
+	РабочийЛист.*}
+ИЗ
+	ПервичныйКонтакт КАК ПервичныйКонтакт
+{ГДЕ
+	ПервичныйКонтакт.РабочийЛист.*}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Встреча",
+	1,
+	2,
+	Визиты.РабочийЛист,
+	НАЧАЛОПЕРИОДА(Визиты.ДатаЗавершения, ГОД),
+	НАЧАЛОПЕРИОДА(Визиты.ДатаЗавершения, КВАРТАЛ),
+	НАЧАЛОПЕРИОДА(Визиты.ДатаЗавершения, МЕСЯЦ),
+	КВАРТАЛ(Визиты.ДатаЗавершения),
+	МЕСЯЦ(Визиты.ДатаЗавершения)
+ИЗ
+	Визиты КАК Визиты
+{ГДЕ
+	Визиты.РабочийЛист.*}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Тест-драйв",
+	1,
+	3,
+	ТестДрайв.РабочийЛист,
+	НАЧАЛОПЕРИОДА(ТестДрайв.ДатаФактическогоЗавершения, ГОД),
+	НАЧАЛОПЕРИОДА(ТестДрайв.ДатаФактическогоЗавершения, КВАРТАЛ),
+	НАЧАЛОПЕРИОДА(ТестДрайв.ДатаФактическогоЗавершения, МЕСЯЦ),
+	КВАРТАЛ(ТестДрайв.ДатаФактическогоЗавершения),
+	МЕСЯЦ(ТестДрайв.ДатаФактическогоЗавершения)
+ИЗ
+	ТестДрайв КАК ТестДрайв
+{ГДЕ
+	ТестДрайв.РабочийЛист.*}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Контракт",
+	1,
+	4,
+	Контракты.РабочийЛист,
+	НАЧАЛОПЕРИОДА(Контракты.Дата, ГОД),
+	НАЧАЛОПЕРИОДА(Контракты.Дата, КВАРТАЛ),
+	НАЧАЛОПЕРИОДА(Контракты.Дата, МЕСЯЦ),
+	КВАРТАЛ(Контракты.Дата),
+	МЕСЯЦ(Контракты.Дата)
+ИЗ
+	Контракты КАК Контракты
+{ГДЕ
+	Контракты.РабочийЛист.*}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Выписка",
+	1,
+	5,
+	Выписка.РабочийЛист,
+	НАЧАЛОПЕРИОДА(Выписка.Дата, ГОД),
+	НАЧАЛОПЕРИОДА(Выписка.Дата, КВАРТАЛ),
+	НАЧАЛОПЕРИОДА(Выписка.Дата, МЕСЯЦ),
+	КВАРТАЛ(Выписка.Дата),
+	МЕСЯЦ(Выписка.Дата)
+ИЗ
+	Выписка КАК Выписка
+{ГДЕ
+	Выписка.РабочийЛист.*}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	"Возврат автомобиля",
+	1,
+	6,
+	ВозвратАвтомобилей.РабочийЛист,
+	НАЧАЛОПЕРИОДА(ВозвратАвтомобилей.Дата, ГОД),
+	НАЧАЛОПЕРИОДА(ВозвратАвтомобилей.Дата, КВАРТАЛ),
+	НАЧАЛОПЕРИОДА(ВозвратАвтомобилей.Дата, МЕСЯЦ),
+	КВАРТАЛ(ВозвратАвтомобилей.Дата),
+	МЕСЯЦ(ВозвратАвтомобилей.Дата)
+ИЗ
+	ВозвратАвтомобилей КАК ВозвратАвтомобилей
+{ГДЕ
+	ВозвратАвтомобилей.РабочийЛист.*}</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(ВЫБОР КОГДА Количество ЕСТЬ NULL ТОГДА 0 ИНАЧЕ Количество КОНЕЦ)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ПодразделениеКомпании</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Подразделение компании</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПодразделенияКомпании</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Воронка продаж автомобилей</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПодразделениеКомпании</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:ChartType">Funnel3D</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ВидОбращения</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemChart">
+				<dcsset:series>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ВидОбращения</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:series>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:ChartType">Funnel3D</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

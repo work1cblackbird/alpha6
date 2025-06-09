@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Генерация штрихкодов номенклатуры</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="Подбор" id="202">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подбор</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подбор</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ПодборРасширеннаяПодсказка" id="203"/>
+				<ChildItems>
+					<Button name="ЗаполнитьПоОтбору" id="131">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьПоОтбору</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>По отбору</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ЗаполнитьПоОтборуРасширеннаяПодсказка" id="132"/>
+					</Button>
+					<Popup name="ИзДокументов" id="204">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Из документов</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Из документов</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="ИзДокументовРасширеннаяПодсказка" id="205"/>
+					</Popup>
+				</ChildItems>
+			</Popup>
+			<Button name="СформироватьШтрихкоды" id="117">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СформироватьШтрихкоды</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сформировать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="СформироватьШтрихкодыРасширеннаяПодсказка" id="118"/>
+			</Button>
+			<Button name="ЗаписатьШтрихкоды" id="133">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗаписатьШтрихкоды</CommandName>
+				<ExtendedTooltip name="ЗаписатьШтрихкодыРасширеннаяПодсказка" id="134"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаТовары" id="90">
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа товары</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаТоварыРасширеннаяПодсказка" id="91"/>
+			<ChildItems>
+				<Table name="Товары" id="92">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Товары</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ТоварыКонтекстноеМеню" id="93"/>
+					<AutoCommandBar name="ТоварыКоманднаяПанель" id="94">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="ТоварыПереместитьВверх" id="121">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Товары.StandardCommand.MoveUp</CommandName>
+								<ExtendedTooltip name="ТоварыПереместитьВверхРасширеннаяПодсказка" id="122"/>
+							</Button>
+							<Button name="ТоварыПереместитьВниз" id="123">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Товары.StandardCommand.MoveDown</CommandName>
+								<ExtendedTooltip name="ТоварыПереместитьВнизРасширеннаяПодсказка" id="124"/>
+							</Button>
+							<Button name="ТоварыНайти" id="125">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<CommandName>Form.Item.Товары.StandardCommand.Find</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ТоварыНайтиРасширеннаяПодсказка" id="126"/>
+							</Button>
+							<Button name="ТоварыОтменитьПоиск" id="127">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<CommandName>Form.Item.Товары.StandardCommand.CancelSearch</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ТоварыОтменитьПоискРасширеннаяПодсказка" id="128"/>
+							</Button>
+							<Popup name="ГруппаОчистить" id="206">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Удалить</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ГруппаОчиститьРасширеннаяПодсказка" id="207"/>
+								<ChildItems>
+									<Button name="ТоварыОчиститьТовары" id="208">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОчиститьТовары</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Все строки</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ТоварыОчиститьТоварыРасширеннаяПодсказка" id="209"/>
+									</Button>
+									<Button name="ТоварыОчиститьНезаполненныеСтроки" id="210">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОчиститьНезаполненныеСтроки</CommandName>
+										<ExtendedTooltip name="ТоварыОчиститьНезаполненныеСтрокиРасширеннаяПодсказка" id="211"/>
+									</Button>
+								</ChildItems>
+							</Popup>
+							<Button name="ТоварыПодсветка" id="212">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ТоварыПодсветка</CommandName>
+								<Picture>
+									<xr:Ref>CommonPicture.СписокЭлементов</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<ExtendedTooltip name="ТоварыПодсветкаРасширеннаяПодсказка" id="213"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ТоварыРасширеннаяПодсказка" id="95"/>
+					<SearchStringAddition name="ТоварыСтрокаПоиска" id="96">
+						<AdditionSource>
+							<Item>Товары</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТоварыСтрокаПоискаКонтекстноеМеню" id="97"/>
+						<ExtendedTooltip name="ТоварыСтрокаПоискаРасширеннаяПодсказка" id="98"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ТоварыСостояниеПросмотра" id="99">
+						<AdditionSource>
+							<Item>Товары</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ТоварыСостояниеПросмотраКонтекстноеМеню" id="100"/>
+						<ExtendedTooltip name="ТоварыСостояниеПросмотраРасширеннаяПодсказка" id="101"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ТоварыУправлениеПоиском" id="102">
+						<AdditionSource>
+							<Item>Товары</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ТоварыУправлениеПоискомКонтекстноеМеню" id="103"/>
+						<ExtendedTooltip name="ТоварыУправлениеПоискомРасширеннаяПодсказка" id="104"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">ТоварыВыбор</Event>
+						<Event name="BeforeAddRow">ТоварыПередНачаломДобавления</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="ТоварыНоменклатура" id="105">
+							<DataPath>Товары.Номенклатура</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ТоварыНоменклатураКонтекстноеМеню" id="106"/>
+							<ExtendedTooltip name="ТоварыНоменклатураРасширеннаяПодсказка" id="107"/>
+						</InputField>
+						<InputField name="ТоварыХарактеристикаНоменклатуры" id="111">
+							<DataPath>Товары.ХарактеристикаНоменклатуры</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Отбор.Владелец</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Items.Товары.CurrentData.ВладелецХарактеристики</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="ТоварыХарактеристикаНоменклатурыКонтекстноеМеню" id="112"/>
+							<ExtendedTooltip name="ТоварыХарактеристикаНоменклатурыРасширеннаяПодсказка" id="113"/>
+						</InputField>
+						<InputField name="ТоварыЕдиницаИзмерения" id="114">
+							<DataPath>Товары.ЕдиницаИзмерения</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Отбор.Владелец</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Items.Товары.CurrentData.ВладелецЕдиницыИзмерения</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="ТоварыЕдиницаИзмеренияКонтекстноеМеню" id="115"/>
+							<ExtendedTooltip name="ТоварыЕдиницаИзмеренияРасширеннаяПодсказка" id="116"/>
+						</InputField>
+						<InputField name="ТоварыШтрихкод" id="108">
+							<DataPath>Товары.Штрихкод</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ChoiceButton>true</ChoiceButton>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ТоварыШтрихкодКонтекстноеМеню" id="109"/>
+							<ExtendedTooltip name="ТоварыШтрихкодРасширеннаяПодсказка" id="110"/>
+							<Events>
+								<Event name="StartChoice">ТоварыШтрихкодНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ГенерацияШтрихкодовНоменклатуры</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Товары" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Товары</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Номенклатура" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Штрихкод" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Штрихкод</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВладелецХарактеристики" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец характеристики</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+						<v8:Type>cfg:CatalogRef.ТипыНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВладелецЕдиницыИзмерения" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец единицы измерения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+						<v8:Type>cfg:CatalogRef.ТипыНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ХарактеристикаНоменклатуры" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика номенклатуры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЕдиницаИзмерения" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Единица измерения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ЕдиницыИзмерения</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИспользованиеШтрихКодов" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использование штрихкодов</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ИспользуютсяЕдиницыИзмерения" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используются единицы измерения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользуютсяХарактеристики" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используются характеристики</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СформироватьШтрихкоды" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать штрихкоды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать штрихкоды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьШтрихкоды</Action>
+		</Command>
+		<Command name="ЗаписатьШтрихкоды" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать штрихкоды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать штрихкоды</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьШтрихкоды</Action>
+		</Command>
+		<Command name="ЗаполнитьПоДокументу" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по документу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по документу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоДокументу</Action>
+		</Command>
+		<Command name="ЗаполнитьПоОтбору" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по настройкам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по отбору</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоОтбору</Action>
+		</Command>
+		<Command name="ОчиститьТовары" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить товары</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить товары</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОчиститьТовары</Action>
+		</Command>
+		<Command name="ОчиститьНезаполненныеСтроки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строки без штрихкодов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить незаполненные строки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОчиститьНезаполненныеСтроки</Action>
+		</Command>
+		<Command name="ТоварыПодсветка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Товары подсветка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Товары подсветка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ТоварыПодсветка</Action>
+		</Command>
+	</Commands>
+</Form>

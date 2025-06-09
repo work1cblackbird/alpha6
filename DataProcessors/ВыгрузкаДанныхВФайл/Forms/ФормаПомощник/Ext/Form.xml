@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Выгрузка данных в файл</v8:content>
+		</v8:item>
+	</Title>
+	<Width>89</Width>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<Customizable>false</Customizable>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnSaveDataInSettingsAtServer">ПриСохраненииДанныхВНастройкахНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Страницы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыExtendedTooltip" id="65"/>
+			<ChildItems>
+				<Page name="СтраницаНачало" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница начало</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаНачалоExtendedTooltip" id="66"/>
+					<ChildItems>
+						<LabelDecoration name="НадписьПриветствие" id="12">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Font ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Помощник выгрузки данных во внешний файл!</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalAlign>Top</VerticalAlign>
+							<ContextMenu name="НадписьПриветствиеКонтекстноеМеню" id="13"/>
+							<ExtendedTooltip name="НадписьПриветствиеExtendedTooltip" id="67"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаОтступНачало" id="14">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отступ начало</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтступНачалоExtendedTooltip" id="68"/>
+							<ChildItems>
+								<LabelDecoration name="ОтступНачало" id="15">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ContextMenu name="ОтступНачалоКонтекстноеМеню" id="16"/>
+									<ExtendedTooltip name="ОтступНачалоExtendedTooltip" id="69"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОбъекта" id="21">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Объекта</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОбъектаExtendedTooltip" id="70"/>
+							<ChildItems>
+								<InputField name="ТипПрикладногоОбъекта" id="17">
+									<DataPath>Объект.ТипПрикладногоОбъекта</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>34</MaxWidth>
+									<ListChoiceMode>true</ListChoiceMode>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ChooseType>false</ChooseType>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ТипПрикладногоОбъектаКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="ТипПрикладногоОбъектаExtendedTooltip" id="71"/>
+									<Events>
+										<Event name="OnChange">ТипПрикладногоОбъектаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ИмяПрикладногоОбъекта" id="19">
+									<DataPath>ИмяПрикладногоОбъекта</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>34</MaxWidth>
+									<ListChoiceMode>true</ListChoiceMode>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ChooseType>false</ChooseType>
+									<ContextMenu name="ИмяПрикладногоОбъектаКонтекстноеМеню" id="20"/>
+									<ExtendedTooltip name="ИмяПрикладногоОбъектаExtendedTooltip" id="72"/>
+									<Events>
+										<Event name="OnChange">ИмяПрикладногоОбъектаПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="НадписьПоясненияОбъекта" id="22">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>88</MaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>При помощи полей "Тип объекта" и "Объект" необходимо указать выгружаемый объект информационной базы. В качестве объекта может выступать справочник целиком, либо табличная часть конкретного документа.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьПоясненияОбъектаКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="НадписьПоясненияОбъектаExtendedTooltip" id="73"/>
+						</LabelDecoration>
+						<InputField name="СсылкаИсточника" id="24">
+							<DataPath>Объект.СсылкаИсточника</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>34</MaxWidth>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ClearButton>true</ClearButton>
+							<SpinButton>false</SpinButton>
+							<OpenButton>false</OpenButton>
+							<QuickChoice>false</QuickChoice>
+							<ChooseType>false</ChooseType>
+							<TextEdit>false</TextEdit>
+							<ChoiceListButton>false</ChoiceListButton>
+							<ContextMenu name="СсылкаИсточникаКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="СсылкаИсточникаExtendedTooltip" id="74"/>
+							<Events>
+								<Event name="OnChange">СсылкаИсточникаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="НадписьПоясненияСсылки" id="26">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ссылка на документ. Указывается только при выгрузке табличной части документа.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьПоясненияСсылкиКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="НадписьПоясненияСсылкиExtendedTooltip" id="75"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНастройки" id="28">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница настройки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница начало</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаНастройкиExtendedTooltip" id="76"/>
+					<ChildItems>
+						<LabelDecoration name="НадписьЗаголовокНастройки" id="29">
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Font ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Укажите параметры выгрузки</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalAlign>Top</VerticalAlign>
+							<ContextMenu name="НадписьЗаголовокНастройкиКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="НадписьЗаголовокНастройкиExtendedTooltip" id="77"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаОтступНастройки" id="31">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отступ настройки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отступ начало</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтступНастройкиExtendedTooltip" id="78"/>
+							<ChildItems>
+								<LabelDecoration name="ОтступНастройки" id="32">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ContextMenu name="ОтступНастройкиКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="ОтступНастройкиExtendedTooltip" id="79"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="НастройкаВыгрузки" id="34">
+							<DataPath>НастройкаВыгрузки</DataPath>
+							<QuickChoice>false</QuickChoice>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<TextEdit>false</TextEdit>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Отбор.ИмяПрикладногоОбъекта</xr:Name>
+									<xr:DataPath xsi:type="xs:string">ИмяПрикладногоОбъекта</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+								<xr:Link>
+									<xr:Name>Отбор.ТипПрикладногоОбъекта</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Объект.ТипПрикладногоОбъекта</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ChoiceParameters>
+								<app:item name="Отбор.ВариантИспользованияНастройки">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ВариантыИспользованияНастройки.EnumValue.ВыгрузкаДанных</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="НастройкаВыгрузкиКонтекстноеМеню" id="35"/>
+							<ExtendedTooltip name="НастройкаВыгрузкиExtendedTooltip" id="80"/>
+							<Events>
+								<Event name="StartChoice">НастройкаВыгрузкиНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="НадписьПоясненияНастройки" id="36">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>54</MaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>В поле следует указать настройку выгрузки данных. Настройка необходима для получения правил преобразования данных информационной базы в данные поддерживаемые соответствующим форматом файла.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьПоясненияНастройкиКонтекстноеМеню" id="37"/>
+							<ExtendedTooltip name="НадписьПоясненияНастройкиExtendedTooltip" id="81"/>
+						</LabelDecoration>
+						<InputField name="ФайлДанных" id="38">
+							<DataPath>ФайлДанных</DataPath>
+							<ChoiceButton>true</ChoiceButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ФайлДанныхКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="ФайлДанныхExtendedTooltip" id="82"/>
+							<Events>
+								<Event name="StartChoice">ФайлДанныхНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="НадписьПоясненияФайлаДанных" id="40">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>54</MaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>В поле следует указать правильное имя файла данных. При нажатии на кнопку "Далее " данные будут отображены в окне предварительного просмотра. Если файл с таким именем уже существует он будет замещен.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьПоясненияФайлаДанныхКонтекстноеМеню" id="41"/>
+							<ExtendedTooltip name="НадписьПоясненияФайлаДанныхExtendedTooltip" id="83"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПросмотр" id="42">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница просмотр</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница начало</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПросмотрExtendedTooltip" id="84"/>
+					<ChildItems>
+						<LabelDecoration name="НадписьЗаголовокПросмотр" id="43">
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Font ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Предварительный просмотр данных</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalAlign>Top</VerticalAlign>
+							<ContextMenu name="НадписьЗаголовокПросмотрКонтекстноеМеню" id="44"/>
+							<ExtendedTooltip name="НадписьЗаголовокПросмотрExtendedTooltip" id="85"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаОтступПросмотр" id="45">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отступ просмотр</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отступ начало</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтступПросмотрExtendedTooltip" id="86"/>
+							<ChildItems>
+								<LabelDecoration name="ОтступПросмотр" id="46">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ContextMenu name="ОтступПросмотрКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="ОтступПросмотрExtendedTooltip" id="87"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ПредварительныйПросмотр" id="48">
+							<Representation>List</Representation>
+							<CommandBarLocation>Top</CommandBarLocation>
+							<AutoAddIncomplete>false</AutoAddIncomplete>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ПредварительныйПросмотр</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Предварительный просмотр</v8:content>
+								</v8:item>
+							</Title>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПредварительныйПросмотрКонтекстноеМеню" id="49"/>
+							<AutoCommandBar name="ПредварительныйПросмотрКоманднаяПанель" id="50">
+								<ChildItems>
+									<Button name="ПредварительныйПросмотрРазрешитьРедактирование" id="62">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.РазрешитьРедактирование</CommandName>
+										<ExtendedTooltip name="ПредварительныйПросмотрРазрешитьРедактированиеExtendedTooltip" id="88"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПредварительныйПросмотрExtendedTooltip" id="89"/>
+							<SearchStringAddition name="ПредварительныйПросмотрСтрокаПоиска" id="97">
+								<AdditionSource>
+									<Item>ПредварительныйПросмотр</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПредварительныйПросмотрСтрокаПоискаКонтекстноеМеню" id="98"/>
+								<ExtendedTooltip name="ПредварительныйПросмотрСтрокаПоискаРасширеннаяПодсказка" id="99"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПредварительныйПросмотрСостояниеПросмотра" id="100">
+								<AdditionSource>
+									<Item>ПредварительныйПросмотр</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПредварительныйПросмотрСостояниеПросмотраКонтекстноеМеню" id="101"/>
+								<ExtendedTooltip name="ПредварительныйПросмотрСостояниеПросмотраРасширеннаяПодсказка" id="102"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПредварительныйПросмотрУправлениеПоиском" id="103">
+								<AdditionSource>
+									<Item>ПредварительныйПросмотр</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПредварительныйПросмотрУправлениеПоискомКонтекстноеМеню" id="104"/>
+								<ExtendedTooltip name="ПредварительныйПросмотрУправлениеПоискомРасширеннаяПодсказка" id="105"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnChange">ПредварительныйПросмотрПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ПредварительныйПросмотрНомерСтроки" id="63">
+									<DataPath>ПредварительныйПросмотр.НомерСтроки</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<SkipOnInput>true</SkipOnInput>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>№</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Left</HorizontalAlign>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>2</Width>
+									<ContextMenu name="ПредварительныйПросмотрНомерСтрокиКонтекстноеМеню" id="64"/>
+									<ExtendedTooltip name="ПредварительныйПросмотрНомерСтрокиExtendedTooltip" id="90"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ГруппаКнопок" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопок</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКнопокExtendedTooltip" id="91"/>
+			<ChildItems>
+				<Button name="Справка" id="6">
+					<Type>UsualButton</Type>
+					<Representation>PictureAndText</Representation>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<ExtendedTooltip name="СправкаExtendedTooltip" id="92"/>
+				</Button>
+				<UsualGroup name="ГруппаКнопокПраво" id="106">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа кнопок право</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа кнопок право</v8:content>
+						</v8:item>
+					</ToolTip>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКнопокПравоРасширеннаяПодсказка" id="107"/>
+					<ChildItems>
+						<Button name="Назад" id="9">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.Назад</CommandName>
+							<ExtendedTooltip name="НазадExtendedTooltip" id="94"/>
+						</Button>
+						<Button name="Далее" id="10">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.Далее</CommandName>
+							<ExtendedTooltip name="ДалееExtendedTooltip" id="95"/>
+						</Button>
+						<Button name="Отмена" id="11">
+							<Type>UsualButton</Type>
+							<CommandName>Form.StandardCommand.Close</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отмена</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ОтменаExtendedTooltip" id="96"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ВыгрузкаДанныхВФайл</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.ИмяТабличнойЧасти</Field>
+				<Field>Объект.СсылкаИсточника</Field>
+				<Field>Объект.ТипПрикладногоОбъекта</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИмяПрикладногоОбъекта" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>255</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ИмяПрикладногоОбъекта</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НастройкаВыгрузки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка выгрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.НастройкиЗагрузкиДанныхИзТабличногоДокумента</v8:Type>
+			</Type>
+			<Save>
+				<Field>НастройкаВыгрузки</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ФайлДанных" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ФайлДанных</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ПредварительныйПросмотр" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предварительный просмотр</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="НомерСтроки" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер строки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>6</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СписокВыбораСправочников" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список выбора справочников</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="СписокВыбораДокументов" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список выбора документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="Поставщик" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поставщик</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьВладелец" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть владелец</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РазрешитьРедактирование" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разрешить редактирование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресХранилищаВыгружаемыхКолонок" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес хранилища выгружаемых колонок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресХранилищаПараметровМодуляОбъектов" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес хранилища параметров модуля объектов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Далее" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Далее</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Назад" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Назад</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="РазрешитьРедактирование" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разрешить редактирование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разрешить редактирование таблицы предварительного просмотра</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РазрешитьРедактирование</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ЕстьВладелец">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

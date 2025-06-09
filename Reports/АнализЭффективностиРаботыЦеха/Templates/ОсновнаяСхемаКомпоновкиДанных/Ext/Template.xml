@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Цеха</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Эффективность</dataPath>
+			<field>Эффективность</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эффективность</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=10; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>План</dataPath>
+			<field>План</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>План</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=10; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Табель</dataPath>
+			<field>Табель</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Табель</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=10; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цех</dataPath>
+			<field>Цех</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Цеха</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоэффициентИспользования</dataPath>
+			<field>КоэффициентИспользования</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коэффициент использования</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=10; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Продуктивность</dataPath>
+			<field>Продуктивность</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продуктивность</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=10; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Факт</dataPath>
+			<field>Факт</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Факт</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧЦ=10; ЧДЦ=2</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+    ВЫБОР
+        КОГДА ВыработкаСотрудниковОбороты.Цех.ЦехДляАнализаЭффективности &lt;&gt; ЗНАЧЕНИЕ(Справочник.Цеха.ПустаяСсылка)
+        ТОГДА ВыработкаСотрудниковОбороты.Цех.ЦехДляАнализаЭффективности
+        ИНАЧЕ ВыработкаСотрудниковОбороты.Цех
+    КОНЕЦ КАК Цех,
+    ВыработкаСотрудниковОбороты.КоличествоНормочасовОборот КАК План,
+    0 КАК Табель,
+    0 КАК Факт
+ПОМЕСТИТЬ Цеха
+ИЗ
+    РегистрНакопления.ВыработкаСотрудников.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Авто, {(ВЫБОР
+        КОГДА Цех.ЦехДляАнализаЭффективности &lt;&gt; ЗНАЧЕНИЕ(Справочник.Цеха.ПустаяСсылка)
+        ТОГДА Цех.ЦехДляАнализаЭффективности
+        ИНАЧЕ Цех
+    КОНЕЦ).* КАК Цех}) КАК ВыработкаСотрудниковОбороты
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+    ВЫБОР
+        КОГДА УРВ_ТабельноеВремя.Ресурс.ЦехДляАнализаЭффективности &lt;&gt; ЗНАЧЕНИЕ(Справочник.Цеха.ПустаяСсылка)
+        ТОГДА УРВ_ТабельноеВремя.Ресурс.ЦехДляАнализаЭффективности
+        ИНАЧЕ УРВ_ТабельноеВремя.Ресурс
+    КОНЕЦ,
+    0,
+    УРВ_ТабельноеВремя.Значение,
+    0
+ИЗ
+    РегистрСведений.УРВ_ТабельноеВремя КАК УРВ_ТабельноеВремя
+ГДЕ
+    УРВ_ТабельноеВремя.ВидИнтервала.РабочийИнтервал = ИСТИНА
+    И УРВ_ТабельноеВремя.Ресурс ССЫЛКА Справочник.Цеха
+    И УРВ_ТабельноеВремя.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+{ГДЕ
+    (ВЫБОР
+        КОГДА УРВ_ТабельноеВремя.Ресурс.ЦехДляАнализаЭффективности &lt;&gt; ЗНАЧЕНИЕ(Справочник.Цеха.ПустаяСсылка)
+        ТОГДА УРВ_ТабельноеВремя.Ресурс.ЦехДляАнализаЭффективности
+        ИНАЧЕ УРВ_ТабельноеВремя.Ресурс
+    КОНЕЦ).* КАК Цех}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+    ВЫБОР
+        КОГДА ФактическоеВремя.Цех.ЦехДляАнализаЭффективности &lt;&gt; ЗНАЧЕНИЕ(Справочник.Цеха.ПустаяСсылка)
+        ТОГДА ФактическоеВремя.Цех.ЦехДляАнализаЭффективности
+        ИНАЧЕ ФактическоеВремя.Цех
+    КОНЕЦ,
+    0,
+    0,
+    ВЫРАЗИТЬ(ФактическоеВремя.Продолжительность/(60*60)  КАК Число(10 , 2))
+ИЗ
+    РегистрСведений.ФактическоеВремя КАК ФактическоеВремя
+ГДЕ
+    ФактическоеВремя.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+    И ФактическоеВремя.Состояние = ЗНАЧЕНИЕ(Справочник.ВидыотметокВремени.Работа)
+{ГДЕ
+   (ВЫБОР
+        КОГДА ФактическоеВремя.Цех.ЦехДляАнализаЭффективности &lt;&gt; ЗНАЧЕНИЕ(Справочник.Цеха.ПустаяСсылка)
+        ТОГДА ФактическоеВремя.Цех.ЦехДляАнализаЭффективности
+        ИНАЧЕ ФактическоеВремя.Цех
+    КОНЕЦ).* КАК Цех}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+    Цеха.Цех,
+    СУММА(Цеха.План) КАК План,
+    СУММА(Цеха.Табель) КАК Табель,
+    СУММА(Цеха.Факт) КАК Факт,
+    ВЫБОР
+        КОГДА СУММА(Цеха.Табель) &lt;&gt; 0
+        ТОГДА СУММА(Цеха.План)/СУММА(Цеха.Табель)
+        ИНАЧЕ 0
+    КОНЕЦ КАК Продуктивность,
+    ВЫБОР
+        КОГДА СУММА(Цеха.Факт) &lt;&gt; 0
+        ТОГДА СУММА(Цеха.План)/СУММА(Цеха.Факт)
+        ИНАЧЕ 0
+    КОНЕЦ КАК Эффективность,
+    ВЫБОР
+        КОГДА СУММА(Цеха.Табель) &lt;&gt; 0
+        ТОГДА СУММА(Цеха.Факт)/СУММА(Цеха.Табель)
+        ИНАЧЕ 0
+    КОНЕЦ КАК КоэффициентИспользования
+{
+ВЫБРАТЬ
+    Цех.* КАК Цех,
+    План КАК План,
+    Табель КАК Табель,
+    Факт КАК Факт,
+    Продуктивность КАК Продуктивность,
+    Эффективность КАК Эффективность,
+    КоэффициентИспользования КАК КоэффициентИспользования
+}
+ИЗ
+    Цеха КАК Цеха
+
+СГРУППИРОВАТЬ ПО
+    Цеха.Цех</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>КоэффициентИспользования</dataPath>
+		<expression>Выбор Когда Сумма(Табель) = 0 Тогда 0 Иначе Сумма(Факт)/Сумма(Табель) Конец</expression>
+	</totalField>
+	<totalField>
+		<dataPath>План</dataPath>
+		<expression>Сумма(План)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Продуктивность</dataPath>
+		<expression>Выбор Когда Сумма(Табель) = 0 Тогда 0 Иначе Сумма(План)/Сумма(Табель) Конец</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Табель</dataPath>
+		<expression>Сумма(Табель)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Факт</dataPath>
+		<expression>Сумма(Факт)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Эффективность</dataPath>
+		<expression>Выбор Когда Сумма(Факт) = 0 Тогда 0 Иначе Сумма(План)/Сумма(Факт) Конец</expression>
+	</totalField>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Анализ эффективности работы цеха</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Базовые показатели</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>План</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Факт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Табель</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Коэффициенты</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Эффективность</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Продуктивность</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоэффициентИспользования</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Цех</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

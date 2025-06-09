@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ЗаписатьИЗакрыть" id="234">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="235"/>
+			</Button>
+			<Button name="Записать" id="236">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаписатьАльфаАвто</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ЗаписатьРасширеннаяПодсказка" id="237"/>
+			</Button>
+			<Button name="ФормаСкопировать" id="246">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Copy</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.СоздатьКопированиемТекущегоАльфаАвто</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаСкопироватьРасширеннаяПодсказка" id="247"/>
+			</Button>
+			<ButtonGroup name="ОсновныеДействия" id="102">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основные действия</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основные действия</v8:content>
+					</v8:item>
+				</ToolTip>
+				<CommandSource>Form</CommandSource>
+				<ExtendedTooltip name="ОсновныеДействияРасширеннаяПодсказка" id="103"/>
+			</ButtonGroup>
+			<ButtonGroup name="ГлобальныеКоманды" id="104">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Глобальные команды</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Глобальные команды</v8:content>
+					</v8:item>
+				</ToolTip>
+				<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
+				<ExtendedTooltip name="ГлобальныеКомандыРасширеннаяПодсказка" id="105"/>
+			</ButtonGroup>
+			<Button name="ФормаИзменитьФорму" id="242">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="243"/>
+			</Button>
+			<Button name="ФормаСправка" id="244">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="245"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="Ссылка" id="231">
+			<DataPath>Объект.Ref</DataPath>
+			<UserVisible>
+				<xr:Common>false</xr:Common>
+			</UserVisible>
+			<ContextMenu name="СсылкаКонтекстноеМеню" id="232"/>
+			<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="233"/>
+		</LabelField>
+		<UsualGroup name="НаименованиеКод" id="79">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование и код</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование и код</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="НаименованиеКодРасширеннаяПодсказка" id="80"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>28</Width>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">НаименованиеПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Артикул" id="96">
+			<DataPath>Объект.Артикул</DataPath>
+			<Width>44</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>55</MaxWidth>
+			<ContextMenu name="АртикулКонтекстноеМеню" id="97"/>
+			<ExtendedTooltip name="АртикулРасширеннаяПодсказка" id="98"/>
+		</InputField>
+		<Pages name="Страницы" id="109">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="110"/>
+			<ChildItems>
+				<Page name="СтраницаОсновные" id="111">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основные</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница основные</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаОсновныеРасширеннаяПодсказка" id="112"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОсновныхРеквизитов" id="201">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Основные реквизиты</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа основных реквизитов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаОсновныхРеквизитовРасширеннаяПодсказка" id="202"/>
+							<ChildItems>
+								<InputField name="Родитель" id="93">
+									<DataPath>Объект.Parent</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<ContextMenu name="РодительКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="95"/>
+								</InputField>
+								<InputField name="ТипПричиныОбращения" id="106">
+									<DataPath>Объект.ТипПричиныОбращения</DataPath>
+									<ContextMenu name="ТипПричиныОбращенияКонтекстноеМеню" id="107"/>
+									<ExtendedTooltip name="ТипПричиныОбращенияРасширеннаяПодсказка" id="108"/>
+								</InputField>
+								<InputField name="ВидРемонта" id="143">
+									<DataPath>Объект.ВидРемонта</DataPath>
+									<ContextMenu name="ВидРемонтаКонтекстноеМеню" id="144"/>
+									<ExtendedTooltip name="ВидРемонтаРасширеннаяПодсказка" id="145"/>
+								</InputField>
+								<InputField name="ВремяВыполнения" id="198">
+									<DataPath>Объект.ВремяВыполнения</DataPath>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ВремяВыполненияКонтекстноеМеню" id="199"/>
+									<ExtendedTooltip name="ВремяВыполненияРасширеннаяПодсказка" id="200"/>
+								</InputField>
+								<InputField name="ТипАвторабот" id="228">
+									<DataPath>Объект.ТипАвторабот</DataPath>
+									<ContextMenu name="ТипАвтоработКонтекстноеМеню" id="229"/>
+									<ExtendedTooltip name="ТипАвтоработРасширеннаяПодсказка" id="230"/>
+								</InputField>
+								<InputField name="ПричинаОбращения" id="99">
+									<DataPath>Объект.ПричинаОбращения</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>52</MaxWidth>
+									<MultiLine>true</MultiLine>
+									<ContextMenu name="ПричинаОбращенияКонтекстноеМеню" id="100"/>
+									<ExtendedTooltip name="ПричинаОбращенияРасширеннаяПодсказка" id="101"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНормыВремени" id="171">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нормы времени</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница нормы времени</v8:content>
+						</v8:item>
+					</ToolTip>
+					<BackColor>style:ЦветОсновнойПанелиФормы</BackColor>
+					<ExtendedTooltip name="СтраницаНормыВремениРасширеннаяПодсказка" id="172"/>
+					<ChildItems>
+						<Table name="НормыВремени" id="203">
+							<Representation>List</Representation>
+							<Height>1</Height>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.НормыВремени</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Цены выполнения автоработы</v8:content>
+								</v8:item>
+							</ToolTip>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="НормыВремениКонтекстноеМеню" id="204"/>
+							<AutoCommandBar name="НормыВремениКоманднаяПанель" id="205"/>
+							<ExtendedTooltip name="НормыВремениРасширеннаяПодсказка" id="206"/>
+							<SearchStringAddition name="НормыВремениСтрокаПоиска" id="207">
+								<AdditionSource>
+									<Item>НормыВремени</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НормыВремениСтрокаПоискаКонтекстноеМеню" id="208"/>
+								<ExtendedTooltip name="НормыВремениСтрокаПоискаРасширеннаяПодсказка" id="209"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="НормыВремениСостояниеПросмотра" id="210">
+								<AdditionSource>
+									<Item>НормыВремени</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НормыВремениСостояниеПросмотраКонтекстноеМеню" id="211"/>
+								<ExtendedTooltip name="НормыВремениСостояниеПросмотраРасширеннаяПодсказка" id="212"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="НормыВремениУправлениеПоиском" id="213">
+								<AdditionSource>
+									<Item>НормыВремени</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="НормыВремениУправлениеПоискомКонтекстноеМеню" id="214"/>
+								<ExtendedTooltip name="НормыВремениУправлениеПоискомРасширеннаяПодсказка" id="215"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="НормыВремениНомерСтроки" id="216">
+									<DataPath>Объект.НормыВремени.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НормыВремениНомерСтрокиКонтекстноеМеню" id="217"/>
+									<ExtendedTooltip name="НормыВремениНомерСтрокиРасширеннаяПодсказка" id="218"/>
+								</LabelField>
+								<InputField name="НормыВремениМодель" id="219">
+									<DataPath>Объект.НормыВремени.Модель</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НормыВремениМодельКонтекстноеМеню" id="220"/>
+									<ExtendedTooltip name="НормыВремениМодельРасширеннаяПодсказка" id="221"/>
+								</InputField>
+								<InputField name="НормыВремениВариантКомплектации" id="222">
+									<DataPath>Объект.НормыВремени.ВариантКомплектации</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НормыВремениВариантКомплектацииКонтекстноеМеню" id="223"/>
+									<ExtendedTooltip name="НормыВремениВариантКомплектацииРасширеннаяПодсказка" id="224"/>
+								</InputField>
+								<InputField name="НормыВремениВремяВыполнения" id="225">
+									<DataPath>Объект.НормыВремени.ВремяВыполнения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="НормыВремениВремяВыполненияКонтекстноеМеню" id="226"/>
+									<ExtendedTooltip name="НормыВремениВремяВыполненияРасширеннаяПодсказка" id="227"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ПричиныОбращений</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПараметрыПодключаемыхКоманд" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры подключаемых команд</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+</Form>

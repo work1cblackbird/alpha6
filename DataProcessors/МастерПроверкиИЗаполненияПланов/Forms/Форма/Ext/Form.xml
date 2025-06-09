@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Подразделение" id="1">
+			<DataPath>Объект.Подразделение</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ПодразделениеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ПодразделениеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаПериод" id="99">
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПериодРасширеннаяПодсказка" id="100"/>
+			<ChildItems>
+				<InputField name="Периодичность" id="4">
+					<DataPath>Объект.Периодичность</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:string">День</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:string">Неделя</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:string">Месяц</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:string">Квартал</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:string">Год</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ПериодичностьКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ПериодичностьРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ПериодичностьПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаНачала" id="7">
+					<DataPath>Объект.ДатаНачала</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>с</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="9"/>
+					<Events>
+						<Event name="OnChange">ДатаНачалаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаКонца" id="10">
+					<DataPath>Объект.ДатаКонца</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>по</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонцаКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ДатаКонцаРасширеннаяПодсказка" id="12"/>
+					<Events>
+						<Event name="OnChange">ДатаКонцаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<Button name="МинусПериод" id="105">
+					<Type>UsualButton</Type>
+					<Representation>Picture</Representation>
+					<CommandName>Form.Command.МинусПериод</CommandName>
+					<ExtendedTooltip name="МинусПериодРасширеннаяПодсказка" id="106"/>
+				</Button>
+				<Button name="ПлюсПериод" id="103">
+					<Type>UsualButton</Type>
+					<Representation>Picture</Representation>
+					<CommandName>Form.Command.ПлюсПериод</CommandName>
+					<ExtendedTooltip name="ПлюсПериодРасширеннаяПодсказка" id="104"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="14"/>
+			<ChildItems>
+				<Page name="ГруппаВидыПланов" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Виды планов</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаВидыПлановРасширеннаяПодсказка" id="16"/>
+					<ChildItems>
+						<Table name="ВидыПланов" id="17">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ВидыПланов</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ВидыПлановКонтекстноеМеню" id="18"/>
+							<AutoCommandBar name="ВидыПлановКоманднаяПанель" id="19">
+								<ChildItems>
+									<Button name="ВидыПлановВидыПлановЗаполнить" id="101">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВидыПлановЗаполнить</CommandName>
+										<ExtendedTooltip name="ВидыПлановВидыПлановЗаполнитьРасширеннаяПодсказка" id="102"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ВидыПлановРасширеннаяПодсказка" id="20"/>
+							<SearchStringAddition name="ВидыПлановСтрокаПоиска" id="21">
+								<AdditionSource>
+									<Item>ВидыПланов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВидыПлановСтрокаПоискаКонтекстноеМеню" id="22"/>
+								<ExtendedTooltip name="ВидыПлановСтрокаПоискаРасширеннаяПодсказка" id="23"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВидыПлановСостояниеПросмотра" id="24">
+								<AdditionSource>
+									<Item>ВидыПланов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВидыПлановСостояниеПросмотраКонтекстноеМеню" id="25"/>
+								<ExtendedTooltip name="ВидыПлановСостояниеПросмотраРасширеннаяПодсказка" id="26"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВидыПлановУправлениеПоиском" id="27">
+								<AdditionSource>
+									<Item>ВидыПланов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВидыПлановУправлениеПоискомКонтекстноеМеню" id="28"/>
+								<ExtendedTooltip name="ВидыПлановУправлениеПоискомРасширеннаяПодсказка" id="29"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<PictureField name="ВидыПлановСветофор" id="115">
+									<DataPath>Объект.ВидыПланов.Светофор</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.КоллекцияШаровБЭД</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</ValuesPicture>
+									<ContextMenu name="ВидыПлановСветофорКонтекстноеМеню" id="116"/>
+									<ExtendedTooltip name="ВидыПлановСветофорРасширеннаяПодсказка" id="117"/>
+								</PictureField>
+								<LabelField name="ВидыПлановНомерСтроки" id="30">
+									<DataPath>Объект.ВидыПланов.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВидыПлановНомерСтрокиКонтекстноеМеню" id="31"/>
+									<ExtendedTooltip name="ВидыПлановНомерСтрокиРасширеннаяПодсказка" id="32"/>
+								</LabelField>
+								<InputField name="ВидыПлановВидПлана" id="33">
+									<DataPath>Объект.ВидыПланов.ВидПлана</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВидыПлановВидПланаКонтекстноеМеню" id="34"/>
+									<ExtendedTooltip name="ВидыПлановВидПланаРасширеннаяПодсказка" id="35"/>
+									<Events>
+										<Event name="OnChange">ВидыПлановВидПланаПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаЗаполнениеПланов" id="39">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заполнение планов</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаЗаполнениеПлановРасширеннаяПодсказка" id="40"/>
+					<ChildItems>
+						<Table name="ЗаполнениеПланов" id="41">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ЗаполнениеПланов</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ЗаполнениеПлановКонтекстноеМеню" id="42"/>
+							<AutoCommandBar name="ЗаполнениеПлановКоманднаяПанель" id="43">
+								<ChildItems>
+									<Button name="ЗаполнениеПлановАвтоформированиеПланов" id="107">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.АвтоформированиеПланов</CommandName>
+										<ExtendedTooltip name="ЗаполнениеПлановАвтоформированиеПлановРасширеннаяПодсказка" id="108"/>
+									</Button>
+									<Button name="ЗаполнениеПлановОткрытьДокументПлан" id="111">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОткрытьДокументПлан</CommandName>
+										<ExtendedTooltip name="ЗаполнениеПлановОткрытьДокументПланРасширеннаяПодсказка" id="112"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ЗаполнениеПлановРасширеннаяПодсказка" id="44"/>
+							<SearchStringAddition name="ЗаполнениеПлановСтрокаПоиска" id="45">
+								<AdditionSource>
+									<Item>ЗаполнениеПланов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаполнениеПлановСтрокаПоискаКонтекстноеМеню" id="46"/>
+								<ExtendedTooltip name="ЗаполнениеПлановСтрокаПоискаРасширеннаяПодсказка" id="47"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЗаполнениеПлановСостояниеПросмотра" id="48">
+								<AdditionSource>
+									<Item>ЗаполнениеПланов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаполнениеПлановСостояниеПросмотраКонтекстноеМеню" id="49"/>
+								<ExtendedTooltip name="ЗаполнениеПлановСостояниеПросмотраРасширеннаяПодсказка" id="50"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЗаполнениеПлановУправлениеПоиском" id="51">
+								<AdditionSource>
+									<Item>ЗаполнениеПланов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаполнениеПлановУправлениеПоискомКонтекстноеМеню" id="52"/>
+								<ExtendedTooltip name="ЗаполнениеПлановУправлениеПоискомРасширеннаяПодсказка" id="53"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ЗаполнениеПлановНомерСтроки" id="54">
+									<DataPath>Объект.ЗаполнениеПланов.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаполнениеПлановНомерСтрокиКонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="ЗаполнениеПлановНомерСтрокиРасширеннаяПодсказка" id="56"/>
+								</LabelField>
+								<InputField name="ЗаполнениеПлановВидПлана" id="57">
+									<DataPath>Объект.ЗаполнениеПланов.ВидПлана</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаполнениеПлановВидПланаКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ЗаполнениеПлановВидПланаРасширеннаяПодсказка" id="59"/>
+								</InputField>
+								<InputField name="ЗаполнениеПлановОбъектПланирования" id="60">
+									<DataPath>Объект.ЗаполнениеПланов.ОбъектПланирования</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаполнениеПлановОбъектПланированияКонтекстноеМеню" id="61"/>
+									<ExtendedTooltip name="ЗаполнениеПлановОбъектПланированияРасширеннаяПодсказка" id="62"/>
+								</InputField>
+								<InputField name="ЗаполнениеПлановДокументПлана" id="66">
+									<DataPath>Объект.ЗаполнениеПланов.ДокументПлана</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаполнениеПлановДокументПланаКонтекстноеМеню" id="67"/>
+									<ExtendedTooltip name="ЗаполнениеПлановДокументПланаРасширеннаяПодсказка" id="68"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаЗаполнениеФактов" id="69">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заполнение фактов</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаЗаполнениеФактовРасширеннаяПодсказка" id="70"/>
+					<ChildItems>
+						<Table name="ЗаполнениеФактов" id="71">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ЗаполнениеФактов</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ЗаполнениеФактовКонтекстноеМеню" id="72"/>
+							<AutoCommandBar name="ЗаполнениеФактовКоманднаяПанель" id="73">
+								<ChildItems>
+									<Button name="ЗаполнениеФактовАвтоформированиеФактов" id="109">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.АвтоформированиеФактов</CommandName>
+										<ExtendedTooltip name="ЗаполнениеФактовАвтоформированиеФактовРасширеннаяПодсказка" id="110"/>
+									</Button>
+									<Button name="ЗаполнениеФактовОткрытьДокументФакт" id="113">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОткрытьДокументФакт</CommandName>
+										<ExtendedTooltip name="ЗаполнениеФактовОткрытьДокументФактРасширеннаяПодсказка" id="114"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ЗаполнениеФактовРасширеннаяПодсказка" id="74"/>
+							<SearchStringAddition name="ЗаполнениеФактовСтрокаПоиска" id="75">
+								<AdditionSource>
+									<Item>ЗаполнениеФактов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаполнениеФактовСтрокаПоискаКонтекстноеМеню" id="76"/>
+								<ExtendedTooltip name="ЗаполнениеФактовСтрокаПоискаРасширеннаяПодсказка" id="77"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЗаполнениеФактовСостояниеПросмотра" id="78">
+								<AdditionSource>
+									<Item>ЗаполнениеФактов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаполнениеФактовСостояниеПросмотраКонтекстноеМеню" id="79"/>
+								<ExtendedTooltip name="ЗаполнениеФактовСостояниеПросмотраРасширеннаяПодсказка" id="80"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЗаполнениеФактовУправлениеПоиском" id="81">
+								<AdditionSource>
+									<Item>ЗаполнениеФактов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаполнениеФактовУправлениеПоискомКонтекстноеМеню" id="82"/>
+								<ExtendedTooltip name="ЗаполнениеФактовУправлениеПоискомРасширеннаяПодсказка" id="83"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ЗаполнениеФактовНомерСтроки" id="84">
+									<DataPath>Объект.ЗаполнениеФактов.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаполнениеФактовНомерСтрокиКонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="ЗаполнениеФактовНомерСтрокиРасширеннаяПодсказка" id="86"/>
+								</LabelField>
+								<InputField name="ЗаполнениеФактовВидПлана" id="87">
+									<DataPath>Объект.ЗаполнениеФактов.ВидПлана</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаполнениеФактовВидПланаКонтекстноеМеню" id="88"/>
+									<ExtendedTooltip name="ЗаполнениеФактовВидПланаРасширеннаяПодсказка" id="89"/>
+								</InputField>
+								<InputField name="ЗаполнениеФактовОбъектПланирования" id="90">
+									<DataPath>Объект.ЗаполнениеФактов.ОбъектПланирования</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаполнениеФактовОбъектПланированияКонтекстноеМеню" id="91"/>
+									<ExtendedTooltip name="ЗаполнениеФактовОбъектПланированияРасширеннаяПодсказка" id="92"/>
+								</InputField>
+								<InputField name="ЗаполнениеФактовДокументФакта" id="96">
+									<DataPath>Объект.ЗаполнениеФактов.ДокументФакта</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаполнениеФактовДокументФактаКонтекстноеМеню" id="97"/>
+									<ExtendedTooltip name="ЗаполнениеФактовДокументФактаРасширеннаяПодсказка" id="98"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.МастерПроверкиИЗаполненияПланов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВидыПлановЗаполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды планов заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВидыПлановЗаполнить</Action>
+		</Command>
+		<Command name="ПлюсПериод" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плюс период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Плюс период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveRight</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПлюсПериод</Action>
+		</Command>
+		<Command name="МинусПериод" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Минус период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Минус период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveLeft</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>МинусПериод</Action>
+		</Command>
+		<Command name="АвтоформированиеПланов" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автоформирование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автоформирование планов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>АвтоформированиеПланов</Action>
+		</Command>
+		<Command name="АвтоформированиеФактов" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автоформирование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автоформирование фактов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>АвтоформированиеФактов</Action>
+		</Command>
+		<Command name="ОткрытьДокументПлан" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть документ план</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьДокументПлан</Action>
+		</Command>
+		<Command name="ОткрытьДокументФакт" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть документ факт</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьДокументФакт</Action>
+		</Command>
+	</Commands>
+</Form>

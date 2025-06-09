@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Параметры выгрузки</v8:content>
+		</v8:item>
+	</Title>
+	<Width>85</Width>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаКнопкаОК" id="7">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ОК</CommandName>
+				<ExtendedTooltip name="ФормаКнопкаОКРасширеннаяПодсказка" id="15"/>
+			</Button>
+			<Button name="ФормаКнопкаЗакрыть" id="8">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаКнопкаЗакрытьРасширеннаяПодсказка" id="16"/>
+			</Button>
+			<Popup name="ФормаГруппаШаблоны" id="9">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Шаблоны</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаГруппаШаблоныРасширеннаяПодсказка" id="17"/>
+				<ChildItems>
+					<Button name="ШтрихКодНоменклатуры" id="10">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ШтрихКодНоменклатуры</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Штрихкод номенклатуры (для документов)</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ШтрихКодНоменклатурыРасширеннаяПодсказка" id="18"/>
+					</Button>
+					<Popup name="ФормаГруппаКонстанты" id="11">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Фиксированное значение (константа)</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаГруппаКонстантыРасширеннаяПодсказка" id="19"/>
+						<ChildItems>
+							<Button name="Строка" id="12">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ШаблонСтрока</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Строка</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="СтрокаРасширеннаяПодсказка" id="20"/>
+							</Button>
+							<Button name="Число" id="13">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ШаблонЧисло</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Число</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ЧислоРасширеннаяПодсказка" id="21"/>
+							</Button>
+							<Button name="Дата" id="14">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ШаблонДата</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Дата</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="22"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="НадписьТекстВыражения" id="1">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>7</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Font ref="sys:DefaultGUIFont" faceName="Courier" height="8" kind="WindowsFont"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В тексте выражения можно использовать следующие предопределенные параметры:
+   Результат      - результат вычисления
+   ТекущиеДанные  - структура доступных значений объекта.
+                    Для справочника его поля, для документа реквизиты табличной части
+   Ссылка         - ссылка на документ (только при выгрузке документа)
+   ПользовательскиеДанные - структура для хранения пользовательских данных
+Встроенные функции, функции общих модулей.</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalAlign>Top</VerticalAlign>
+			<ContextMenu name="НадписьТекстВыраженияКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НадписьТекстВыраженияРасширеннаяПодсказка" id="23"/>
+		</LabelDecoration>
+		<TextDocumentField name="ПолеТекстовогоДокумента" id="3">
+			<DataPath>Выражение</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<ContextMenu name="ПолеТекстовогоДокументаКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="ПолеТекстовогоДокументаРасширеннаяПодсказка" id="24"/>
+		</TextDocumentField>
+		<InputField name="Представление" id="5">
+			<DataPath>Представление</DataPath>
+			<ContextMenu name="ПредставлениеКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="ПредставлениеРасширеннаяПодсказка" id="25"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Выражение" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выражение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Представление" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ШтрихКодНоменклатуры" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Штрих код номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Штрих код номенклатуры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ШтрихКодНоменклатуры</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОК" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ШаблонСтрока" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон строка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон строка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ШаблонСтрока</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ШаблонЧисло" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон число</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон число</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ШаблонЧисло</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ШаблонДата" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон дата</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон дата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ШаблонДата</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>
